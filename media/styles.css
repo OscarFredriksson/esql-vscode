@@ -1,0 +1,43 @@
+/*
+ * Styles for ACE Flow Visualizer
+ * Additional styles are inlined in the HTML template
+ */
+
+:root {
+  --node-padding: 8px;
+  --connection-width: 1.5px;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+  background: var(--vscode-editor-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.zoom-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-button:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+
+.zoom-button:active {
+  transform: scale(0.95);
+}

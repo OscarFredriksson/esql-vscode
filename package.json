@@ -1,0 +1,90 @@
+{
+  "name": "esql-language",
+  "displayName": "ESQL Language & ACE Flow Visualizer",
+  "description": "ESQL syntax highlighting and visual previewer for IBM App Connect Enterprise message flows and subflows",
+  "version": "0.3.0",
+  "publisher": "oscarfredriksson",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Visualizers"
+  ],
+  "activationEvents": [
+    "onLanguage:xml"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "esql",
+        "aliases": [
+          "ESQL",
+          "esql"
+        ],
+        "extensions": [
+          ".esql"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "esql",
+        "scopeName": "source.esql",
+        "path": "./syntaxes/esql.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "aceFlowVisualizer.openPreview",
+        "title": "Open Preview to the Side",
+        "category": "ACE Flow",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "aceFlowVisualizer.openPreviewToSide",
+        "title": "Open Preview to the Side",
+        "category": "ACE Flow",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "aceFlowVisualizer.openPreviewToSide",
+          "when": "resourceExtname == .msgflow || resourceExtname == .subflow",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "aceFlowVisualizer.openPreview",
+          "when": "resourceExtname == .msgflow || resourceExtname == .subflow"
+        },
+        {
+          "command": "aceFlowVisualizer.openPreviewToSide",
+          "when": "resourceExtname == .msgflow || resourceExtname == .subflow"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "compile": "npm run esbuild-base -- --sourcemap",
+    "watch": "npm run esbuild-base -- --sourcemap --watch",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.19.0",
+    "esbuild": "^0.19.12",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.3.0"
+  }
+}

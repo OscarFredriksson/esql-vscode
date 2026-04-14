@@ -1,0 +1,126 @@
+{
+  "scopeName": "source.esql",
+  "name": "ESQL",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#builtins" },
+    { "include": "#operators" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.esql",
+          "match": "--.*$"
+        },
+        {
+          "name": "comment.block.esql",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [{ "include": "#comments" }]
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.esql",
+          "begin": "'",
+          "end": "'",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.esql" }
+          },
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.esql" }
+          },
+          "patterns": [
+            { "name": "constant.character.escape.esql", "match": "''" }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.esql",
+          "match": "\\b\\d+(?:_\\d+)*(?:\\.\\d+(?:_\\d+)*)?(?:[eE][+-]?\\d+)?\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.esql",
+          "match": "\\b(?i:(BEGIN|END|IF|THEN|ELSE|ELSEIF|CASE|WHEN|WHILE|ITERATE|LEAVE|RETURN|DECLARE|SET|CALL|CREATE|MODULE|COMPUTE|FUNCTION|PROCEDURE|EXTERNAL|SHARED|ATOMIC|HANDLER|CONTINUE|SIGNAL|RESIGNAL|PROPAGATE|PASSTHRU|INSERT|UPDATE|DELETE|SELECT|FROM|WHERE|INTO|VALUES|GROUP|BY|HAVING|ORDER|AS|TO|AND|OR|NOT|NULLIF|COALESCE|THROW|USER|EXCEPTION|MESSAGE|TERMINAL))\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.esql",
+          "match": "\\b(?i:(BOOLEAN|BIT|BLOB|CHARACTER|CHAR|VARCHAR|NVARCHAR|INTEGER|INT|SMALLINT|BIGINT|DECIMAL|NUMERIC|FLOAT|DOUBLE|DATE|TIME|TIMESTAMP|INTERVAL|ROW|LIST|REFERENCE))\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.esql",
+          "match": "\\b(?i:(TRUE|FALSE))\\b"
+        },
+        { "name": "constant.language.null.esql", "match": "\\b(?i:NULL)\\b" }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.variable.builtin.esql",
+          "match": "\\b(?i:(InputRoot|OutputRoot|Environment|LocalEnvironment|ExceptionList|InputLocalEnvironment|OutputLocalEnvironment|Database))\\b"
+        },
+        {
+          "name": "support.function.esql",
+          "match": "\\b(?i:(CURRENT_TIMESTAMP|CURRENT_DATE|CURRENT_TIME|NOW|CARDINALITY|COALESCE|TRIM|UCASE|LCASE|SUBSTRING|POSITION|CAST|ABS|ROUND|CEIL|FLOOR))\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.esql",
+          "match": "\\b(?i:(AND|OR|NOT))\\b"
+        },
+        {
+          "name": "keyword.operator.comparison.esql",
+          "match": "(=|<>|!=|<=|>=|<|>)"
+        },
+        { "name": "keyword.operator.assignment.esql", "match": ":=" }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "entity.name.function.esql",
+          "match": "\\b(?i:(CREATE\\s+(?:COMPUTE\\s+)?MODULE|CREATE\\s+FUNCTION|CREATE\\s+PROCEDURE))\\s+([A-Za-z_][\\w$]*)",
+          "captures": {
+            "1": { "name": "keyword.other.esql" },
+            "2": { "name": "entity.name.function.esql" }
+          }
+        },
+        {
+          "name": "variable.other.esql",
+          "match": "\\b[A-Za-z_][\\w$]*\\b"
+        }
+      ]
+    }
+  },
+  "injections": {},
+  "fileTypes": ["esql"],
+  "uuid": "d5a9b2b2-2a77-4dd8-9a1e-000000000001"
+}
