@@ -4,12 +4,15 @@ This extension provides ESQL syntax highlighting and a visual previewer for IBM 
 
 ## Features
 
-### ESQL Syntax Highlighting
+### ESQL Language Server
 
-- Full syntax highlighting for `.esql` files
-- Support for ESQL keywords, functions, built-in variables, and operators
-- Line and block comments
-- String and numeric literals
+Full language server support for `.esql` files, including:
+
+- **Syntax highlighting** — keywords, types, built-in variables, operators, strings, and numeric literals
+- **Completions** — all ESQL keywords, data types, built-in variables (`InputRoot`, `OutputRoot`, `Environment`, …), built-in functions (`CAST`, `CARDINALITY`, `SUBSTRING`, …), and user-defined modules/functions/procedures from the current file
+- **Hover documentation** — signature and description for any keyword, type, or built-in under the cursor
+- **Document symbols / Outline** — navigable tree of all `CREATE MODULE`, `CREATE FUNCTION`, and `CREATE PROCEDURE` declarations
+- **Diagnostics** — warnings for unmatched `BEGIN`/`END` blocks, mismatched `CREATE MODULE`/`END MODULE`, and `DECLARE` statements missing a semicolon
 
 ### ACE Flow Visualizer
 
@@ -41,7 +44,12 @@ This extension provides ESQL syntax highlighting and a visual previewer for IBM 
 
 ### ESQL Files
 
-Simply open any `.esql` file and enjoy syntax highlighting.
+Open any `.esql` file and the language server activates automatically:
+
+- Press `Ctrl+Space` (or `Cmd+Space`) for completions
+- Hover over any keyword, type, or built-in to see inline documentation
+- Open the **Outline** panel in the Explorer sidebar to navigate modules and functions
+- Diagnostics appear inline as you type
 
 ## Supported Node Types
 
@@ -118,17 +126,21 @@ npm run watch
 ```
 esql-vscode/
 ├── src/
-│   ├── extension.ts           # Extension activation
+│   ├── extension.ts               # Extension activation + language client
 │   ├── editor/
 │   │   └── flowEditorProvider.ts  # Custom editor provider
 │   ├── parser/
-│   │   └── flowParser.ts      # XML/XMI parser for flow files
+│   │   └── flowParser.ts          # XML/XMI parser for flow files
 │   └── models/
-│       └── flowModel.ts       # Type definitions
+│       └── flowModel.ts           # Type definitions
+├── server/
+│   └── src/
+│       ├── server.ts              # ESQL language server (LSP)
+│       └── esqlData.ts            # ESQL keywords, types, and built-in docs
 ├── media/
-│   └── styles.css            # Webview styles
+│   └── styles.css                 # Webview styles
 ├── syntaxes/
-│   └── esql.tmLanguage.json  # ESQL grammar
+│   └── esql.tmLanguage.json       # ESQL TextMate grammar
 └── package.json
 ```
 
@@ -145,6 +157,14 @@ MIT
 Created for visualization of IBM App Connect Enterprise message flows and subflows.
 
 ## Changelog
+
+### 0.4.0
+
+- **New**: ESQL Language Server (LSP) for `.esql` files
+- Completions for all keywords, data types, built-in variables, and built-in functions — each with markdown documentation
+- Hover documentation showing function signatures and descriptions
+- Document symbols / Outline panel support for modules, functions, and procedures
+- Diagnostics: unmatched `BEGIN`/`END`, mismatched `CREATE MODULE`/`END MODULE`, missing semicolons on `DECLARE`
 
 ### 0.3.0
 

@@ -2,7 +2,7 @@
   "name": "esql-language",
   "displayName": "ESQL Language & ACE Flow Visualizer",
   "description": "ESQL syntax highlighting and visual previewer for IBM App Connect Enterprise message flows and subflows",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "oscarfredriksson",
   "engines": {
     "vscode": "^1.80.0"
@@ -12,7 +12,8 @@
     "Visualizers"
   ],
   "activationEvents": [
-    "onLanguage:xml"
+    "onLanguage:xml",
+    "onLanguage:esql"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -71,20 +72,25 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run esbuild-base -- --minify",
-    "compile": "npm run esbuild-base -- --sourcemap",
-    "watch": "npm run esbuild-base -- --sourcemap --watch",
+    "vscode:prepublish": "npm run esbuild-base -- --minify && npm run esbuild-server -- --minify",
+    "compile": "npm run esbuild-base -- --sourcemap && npm run esbuild-server -- --sourcemap",
+    "watch": "concurrently \"npm run esbuild-base -- --sourcemap --watch\" \"npm run esbuild-server -- --sourcemap --watch\"",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild-server": "esbuild ./server/src/server.ts --bundle --outfile=out/server.js --format=cjs --platform=node",
     "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.80.0",
     "@vscode/vsce": "^2.19.0",
+    "concurrently": "^9.2.1",
     "esbuild": "^0.19.12",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "fast-xml-parser": "^4.3.0"
+    "fast-xml-parser": "^4.3.0",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }

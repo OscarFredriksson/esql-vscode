@@ -2,13 +2,51 @@
  * IBM App Connect Enterprise Flow Visualizer Extension
  */
 
+import * as path from 'path';
 import * as vscode from 'vscode';
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind,
+} from 'vscode-languageclient/node';
 import { FlowPreviewPanel } from './preview/flowPreviewPanel';
+
+let client: LanguageClient;
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('ESQL Language & ACE Flow Visualizer extension is now active');
 
-  // Register command to open preview
+  // ── Language Server ────────────────────────────────────────────────────────
+  const serverModule = context.asAbsolutePath(path.join('out', 'server.js'));
+
+  const serverOptions: ServerOptions = {
+    run: { module: serverModule, transport: TransportKind.ipc },
+    debug: {
+      module: serverModule,
+      transport: TransportKind.ipc,
+      options: { execArgv: ['--nolazy', '--inspect=6009'] },
+    },
+  };
+
+  const clientOptions: LanguageClientOptions = {
+    documentSelector: [{ scheme: 'file', language: 'esql' }],
+    synchronize: {
+      fileEvents: vscode.workspace.createFileSystemWatcher('**/*.esql'),
+    },
+  };
+
+  client = new LanguageClient(
+    'esqlLanguageServer',
+    'ESQL Language Server',
+    serverOptions,
+    clientOptions,
+  );
+
+  client.start();
+  context.subscriptions.push({ dispose: () => client.stop() });
+
+  // ── Flow Visualizer commands ──────────────────────────────────────────────
   context.subscriptions.push(
     vscode.commands.registerCommand('aceFlowVisualizer.openPreview', () => {
       const editor = vscode.window.activeTextEditor;
