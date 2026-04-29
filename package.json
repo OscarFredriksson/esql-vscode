@@ -2,7 +2,7 @@
   "name": "esql-language",
   "displayName": "ESQL Language & ACE Flow Visualizer",
   "description": "ESQL syntax highlighting and visual previewer for IBM App Connect Enterprise message flows and subflows",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "publisher": "oscarfredriksson",
   "engines": {
     "vscode": "^1.80.0"
