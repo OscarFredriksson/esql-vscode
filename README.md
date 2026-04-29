@@ -158,6 +158,12 @@ Created for visualization of IBM App Connect Enterprise message flows and subflo
 
 ## Changelog
 
+### 0.4.2
+
+- Added GitHub Actions workflow for automated extension building and release
+- Extension now builds and packages automatically on every push
+- Built `.vsix` files available as artifacts and GitHub Releases
+
 ### 0.4.1
 
 - Added local variable IntelliSense from `DECLARE` statements
