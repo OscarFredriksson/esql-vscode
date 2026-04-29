@@ -1,43 +1,10095 @@
-"use strict";var od=Object.create;var Rs=Object.defineProperty;var sd=Object.getOwnPropertyDescriptor;var ad=Object.getOwnPropertyNames;var cd=Object.getPrototypeOf,ud=Object.prototype.hasOwnProperty;var w=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var ld=(e,t,n,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of ad(t))!ud.call(e,i)&&i!==n&&Rs(e,i,{get:()=>t[i],enumerable:!(r=sd(t,i))||r.enumerable});return e};var Ds=(e,t,n)=>(n=e!=null?od(cd(e)):{},ld(t||!e||!e.__esModule?Rs(n,"default",{value:e,enumerable:!0}):n,e));var $n=w(he=>{"use strict";Object.defineProperty(he,"__esModule",{value:!0});he.thenable=he.typedArray=he.stringArray=he.array=he.func=he.error=he.number=he.string=he.boolean=void 0;function dd(e){return e===!0||e===!1}he.boolean=dd;function _s(e){return typeof e=="string"||e instanceof String}he.string=_s;function fd(e){return typeof e=="number"||e instanceof Number}he.number=fd;function hd(e){return e instanceof Error}he.error=hd;function Ts(e){return typeof e=="function"}he.func=Ts;function Es(e){return Array.isArray(e)}he.array=Es;function gd(e){return Es(e)&&e.every(t=>_s(t))}he.stringArray=gd;function md(e,t){return Array.isArray(e)&&e.every(t)}he.typedArray=md;function pd(e){return e&&Ts(e.then)}he.thenable=pd});var xt=w(ve=>{"use strict";Object.defineProperty(ve,"__esModule",{value:!0});ve.stringArray=ve.array=ve.func=ve.error=ve.number=ve.string=ve.boolean=void 0;function yd(e){return e===!0||e===!1}ve.boolean=yd;function Cs(e){return typeof e=="string"||e instanceof String}ve.string=Cs;function vd(e){return typeof e=="number"||e instanceof Number}ve.number=vd;function bd(e){return e instanceof Error}ve.error=bd;function Rd(e){return typeof e=="function"}ve.func=Rd;function Ss(e){return Array.isArray(e)}ve.array=Ss;function Dd(e){return Ss(e)&&e.every(t=>Cs(t))}ve.stringArray=Dd});var xi=w(N=>{"use strict";Object.defineProperty(N,"__esModule",{value:!0});N.Message=N.NotificationType9=N.NotificationType8=N.NotificationType7=N.NotificationType6=N.NotificationType5=N.NotificationType4=N.NotificationType3=N.NotificationType2=N.NotificationType1=N.NotificationType0=N.NotificationType=N.RequestType9=N.RequestType8=N.RequestType7=N.RequestType6=N.RequestType5=N.RequestType4=N.RequestType3=N.RequestType2=N.RequestType1=N.RequestType=N.RequestType0=N.AbstractMessageSignature=N.ParameterStructures=N.ResponseError=N.ErrorCodes=void 0;var Dt=xt(),hi;(function(e){e.ParseError=-32700,e.InvalidRequest=-32600,e.MethodNotFound=-32601,e.InvalidParams=-32602,e.InternalError=-32603,e.jsonrpcReservedErrorRangeStart=-32099,e.serverErrorStart=-32099,e.MessageWriteError=-32099,e.MessageReadError=-32098,e.PendingResponseRejected=-32097,e.ConnectionInactive=-32096,e.ServerNotInitialized=-32002,e.UnknownErrorCode=-32001,e.jsonrpcReservedErrorRangeEnd=-32e3,e.serverErrorEnd=-32e3})(hi||(N.ErrorCodes=hi={}));var gi=class e extends Error{constructor(t,n,r){super(n),this.code=Dt.number(t)?t:hi.UnknownErrorCode,this.data=r,Object.setPrototypeOf(this,e.prototype)}toJson(){let t={code:this.code,message:this.message};return this.data!==void 0&&(t.data=this.data),t}};N.ResponseError=gi;var Te=class e{constructor(t){this.kind=t}static is(t){return t===e.auto||t===e.byName||t===e.byPosition}toString(){return this.kind}};N.ParameterStructures=Te;Te.auto=new Te("auto");Te.byPosition=new Te("byPosition");Te.byName=new Te("byName");var ie=class{constructor(t,n){this.method=t,this.numberOfParams=n}get parameterStructures(){return Te.auto}};N.AbstractMessageSignature=ie;var mi=class extends ie{constructor(t){super(t,0)}};N.RequestType0=mi;var pi=class extends ie{constructor(t,n=Te.auto){super(t,1),this._parameterStructures=n}get parameterStructures(){return this._parameterStructures}};N.RequestType=pi;var yi=class extends ie{constructor(t,n=Te.auto){super(t,1),this._parameterStructures=n}get parameterStructures(){return this._parameterStructures}};N.RequestType1=yi;var vi=class extends ie{constructor(t){super(t,2)}};N.RequestType2=vi;var bi=class extends ie{constructor(t){super(t,3)}};N.RequestType3=bi;var Ri=class extends ie{constructor(t){super(t,4)}};N.RequestType4=Ri;var Di=class extends ie{constructor(t){super(t,5)}};N.RequestType5=Di;var _i=class extends ie{constructor(t){super(t,6)}};N.RequestType6=_i;var Ti=class extends ie{constructor(t){super(t,7)}};N.RequestType7=Ti;var Ei=class extends ie{constructor(t){super(t,8)}};N.RequestType8=Ei;var Ci=class extends ie{constructor(t){super(t,9)}};N.RequestType9=Ci;var Si=class extends ie{constructor(t,n=Te.auto){super(t,1),this._parameterStructures=n}get parameterStructures(){return this._parameterStructures}};N.NotificationType=Si;var Pi=class extends ie{constructor(t){super(t,0)}};N.NotificationType0=Pi;var wi=class extends ie{constructor(t,n=Te.auto){super(t,1),this._parameterStructures=n}get parameterStructures(){return this._parameterStructures}};N.NotificationType1=wi;var ki=class extends ie{constructor(t){super(t,2)}};N.NotificationType2=ki;var qi=class extends ie{constructor(t){super(t,3)}};N.NotificationType3=qi;var Oi=class extends ie{constructor(t){super(t,4)}};N.NotificationType4=Oi;var Ni=class extends ie{constructor(t){super(t,5)}};N.NotificationType5=Ni;var Mi=class extends ie{constructor(t){super(t,6)}};N.NotificationType6=Mi;var Ii=class extends ie{constructor(t){super(t,7)}};N.NotificationType7=Ii;var Li=class extends ie{constructor(t){super(t,8)}};N.NotificationType8=Li;var Ai=class extends ie{constructor(t){super(t,9)}};N.NotificationType9=Ai;var Ps;(function(e){function t(i){let u=i;return u&&Dt.string(u.method)&&(Dt.string(u.id)||Dt.number(u.id))}e.isRequest=t;function n(i){let u=i;return u&&Dt.string(u.method)&&i.id===void 0}e.isNotification=n;function r(i){let u=i;return u&&(u.result!==void 0||!!u.error)&&(Dt.string(u.id)||Dt.number(u.id)||u.id===null)}e.isResponse=r})(Ps||(N.Message=Ps={}))});var Fi=w(it=>{"use strict";var ws;Object.defineProperty(it,"__esModule",{value:!0});it.LRUCache=it.LinkedMap=it.Touch=void 0;var be;(function(e){e.None=0,e.First=1,e.AsOld=e.First,e.Last=2,e.AsNew=e.Last})(be||(it.Touch=be={}));var zn=class{constructor(){this[ws]="LinkedMap",this._map=new Map,this._head=void 0,this._tail=void 0,this._size=0,this._state=0}clear(){this._map.clear(),this._head=void 0,this._tail=void 0,this._size=0,this._state++}isEmpty(){return!this._head&&!this._tail}get size(){return this._size}get first(){return this._head?.value}get last(){return this._tail?.value}has(t){return this._map.has(t)}get(t,n=be.None){let r=this._map.get(t);if(r)return n!==be.None&&this.touch(r,n),r.value}set(t,n,r=be.None){let i=this._map.get(t);if(i)i.value=n,r!==be.None&&this.touch(i,r);else{switch(i={key:t,value:n,next:void 0,previous:void 0},r){case be.None:this.addItemLast(i);break;case be.First:this.addItemFirst(i);break;case be.Last:this.addItemLast(i);break;default:this.addItemLast(i);break}this._map.set(t,i),this._size++}return this}delete(t){return!!this.remove(t)}remove(t){let n=this._map.get(t);if(n)return this._map.delete(t),this.removeItem(n),this._size--,n.value}shift(){if(!this._head&&!this._tail)return;if(!this._head||!this._tail)throw new Error("Invalid list");let t=this._head;return this._map.delete(t.key),this.removeItem(t),this._size--,t.value}forEach(t,n){let r=this._state,i=this._head;for(;i;){if(n?t.bind(n)(i.value,i.key,this):t(i.value,i.key,this),this._state!==r)throw new Error("LinkedMap got modified during iteration.");i=i.next}}keys(){let t=this._state,n=this._head,r={[Symbol.iterator]:()=>r,next:()=>{if(this._state!==t)throw new Error("LinkedMap got modified during iteration.");if(n){let i={value:n.key,done:!1};return n=n.next,i}else return{value:void 0,done:!0}}};return r}values(){let t=this._state,n=this._head,r={[Symbol.iterator]:()=>r,next:()=>{if(this._state!==t)throw new Error("LinkedMap got modified during iteration.");if(n){let i={value:n.value,done:!1};return n=n.next,i}else return{value:void 0,done:!0}}};return r}entries(){let t=this._state,n=this._head,r={[Symbol.iterator]:()=>r,next:()=>{if(this._state!==t)throw new Error("LinkedMap got modified during iteration.");if(n){let i={value:[n.key,n.value],done:!1};return n=n.next,i}else return{value:void 0,done:!0}}};return r}[(ws=Symbol.toStringTag,Symbol.iterator)](){return this.entries()}trimOld(t){if(t>=this.size)return;if(t===0){this.clear();return}let n=this._head,r=this.size;for(;n&&r>t;)this._map.delete(n.key),n=n.next,r--;this._head=n,this._size=r,n&&(n.previous=void 0),this._state++}addItemFirst(t){if(!this._head&&!this._tail)this._tail=t;else if(this._head)t.next=this._head,this._head.previous=t;else throw new Error("Invalid list");this._head=t,this._state++}addItemLast(t){if(!this._head&&!this._tail)this._head=t;else if(this._tail)t.previous=this._tail,this._tail.next=t;else throw new Error("Invalid list");this._tail=t,this._state++}removeItem(t){if(t===this._head&&t===this._tail)this._head=void 0,this._tail=void 0;else if(t===this._head){if(!t.next)throw new Error("Invalid list");t.next.previous=void 0,this._head=t.next}else if(t===this._tail){if(!t.previous)throw new Error("Invalid list");t.previous.next=void 0,this._tail=t.previous}else{let n=t.next,r=t.previous;if(!n||!r)throw new Error("Invalid list");n.previous=r,r.next=n}t.next=void 0,t.previous=void 0,this._state++}touch(t,n){if(!this._head||!this._tail)throw new Error("Invalid list");if(!(n!==be.First&&n!==be.Last)){if(n===be.First){if(t===this._head)return;let r=t.next,i=t.previous;t===this._tail?(i.next=void 0,this._tail=i):(r.previous=i,i.next=r),t.previous=void 0,t.next=this._head,this._head.previous=t,this._head=t,this._state++}else if(n===be.Last){if(t===this._tail)return;let r=t.next,i=t.previous;t===this._head?(r.previous=void 0,this._head=r):(r.previous=i,i.next=r),t.next=void 0,t.previous=this._tail,this._tail.next=t,this._tail=t,this._state++}}}toJSON(){let t=[];return this.forEach((n,r)=>{t.push([r,n])}),t}fromJSON(t){this.clear();for(let[n,r]of t)this.set(n,r)}};it.LinkedMap=zn;var ji=class extends zn{constructor(t,n=1){super(),this._limit=t,this._ratio=Math.min(Math.max(0,n),1)}get limit(){return this._limit}set limit(t){this._limit=t,this.checkTrim()}get ratio(){return this._ratio}set ratio(t){this._ratio=Math.min(Math.max(0,t),1),this.checkTrim()}get(t,n=be.AsNew){return super.get(t,n)}peek(t){return super.get(t,be.None)}set(t,n){return super.set(t,n,be.Last),this.checkTrim(),this}checkTrim(){this.size>this._limit&&this.trimOld(Math.round(this._limit*this._ratio))}};it.LRUCache=ji});var qs=w(Vn=>{"use strict";Object.defineProperty(Vn,"__esModule",{value:!0});Vn.Disposable=void 0;var ks;(function(e){function t(n){return{dispose:n}}e.create=t})(ks||(Vn.Disposable=ks={}))});var ot=w(Ui=>{"use strict";Object.defineProperty(Ui,"__esModule",{value:!0});var Wi;function Hi(){if(Wi===void 0)throw new Error("No runtime abstraction layer installed");return Wi}(function(e){function t(n){if(n===void 0)throw new Error("No runtime abstraction layer provided");Wi=n}e.install=t})(Hi||(Hi={}));Ui.default=Hi});var Ft=w(jt=>{"use strict";Object.defineProperty(jt,"__esModule",{value:!0});jt.Emitter=jt.Event=void 0;var _d=ot(),Os;(function(e){let t={dispose(){}};e.None=function(){return t}})(Os||(jt.Event=Os={}));var Bi=class{add(t,n=null,r){this._callbacks||(this._callbacks=[],this._contexts=[]),this._callbacks.push(t),this._contexts.push(n),Array.isArray(r)&&r.push({dispose:()=>this.remove(t,n)})}remove(t,n=null){if(!this._callbacks)return;let r=!1;for(let i=0,u=this._callbacks.length;i<u;i++)if(this._callbacks[i]===t)if(this._contexts[i]===n){this._callbacks.splice(i,1),this._contexts.splice(i,1);return}else r=!0;if(r)throw new Error("When adding a listener with a context, you should remove it with the same context")}invoke(...t){if(!this._callbacks)return[];let n=[],r=this._callbacks.slice(0),i=this._contexts.slice(0);for(let u=0,h=r.length;u<h;u++)try{n.push(r[u].apply(i[u],t))}catch(b){(0,_d.default)().console.error(b)}return n}isEmpty(){return!this._callbacks||this._callbacks.length===0}dispose(){this._callbacks=void 0,this._contexts=void 0}},Gn=class e{constructor(t){this._options=t}get event(){return this._event||(this._event=(t,n,r)=>{this._callbacks||(this._callbacks=new Bi),this._options&&this._options.onFirstListenerAdd&&this._callbacks.isEmpty()&&this._options.onFirstListenerAdd(this),this._callbacks.add(t,n);let i={dispose:()=>{this._callbacks&&(this._callbacks.remove(t,n),i.dispose=e._noop,this._options&&this._options.onLastListenerRemove&&this._callbacks.isEmpty()&&this._options.onLastListenerRemove(this))}};return Array.isArray(r)&&r.push(i),i}),this._event}fire(t){this._callbacks&&this._callbacks.invoke.call(this._callbacks,t)}dispose(){this._callbacks&&(this._callbacks.dispose(),this._callbacks=void 0)}};jt.Emitter=Gn;Gn._noop=function(){}});var Yn=w(Wt=>{"use strict";Object.defineProperty(Wt,"__esModule",{value:!0});Wt.CancellationTokenSource=Wt.CancellationToken=void 0;var Td=ot(),Ed=xt(),$i=Ft(),Qn;(function(e){e.None=Object.freeze({isCancellationRequested:!1,onCancellationRequested:$i.Event.None}),e.Cancelled=Object.freeze({isCancellationRequested:!0,onCancellationRequested:$i.Event.None});function t(n){let r=n;return r&&(r===e.None||r===e.Cancelled||Ed.boolean(r.isCancellationRequested)&&!!r.onCancellationRequested)}e.is=t})(Qn||(Wt.CancellationToken=Qn={}));var Cd=Object.freeze(function(e,t){let n=(0,Td.default)().timer.setTimeout(e.bind(t),0);return{dispose(){n.dispose()}}}),Xn=class{constructor(){this._isCancelled=!1}cancel(){this._isCancelled||(this._isCancelled=!0,this._emitter&&(this._emitter.fire(void 0),this.dispose()))}get isCancellationRequested(){return this._isCancelled}get onCancellationRequested(){return this._isCancelled?Cd:(this._emitter||(this._emitter=new $i.Emitter),this._emitter.event)}dispose(){this._emitter&&(this._emitter.dispose(),this._emitter=void 0)}},zi=class{get token(){return this._token||(this._token=new Xn),this._token}cancel(){this._token?this._token.cancel():this._token=Qn.Cancelled}dispose(){this._token?this._token instanceof Xn&&this._token.dispose():this._token=Qn.None}};Wt.CancellationTokenSource=zi});var Ns=w(Ht=>{"use strict";Object.defineProperty(Ht,"__esModule",{value:!0});Ht.SharedArrayReceiverStrategy=Ht.SharedArraySenderStrategy=void 0;var Sd=Yn(),fn;(function(e){e.Continue=0,e.Cancelled=1})(fn||(fn={}));var Vi=class{constructor(){this.buffers=new Map}enableCancellation(t){if(t.id===null)return;let n=new SharedArrayBuffer(4),r=new Int32Array(n,0,1);r[0]=fn.Continue,this.buffers.set(t.id,n),t.$cancellationData=n}async sendCancellation(t,n){let r=this.buffers.get(n);if(r===void 0)return;let i=new Int32Array(r,0,1);Atomics.store(i,0,fn.Cancelled)}cleanup(t){this.buffers.delete(t)}dispose(){this.buffers.clear()}};Ht.SharedArraySenderStrategy=Vi;var Gi=class{constructor(t){this.data=new Int32Array(t,0,1)}get isCancellationRequested(){return Atomics.load(this.data,0)===fn.Cancelled}get onCancellationRequested(){throw new Error("Cancellation over SharedArrayBuffer doesn't support cancellation events")}},Qi=class{constructor(t){this.token=new Gi(t)}cancel(){}dispose(){}},Xi=class{constructor(){this.kind="request"}createCancellationTokenSource(t){let n=t.$cancellationData;return n===void 0?new Sd.CancellationTokenSource:new Qi(n)}};Ht.SharedArrayReceiverStrategy=Xi});var Ji=w(Jn=>{"use strict";Object.defineProperty(Jn,"__esModule",{value:!0});Jn.Semaphore=void 0;var Pd=ot(),Yi=class{constructor(t=1){if(t<=0)throw new Error("Capacity must be greater than 0");this._capacity=t,this._active=0,this._waiting=[]}lock(t){return new Promise((n,r)=>{this._waiting.push({thunk:t,resolve:n,reject:r}),this.runNext()})}get active(){return this._active}runNext(){this._waiting.length===0||this._active===this._capacity||(0,Pd.default)().timer.setImmediate(()=>this.doRunNext())}doRunNext(){if(this._waiting.length===0||this._active===this._capacity)return;let t=this._waiting.shift();if(this._active++,this._active>this._capacity)throw new Error("To many thunks active");try{let n=t.thunk();n instanceof Promise?n.then(r=>{this._active--,t.resolve(r),this.runNext()},r=>{this._active--,t.reject(r),this.runNext()}):(this._active--,t.resolve(n),this.runNext())}catch(n){this._active--,t.reject(n),this.runNext()}}};Jn.Semaphore=Yi});var Is=w(st=>{"use strict";Object.defineProperty(st,"__esModule",{value:!0});st.ReadableStreamMessageReader=st.AbstractMessageReader=st.MessageReader=void 0;var Zi=ot(),Ut=xt(),Ki=Ft(),wd=Ji(),Ms;(function(e){function t(n){let r=n;return r&&Ut.func(r.listen)&&Ut.func(r.dispose)&&Ut.func(r.onError)&&Ut.func(r.onClose)&&Ut.func(r.onPartialMessage)}e.is=t})(Ms||(st.MessageReader=Ms={}));var Kn=class{constructor(){this.errorEmitter=new Ki.Emitter,this.closeEmitter=new Ki.Emitter,this.partialMessageEmitter=new Ki.Emitter}dispose(){this.errorEmitter.dispose(),this.closeEmitter.dispose()}get onError(){return this.errorEmitter.event}fireError(t){this.errorEmitter.fire(this.asError(t))}get onClose(){return this.closeEmitter.event}fireClose(){this.closeEmitter.fire(void 0)}get onPartialMessage(){return this.partialMessageEmitter.event}firePartialMessage(t){this.partialMessageEmitter.fire(t)}asError(t){return t instanceof Error?t:new Error(`Reader received error. Reason: ${Ut.string(t.message)?t.message:"unknown"}`)}};st.AbstractMessageReader=Kn;var eo;(function(e){function t(n){let r,i,u,h=new Map,b,P=new Map;if(n===void 0||typeof n=="string")r=n??"utf-8";else{if(r=n.charset??"utf-8",n.contentDecoder!==void 0&&(u=n.contentDecoder,h.set(u.name,u)),n.contentDecoders!==void 0)for(let C of n.contentDecoders)h.set(C.name,C);if(n.contentTypeDecoder!==void 0&&(b=n.contentTypeDecoder,P.set(b.name,b)),n.contentTypeDecoders!==void 0)for(let C of n.contentTypeDecoders)P.set(C.name,C)}return b===void 0&&(b=(0,Zi.default)().applicationJson.decoder,P.set(b.name,b)),{charset:r,contentDecoder:u,contentDecoders:h,contentTypeDecoder:b,contentTypeDecoders:P}}e.fromOptions=t})(eo||(eo={}));var to=class extends Kn{constructor(t,n){super(),this.readable=t,this.options=eo.fromOptions(n),this.buffer=(0,Zi.default)().messageBuffer.create(this.options.charset),this._partialMessageTimeout=1e4,this.nextMessageLength=-1,this.messageToken=0,this.readSemaphore=new wd.Semaphore(1)}set partialMessageTimeout(t){this._partialMessageTimeout=t}get partialMessageTimeout(){return this._partialMessageTimeout}listen(t){this.nextMessageLength=-1,this.messageToken=0,this.partialMessageTimer=void 0,this.callback=t;let n=this.readable.onData(r=>{this.onData(r)});return this.readable.onError(r=>this.fireError(r)),this.readable.onClose(()=>this.fireClose()),n}onData(t){try{for(this.buffer.append(t);;){if(this.nextMessageLength===-1){let r=this.buffer.tryReadHeaders(!0);if(!r)return;let i=r.get("content-length");if(!i){this.fireError(new Error(`Header must provide a Content-Length property.
-${JSON.stringify(Object.fromEntries(r))}`));return}let u=parseInt(i);if(isNaN(u)){this.fireError(new Error(`Content-Length value must be a number. Got ${i}`));return}this.nextMessageLength=u}let n=this.buffer.tryReadBody(this.nextMessageLength);if(n===void 0){this.setPartialMessageTimer();return}this.clearPartialMessageTimer(),this.nextMessageLength=-1,this.readSemaphore.lock(async()=>{let r=this.options.contentDecoder!==void 0?await this.options.contentDecoder.decode(n):n,i=await this.options.contentTypeDecoder.decode(r,this.options);this.callback(i)}).catch(r=>{this.fireError(r)})}}catch(n){this.fireError(n)}}clearPartialMessageTimer(){this.partialMessageTimer&&(this.partialMessageTimer.dispose(),this.partialMessageTimer=void 0)}setPartialMessageTimer(){this.clearPartialMessageTimer(),!(this._partialMessageTimeout<=0)&&(this.partialMessageTimer=(0,Zi.default)().timer.setTimeout((t,n)=>{this.partialMessageTimer=void 0,t===this.messageToken&&(this.firePartialMessage({messageToken:t,waitingTime:n}),this.setPartialMessageTimer())},this._partialMessageTimeout,this.messageToken,this._partialMessageTimeout))}};st.ReadableStreamMessageReader=to});var Fs=w(at=>{"use strict";Object.defineProperty(at,"__esModule",{value:!0});at.WriteableStreamMessageWriter=at.AbstractMessageWriter=at.MessageWriter=void 0;var Ls=ot(),hn=xt(),kd=Ji(),As=Ft(),qd="Content-Length: ",xs=`\r
-`,js;(function(e){function t(n){let r=n;return r&&hn.func(r.dispose)&&hn.func(r.onClose)&&hn.func(r.onError)&&hn.func(r.write)}e.is=t})(js||(at.MessageWriter=js={}));var Zn=class{constructor(){this.errorEmitter=new As.Emitter,this.closeEmitter=new As.Emitter}dispose(){this.errorEmitter.dispose(),this.closeEmitter.dispose()}get onError(){return this.errorEmitter.event}fireError(t,n,r){this.errorEmitter.fire([this.asError(t),n,r])}get onClose(){return this.closeEmitter.event}fireClose(){this.closeEmitter.fire(void 0)}asError(t){return t instanceof Error?t:new Error(`Writer received error. Reason: ${hn.string(t.message)?t.message:"unknown"}`)}};at.AbstractMessageWriter=Zn;var no;(function(e){function t(n){return n===void 0||typeof n=="string"?{charset:n??"utf-8",contentTypeEncoder:(0,Ls.default)().applicationJson.encoder}:{charset:n.charset??"utf-8",contentEncoder:n.contentEncoder,contentTypeEncoder:n.contentTypeEncoder??(0,Ls.default)().applicationJson.encoder}}e.fromOptions=t})(no||(no={}));var ro=class extends Zn{constructor(t,n){super(),this.writable=t,this.options=no.fromOptions(n),this.errorCount=0,this.writeSemaphore=new kd.Semaphore(1),this.writable.onError(r=>this.fireError(r)),this.writable.onClose(()=>this.fireClose())}async write(t){return this.writeSemaphore.lock(async()=>this.options.contentTypeEncoder.encode(t,this.options).then(r=>this.options.contentEncoder!==void 0?this.options.contentEncoder.encode(r):r).then(r=>{let i=[];return i.push(qd,r.byteLength.toString(),xs),i.push(xs),this.doWrite(t,i,r)},r=>{throw this.fireError(r),r}))}async doWrite(t,n,r){try{return await this.writable.write(n.join(""),"ascii"),this.writable.write(r)}catch(i){return this.handleError(i,t),Promise.reject(i)}}handleError(t,n){this.errorCount++,this.fireError(t,n,this.errorCount)}end(){this.writable.end()}};at.WriteableStreamMessageWriter=ro});var Ws=w(er=>{"use strict";Object.defineProperty(er,"__esModule",{value:!0});er.AbstractMessageBuffer=void 0;var Od=13,Nd=10,Md=`\r
-`,io=class{constructor(t="utf-8"){this._encoding=t,this._chunks=[],this._totalLength=0}get encoding(){return this._encoding}append(t){let n=typeof t=="string"?this.fromString(t,this._encoding):t;this._chunks.push(n),this._totalLength+=n.byteLength}tryReadHeaders(t=!1){if(this._chunks.length===0)return;let n=0,r=0,i=0,u=0;e:for(;r<this._chunks.length;){let C=this._chunks[r];for(i=0;i<C.length;){switch(C[i]){case Od:switch(n){case 0:n=1;break;case 2:n=3;break;default:n=0}break;case Nd:switch(n){case 1:n=2;break;case 3:n=4,i++;break e;default:n=0}break;default:n=0}i++}u+=C.byteLength,r++}if(n!==4)return;let h=this._read(u+i),b=new Map,P=this.toString(h,"ascii").split(Md);if(P.length<2)return b;for(let C=0;C<P.length-2;C++){let k=P[C],O=k.indexOf(":");if(O===-1)throw new Error(`Message header must separate key and value using ':'
-${k}`);let M=k.substr(0,O),$=k.substr(O+1).trim();b.set(t?M.toLowerCase():M,$)}return b}tryReadBody(t){if(!(this._totalLength<t))return this._read(t)}get numberOfBytes(){return this._totalLength}_read(t){if(t===0)return this.emptyBuffer();if(t>this._totalLength)throw new Error("Cannot read so many bytes!");if(this._chunks[0].byteLength===t){let u=this._chunks[0];return this._chunks.shift(),this._totalLength-=t,this.asNative(u)}if(this._chunks[0].byteLength>t){let u=this._chunks[0],h=this.asNative(u,t);return this._chunks[0]=u.slice(t),this._totalLength-=t,h}let n=this.allocNative(t),r=0,i=0;for(;t>0;){let u=this._chunks[i];if(u.byteLength>t){let h=u.slice(0,t);n.set(h,r),r+=t,this._chunks[i]=u.slice(t),this._totalLength-=t,t-=t}else n.set(u,r),r+=u.byteLength,this._chunks.shift(),this._totalLength-=u.byteLength,t-=u.byteLength}return n}};er.AbstractMessageBuffer=io});var zs=w(x=>{"use strict";Object.defineProperty(x,"__esModule",{value:!0});x.createMessageConnection=x.ConnectionOptions=x.MessageStrategy=x.CancellationStrategy=x.CancellationSenderStrategy=x.CancellationReceiverStrategy=x.RequestCancellationReceiverStrategy=x.IdCancellationReceiverStrategy=x.ConnectionStrategy=x.ConnectionError=x.ConnectionErrors=x.LogTraceNotification=x.SetTraceNotification=x.TraceFormat=x.TraceValues=x.Trace=x.NullLogger=x.ProgressType=x.ProgressToken=void 0;var Hs=ot(),ae=xt(),I=xi(),Us=Fi(),gn=Ft(),oo=Yn(),yn;(function(e){e.type=new I.NotificationType("$/cancelRequest")})(yn||(yn={}));var so;(function(e){function t(n){return typeof n=="string"||typeof n=="number"}e.is=t})(so||(x.ProgressToken=so={}));var mn;(function(e){e.type=new I.NotificationType("$/progress")})(mn||(mn={}));var ao=class{constructor(){}};x.ProgressType=ao;var co;(function(e){function t(n){return ae.func(n)}e.is=t})(co||(co={}));x.NullLogger=Object.freeze({error:()=>{},warn:()=>{},info:()=>{},log:()=>{}});var G;(function(e){e[e.Off=0]="Off",e[e.Messages=1]="Messages",e[e.Compact=2]="Compact",e[e.Verbose=3]="Verbose"})(G||(x.Trace=G={}));var Bs;(function(e){e.Off="off",e.Messages="messages",e.Compact="compact",e.Verbose="verbose"})(Bs||(x.TraceValues=Bs={}));(function(e){function t(r){if(!ae.string(r))return e.Off;switch(r=r.toLowerCase(),r){case"off":return e.Off;case"messages":return e.Messages;case"compact":return e.Compact;case"verbose":return e.Verbose;default:return e.Off}}e.fromString=t;function n(r){switch(r){case e.Off:return"off";case e.Messages:return"messages";case e.Compact:return"compact";case e.Verbose:return"verbose";default:return"off"}}e.toString=n})(G||(x.Trace=G={}));var ke;(function(e){e.Text="text",e.JSON="json"})(ke||(x.TraceFormat=ke={}));(function(e){function t(n){return ae.string(n)?(n=n.toLowerCase(),n==="json"?e.JSON:e.Text):e.Text}e.fromString=t})(ke||(x.TraceFormat=ke={}));var uo;(function(e){e.type=new I.NotificationType("$/setTrace")})(uo||(x.SetTraceNotification=uo={}));var tr;(function(e){e.type=new I.NotificationType("$/logTrace")})(tr||(x.LogTraceNotification=tr={}));var pn;(function(e){e[e.Closed=1]="Closed",e[e.Disposed=2]="Disposed",e[e.AlreadyListening=3]="AlreadyListening"})(pn||(x.ConnectionErrors=pn={}));var Bt=class e extends Error{constructor(t,n){super(n),this.code=t,Object.setPrototypeOf(this,e.prototype)}};x.ConnectionError=Bt;var lo;(function(e){function t(n){let r=n;return r&&ae.func(r.cancelUndispatched)}e.is=t})(lo||(x.ConnectionStrategy=lo={}));var nr;(function(e){function t(n){let r=n;return r&&(r.kind===void 0||r.kind==="id")&&ae.func(r.createCancellationTokenSource)&&(r.dispose===void 0||ae.func(r.dispose))}e.is=t})(nr||(x.IdCancellationReceiverStrategy=nr={}));var fo;(function(e){function t(n){let r=n;return r&&r.kind==="request"&&ae.func(r.createCancellationTokenSource)&&(r.dispose===void 0||ae.func(r.dispose))}e.is=t})(fo||(x.RequestCancellationReceiverStrategy=fo={}));var rr;(function(e){e.Message=Object.freeze({createCancellationTokenSource(n){return new oo.CancellationTokenSource}});function t(n){return nr.is(n)||fo.is(n)}e.is=t})(rr||(x.CancellationReceiverStrategy=rr={}));var ir;(function(e){e.Message=Object.freeze({sendCancellation(n,r){return n.sendNotification(yn.type,{id:r})},cleanup(n){}});function t(n){let r=n;return r&&ae.func(r.sendCancellation)&&ae.func(r.cleanup)}e.is=t})(ir||(x.CancellationSenderStrategy=ir={}));var or;(function(e){e.Message=Object.freeze({receiver:rr.Message,sender:ir.Message});function t(n){let r=n;return r&&rr.is(r.receiver)&&ir.is(r.sender)}e.is=t})(or||(x.CancellationStrategy=or={}));var sr;(function(e){function t(n){let r=n;return r&&ae.func(r.handleMessage)}e.is=t})(sr||(x.MessageStrategy=sr={}));var $s;(function(e){function t(n){let r=n;return r&&(or.is(r.cancellationStrategy)||lo.is(r.connectionStrategy)||sr.is(r.messageStrategy))}e.is=t})($s||(x.ConnectionOptions=$s={}));var He;(function(e){e[e.New=1]="New",e[e.Listening=2]="Listening",e[e.Closed=3]="Closed",e[e.Disposed=4]="Disposed"})(He||(He={}));function Id(e,t,n,r){let i=n!==void 0?n:x.NullLogger,u=0,h=0,b=0,P="2.0",C,k=new Map,O,M=new Map,$=new Map,W,X=new Us.LinkedMap,K=new Map,B=new Set,y=new Map,p=G.Off,T=ke.Text,j,ee=He.New,ce=new gn.Emitter,xe=new gn.Emitter,yt=new gn.Emitter,tt=new gn.Emitter,nt=new gn.Emitter,_e=r&&r.cancellationStrategy?r.cancellationStrategy:or.Message;function qt(l){if(l===null)throw new Error("Can't send requests with id null since the response can't be correlated.");return"req-"+l.toString()}function Ot(l){return l===null?"res-unknown-"+(++b).toString():"res-"+l.toString()}function wn(){return"not-"+(++h).toString()}function fi(l,R){I.Message.isRequest(R)?l.set(qt(R.id),R):I.Message.isResponse(R)?l.set(Ot(R.id),R):l.set(wn(),R)}function kn(l){}function sn(){return ee===He.Listening}function vt(){return ee===He.Closed}function Xe(){return ee===He.Disposed}function Nt(){(ee===He.New||ee===He.Listening)&&(ee=He.Closed,xe.fire(void 0))}function bt(l){ce.fire([l,void 0,void 0])}function qn(l){ce.fire(l)}e.onClose(Nt),e.onError(bt),t.onClose(Nt),t.onError(qn);function an(){W||X.size===0||(W=(0,Hs.default)().timer.setImmediate(()=>{W=void 0,On()}))}function cn(l){I.Message.isRequest(l)?Mn(l):I.Message.isNotification(l)?Ln(l):I.Message.isResponse(l)?In(l):Mt(l)}function On(){if(X.size===0)return;let l=X.shift();try{let R=r?.messageStrategy;sr.is(R)?R.handleMessage(l,cn):cn(l)}finally{an()}}let Nn=l=>{try{if(I.Message.isNotification(l)&&l.method===yn.type.method){let R=l.params.id,E=qt(R),q=X.get(E);if(I.Message.isRequest(q)){let Y=r?.connectionStrategy,re=Y&&Y.cancelUndispatched?Y.cancelUndispatched(q,kn):void 0;if(re&&(re.error!==void 0||re.result!==void 0)){X.delete(E),y.delete(R),re.id=q.id,Rt(re,l.method,Date.now()),t.write(re).catch(()=>i.error("Sending response for canceled message failed."));return}}let J=y.get(R);if(J!==void 0){J.cancel(),It(l);return}else B.add(R)}fi(X,l)}finally{an()}};function Mn(l){if(Xe())return;function R(F,Z,z){let ue={jsonrpc:P,id:l.id};F instanceof I.ResponseError?ue.error=F.toJson():ue.result=F===void 0?null:F,Rt(ue,Z,z),t.write(ue).catch(()=>i.error("Sending response failed."))}function E(F,Z,z){let ue={jsonrpc:P,id:l.id,error:F.toJson()};Rt(ue,Z,z),t.write(ue).catch(()=>i.error("Sending response failed."))}function q(F,Z,z){F===void 0&&(F=null);let ue={jsonrpc:P,id:l.id,result:F};Rt(ue,Z,z),t.write(ue).catch(()=>i.error("Sending response failed."))}jn(l);let J=k.get(l.method),Y,re;J&&(Y=J.type,re=J.handler);let oe=Date.now();if(re||C){let F=l.id??String(Date.now()),Z=nr.is(_e.receiver)?_e.receiver.createCancellationTokenSource(F):_e.receiver.createCancellationTokenSource(l);l.id!==null&&B.has(l.id)&&Z.cancel(),l.id!==null&&y.set(F,Z);try{let z;if(re)if(l.params===void 0){if(Y!==void 0&&Y.numberOfParams!==0){E(new I.ResponseError(I.ErrorCodes.InvalidParams,`Request ${l.method} defines ${Y.numberOfParams} params but received none.`),l.method,oe);return}z=re(Z.token)}else if(Array.isArray(l.params)){if(Y!==void 0&&Y.parameterStructures===I.ParameterStructures.byName){E(new I.ResponseError(I.ErrorCodes.InvalidParams,`Request ${l.method} defines parameters by name but received parameters by position`),l.method,oe);return}z=re(...l.params,Z.token)}else{if(Y!==void 0&&Y.parameterStructures===I.ParameterStructures.byPosition){E(new I.ResponseError(I.ErrorCodes.InvalidParams,`Request ${l.method} defines parameters by position but received parameters by name`),l.method,oe);return}z=re(l.params,Z.token)}else C&&(z=C(l.method,l.params,Z.token));let ue=z;z?ue.then?ue.then(me=>{y.delete(F),R(me,l.method,oe)},me=>{y.delete(F),me instanceof I.ResponseError?E(me,l.method,oe):me&&ae.string(me.message)?E(new I.ResponseError(I.ErrorCodes.InternalError,`Request ${l.method} failed with message: ${me.message}`),l.method,oe):E(new I.ResponseError(I.ErrorCodes.InternalError,`Request ${l.method} failed unexpectedly without providing any details.`),l.method,oe)}):(y.delete(F),R(z,l.method,oe)):(y.delete(F),q(z,l.method,oe))}catch(z){y.delete(F),z instanceof I.ResponseError?R(z,l.method,oe):z&&ae.string(z.message)?E(new I.ResponseError(I.ErrorCodes.InternalError,`Request ${l.method} failed with message: ${z.message}`),l.method,oe):E(new I.ResponseError(I.ErrorCodes.InternalError,`Request ${l.method} failed unexpectedly without providing any details.`),l.method,oe)}}else E(new I.ResponseError(I.ErrorCodes.MethodNotFound,`Unhandled method ${l.method}`),l.method,oe)}function In(l){if(!Xe())if(l.id===null)l.error?i.error(`Received response message without id: Error is: 
-${JSON.stringify(l.error,void 0,4)}`):i.error("Received response message without id. No further error information provided.");else{let R=l.id,E=K.get(R);if(Fn(l,E),E!==void 0){K.delete(R);try{if(l.error){let q=l.error;E.reject(new I.ResponseError(q.code,q.message,q.data))}else if(l.result!==void 0)E.resolve(l.result);else throw new Error("Should never happen.")}catch(q){q.message?i.error(`Response handler '${E.method}' failed with message: ${q.message}`):i.error(`Response handler '${E.method}' failed unexpectedly.`)}}}}function Ln(l){if(Xe())return;let R,E;if(l.method===yn.type.method){let q=l.params.id;B.delete(q),It(l);return}else{let q=M.get(l.method);q&&(E=q.handler,R=q.type)}if(E||O)try{if(It(l),E)if(l.params===void 0)R!==void 0&&R.numberOfParams!==0&&R.parameterStructures!==I.ParameterStructures.byName&&i.error(`Notification ${l.method} defines ${R.numberOfParams} params but received none.`),E();else if(Array.isArray(l.params)){let q=l.params;l.method===mn.type.method&&q.length===2&&so.is(q[0])?E({token:q[0],value:q[1]}):(R!==void 0&&(R.parameterStructures===I.ParameterStructures.byName&&i.error(`Notification ${l.method} defines parameters by name but received parameters by position`),R.numberOfParams!==l.params.length&&i.error(`Notification ${l.method} defines ${R.numberOfParams} params but received ${q.length} arguments`)),E(...q))}else R!==void 0&&R.parameterStructures===I.ParameterStructures.byPosition&&i.error(`Notification ${l.method} defines parameters by position but received parameters by name`),E(l.params);else O&&O(l.method,l.params)}catch(q){q.message?i.error(`Notification handler '${l.method}' failed with message: ${q.message}`):i.error(`Notification handler '${l.method}' failed unexpectedly.`)}else yt.fire(l)}function Mt(l){if(!l){i.error("Received empty message.");return}i.error(`Received message which is neither a response nor a notification message:
-${JSON.stringify(l,null,4)}`);let R=l;if(ae.string(R.id)||ae.number(R.id)){let E=R.id,q=K.get(E);q&&q.reject(new Error("The received response has neither a result nor an error property."))}}function je(l){if(l!=null)switch(p){case G.Verbose:return JSON.stringify(l,null,4);case G.Compact:return JSON.stringify(l);default:return}}function An(l){if(!(p===G.Off||!j))if(T===ke.Text){let R;(p===G.Verbose||p===G.Compact)&&l.params&&(R=`Params: ${je(l.params)}
+"use strict";
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __commonJS = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 
-`),j.log(`Sending request '${l.method} - (${l.id})'.`,R)}else Ye("send-request",l)}function xn(l){if(!(p===G.Off||!j))if(T===ke.Text){let R;(p===G.Verbose||p===G.Compact)&&(l.params?R=`Params: ${je(l.params)}
+// node_modules/vscode-languageserver/lib/common/utils/is.js
+var require_is = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/utils/is.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.thenable = exports2.typedArray = exports2.stringArray = exports2.array = exports2.func = exports2.error = exports2.number = exports2.string = exports2.boolean = void 0;
+    function boolean(value) {
+      return value === true || value === false;
+    }
+    exports2.boolean = boolean;
+    function string(value) {
+      return typeof value === "string" || value instanceof String;
+    }
+    exports2.string = string;
+    function number(value) {
+      return typeof value === "number" || value instanceof Number;
+    }
+    exports2.number = number;
+    function error(value) {
+      return value instanceof Error;
+    }
+    exports2.error = error;
+    function func(value) {
+      return typeof value === "function";
+    }
+    exports2.func = func;
+    function array(value) {
+      return Array.isArray(value);
+    }
+    exports2.array = array;
+    function stringArray(value) {
+      return array(value) && value.every((elem) => string(elem));
+    }
+    exports2.stringArray = stringArray;
+    function typedArray(value, check) {
+      return Array.isArray(value) && value.every(check);
+    }
+    exports2.typedArray = typedArray;
+    function thenable(value) {
+      return value && func(value.then);
+    }
+    exports2.thenable = thenable;
+  }
+});
 
-`:R=`No parameters provided.
+// node_modules/vscode-jsonrpc/lib/common/is.js
+var require_is2 = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/is.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.stringArray = exports2.array = exports2.func = exports2.error = exports2.number = exports2.string = exports2.boolean = void 0;
+    function boolean(value) {
+      return value === true || value === false;
+    }
+    exports2.boolean = boolean;
+    function string(value) {
+      return typeof value === "string" || value instanceof String;
+    }
+    exports2.string = string;
+    function number(value) {
+      return typeof value === "number" || value instanceof Number;
+    }
+    exports2.number = number;
+    function error(value) {
+      return value instanceof Error;
+    }
+    exports2.error = error;
+    function func(value) {
+      return typeof value === "function";
+    }
+    exports2.func = func;
+    function array(value) {
+      return Array.isArray(value);
+    }
+    exports2.array = array;
+    function stringArray(value) {
+      return array(value) && value.every((elem) => string(elem));
+    }
+    exports2.stringArray = stringArray;
+  }
+});
 
-`),j.log(`Sending notification '${l.method}'.`,R)}else Ye("send-notification",l)}function Rt(l,R,E){if(!(p===G.Off||!j))if(T===ke.Text){let q;(p===G.Verbose||p===G.Compact)&&(l.error&&l.error.data?q=`Error data: ${je(l.error.data)}
+// node_modules/vscode-jsonrpc/lib/common/messages.js
+var require_messages = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/messages.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.Message = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType = exports2.RequestType0 = exports2.AbstractMessageSignature = exports2.ParameterStructures = exports2.ResponseError = exports2.ErrorCodes = void 0;
+    var is = require_is2();
+    var ErrorCodes;
+    (function(ErrorCodes2) {
+      ErrorCodes2.ParseError = -32700;
+      ErrorCodes2.InvalidRequest = -32600;
+      ErrorCodes2.MethodNotFound = -32601;
+      ErrorCodes2.InvalidParams = -32602;
+      ErrorCodes2.InternalError = -32603;
+      ErrorCodes2.jsonrpcReservedErrorRangeStart = -32099;
+      ErrorCodes2.serverErrorStart = -32099;
+      ErrorCodes2.MessageWriteError = -32099;
+      ErrorCodes2.MessageReadError = -32098;
+      ErrorCodes2.PendingResponseRejected = -32097;
+      ErrorCodes2.ConnectionInactive = -32096;
+      ErrorCodes2.ServerNotInitialized = -32002;
+      ErrorCodes2.UnknownErrorCode = -32001;
+      ErrorCodes2.jsonrpcReservedErrorRangeEnd = -32e3;
+      ErrorCodes2.serverErrorEnd = -32e3;
+    })(ErrorCodes || (exports2.ErrorCodes = ErrorCodes = {}));
+    var ResponseError = class _ResponseError extends Error {
+      constructor(code, message, data) {
+        super(message);
+        this.code = is.number(code) ? code : ErrorCodes.UnknownErrorCode;
+        this.data = data;
+        Object.setPrototypeOf(this, _ResponseError.prototype);
+      }
+      toJson() {
+        const result = {
+          code: this.code,
+          message: this.message
+        };
+        if (this.data !== void 0) {
+          result.data = this.data;
+        }
+        return result;
+      }
+    };
+    exports2.ResponseError = ResponseError;
+    var ParameterStructures = class _ParameterStructures {
+      constructor(kind) {
+        this.kind = kind;
+      }
+      static is(value) {
+        return value === _ParameterStructures.auto || value === _ParameterStructures.byName || value === _ParameterStructures.byPosition;
+      }
+      toString() {
+        return this.kind;
+      }
+    };
+    exports2.ParameterStructures = ParameterStructures;
+    ParameterStructures.auto = new ParameterStructures("auto");
+    ParameterStructures.byPosition = new ParameterStructures("byPosition");
+    ParameterStructures.byName = new ParameterStructures("byName");
+    var AbstractMessageSignature = class {
+      constructor(method, numberOfParams) {
+        this.method = method;
+        this.numberOfParams = numberOfParams;
+      }
+      get parameterStructures() {
+        return ParameterStructures.auto;
+      }
+    };
+    exports2.AbstractMessageSignature = AbstractMessageSignature;
+    var RequestType0 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 0);
+      }
+    };
+    exports2.RequestType0 = RequestType0;
+    var RequestType = class extends AbstractMessageSignature {
+      constructor(method, _parameterStructures = ParameterStructures.auto) {
+        super(method, 1);
+        this._parameterStructures = _parameterStructures;
+      }
+      get parameterStructures() {
+        return this._parameterStructures;
+      }
+    };
+    exports2.RequestType = RequestType;
+    var RequestType1 = class extends AbstractMessageSignature {
+      constructor(method, _parameterStructures = ParameterStructures.auto) {
+        super(method, 1);
+        this._parameterStructures = _parameterStructures;
+      }
+      get parameterStructures() {
+        return this._parameterStructures;
+      }
+    };
+    exports2.RequestType1 = RequestType1;
+    var RequestType2 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 2);
+      }
+    };
+    exports2.RequestType2 = RequestType2;
+    var RequestType3 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 3);
+      }
+    };
+    exports2.RequestType3 = RequestType3;
+    var RequestType4 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 4);
+      }
+    };
+    exports2.RequestType4 = RequestType4;
+    var RequestType5 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 5);
+      }
+    };
+    exports2.RequestType5 = RequestType5;
+    var RequestType6 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 6);
+      }
+    };
+    exports2.RequestType6 = RequestType6;
+    var RequestType7 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 7);
+      }
+    };
+    exports2.RequestType7 = RequestType7;
+    var RequestType8 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 8);
+      }
+    };
+    exports2.RequestType8 = RequestType8;
+    var RequestType9 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 9);
+      }
+    };
+    exports2.RequestType9 = RequestType9;
+    var NotificationType = class extends AbstractMessageSignature {
+      constructor(method, _parameterStructures = ParameterStructures.auto) {
+        super(method, 1);
+        this._parameterStructures = _parameterStructures;
+      }
+      get parameterStructures() {
+        return this._parameterStructures;
+      }
+    };
+    exports2.NotificationType = NotificationType;
+    var NotificationType0 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 0);
+      }
+    };
+    exports2.NotificationType0 = NotificationType0;
+    var NotificationType1 = class extends AbstractMessageSignature {
+      constructor(method, _parameterStructures = ParameterStructures.auto) {
+        super(method, 1);
+        this._parameterStructures = _parameterStructures;
+      }
+      get parameterStructures() {
+        return this._parameterStructures;
+      }
+    };
+    exports2.NotificationType1 = NotificationType1;
+    var NotificationType2 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 2);
+      }
+    };
+    exports2.NotificationType2 = NotificationType2;
+    var NotificationType3 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 3);
+      }
+    };
+    exports2.NotificationType3 = NotificationType3;
+    var NotificationType4 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 4);
+      }
+    };
+    exports2.NotificationType4 = NotificationType4;
+    var NotificationType5 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 5);
+      }
+    };
+    exports2.NotificationType5 = NotificationType5;
+    var NotificationType6 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 6);
+      }
+    };
+    exports2.NotificationType6 = NotificationType6;
+    var NotificationType7 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 7);
+      }
+    };
+    exports2.NotificationType7 = NotificationType7;
+    var NotificationType8 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 8);
+      }
+    };
+    exports2.NotificationType8 = NotificationType8;
+    var NotificationType9 = class extends AbstractMessageSignature {
+      constructor(method) {
+        super(method, 9);
+      }
+    };
+    exports2.NotificationType9 = NotificationType9;
+    var Message;
+    (function(Message2) {
+      function isRequest(message) {
+        const candidate = message;
+        return candidate && is.string(candidate.method) && (is.string(candidate.id) || is.number(candidate.id));
+      }
+      Message2.isRequest = isRequest;
+      function isNotification(message) {
+        const candidate = message;
+        return candidate && is.string(candidate.method) && message.id === void 0;
+      }
+      Message2.isNotification = isNotification;
+      function isResponse(message) {
+        const candidate = message;
+        return candidate && (candidate.result !== void 0 || !!candidate.error) && (is.string(candidate.id) || is.number(candidate.id) || candidate.id === null);
+      }
+      Message2.isResponse = isResponse;
+    })(Message || (exports2.Message = Message = {}));
+  }
+});
 
-`:l.result?q=`Result: ${je(l.result)}
+// node_modules/vscode-jsonrpc/lib/common/linkedMap.js
+var require_linkedMap = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/linkedMap.js"(exports2) {
+    "use strict";
+    var _a;
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.LRUCache = exports2.LinkedMap = exports2.Touch = void 0;
+    var Touch;
+    (function(Touch2) {
+      Touch2.None = 0;
+      Touch2.First = 1;
+      Touch2.AsOld = Touch2.First;
+      Touch2.Last = 2;
+      Touch2.AsNew = Touch2.Last;
+    })(Touch || (exports2.Touch = Touch = {}));
+    var LinkedMap = class {
+      constructor() {
+        this[_a] = "LinkedMap";
+        this._map = /* @__PURE__ */ new Map();
+        this._head = void 0;
+        this._tail = void 0;
+        this._size = 0;
+        this._state = 0;
+      }
+      clear() {
+        this._map.clear();
+        this._head = void 0;
+        this._tail = void 0;
+        this._size = 0;
+        this._state++;
+      }
+      isEmpty() {
+        return !this._head && !this._tail;
+      }
+      get size() {
+        return this._size;
+      }
+      get first() {
+        return this._head?.value;
+      }
+      get last() {
+        return this._tail?.value;
+      }
+      has(key) {
+        return this._map.has(key);
+      }
+      get(key, touch = Touch.None) {
+        const item = this._map.get(key);
+        if (!item) {
+          return void 0;
+        }
+        if (touch !== Touch.None) {
+          this.touch(item, touch);
+        }
+        return item.value;
+      }
+      set(key, value, touch = Touch.None) {
+        let item = this._map.get(key);
+        if (item) {
+          item.value = value;
+          if (touch !== Touch.None) {
+            this.touch(item, touch);
+          }
+        } else {
+          item = { key, value, next: void 0, previous: void 0 };
+          switch (touch) {
+            case Touch.None:
+              this.addItemLast(item);
+              break;
+            case Touch.First:
+              this.addItemFirst(item);
+              break;
+            case Touch.Last:
+              this.addItemLast(item);
+              break;
+            default:
+              this.addItemLast(item);
+              break;
+          }
+          this._map.set(key, item);
+          this._size++;
+        }
+        return this;
+      }
+      delete(key) {
+        return !!this.remove(key);
+      }
+      remove(key) {
+        const item = this._map.get(key);
+        if (!item) {
+          return void 0;
+        }
+        this._map.delete(key);
+        this.removeItem(item);
+        this._size--;
+        return item.value;
+      }
+      shift() {
+        if (!this._head && !this._tail) {
+          return void 0;
+        }
+        if (!this._head || !this._tail) {
+          throw new Error("Invalid list");
+        }
+        const item = this._head;
+        this._map.delete(item.key);
+        this.removeItem(item);
+        this._size--;
+        return item.value;
+      }
+      forEach(callbackfn, thisArg) {
+        const state = this._state;
+        let current = this._head;
+        while (current) {
+          if (thisArg) {
+            callbackfn.bind(thisArg)(current.value, current.key, this);
+          } else {
+            callbackfn(current.value, current.key, this);
+          }
+          if (this._state !== state) {
+            throw new Error(`LinkedMap got modified during iteration.`);
+          }
+          current = current.next;
+        }
+      }
+      keys() {
+        const state = this._state;
+        let current = this._head;
+        const iterator = {
+          [Symbol.iterator]: () => {
+            return iterator;
+          },
+          next: () => {
+            if (this._state !== state) {
+              throw new Error(`LinkedMap got modified during iteration.`);
+            }
+            if (current) {
+              const result = { value: current.key, done: false };
+              current = current.next;
+              return result;
+            } else {
+              return { value: void 0, done: true };
+            }
+          }
+        };
+        return iterator;
+      }
+      values() {
+        const state = this._state;
+        let current = this._head;
+        const iterator = {
+          [Symbol.iterator]: () => {
+            return iterator;
+          },
+          next: () => {
+            if (this._state !== state) {
+              throw new Error(`LinkedMap got modified during iteration.`);
+            }
+            if (current) {
+              const result = { value: current.value, done: false };
+              current = current.next;
+              return result;
+            } else {
+              return { value: void 0, done: true };
+            }
+          }
+        };
+        return iterator;
+      }
+      entries() {
+        const state = this._state;
+        let current = this._head;
+        const iterator = {
+          [Symbol.iterator]: () => {
+            return iterator;
+          },
+          next: () => {
+            if (this._state !== state) {
+              throw new Error(`LinkedMap got modified during iteration.`);
+            }
+            if (current) {
+              const result = { value: [current.key, current.value], done: false };
+              current = current.next;
+              return result;
+            } else {
+              return { value: void 0, done: true };
+            }
+          }
+        };
+        return iterator;
+      }
+      [(_a = Symbol.toStringTag, Symbol.iterator)]() {
+        return this.entries();
+      }
+      trimOld(newSize) {
+        if (newSize >= this.size) {
+          return;
+        }
+        if (newSize === 0) {
+          this.clear();
+          return;
+        }
+        let current = this._head;
+        let currentSize = this.size;
+        while (current && currentSize > newSize) {
+          this._map.delete(current.key);
+          current = current.next;
+          currentSize--;
+        }
+        this._head = current;
+        this._size = currentSize;
+        if (current) {
+          current.previous = void 0;
+        }
+        this._state++;
+      }
+      addItemFirst(item) {
+        if (!this._head && !this._tail) {
+          this._tail = item;
+        } else if (!this._head) {
+          throw new Error("Invalid list");
+        } else {
+          item.next = this._head;
+          this._head.previous = item;
+        }
+        this._head = item;
+        this._state++;
+      }
+      addItemLast(item) {
+        if (!this._head && !this._tail) {
+          this._head = item;
+        } else if (!this._tail) {
+          throw new Error("Invalid list");
+        } else {
+          item.previous = this._tail;
+          this._tail.next = item;
+        }
+        this._tail = item;
+        this._state++;
+      }
+      removeItem(item) {
+        if (item === this._head && item === this._tail) {
+          this._head = void 0;
+          this._tail = void 0;
+        } else if (item === this._head) {
+          if (!item.next) {
+            throw new Error("Invalid list");
+          }
+          item.next.previous = void 0;
+          this._head = item.next;
+        } else if (item === this._tail) {
+          if (!item.previous) {
+            throw new Error("Invalid list");
+          }
+          item.previous.next = void 0;
+          this._tail = item.previous;
+        } else {
+          const next = item.next;
+          const previous = item.previous;
+          if (!next || !previous) {
+            throw new Error("Invalid list");
+          }
+          next.previous = previous;
+          previous.next = next;
+        }
+        item.next = void 0;
+        item.previous = void 0;
+        this._state++;
+      }
+      touch(item, touch) {
+        if (!this._head || !this._tail) {
+          throw new Error("Invalid list");
+        }
+        if (touch !== Touch.First && touch !== Touch.Last) {
+          return;
+        }
+        if (touch === Touch.First) {
+          if (item === this._head) {
+            return;
+          }
+          const next = item.next;
+          const previous = item.previous;
+          if (item === this._tail) {
+            previous.next = void 0;
+            this._tail = previous;
+          } else {
+            next.previous = previous;
+            previous.next = next;
+          }
+          item.previous = void 0;
+          item.next = this._head;
+          this._head.previous = item;
+          this._head = item;
+          this._state++;
+        } else if (touch === Touch.Last) {
+          if (item === this._tail) {
+            return;
+          }
+          const next = item.next;
+          const previous = item.previous;
+          if (item === this._head) {
+            next.previous = void 0;
+            this._head = next;
+          } else {
+            next.previous = previous;
+            previous.next = next;
+          }
+          item.next = void 0;
+          item.previous = this._tail;
+          this._tail.next = item;
+          this._tail = item;
+          this._state++;
+        }
+      }
+      toJSON() {
+        const data = [];
+        this.forEach((value, key) => {
+          data.push([key, value]);
+        });
+        return data;
+      }
+      fromJSON(data) {
+        this.clear();
+        for (const [key, value] of data) {
+          this.set(key, value);
+        }
+      }
+    };
+    exports2.LinkedMap = LinkedMap;
+    var LRUCache = class extends LinkedMap {
+      constructor(limit, ratio = 1) {
+        super();
+        this._limit = limit;
+        this._ratio = Math.min(Math.max(0, ratio), 1);
+      }
+      get limit() {
+        return this._limit;
+      }
+      set limit(limit) {
+        this._limit = limit;
+        this.checkTrim();
+      }
+      get ratio() {
+        return this._ratio;
+      }
+      set ratio(ratio) {
+        this._ratio = Math.min(Math.max(0, ratio), 1);
+        this.checkTrim();
+      }
+      get(key, touch = Touch.AsNew) {
+        return super.get(key, touch);
+      }
+      peek(key) {
+        return super.get(key, Touch.None);
+      }
+      set(key, value) {
+        super.set(key, value, Touch.Last);
+        this.checkTrim();
+        return this;
+      }
+      checkTrim() {
+        if (this.size > this._limit) {
+          this.trimOld(Math.round(this._limit * this._ratio));
+        }
+      }
+    };
+    exports2.LRUCache = LRUCache;
+  }
+});
 
-`:l.error===void 0&&(q=`No result returned.
+// node_modules/vscode-jsonrpc/lib/common/disposable.js
+var require_disposable = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/disposable.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.Disposable = void 0;
+    var Disposable;
+    (function(Disposable2) {
+      function create(func) {
+        return {
+          dispose: func
+        };
+      }
+      Disposable2.create = create;
+    })(Disposable || (exports2.Disposable = Disposable = {}));
+  }
+});
 
-`)),j.log(`Sending response '${R} - (${l.id})'. Processing request took ${Date.now()-E}ms`,q)}else Ye("send-response",l)}function jn(l){if(!(p===G.Off||!j))if(T===ke.Text){let R;(p===G.Verbose||p===G.Compact)&&l.params&&(R=`Params: ${je(l.params)}
+// node_modules/vscode-jsonrpc/lib/common/ral.js
+var require_ral = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/ral.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    var _ral;
+    function RAL() {
+      if (_ral === void 0) {
+        throw new Error(`No runtime abstraction layer installed`);
+      }
+      return _ral;
+    }
+    (function(RAL2) {
+      function install(ral) {
+        if (ral === void 0) {
+          throw new Error(`No runtime abstraction layer provided`);
+        }
+        _ral = ral;
+      }
+      RAL2.install = install;
+    })(RAL || (RAL = {}));
+    exports2.default = RAL;
+  }
+});
 
-`),j.log(`Received request '${l.method} - (${l.id})'.`,R)}else Ye("receive-request",l)}function It(l){if(!(p===G.Off||!j||l.method===tr.type.method))if(T===ke.Text){let R;(p===G.Verbose||p===G.Compact)&&(l.params?R=`Params: ${je(l.params)}
+// node_modules/vscode-jsonrpc/lib/common/events.js
+var require_events = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/events.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.Emitter = exports2.Event = void 0;
+    var ral_1 = require_ral();
+    var Event;
+    (function(Event2) {
+      const _disposable = { dispose() {
+      } };
+      Event2.None = function() {
+        return _disposable;
+      };
+    })(Event || (exports2.Event = Event = {}));
+    var CallbackList = class {
+      add(callback, context = null, bucket) {
+        if (!this._callbacks) {
+          this._callbacks = [];
+          this._contexts = [];
+        }
+        this._callbacks.push(callback);
+        this._contexts.push(context);
+        if (Array.isArray(bucket)) {
+          bucket.push({ dispose: () => this.remove(callback, context) });
+        }
+      }
+      remove(callback, context = null) {
+        if (!this._callbacks) {
+          return;
+        }
+        let foundCallbackWithDifferentContext = false;
+        for (let i = 0, len = this._callbacks.length; i < len; i++) {
+          if (this._callbacks[i] === callback) {
+            if (this._contexts[i] === context) {
+              this._callbacks.splice(i, 1);
+              this._contexts.splice(i, 1);
+              return;
+            } else {
+              foundCallbackWithDifferentContext = true;
+            }
+          }
+        }
+        if (foundCallbackWithDifferentContext) {
+          throw new Error("When adding a listener with a context, you should remove it with the same context");
+        }
+      }
+      invoke(...args) {
+        if (!this._callbacks) {
+          return [];
+        }
+        const ret = [], callbacks = this._callbacks.slice(0), contexts = this._contexts.slice(0);
+        for (let i = 0, len = callbacks.length; i < len; i++) {
+          try {
+            ret.push(callbacks[i].apply(contexts[i], args));
+          } catch (e) {
+            (0, ral_1.default)().console.error(e);
+          }
+        }
+        return ret;
+      }
+      isEmpty() {
+        return !this._callbacks || this._callbacks.length === 0;
+      }
+      dispose() {
+        this._callbacks = void 0;
+        this._contexts = void 0;
+      }
+    };
+    var Emitter = class _Emitter {
+      constructor(_options) {
+        this._options = _options;
+      }
+      /**
+       * For the public to allow to subscribe
+       * to events from this Emitter
+       */
+      get event() {
+        if (!this._event) {
+          this._event = (listener, thisArgs, disposables) => {
+            if (!this._callbacks) {
+              this._callbacks = new CallbackList();
+            }
+            if (this._options && this._options.onFirstListenerAdd && this._callbacks.isEmpty()) {
+              this._options.onFirstListenerAdd(this);
+            }
+            this._callbacks.add(listener, thisArgs);
+            const result = {
+              dispose: () => {
+                if (!this._callbacks) {
+                  return;
+                }
+                this._callbacks.remove(listener, thisArgs);
+                result.dispose = _Emitter._noop;
+                if (this._options && this._options.onLastListenerRemove && this._callbacks.isEmpty()) {
+                  this._options.onLastListenerRemove(this);
+                }
+              }
+            };
+            if (Array.isArray(disposables)) {
+              disposables.push(result);
+            }
+            return result;
+          };
+        }
+        return this._event;
+      }
+      /**
+       * To be kept private to fire an event to
+       * subscribers
+       */
+      fire(event) {
+        if (this._callbacks) {
+          this._callbacks.invoke.call(this._callbacks, event);
+        }
+      }
+      dispose() {
+        if (this._callbacks) {
+          this._callbacks.dispose();
+          this._callbacks = void 0;
+        }
+      }
+    };
+    exports2.Emitter = Emitter;
+    Emitter._noop = function() {
+    };
+  }
+});
 
-`:R=`No parameters provided.
+// node_modules/vscode-jsonrpc/lib/common/cancellation.js
+var require_cancellation = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/cancellation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.CancellationTokenSource = exports2.CancellationToken = void 0;
+    var ral_1 = require_ral();
+    var Is = require_is2();
+    var events_1 = require_events();
+    var CancellationToken;
+    (function(CancellationToken2) {
+      CancellationToken2.None = Object.freeze({
+        isCancellationRequested: false,
+        onCancellationRequested: events_1.Event.None
+      });
+      CancellationToken2.Cancelled = Object.freeze({
+        isCancellationRequested: true,
+        onCancellationRequested: events_1.Event.None
+      });
+      function is(value) {
+        const candidate = value;
+        return candidate && (candidate === CancellationToken2.None || candidate === CancellationToken2.Cancelled || Is.boolean(candidate.isCancellationRequested) && !!candidate.onCancellationRequested);
+      }
+      CancellationToken2.is = is;
+    })(CancellationToken || (exports2.CancellationToken = CancellationToken = {}));
+    var shortcutEvent = Object.freeze(function(callback, context) {
+      const handle = (0, ral_1.default)().timer.setTimeout(callback.bind(context), 0);
+      return { dispose() {
+        handle.dispose();
+      } };
+    });
+    var MutableToken = class {
+      constructor() {
+        this._isCancelled = false;
+      }
+      cancel() {
+        if (!this._isCancelled) {
+          this._isCancelled = true;
+          if (this._emitter) {
+            this._emitter.fire(void 0);
+            this.dispose();
+          }
+        }
+      }
+      get isCancellationRequested() {
+        return this._isCancelled;
+      }
+      get onCancellationRequested() {
+        if (this._isCancelled) {
+          return shortcutEvent;
+        }
+        if (!this._emitter) {
+          this._emitter = new events_1.Emitter();
+        }
+        return this._emitter.event;
+      }
+      dispose() {
+        if (this._emitter) {
+          this._emitter.dispose();
+          this._emitter = void 0;
+        }
+      }
+    };
+    var CancellationTokenSource = class {
+      get token() {
+        if (!this._token) {
+          this._token = new MutableToken();
+        }
+        return this._token;
+      }
+      cancel() {
+        if (!this._token) {
+          this._token = CancellationToken.Cancelled;
+        } else {
+          this._token.cancel();
+        }
+      }
+      dispose() {
+        if (!this._token) {
+          this._token = CancellationToken.None;
+        } else if (this._token instanceof MutableToken) {
+          this._token.dispose();
+        }
+      }
+    };
+    exports2.CancellationTokenSource = CancellationTokenSource;
+  }
+});
 
-`),j.log(`Received notification '${l.method}'.`,R)}else Ye("receive-notification",l)}function Fn(l,R){if(!(p===G.Off||!j))if(T===ke.Text){let E;if((p===G.Verbose||p===G.Compact)&&(l.error&&l.error.data?E=`Error data: ${je(l.error.data)}
+// node_modules/vscode-jsonrpc/lib/common/sharedArrayCancellation.js
+var require_sharedArrayCancellation = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/sharedArrayCancellation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.SharedArrayReceiverStrategy = exports2.SharedArraySenderStrategy = void 0;
+    var cancellation_1 = require_cancellation();
+    var CancellationState;
+    (function(CancellationState2) {
+      CancellationState2.Continue = 0;
+      CancellationState2.Cancelled = 1;
+    })(CancellationState || (CancellationState = {}));
+    var SharedArraySenderStrategy = class {
+      constructor() {
+        this.buffers = /* @__PURE__ */ new Map();
+      }
+      enableCancellation(request) {
+        if (request.id === null) {
+          return;
+        }
+        const buffer = new SharedArrayBuffer(4);
+        const data = new Int32Array(buffer, 0, 1);
+        data[0] = CancellationState.Continue;
+        this.buffers.set(request.id, buffer);
+        request.$cancellationData = buffer;
+      }
+      async sendCancellation(_conn, id) {
+        const buffer = this.buffers.get(id);
+        if (buffer === void 0) {
+          return;
+        }
+        const data = new Int32Array(buffer, 0, 1);
+        Atomics.store(data, 0, CancellationState.Cancelled);
+      }
+      cleanup(id) {
+        this.buffers.delete(id);
+      }
+      dispose() {
+        this.buffers.clear();
+      }
+    };
+    exports2.SharedArraySenderStrategy = SharedArraySenderStrategy;
+    var SharedArrayBufferCancellationToken = class {
+      constructor(buffer) {
+        this.data = new Int32Array(buffer, 0, 1);
+      }
+      get isCancellationRequested() {
+        return Atomics.load(this.data, 0) === CancellationState.Cancelled;
+      }
+      get onCancellationRequested() {
+        throw new Error(`Cancellation over SharedArrayBuffer doesn't support cancellation events`);
+      }
+    };
+    var SharedArrayBufferCancellationTokenSource = class {
+      constructor(buffer) {
+        this.token = new SharedArrayBufferCancellationToken(buffer);
+      }
+      cancel() {
+      }
+      dispose() {
+      }
+    };
+    var SharedArrayReceiverStrategy = class {
+      constructor() {
+        this.kind = "request";
+      }
+      createCancellationTokenSource(request) {
+        const buffer = request.$cancellationData;
+        if (buffer === void 0) {
+          return new cancellation_1.CancellationTokenSource();
+        }
+        return new SharedArrayBufferCancellationTokenSource(buffer);
+      }
+    };
+    exports2.SharedArrayReceiverStrategy = SharedArrayReceiverStrategy;
+  }
+});
 
-`:l.result?E=`Result: ${je(l.result)}
+// node_modules/vscode-jsonrpc/lib/common/semaphore.js
+var require_semaphore = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/semaphore.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.Semaphore = void 0;
+    var ral_1 = require_ral();
+    var Semaphore = class {
+      constructor(capacity = 1) {
+        if (capacity <= 0) {
+          throw new Error("Capacity must be greater than 0");
+        }
+        this._capacity = capacity;
+        this._active = 0;
+        this._waiting = [];
+      }
+      lock(thunk) {
+        return new Promise((resolve, reject) => {
+          this._waiting.push({ thunk, resolve, reject });
+          this.runNext();
+        });
+      }
+      get active() {
+        return this._active;
+      }
+      runNext() {
+        if (this._waiting.length === 0 || this._active === this._capacity) {
+          return;
+        }
+        (0, ral_1.default)().timer.setImmediate(() => this.doRunNext());
+      }
+      doRunNext() {
+        if (this._waiting.length === 0 || this._active === this._capacity) {
+          return;
+        }
+        const next = this._waiting.shift();
+        this._active++;
+        if (this._active > this._capacity) {
+          throw new Error(`To many thunks active`);
+        }
+        try {
+          const result = next.thunk();
+          if (result instanceof Promise) {
+            result.then((value) => {
+              this._active--;
+              next.resolve(value);
+              this.runNext();
+            }, (err) => {
+              this._active--;
+              next.reject(err);
+              this.runNext();
+            });
+          } else {
+            this._active--;
+            next.resolve(result);
+            this.runNext();
+          }
+        } catch (err) {
+          this._active--;
+          next.reject(err);
+          this.runNext();
+        }
+      }
+    };
+    exports2.Semaphore = Semaphore;
+  }
+});
 
-`:l.error===void 0&&(E=`No result returned.
+// node_modules/vscode-jsonrpc/lib/common/messageReader.js
+var require_messageReader = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/messageReader.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = void 0;
+    var ral_1 = require_ral();
+    var Is = require_is2();
+    var events_1 = require_events();
+    var semaphore_1 = require_semaphore();
+    var MessageReader;
+    (function(MessageReader2) {
+      function is(value) {
+        let candidate = value;
+        return candidate && Is.func(candidate.listen) && Is.func(candidate.dispose) && Is.func(candidate.onError) && Is.func(candidate.onClose) && Is.func(candidate.onPartialMessage);
+      }
+      MessageReader2.is = is;
+    })(MessageReader || (exports2.MessageReader = MessageReader = {}));
+    var AbstractMessageReader = class {
+      constructor() {
+        this.errorEmitter = new events_1.Emitter();
+        this.closeEmitter = new events_1.Emitter();
+        this.partialMessageEmitter = new events_1.Emitter();
+      }
+      dispose() {
+        this.errorEmitter.dispose();
+        this.closeEmitter.dispose();
+      }
+      get onError() {
+        return this.errorEmitter.event;
+      }
+      fireError(error) {
+        this.errorEmitter.fire(this.asError(error));
+      }
+      get onClose() {
+        return this.closeEmitter.event;
+      }
+      fireClose() {
+        this.closeEmitter.fire(void 0);
+      }
+      get onPartialMessage() {
+        return this.partialMessageEmitter.event;
+      }
+      firePartialMessage(info) {
+        this.partialMessageEmitter.fire(info);
+      }
+      asError(error) {
+        if (error instanceof Error) {
+          return error;
+        } else {
+          return new Error(`Reader received error. Reason: ${Is.string(error.message) ? error.message : "unknown"}`);
+        }
+      }
+    };
+    exports2.AbstractMessageReader = AbstractMessageReader;
+    var ResolvedMessageReaderOptions;
+    (function(ResolvedMessageReaderOptions2) {
+      function fromOptions(options) {
+        let charset;
+        let result;
+        let contentDecoder;
+        const contentDecoders = /* @__PURE__ */ new Map();
+        let contentTypeDecoder;
+        const contentTypeDecoders = /* @__PURE__ */ new Map();
+        if (options === void 0 || typeof options === "string") {
+          charset = options ?? "utf-8";
+        } else {
+          charset = options.charset ?? "utf-8";
+          if (options.contentDecoder !== void 0) {
+            contentDecoder = options.contentDecoder;
+            contentDecoders.set(contentDecoder.name, contentDecoder);
+          }
+          if (options.contentDecoders !== void 0) {
+            for (const decoder of options.contentDecoders) {
+              contentDecoders.set(decoder.name, decoder);
+            }
+          }
+          if (options.contentTypeDecoder !== void 0) {
+            contentTypeDecoder = options.contentTypeDecoder;
+            contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
+          }
+          if (options.contentTypeDecoders !== void 0) {
+            for (const decoder of options.contentTypeDecoders) {
+              contentTypeDecoders.set(decoder.name, decoder);
+            }
+          }
+        }
+        if (contentTypeDecoder === void 0) {
+          contentTypeDecoder = (0, ral_1.default)().applicationJson.decoder;
+          contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
+        }
+        return { charset, contentDecoder, contentDecoders, contentTypeDecoder, contentTypeDecoders };
+      }
+      ResolvedMessageReaderOptions2.fromOptions = fromOptions;
+    })(ResolvedMessageReaderOptions || (ResolvedMessageReaderOptions = {}));
+    var ReadableStreamMessageReader = class extends AbstractMessageReader {
+      constructor(readable, options) {
+        super();
+        this.readable = readable;
+        this.options = ResolvedMessageReaderOptions.fromOptions(options);
+        this.buffer = (0, ral_1.default)().messageBuffer.create(this.options.charset);
+        this._partialMessageTimeout = 1e4;
+        this.nextMessageLength = -1;
+        this.messageToken = 0;
+        this.readSemaphore = new semaphore_1.Semaphore(1);
+      }
+      set partialMessageTimeout(timeout) {
+        this._partialMessageTimeout = timeout;
+      }
+      get partialMessageTimeout() {
+        return this._partialMessageTimeout;
+      }
+      listen(callback) {
+        this.nextMessageLength = -1;
+        this.messageToken = 0;
+        this.partialMessageTimer = void 0;
+        this.callback = callback;
+        const result = this.readable.onData((data) => {
+          this.onData(data);
+        });
+        this.readable.onError((error) => this.fireError(error));
+        this.readable.onClose(() => this.fireClose());
+        return result;
+      }
+      onData(data) {
+        try {
+          this.buffer.append(data);
+          while (true) {
+            if (this.nextMessageLength === -1) {
+              const headers = this.buffer.tryReadHeaders(true);
+              if (!headers) {
+                return;
+              }
+              const contentLength = headers.get("content-length");
+              if (!contentLength) {
+                this.fireError(new Error(`Header must provide a Content-Length property.
+${JSON.stringify(Object.fromEntries(headers))}`));
+                return;
+              }
+              const length = parseInt(contentLength);
+              if (isNaN(length)) {
+                this.fireError(new Error(`Content-Length value must be a number. Got ${contentLength}`));
+                return;
+              }
+              this.nextMessageLength = length;
+            }
+            const body = this.buffer.tryReadBody(this.nextMessageLength);
+            if (body === void 0) {
+              this.setPartialMessageTimer();
+              return;
+            }
+            this.clearPartialMessageTimer();
+            this.nextMessageLength = -1;
+            this.readSemaphore.lock(async () => {
+              const bytes = this.options.contentDecoder !== void 0 ? await this.options.contentDecoder.decode(body) : body;
+              const message = await this.options.contentTypeDecoder.decode(bytes, this.options);
+              this.callback(message);
+            }).catch((error) => {
+              this.fireError(error);
+            });
+          }
+        } catch (error) {
+          this.fireError(error);
+        }
+      }
+      clearPartialMessageTimer() {
+        if (this.partialMessageTimer) {
+          this.partialMessageTimer.dispose();
+          this.partialMessageTimer = void 0;
+        }
+      }
+      setPartialMessageTimer() {
+        this.clearPartialMessageTimer();
+        if (this._partialMessageTimeout <= 0) {
+          return;
+        }
+        this.partialMessageTimer = (0, ral_1.default)().timer.setTimeout((token, timeout) => {
+          this.partialMessageTimer = void 0;
+          if (token === this.messageToken) {
+            this.firePartialMessage({ messageToken: token, waitingTime: timeout });
+            this.setPartialMessageTimer();
+          }
+        }, this._partialMessageTimeout, this.messageToken, this._partialMessageTimeout);
+      }
+    };
+    exports2.ReadableStreamMessageReader = ReadableStreamMessageReader;
+  }
+});
 
-`)),R){let q=l.error?` Request failed: ${l.error.message} (${l.error.code}).`:"";j.log(`Received response '${R.method} - (${l.id})' in ${Date.now()-R.timerStart}ms.${q}`,E)}else j.log(`Received response ${l.id} without active response promise.`,E)}else Ye("receive-response",l)}function Ye(l,R){if(!j||p===G.Off)return;let E={isLSPMessage:!0,type:l,message:R,timestamp:Date.now()};j.log(E)}function rt(){if(vt())throw new Bt(pn.Closed,"Connection is closed.");if(Xe())throw new Bt(pn.Disposed,"Connection is disposed.")}function Wn(){if(sn())throw new Bt(pn.AlreadyListening,"Connection is already listening")}function Hn(){if(!sn())throw new Error("Call listen() first.")}function $e(l){return l===void 0?null:l}function un(l){if(l!==null)return l}function ln(l){return l!=null&&!Array.isArray(l)&&typeof l=="object"}function Lt(l,R){switch(l){case I.ParameterStructures.auto:return ln(R)?un(R):[$e(R)];case I.ParameterStructures.byName:if(!ln(R))throw new Error("Received parameters by name but param is not an object literal.");return un(R);case I.ParameterStructures.byPosition:return[$e(R)];default:throw new Error(`Unknown parameter structure ${l.toString()}`)}}function dn(l,R){let E,q=l.numberOfParams;switch(q){case 0:E=void 0;break;case 1:E=Lt(l.parameterStructures,R[0]);break;default:E=[];for(let J=0;J<R.length&&J<q;J++)E.push($e(R[J]));if(R.length<q)for(let J=R.length;J<q;J++)E.push(null);break}return E}let Je={sendNotification:(l,...R)=>{rt();let E,q;if(ae.string(l)){E=l;let Y=R[0],re=0,oe=I.ParameterStructures.auto;I.ParameterStructures.is(Y)&&(re=1,oe=Y);let F=R.length,Z=F-re;switch(Z){case 0:q=void 0;break;case 1:q=Lt(oe,R[re]);break;default:if(oe===I.ParameterStructures.byName)throw new Error(`Received ${Z} parameters for 'by Name' notification parameter structure.`);q=R.slice(re,F).map(z=>$e(z));break}}else{let Y=R;E=l.method,q=dn(l,Y)}let J={jsonrpc:P,method:E,params:q};return xn(J),t.write(J).catch(Y=>{throw i.error("Sending notification failed."),Y})},onNotification:(l,R)=>{rt();let E;return ae.func(l)?O=l:R&&(ae.string(l)?(E=l,M.set(l,{type:void 0,handler:R})):(E=l.method,M.set(l.method,{type:l,handler:R}))),{dispose:()=>{E!==void 0?M.delete(E):O=void 0}}},onProgress:(l,R,E)=>{if($.has(R))throw new Error(`Progress handler for token ${R} already registered`);return $.set(R,E),{dispose:()=>{$.delete(R)}}},sendProgress:(l,R,E)=>Je.sendNotification(mn.type,{token:R,value:E}),onUnhandledProgress:tt.event,sendRequest:(l,...R)=>{rt(),Hn();let E,q,J;if(ae.string(l)){E=l;let F=R[0],Z=R[R.length-1],z=0,ue=I.ParameterStructures.auto;I.ParameterStructures.is(F)&&(z=1,ue=F);let me=R.length;oo.CancellationToken.is(Z)&&(me=me-1,J=Z);let we=me-z;switch(we){case 0:q=void 0;break;case 1:q=Lt(ue,R[z]);break;default:if(ue===I.ParameterStructures.byName)throw new Error(`Received ${we} parameters for 'by Name' request parameter structure.`);q=R.slice(z,me).map(Un=>$e(Un));break}}else{let F=R;E=l.method,q=dn(l,F);let Z=l.numberOfParams;J=oo.CancellationToken.is(F[Z])?F[Z]:void 0}let Y=u++,re;J&&(re=J.onCancellationRequested(()=>{let F=_e.sender.sendCancellation(Je,Y);return F===void 0?(i.log(`Received no promise from cancellation strategy when cancelling id ${Y}`),Promise.resolve()):F.catch(()=>{i.log(`Sending cancellation messages for id ${Y} failed`)})}));let oe={jsonrpc:P,id:Y,method:E,params:q};return An(oe),typeof _e.sender.enableCancellation=="function"&&_e.sender.enableCancellation(oe),new Promise(async(F,Z)=>{let z=we=>{F(we),_e.sender.cleanup(Y),re?.dispose()},ue=we=>{Z(we),_e.sender.cleanup(Y),re?.dispose()},me={method:E,timerStart:Date.now(),resolve:z,reject:ue};try{await t.write(oe),K.set(Y,me)}catch(we){throw i.error("Sending request failed."),me.reject(new I.ResponseError(I.ErrorCodes.MessageWriteError,we.message?we.message:"Unknown reason")),we}})},onRequest:(l,R)=>{rt();let E=null;return co.is(l)?(E=void 0,C=l):ae.string(l)?(E=null,R!==void 0&&(E=l,k.set(l,{handler:R,type:void 0}))):R!==void 0&&(E=l.method,k.set(l.method,{type:l,handler:R})),{dispose:()=>{E!==null&&(E!==void 0?k.delete(E):C=void 0)}}},hasPendingResponse:()=>K.size>0,trace:async(l,R,E)=>{let q=!1,J=ke.Text;E!==void 0&&(ae.boolean(E)?q=E:(q=E.sendNotification||!1,J=E.traceFormat||ke.Text)),p=l,T=J,p===G.Off?j=void 0:j=R,q&&!vt()&&!Xe()&&await Je.sendNotification(uo.type,{value:G.toString(l)})},onError:ce.event,onClose:xe.event,onUnhandledNotification:yt.event,onDispose:nt.event,end:()=>{t.end()},dispose:()=>{if(Xe())return;ee=He.Disposed,nt.fire(void 0);let l=new I.ResponseError(I.ErrorCodes.PendingResponseRejected,"Pending response rejected since connection got disposed");for(let R of K.values())R.reject(l);K=new Map,y=new Map,B=new Set,X=new Us.LinkedMap,ae.func(t.dispose)&&t.dispose(),ae.func(e.dispose)&&e.dispose()},listen:()=>{rt(),Wn(),ee=He.Listening,e.listen(Nn)},inspect:()=>{(0,Hs.default)().console.log("inspect")}};return Je.onNotification(tr.type,l=>{if(p===G.Off||!j)return;let R=p===G.Verbose||p===G.Compact;j.log(l.message,R?l.verbose:void 0)}),Je.onNotification(mn.type,l=>{let R=$.get(l.token);R?R(l.value):tt.fire(l)}),Je}x.createMessageConnection=Id});var ar=w(v=>{"use strict";Object.defineProperty(v,"__esModule",{value:!0});v.ProgressType=v.ProgressToken=v.createMessageConnection=v.NullLogger=v.ConnectionOptions=v.ConnectionStrategy=v.AbstractMessageBuffer=v.WriteableStreamMessageWriter=v.AbstractMessageWriter=v.MessageWriter=v.ReadableStreamMessageReader=v.AbstractMessageReader=v.MessageReader=v.SharedArrayReceiverStrategy=v.SharedArraySenderStrategy=v.CancellationToken=v.CancellationTokenSource=v.Emitter=v.Event=v.Disposable=v.LRUCache=v.Touch=v.LinkedMap=v.ParameterStructures=v.NotificationType9=v.NotificationType8=v.NotificationType7=v.NotificationType6=v.NotificationType5=v.NotificationType4=v.NotificationType3=v.NotificationType2=v.NotificationType1=v.NotificationType0=v.NotificationType=v.ErrorCodes=v.ResponseError=v.RequestType9=v.RequestType8=v.RequestType7=v.RequestType6=v.RequestType5=v.RequestType4=v.RequestType3=v.RequestType2=v.RequestType1=v.RequestType0=v.RequestType=v.Message=v.RAL=void 0;v.MessageStrategy=v.CancellationStrategy=v.CancellationSenderStrategy=v.CancellationReceiverStrategy=v.ConnectionError=v.ConnectionErrors=v.LogTraceNotification=v.SetTraceNotification=v.TraceFormat=v.TraceValues=v.Trace=void 0;var ne=xi();Object.defineProperty(v,"Message",{enumerable:!0,get:function(){return ne.Message}});Object.defineProperty(v,"RequestType",{enumerable:!0,get:function(){return ne.RequestType}});Object.defineProperty(v,"RequestType0",{enumerable:!0,get:function(){return ne.RequestType0}});Object.defineProperty(v,"RequestType1",{enumerable:!0,get:function(){return ne.RequestType1}});Object.defineProperty(v,"RequestType2",{enumerable:!0,get:function(){return ne.RequestType2}});Object.defineProperty(v,"RequestType3",{enumerable:!0,get:function(){return ne.RequestType3}});Object.defineProperty(v,"RequestType4",{enumerable:!0,get:function(){return ne.RequestType4}});Object.defineProperty(v,"RequestType5",{enumerable:!0,get:function(){return ne.RequestType5}});Object.defineProperty(v,"RequestType6",{enumerable:!0,get:function(){return ne.RequestType6}});Object.defineProperty(v,"RequestType7",{enumerable:!0,get:function(){return ne.RequestType7}});Object.defineProperty(v,"RequestType8",{enumerable:!0,get:function(){return ne.RequestType8}});Object.defineProperty(v,"RequestType9",{enumerable:!0,get:function(){return ne.RequestType9}});Object.defineProperty(v,"ResponseError",{enumerable:!0,get:function(){return ne.ResponseError}});Object.defineProperty(v,"ErrorCodes",{enumerable:!0,get:function(){return ne.ErrorCodes}});Object.defineProperty(v,"NotificationType",{enumerable:!0,get:function(){return ne.NotificationType}});Object.defineProperty(v,"NotificationType0",{enumerable:!0,get:function(){return ne.NotificationType0}});Object.defineProperty(v,"NotificationType1",{enumerable:!0,get:function(){return ne.NotificationType1}});Object.defineProperty(v,"NotificationType2",{enumerable:!0,get:function(){return ne.NotificationType2}});Object.defineProperty(v,"NotificationType3",{enumerable:!0,get:function(){return ne.NotificationType3}});Object.defineProperty(v,"NotificationType4",{enumerable:!0,get:function(){return ne.NotificationType4}});Object.defineProperty(v,"NotificationType5",{enumerable:!0,get:function(){return ne.NotificationType5}});Object.defineProperty(v,"NotificationType6",{enumerable:!0,get:function(){return ne.NotificationType6}});Object.defineProperty(v,"NotificationType7",{enumerable:!0,get:function(){return ne.NotificationType7}});Object.defineProperty(v,"NotificationType8",{enumerable:!0,get:function(){return ne.NotificationType8}});Object.defineProperty(v,"NotificationType9",{enumerable:!0,get:function(){return ne.NotificationType9}});Object.defineProperty(v,"ParameterStructures",{enumerable:!0,get:function(){return ne.ParameterStructures}});var ho=Fi();Object.defineProperty(v,"LinkedMap",{enumerable:!0,get:function(){return ho.LinkedMap}});Object.defineProperty(v,"LRUCache",{enumerable:!0,get:function(){return ho.LRUCache}});Object.defineProperty(v,"Touch",{enumerable:!0,get:function(){return ho.Touch}});var Ld=qs();Object.defineProperty(v,"Disposable",{enumerable:!0,get:function(){return Ld.Disposable}});var Vs=Ft();Object.defineProperty(v,"Event",{enumerable:!0,get:function(){return Vs.Event}});Object.defineProperty(v,"Emitter",{enumerable:!0,get:function(){return Vs.Emitter}});var Gs=Yn();Object.defineProperty(v,"CancellationTokenSource",{enumerable:!0,get:function(){return Gs.CancellationTokenSource}});Object.defineProperty(v,"CancellationToken",{enumerable:!0,get:function(){return Gs.CancellationToken}});var Qs=Ns();Object.defineProperty(v,"SharedArraySenderStrategy",{enumerable:!0,get:function(){return Qs.SharedArraySenderStrategy}});Object.defineProperty(v,"SharedArrayReceiverStrategy",{enumerable:!0,get:function(){return Qs.SharedArrayReceiverStrategy}});var go=Is();Object.defineProperty(v,"MessageReader",{enumerable:!0,get:function(){return go.MessageReader}});Object.defineProperty(v,"AbstractMessageReader",{enumerable:!0,get:function(){return go.AbstractMessageReader}});Object.defineProperty(v,"ReadableStreamMessageReader",{enumerable:!0,get:function(){return go.ReadableStreamMessageReader}});var mo=Fs();Object.defineProperty(v,"MessageWriter",{enumerable:!0,get:function(){return mo.MessageWriter}});Object.defineProperty(v,"AbstractMessageWriter",{enumerable:!0,get:function(){return mo.AbstractMessageWriter}});Object.defineProperty(v,"WriteableStreamMessageWriter",{enumerable:!0,get:function(){return mo.WriteableStreamMessageWriter}});var Ad=Ws();Object.defineProperty(v,"AbstractMessageBuffer",{enumerable:!0,get:function(){return Ad.AbstractMessageBuffer}});var ye=zs();Object.defineProperty(v,"ConnectionStrategy",{enumerable:!0,get:function(){return ye.ConnectionStrategy}});Object.defineProperty(v,"ConnectionOptions",{enumerable:!0,get:function(){return ye.ConnectionOptions}});Object.defineProperty(v,"NullLogger",{enumerable:!0,get:function(){return ye.NullLogger}});Object.defineProperty(v,"createMessageConnection",{enumerable:!0,get:function(){return ye.createMessageConnection}});Object.defineProperty(v,"ProgressToken",{enumerable:!0,get:function(){return ye.ProgressToken}});Object.defineProperty(v,"ProgressType",{enumerable:!0,get:function(){return ye.ProgressType}});Object.defineProperty(v,"Trace",{enumerable:!0,get:function(){return ye.Trace}});Object.defineProperty(v,"TraceValues",{enumerable:!0,get:function(){return ye.TraceValues}});Object.defineProperty(v,"TraceFormat",{enumerable:!0,get:function(){return ye.TraceFormat}});Object.defineProperty(v,"SetTraceNotification",{enumerable:!0,get:function(){return ye.SetTraceNotification}});Object.defineProperty(v,"LogTraceNotification",{enumerable:!0,get:function(){return ye.LogTraceNotification}});Object.defineProperty(v,"ConnectionErrors",{enumerable:!0,get:function(){return ye.ConnectionErrors}});Object.defineProperty(v,"ConnectionError",{enumerable:!0,get:function(){return ye.ConnectionError}});Object.defineProperty(v,"CancellationReceiverStrategy",{enumerable:!0,get:function(){return ye.CancellationReceiverStrategy}});Object.defineProperty(v,"CancellationSenderStrategy",{enumerable:!0,get:function(){return ye.CancellationSenderStrategy}});Object.defineProperty(v,"CancellationStrategy",{enumerable:!0,get:function(){return ye.CancellationStrategy}});Object.defineProperty(v,"MessageStrategy",{enumerable:!0,get:function(){return ye.MessageStrategy}});var xd=ot();v.RAL=xd.default});var Js=w(bo=>{"use strict";Object.defineProperty(bo,"__esModule",{value:!0});var Xs=require("util"),Ze=ar(),cr=class e extends Ze.AbstractMessageBuffer{constructor(t="utf-8"){super(t)}emptyBuffer(){return e.emptyBuffer}fromString(t,n){return Buffer.from(t,n)}toString(t,n){return t instanceof Buffer?t.toString(n):new Xs.TextDecoder(n).decode(t)}asNative(t,n){return n===void 0?t instanceof Buffer?t:Buffer.from(t):t instanceof Buffer?t.slice(0,n):Buffer.from(t,0,n)}allocNative(t){return Buffer.allocUnsafe(t)}};cr.emptyBuffer=Buffer.allocUnsafe(0);var po=class{constructor(t){this.stream=t}onClose(t){return this.stream.on("close",t),Ze.Disposable.create(()=>this.stream.off("close",t))}onError(t){return this.stream.on("error",t),Ze.Disposable.create(()=>this.stream.off("error",t))}onEnd(t){return this.stream.on("end",t),Ze.Disposable.create(()=>this.stream.off("end",t))}onData(t){return this.stream.on("data",t),Ze.Disposable.create(()=>this.stream.off("data",t))}},yo=class{constructor(t){this.stream=t}onClose(t){return this.stream.on("close",t),Ze.Disposable.create(()=>this.stream.off("close",t))}onError(t){return this.stream.on("error",t),Ze.Disposable.create(()=>this.stream.off("error",t))}onEnd(t){return this.stream.on("end",t),Ze.Disposable.create(()=>this.stream.off("end",t))}write(t,n){return new Promise((r,i)=>{let u=h=>{h==null?r():i(h)};typeof t=="string"?this.stream.write(t,n,u):this.stream.write(t,u)})}end(){this.stream.end()}},Ys=Object.freeze({messageBuffer:Object.freeze({create:e=>new cr(e)}),applicationJson:Object.freeze({encoder:Object.freeze({name:"application/json",encode:(e,t)=>{try{return Promise.resolve(Buffer.from(JSON.stringify(e,void 0,0),t.charset))}catch(n){return Promise.reject(n)}}}),decoder:Object.freeze({name:"application/json",decode:(e,t)=>{try{return e instanceof Buffer?Promise.resolve(JSON.parse(e.toString(t.charset))):Promise.resolve(JSON.parse(new Xs.TextDecoder(t.charset).decode(e)))}catch(n){return Promise.reject(n)}}})}),stream:Object.freeze({asReadableStream:e=>new po(e),asWritableStream:e=>new yo(e)}),console,timer:Object.freeze({setTimeout(e,t,...n){let r=setTimeout(e,t,...n);return{dispose:()=>clearTimeout(r)}},setImmediate(e,...t){let n=setImmediate(e,...t);return{dispose:()=>clearImmediate(n)}},setInterval(e,t,...n){let r=setInterval(e,t,...n);return{dispose:()=>clearInterval(r)}}})});function vo(){return Ys}(function(e){function t(){Ze.RAL.install(Ys)}e.install=t})(vo||(vo={}));bo.default=vo});var Et=w(U=>{"use strict";var jd=U&&U.__createBinding||(Object.create?function(e,t,n,r){r===void 0&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);(!i||("get"in i?!t.__esModule:i.writable||i.configurable))&&(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){r===void 0&&(r=n),e[r]=t[n]}),Fd=U&&U.__exportStar||function(e,t){for(var n in e)n!=="default"&&!Object.prototype.hasOwnProperty.call(t,n)&&jd(t,e,n)};Object.defineProperty(U,"__esModule",{value:!0});U.createMessageConnection=U.createServerSocketTransport=U.createClientSocketTransport=U.createServerPipeTransport=U.createClientPipeTransport=U.generateRandomPipeName=U.StreamMessageWriter=U.StreamMessageReader=U.SocketMessageWriter=U.SocketMessageReader=U.PortMessageWriter=U.PortMessageReader=U.IPCMessageWriter=U.IPCMessageReader=void 0;var $t=Js();$t.default.install();var Ks=require("path"),Wd=require("os"),Hd=require("crypto"),dr=require("net"),qe=ar();Fd(ar(),U);var Ro=class extends qe.AbstractMessageReader{constructor(t){super(),this.process=t;let n=this.process;n.on("error",r=>this.fireError(r)),n.on("close",()=>this.fireClose())}listen(t){return this.process.on("message",t),qe.Disposable.create(()=>this.process.off("message",t))}};U.IPCMessageReader=Ro;var Do=class extends qe.AbstractMessageWriter{constructor(t){super(),this.process=t,this.errorCount=0;let n=this.process;n.on("error",r=>this.fireError(r)),n.on("close",()=>this.fireClose)}write(t){try{return typeof this.process.send=="function"&&this.process.send(t,void 0,void 0,n=>{n?(this.errorCount++,this.handleError(n,t)):this.errorCount=0}),Promise.resolve()}catch(n){return this.handleError(n,t),Promise.reject(n)}}handleError(t,n){this.errorCount++,this.fireError(t,n,this.errorCount)}end(){}};U.IPCMessageWriter=Do;var _o=class extends qe.AbstractMessageReader{constructor(t){super(),this.onData=new qe.Emitter,t.on("close",()=>this.fireClose),t.on("error",n=>this.fireError(n)),t.on("message",n=>{this.onData.fire(n)})}listen(t){return this.onData.event(t)}};U.PortMessageReader=_o;var To=class extends qe.AbstractMessageWriter{constructor(t){super(),this.port=t,this.errorCount=0,t.on("close",()=>this.fireClose()),t.on("error",n=>this.fireError(n))}write(t){try{return this.port.postMessage(t),Promise.resolve()}catch(n){return this.handleError(n,t),Promise.reject(n)}}handleError(t,n){this.errorCount++,this.fireError(t,n,this.errorCount)}end(){}};U.PortMessageWriter=To;var _t=class extends qe.ReadableStreamMessageReader{constructor(t,n="utf-8"){super((0,$t.default)().stream.asReadableStream(t),n)}};U.SocketMessageReader=_t;var Tt=class extends qe.WriteableStreamMessageWriter{constructor(t,n){super((0,$t.default)().stream.asWritableStream(t),n),this.socket=t}dispose(){super.dispose(),this.socket.destroy()}};U.SocketMessageWriter=Tt;var ur=class extends qe.ReadableStreamMessageReader{constructor(t,n){super((0,$t.default)().stream.asReadableStream(t),n)}};U.StreamMessageReader=ur;var lr=class extends qe.WriteableStreamMessageWriter{constructor(t,n){super((0,$t.default)().stream.asWritableStream(t),n)}};U.StreamMessageWriter=lr;var Zs=process.env.XDG_RUNTIME_DIR,Ud=new Map([["linux",107],["darwin",103]]);function Bd(){let e=(0,Hd.randomBytes)(21).toString("hex");if(process.platform==="win32")return`\\\\.\\pipe\\vscode-jsonrpc-${e}-sock`;let t;Zs?t=Ks.join(Zs,`vscode-ipc-${e}.sock`):t=Ks.join(Wd.tmpdir(),`vscode-${e}.sock`);let n=Ud.get(process.platform);return n!==void 0&&t.length>n&&(0,$t.default)().console.warn(`WARNING: IPC handle "${t}" is longer than ${n} characters.`),t}U.generateRandomPipeName=Bd;function $d(e,t="utf-8"){let n,r=new Promise((i,u)=>{n=i});return new Promise((i,u)=>{let h=(0,dr.createServer)(b=>{h.close(),n([new _t(b,t),new Tt(b,t)])});h.on("error",u),h.listen(e,()=>{h.removeListener("error",u),i({onConnected:()=>r})})})}U.createClientPipeTransport=$d;function zd(e,t="utf-8"){let n=(0,dr.createConnection)(e);return[new _t(n,t),new Tt(n,t)]}U.createServerPipeTransport=zd;function Vd(e,t="utf-8"){let n,r=new Promise((i,u)=>{n=i});return new Promise((i,u)=>{let h=(0,dr.createServer)(b=>{h.close(),n([new _t(b,t),new Tt(b,t)])});h.on("error",u),h.listen(e,"127.0.0.1",()=>{h.removeListener("error",u),i({onConnected:()=>r})})})}U.createClientSocketTransport=Vd;function Gd(e,t="utf-8"){let n=(0,dr.createConnection)(e,"127.0.0.1");return[new _t(n,t),new Tt(n,t)]}U.createServerSocketTransport=Gd;function Qd(e){let t=e;return t.read!==void 0&&t.addListener!==void 0}function Xd(e){let t=e;return t.write!==void 0&&t.addListener!==void 0}function Yd(e,t,n,r){n||(n=qe.NullLogger);let i=Qd(e)?new ur(e):e,u=Xd(t)?new lr(t):t;return qe.ConnectionStrategy.is(r)&&(r={connectionStrategy:r}),(0,qe.createMessageConnection)(i,u,n,r)}U.createMessageConnection=Yd});var Eo=w((Qh,ea)=>{"use strict";ea.exports=Et()});var hr=w((ta,fr)=>{(function(e){if(typeof fr=="object"&&typeof fr.exports=="object"){var t=e(require,ta);t!==void 0&&(fr.exports=t)}else typeof define=="function"&&define.amd&&define(["require","exports"],e)})(function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.TextDocument=t.EOL=t.WorkspaceFolder=t.InlineCompletionContext=t.SelectedCompletionInfo=t.InlineCompletionTriggerKind=t.InlineCompletionList=t.InlineCompletionItem=t.StringValue=t.InlayHint=t.InlayHintLabelPart=t.InlayHintKind=t.InlineValueContext=t.InlineValueEvaluatableExpression=t.InlineValueVariableLookup=t.InlineValueText=t.SemanticTokens=t.SemanticTokenModifiers=t.SemanticTokenTypes=t.SelectionRange=t.DocumentLink=t.FormattingOptions=t.CodeLens=t.CodeAction=t.CodeActionContext=t.CodeActionTriggerKind=t.CodeActionKind=t.DocumentSymbol=t.WorkspaceSymbol=t.SymbolInformation=t.SymbolTag=t.SymbolKind=t.DocumentHighlight=t.DocumentHighlightKind=t.SignatureInformation=t.ParameterInformation=t.Hover=t.MarkedString=t.CompletionList=t.CompletionItem=t.CompletionItemLabelDetails=t.InsertTextMode=t.InsertReplaceEdit=t.CompletionItemTag=t.InsertTextFormat=t.CompletionItemKind=t.MarkupContent=t.MarkupKind=t.TextDocumentItem=t.OptionalVersionedTextDocumentIdentifier=t.VersionedTextDocumentIdentifier=t.TextDocumentIdentifier=t.WorkspaceChange=t.WorkspaceEdit=t.DeleteFile=t.RenameFile=t.CreateFile=t.TextDocumentEdit=t.AnnotatedTextEdit=t.ChangeAnnotationIdentifier=t.ChangeAnnotation=t.TextEdit=t.Command=t.Diagnostic=t.CodeDescription=t.DiagnosticTag=t.DiagnosticSeverity=t.DiagnosticRelatedInformation=t.FoldingRange=t.FoldingRangeKind=t.ColorPresentation=t.ColorInformation=t.Color=t.LocationLink=t.Location=t.Range=t.Position=t.uinteger=t.integer=t.URI=t.DocumentUri=void 0;var n;(function(s){function d(f){return typeof f=="string"}s.is=d})(n||(t.DocumentUri=n={}));var r;(function(s){function d(f){return typeof f=="string"}s.is=d})(r||(t.URI=r={}));var i;(function(s){s.MIN_VALUE=-2147483648,s.MAX_VALUE=2147483647;function d(f){return typeof f=="number"&&s.MIN_VALUE<=f&&f<=s.MAX_VALUE}s.is=d})(i||(t.integer=i={}));var u;(function(s){s.MIN_VALUE=0,s.MAX_VALUE=2147483647;function d(f){return typeof f=="number"&&s.MIN_VALUE<=f&&f<=s.MAX_VALUE}s.is=d})(u||(t.uinteger=u={}));var h;(function(s){function d(a,o){return a===Number.MAX_VALUE&&(a=u.MAX_VALUE),o===Number.MAX_VALUE&&(o=u.MAX_VALUE),{line:a,character:o}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&m.uinteger(o.line)&&m.uinteger(o.character)}s.is=f})(h||(t.Position=h={}));var b;(function(s){function d(a,o,g,D){if(m.uinteger(a)&&m.uinteger(o)&&m.uinteger(g)&&m.uinteger(D))return{start:h.create(a,o),end:h.create(g,D)};if(h.is(a)&&h.is(o))return{start:a,end:o};throw new Error("Range#create called with invalid arguments[".concat(a,", ").concat(o,", ").concat(g,", ").concat(D,"]"))}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&h.is(o.start)&&h.is(o.end)}s.is=f})(b||(t.Range=b={}));var P;(function(s){function d(a,o){return{uri:a,range:o}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&b.is(o.range)&&(m.string(o.uri)||m.undefined(o.uri))}s.is=f})(P||(t.Location=P={}));var C;(function(s){function d(a,o,g,D){return{targetUri:a,targetRange:o,targetSelectionRange:g,originSelectionRange:D}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&b.is(o.targetRange)&&m.string(o.targetUri)&&b.is(o.targetSelectionRange)&&(b.is(o.originSelectionRange)||m.undefined(o.originSelectionRange))}s.is=f})(C||(t.LocationLink=C={}));var k;(function(s){function d(a,o,g,D){return{red:a,green:o,blue:g,alpha:D}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&m.numberRange(o.red,0,1)&&m.numberRange(o.green,0,1)&&m.numberRange(o.blue,0,1)&&m.numberRange(o.alpha,0,1)}s.is=f})(k||(t.Color=k={}));var O;(function(s){function d(a,o){return{range:a,color:o}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&b.is(o.range)&&k.is(o.color)}s.is=f})(O||(t.ColorInformation=O={}));var M;(function(s){function d(a,o,g){return{label:a,textEdit:o,additionalTextEdits:g}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&m.string(o.label)&&(m.undefined(o.textEdit)||j.is(o))&&(m.undefined(o.additionalTextEdits)||m.typedArray(o.additionalTextEdits,j.is))}s.is=f})(M||(t.ColorPresentation=M={}));var $;(function(s){s.Comment="comment",s.Imports="imports",s.Region="region"})($||(t.FoldingRangeKind=$={}));var W;(function(s){function d(a,o,g,D,A,le){var te={startLine:a,endLine:o};return m.defined(g)&&(te.startCharacter=g),m.defined(D)&&(te.endCharacter=D),m.defined(A)&&(te.kind=A),m.defined(le)&&(te.collapsedText=le),te}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&m.uinteger(o.startLine)&&m.uinteger(o.startLine)&&(m.undefined(o.startCharacter)||m.uinteger(o.startCharacter))&&(m.undefined(o.endCharacter)||m.uinteger(o.endCharacter))&&(m.undefined(o.kind)||m.string(o.kind))}s.is=f})(W||(t.FoldingRange=W={}));var X;(function(s){function d(a,o){return{location:a,message:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&P.is(o.location)&&m.string(o.message)}s.is=f})(X||(t.DiagnosticRelatedInformation=X={}));var K;(function(s){s.Error=1,s.Warning=2,s.Information=3,s.Hint=4})(K||(t.DiagnosticSeverity=K={}));var B;(function(s){s.Unnecessary=1,s.Deprecated=2})(B||(t.DiagnosticTag=B={}));var y;(function(s){function d(f){var a=f;return m.objectLiteral(a)&&m.string(a.href)}s.is=d})(y||(t.CodeDescription=y={}));var p;(function(s){function d(a,o,g,D,A,le){var te={range:a,message:o};return m.defined(g)&&(te.severity=g),m.defined(D)&&(te.code=D),m.defined(A)&&(te.source=A),m.defined(le)&&(te.relatedInformation=le),te}s.create=d;function f(a){var o,g=a;return m.defined(g)&&b.is(g.range)&&m.string(g.message)&&(m.number(g.severity)||m.undefined(g.severity))&&(m.integer(g.code)||m.string(g.code)||m.undefined(g.code))&&(m.undefined(g.codeDescription)||m.string((o=g.codeDescription)===null||o===void 0?void 0:o.href))&&(m.string(g.source)||m.undefined(g.source))&&(m.undefined(g.relatedInformation)||m.typedArray(g.relatedInformation,X.is))}s.is=f})(p||(t.Diagnostic=p={}));var T;(function(s){function d(a,o){for(var g=[],D=2;D<arguments.length;D++)g[D-2]=arguments[D];var A={title:a,command:o};return m.defined(g)&&g.length>0&&(A.arguments=g),A}s.create=d;function f(a){var o=a;return m.defined(o)&&m.string(o.title)&&m.string(o.command)}s.is=f})(T||(t.Command=T={}));var j;(function(s){function d(g,D){return{range:g,newText:D}}s.replace=d;function f(g,D){return{range:{start:g,end:g},newText:D}}s.insert=f;function a(g){return{range:g,newText:""}}s.del=a;function o(g){var D=g;return m.objectLiteral(D)&&m.string(D.newText)&&b.is(D.range)}s.is=o})(j||(t.TextEdit=j={}));var ee;(function(s){function d(a,o,g){var D={label:a};return o!==void 0&&(D.needsConfirmation=o),g!==void 0&&(D.description=g),D}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&m.string(o.label)&&(m.boolean(o.needsConfirmation)||o.needsConfirmation===void 0)&&(m.string(o.description)||o.description===void 0)}s.is=f})(ee||(t.ChangeAnnotation=ee={}));var ce;(function(s){function d(f){var a=f;return m.string(a)}s.is=d})(ce||(t.ChangeAnnotationIdentifier=ce={}));var xe;(function(s){function d(g,D,A){return{range:g,newText:D,annotationId:A}}s.replace=d;function f(g,D,A){return{range:{start:g,end:g},newText:D,annotationId:A}}s.insert=f;function a(g,D){return{range:g,newText:"",annotationId:D}}s.del=a;function o(g){var D=g;return j.is(D)&&(ee.is(D.annotationId)||ce.is(D.annotationId))}s.is=o})(xe||(t.AnnotatedTextEdit=xe={}));var yt;(function(s){function d(a,o){return{textDocument:a,edits:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&vt.is(o.textDocument)&&Array.isArray(o.edits)}s.is=f})(yt||(t.TextDocumentEdit=yt={}));var tt;(function(s){function d(a,o,g){var D={kind:"create",uri:a};return o!==void 0&&(o.overwrite!==void 0||o.ignoreIfExists!==void 0)&&(D.options=o),g!==void 0&&(D.annotationId=g),D}s.create=d;function f(a){var o=a;return o&&o.kind==="create"&&m.string(o.uri)&&(o.options===void 0||(o.options.overwrite===void 0||m.boolean(o.options.overwrite))&&(o.options.ignoreIfExists===void 0||m.boolean(o.options.ignoreIfExists)))&&(o.annotationId===void 0||ce.is(o.annotationId))}s.is=f})(tt||(t.CreateFile=tt={}));var nt;(function(s){function d(a,o,g,D){var A={kind:"rename",oldUri:a,newUri:o};return g!==void 0&&(g.overwrite!==void 0||g.ignoreIfExists!==void 0)&&(A.options=g),D!==void 0&&(A.annotationId=D),A}s.create=d;function f(a){var o=a;return o&&o.kind==="rename"&&m.string(o.oldUri)&&m.string(o.newUri)&&(o.options===void 0||(o.options.overwrite===void 0||m.boolean(o.options.overwrite))&&(o.options.ignoreIfExists===void 0||m.boolean(o.options.ignoreIfExists)))&&(o.annotationId===void 0||ce.is(o.annotationId))}s.is=f})(nt||(t.RenameFile=nt={}));var _e;(function(s){function d(a,o,g){var D={kind:"delete",uri:a};return o!==void 0&&(o.recursive!==void 0||o.ignoreIfNotExists!==void 0)&&(D.options=o),g!==void 0&&(D.annotationId=g),D}s.create=d;function f(a){var o=a;return o&&o.kind==="delete"&&m.string(o.uri)&&(o.options===void 0||(o.options.recursive===void 0||m.boolean(o.options.recursive))&&(o.options.ignoreIfNotExists===void 0||m.boolean(o.options.ignoreIfNotExists)))&&(o.annotationId===void 0||ce.is(o.annotationId))}s.is=f})(_e||(t.DeleteFile=_e={}));var qt;(function(s){function d(f){var a=f;return a&&(a.changes!==void 0||a.documentChanges!==void 0)&&(a.documentChanges===void 0||a.documentChanges.every(function(o){return m.string(o.kind)?tt.is(o)||nt.is(o)||_e.is(o):yt.is(o)}))}s.is=d})(qt||(t.WorkspaceEdit=qt={}));var Ot=function(){function s(d,f){this.edits=d,this.changeAnnotations=f}return s.prototype.insert=function(d,f,a){var o,g;if(a===void 0?o=j.insert(d,f):ce.is(a)?(g=a,o=xe.insert(d,f,a)):(this.assertChangeAnnotations(this.changeAnnotations),g=this.changeAnnotations.manage(a),o=xe.insert(d,f,g)),this.edits.push(o),g!==void 0)return g},s.prototype.replace=function(d,f,a){var o,g;if(a===void 0?o=j.replace(d,f):ce.is(a)?(g=a,o=xe.replace(d,f,a)):(this.assertChangeAnnotations(this.changeAnnotations),g=this.changeAnnotations.manage(a),o=xe.replace(d,f,g)),this.edits.push(o),g!==void 0)return g},s.prototype.delete=function(d,f){var a,o;if(f===void 0?a=j.del(d):ce.is(f)?(o=f,a=xe.del(d,f)):(this.assertChangeAnnotations(this.changeAnnotations),o=this.changeAnnotations.manage(f),a=xe.del(d,o)),this.edits.push(a),o!==void 0)return o},s.prototype.add=function(d){this.edits.push(d)},s.prototype.all=function(){return this.edits},s.prototype.clear=function(){this.edits.splice(0,this.edits.length)},s.prototype.assertChangeAnnotations=function(d){if(d===void 0)throw new Error("Text edit change is not configured to manage change annotations.")},s}(),wn=function(){function s(d){this._annotations=d===void 0?Object.create(null):d,this._counter=0,this._size=0}return s.prototype.all=function(){return this._annotations},Object.defineProperty(s.prototype,"size",{get:function(){return this._size},enumerable:!1,configurable:!0}),s.prototype.manage=function(d,f){var a;if(ce.is(d)?a=d:(a=this.nextId(),f=d),this._annotations[a]!==void 0)throw new Error("Id ".concat(a," is already in use."));if(f===void 0)throw new Error("No annotation provided for id ".concat(a));return this._annotations[a]=f,this._size++,a},s.prototype.nextId=function(){return this._counter++,this._counter.toString()},s}(),fi=function(){function s(d){var f=this;this._textEditChanges=Object.create(null),d!==void 0?(this._workspaceEdit=d,d.documentChanges?(this._changeAnnotations=new wn(d.changeAnnotations),d.changeAnnotations=this._changeAnnotations.all(),d.documentChanges.forEach(function(a){if(yt.is(a)){var o=new Ot(a.edits,f._changeAnnotations);f._textEditChanges[a.textDocument.uri]=o}})):d.changes&&Object.keys(d.changes).forEach(function(a){var o=new Ot(d.changes[a]);f._textEditChanges[a]=o})):this._workspaceEdit={}}return Object.defineProperty(s.prototype,"edit",{get:function(){return this.initDocumentChanges(),this._changeAnnotations!==void 0&&(this._changeAnnotations.size===0?this._workspaceEdit.changeAnnotations=void 0:this._workspaceEdit.changeAnnotations=this._changeAnnotations.all()),this._workspaceEdit},enumerable:!1,configurable:!0}),s.prototype.getTextEditChange=function(d){if(vt.is(d)){if(this.initDocumentChanges(),this._workspaceEdit.documentChanges===void 0)throw new Error("Workspace edit is not configured for document changes.");var f={uri:d.uri,version:d.version},a=this._textEditChanges[f.uri];if(!a){var o=[],g={textDocument:f,edits:o};this._workspaceEdit.documentChanges.push(g),a=new Ot(o,this._changeAnnotations),this._textEditChanges[f.uri]=a}return a}else{if(this.initChanges(),this._workspaceEdit.changes===void 0)throw new Error("Workspace edit is not configured for normal text edit changes.");var a=this._textEditChanges[d];if(!a){var o=[];this._workspaceEdit.changes[d]=o,a=new Ot(o),this._textEditChanges[d]=a}return a}},s.prototype.initDocumentChanges=function(){this._workspaceEdit.documentChanges===void 0&&this._workspaceEdit.changes===void 0&&(this._changeAnnotations=new wn,this._workspaceEdit.documentChanges=[],this._workspaceEdit.changeAnnotations=this._changeAnnotations.all())},s.prototype.initChanges=function(){this._workspaceEdit.documentChanges===void 0&&this._workspaceEdit.changes===void 0&&(this._workspaceEdit.changes=Object.create(null))},s.prototype.createFile=function(d,f,a){if(this.initDocumentChanges(),this._workspaceEdit.documentChanges===void 0)throw new Error("Workspace edit is not configured for document changes.");var o;ee.is(f)||ce.is(f)?o=f:a=f;var g,D;if(o===void 0?g=tt.create(d,a):(D=ce.is(o)?o:this._changeAnnotations.manage(o),g=tt.create(d,a,D)),this._workspaceEdit.documentChanges.push(g),D!==void 0)return D},s.prototype.renameFile=function(d,f,a,o){if(this.initDocumentChanges(),this._workspaceEdit.documentChanges===void 0)throw new Error("Workspace edit is not configured for document changes.");var g;ee.is(a)||ce.is(a)?g=a:o=a;var D,A;if(g===void 0?D=nt.create(d,f,o):(A=ce.is(g)?g:this._changeAnnotations.manage(g),D=nt.create(d,f,o,A)),this._workspaceEdit.documentChanges.push(D),A!==void 0)return A},s.prototype.deleteFile=function(d,f,a){if(this.initDocumentChanges(),this._workspaceEdit.documentChanges===void 0)throw new Error("Workspace edit is not configured for document changes.");var o;ee.is(f)||ce.is(f)?o=f:a=f;var g,D;if(o===void 0?g=_e.create(d,a):(D=ce.is(o)?o:this._changeAnnotations.manage(o),g=_e.create(d,a,D)),this._workspaceEdit.documentChanges.push(g),D!==void 0)return D},s}();t.WorkspaceChange=fi;var kn;(function(s){function d(a){return{uri:a}}s.create=d;function f(a){var o=a;return m.defined(o)&&m.string(o.uri)}s.is=f})(kn||(t.TextDocumentIdentifier=kn={}));var sn;(function(s){function d(a,o){return{uri:a,version:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&m.string(o.uri)&&m.integer(o.version)}s.is=f})(sn||(t.VersionedTextDocumentIdentifier=sn={}));var vt;(function(s){function d(a,o){return{uri:a,version:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&m.string(o.uri)&&(o.version===null||m.integer(o.version))}s.is=f})(vt||(t.OptionalVersionedTextDocumentIdentifier=vt={}));var Xe;(function(s){function d(a,o,g,D){return{uri:a,languageId:o,version:g,text:D}}s.create=d;function f(a){var o=a;return m.defined(o)&&m.string(o.uri)&&m.string(o.languageId)&&m.integer(o.version)&&m.string(o.text)}s.is=f})(Xe||(t.TextDocumentItem=Xe={}));var Nt;(function(s){s.PlainText="plaintext",s.Markdown="markdown";function d(f){var a=f;return a===s.PlainText||a===s.Markdown}s.is=d})(Nt||(t.MarkupKind=Nt={}));var bt;(function(s){function d(f){var a=f;return m.objectLiteral(f)&&Nt.is(a.kind)&&m.string(a.value)}s.is=d})(bt||(t.MarkupContent=bt={}));var qn;(function(s){s.Text=1,s.Method=2,s.Function=3,s.Constructor=4,s.Field=5,s.Variable=6,s.Class=7,s.Interface=8,s.Module=9,s.Property=10,s.Unit=11,s.Value=12,s.Enum=13,s.Keyword=14,s.Snippet=15,s.Color=16,s.File=17,s.Reference=18,s.Folder=19,s.EnumMember=20,s.Constant=21,s.Struct=22,s.Event=23,s.Operator=24,s.TypeParameter=25})(qn||(t.CompletionItemKind=qn={}));var an;(function(s){s.PlainText=1,s.Snippet=2})(an||(t.InsertTextFormat=an={}));var cn;(function(s){s.Deprecated=1})(cn||(t.CompletionItemTag=cn={}));var On;(function(s){function d(a,o,g){return{newText:a,insert:o,replace:g}}s.create=d;function f(a){var o=a;return o&&m.string(o.newText)&&b.is(o.insert)&&b.is(o.replace)}s.is=f})(On||(t.InsertReplaceEdit=On={}));var Nn;(function(s){s.asIs=1,s.adjustIndentation=2})(Nn||(t.InsertTextMode=Nn={}));var Mn;(function(s){function d(f){var a=f;return a&&(m.string(a.detail)||a.detail===void 0)&&(m.string(a.description)||a.description===void 0)}s.is=d})(Mn||(t.CompletionItemLabelDetails=Mn={}));var In;(function(s){function d(f){return{label:f}}s.create=d})(In||(t.CompletionItem=In={}));var Ln;(function(s){function d(f,a){return{items:f||[],isIncomplete:!!a}}s.create=d})(Ln||(t.CompletionList=Ln={}));var Mt;(function(s){function d(a){return a.replace(/[\\`*_{}[\]()#+\-.!]/g,"\\$&")}s.fromPlainText=d;function f(a){var o=a;return m.string(o)||m.objectLiteral(o)&&m.string(o.language)&&m.string(o.value)}s.is=f})(Mt||(t.MarkedString=Mt={}));var je;(function(s){function d(f){var a=f;return!!a&&m.objectLiteral(a)&&(bt.is(a.contents)||Mt.is(a.contents)||m.typedArray(a.contents,Mt.is))&&(f.range===void 0||b.is(f.range))}s.is=d})(je||(t.Hover=je={}));var An;(function(s){function d(f,a){return a?{label:f,documentation:a}:{label:f}}s.create=d})(An||(t.ParameterInformation=An={}));var xn;(function(s){function d(f,a){for(var o=[],g=2;g<arguments.length;g++)o[g-2]=arguments[g];var D={label:f};return m.defined(a)&&(D.documentation=a),m.defined(o)?D.parameters=o:D.parameters=[],D}s.create=d})(xn||(t.SignatureInformation=xn={}));var Rt;(function(s){s.Text=1,s.Read=2,s.Write=3})(Rt||(t.DocumentHighlightKind=Rt={}));var jn;(function(s){function d(f,a){var o={range:f};return m.number(a)&&(o.kind=a),o}s.create=d})(jn||(t.DocumentHighlight=jn={}));var It;(function(s){s.File=1,s.Module=2,s.Namespace=3,s.Package=4,s.Class=5,s.Method=6,s.Property=7,s.Field=8,s.Constructor=9,s.Enum=10,s.Interface=11,s.Function=12,s.Variable=13,s.Constant=14,s.String=15,s.Number=16,s.Boolean=17,s.Array=18,s.Object=19,s.Key=20,s.Null=21,s.EnumMember=22,s.Struct=23,s.Event=24,s.Operator=25,s.TypeParameter=26})(It||(t.SymbolKind=It={}));var Fn;(function(s){s.Deprecated=1})(Fn||(t.SymbolTag=Fn={}));var Ye;(function(s){function d(f,a,o,g,D){var A={name:f,kind:a,location:{uri:g,range:o}};return D&&(A.containerName=D),A}s.create=d})(Ye||(t.SymbolInformation=Ye={}));var rt;(function(s){function d(f,a,o,g){return g!==void 0?{name:f,kind:a,location:{uri:o,range:g}}:{name:f,kind:a,location:{uri:o}}}s.create=d})(rt||(t.WorkspaceSymbol=rt={}));var Wn;(function(s){function d(a,o,g,D,A,le){var te={name:a,detail:o,kind:g,range:D,selectionRange:A};return le!==void 0&&(te.children=le),te}s.create=d;function f(a){var o=a;return o&&m.string(o.name)&&m.number(o.kind)&&b.is(o.range)&&b.is(o.selectionRange)&&(o.detail===void 0||m.string(o.detail))&&(o.deprecated===void 0||m.boolean(o.deprecated))&&(o.children===void 0||Array.isArray(o.children))&&(o.tags===void 0||Array.isArray(o.tags))}s.is=f})(Wn||(t.DocumentSymbol=Wn={}));var Hn;(function(s){s.Empty="",s.QuickFix="quickfix",s.Refactor="refactor",s.RefactorExtract="refactor.extract",s.RefactorInline="refactor.inline",s.RefactorRewrite="refactor.rewrite",s.Source="source",s.SourceOrganizeImports="source.organizeImports",s.SourceFixAll="source.fixAll"})(Hn||(t.CodeActionKind=Hn={}));var $e;(function(s){s.Invoked=1,s.Automatic=2})($e||(t.CodeActionTriggerKind=$e={}));var un;(function(s){function d(a,o,g){var D={diagnostics:a};return o!=null&&(D.only=o),g!=null&&(D.triggerKind=g),D}s.create=d;function f(a){var o=a;return m.defined(o)&&m.typedArray(o.diagnostics,p.is)&&(o.only===void 0||m.typedArray(o.only,m.string))&&(o.triggerKind===void 0||o.triggerKind===$e.Invoked||o.triggerKind===$e.Automatic)}s.is=f})(un||(t.CodeActionContext=un={}));var ln;(function(s){function d(a,o,g){var D={title:a},A=!0;return typeof o=="string"?(A=!1,D.kind=o):T.is(o)?D.command=o:D.edit=o,A&&g!==void 0&&(D.kind=g),D}s.create=d;function f(a){var o=a;return o&&m.string(o.title)&&(o.diagnostics===void 0||m.typedArray(o.diagnostics,p.is))&&(o.kind===void 0||m.string(o.kind))&&(o.edit!==void 0||o.command!==void 0)&&(o.command===void 0||T.is(o.command))&&(o.isPreferred===void 0||m.boolean(o.isPreferred))&&(o.edit===void 0||qt.is(o.edit))}s.is=f})(ln||(t.CodeAction=ln={}));var Lt;(function(s){function d(a,o){var g={range:a};return m.defined(o)&&(g.data=o),g}s.create=d;function f(a){var o=a;return m.defined(o)&&b.is(o.range)&&(m.undefined(o.command)||T.is(o.command))}s.is=f})(Lt||(t.CodeLens=Lt={}));var dn;(function(s){function d(a,o){return{tabSize:a,insertSpaces:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&m.uinteger(o.tabSize)&&m.boolean(o.insertSpaces)}s.is=f})(dn||(t.FormattingOptions=dn={}));var Je;(function(s){function d(a,o,g){return{range:a,target:o,data:g}}s.create=d;function f(a){var o=a;return m.defined(o)&&b.is(o.range)&&(m.undefined(o.target)||m.string(o.target))}s.is=f})(Je||(t.DocumentLink=Je={}));var l;(function(s){function d(a,o){return{range:a,parent:o}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&b.is(o.range)&&(o.parent===void 0||s.is(o.parent))}s.is=f})(l||(t.SelectionRange=l={}));var R;(function(s){s.namespace="namespace",s.type="type",s.class="class",s.enum="enum",s.interface="interface",s.struct="struct",s.typeParameter="typeParameter",s.parameter="parameter",s.variable="variable",s.property="property",s.enumMember="enumMember",s.event="event",s.function="function",s.method="method",s.macro="macro",s.keyword="keyword",s.modifier="modifier",s.comment="comment",s.string="string",s.number="number",s.regexp="regexp",s.operator="operator",s.decorator="decorator"})(R||(t.SemanticTokenTypes=R={}));var E;(function(s){s.declaration="declaration",s.definition="definition",s.readonly="readonly",s.static="static",s.deprecated="deprecated",s.abstract="abstract",s.async="async",s.modification="modification",s.documentation="documentation",s.defaultLibrary="defaultLibrary"})(E||(t.SemanticTokenModifiers=E={}));var q;(function(s){function d(f){var a=f;return m.objectLiteral(a)&&(a.resultId===void 0||typeof a.resultId=="string")&&Array.isArray(a.data)&&(a.data.length===0||typeof a.data[0]=="number")}s.is=d})(q||(t.SemanticTokens=q={}));var J;(function(s){function d(a,o){return{range:a,text:o}}s.create=d;function f(a){var o=a;return o!=null&&b.is(o.range)&&m.string(o.text)}s.is=f})(J||(t.InlineValueText=J={}));var Y;(function(s){function d(a,o,g){return{range:a,variableName:o,caseSensitiveLookup:g}}s.create=d;function f(a){var o=a;return o!=null&&b.is(o.range)&&m.boolean(o.caseSensitiveLookup)&&(m.string(o.variableName)||o.variableName===void 0)}s.is=f})(Y||(t.InlineValueVariableLookup=Y={}));var re;(function(s){function d(a,o){return{range:a,expression:o}}s.create=d;function f(a){var o=a;return o!=null&&b.is(o.range)&&(m.string(o.expression)||o.expression===void 0)}s.is=f})(re||(t.InlineValueEvaluatableExpression=re={}));var oe;(function(s){function d(a,o){return{frameId:a,stoppedLocation:o}}s.create=d;function f(a){var o=a;return m.defined(o)&&b.is(a.stoppedLocation)}s.is=f})(oe||(t.InlineValueContext=oe={}));var F;(function(s){s.Type=1,s.Parameter=2;function d(f){return f===1||f===2}s.is=d})(F||(t.InlayHintKind=F={}));var Z;(function(s){function d(a){return{value:a}}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&(o.tooltip===void 0||m.string(o.tooltip)||bt.is(o.tooltip))&&(o.location===void 0||P.is(o.location))&&(o.command===void 0||T.is(o.command))}s.is=f})(Z||(t.InlayHintLabelPart=Z={}));var z;(function(s){function d(a,o,g){var D={position:a,label:o};return g!==void 0&&(D.kind=g),D}s.create=d;function f(a){var o=a;return m.objectLiteral(o)&&h.is(o.position)&&(m.string(o.label)||m.typedArray(o.label,Z.is))&&(o.kind===void 0||F.is(o.kind))&&o.textEdits===void 0||m.typedArray(o.textEdits,j.is)&&(o.tooltip===void 0||m.string(o.tooltip)||bt.is(o.tooltip))&&(o.paddingLeft===void 0||m.boolean(o.paddingLeft))&&(o.paddingRight===void 0||m.boolean(o.paddingRight))}s.is=f})(z||(t.InlayHint=z={}));var ue;(function(s){function d(f){return{kind:"snippet",value:f}}s.createSnippet=d})(ue||(t.StringValue=ue={}));var me;(function(s){function d(f,a,o,g){return{insertText:f,filterText:a,range:o,command:g}}s.create=d})(me||(t.InlineCompletionItem=me={}));var we;(function(s){function d(f){return{items:f}}s.create=d})(we||(t.InlineCompletionList=we={}));var Un;(function(s){s.Invoked=0,s.Automatic=1})(Un||(t.InlineCompletionTriggerKind=Un={}));var ms;(function(s){function d(f,a){return{range:f,text:a}}s.create=d})(ms||(t.SelectedCompletionInfo=ms={}));var ps;(function(s){function d(f,a){return{triggerKind:f,selectedCompletionInfo:a}}s.create=d})(ps||(t.InlineCompletionContext=ps={}));var ys;(function(s){function d(f){var a=f;return m.objectLiteral(a)&&r.is(a.uri)&&m.string(a.name)}s.is=d})(ys||(t.WorkspaceFolder=ys={})),t.EOL=[`
-`,`\r
-`,"\r"];var vs;(function(s){function d(g,D,A,le){return new id(g,D,A,le)}s.create=d;function f(g){var D=g;return!!(m.defined(D)&&m.string(D.uri)&&(m.undefined(D.languageId)||m.string(D.languageId))&&m.uinteger(D.lineCount)&&m.func(D.getText)&&m.func(D.positionAt)&&m.func(D.offsetAt))}s.is=f;function a(g,D){for(var A=g.getText(),le=o(D,function(At,Bn){var bs=At.range.start.line-Bn.range.start.line;return bs===0?At.range.start.character-Bn.range.start.character:bs}),te=A.length,Fe=le.length-1;Fe>=0;Fe--){var We=le[Fe],Ke=g.offsetAt(We.range.start),H=g.offsetAt(We.range.end);if(H<=te)A=A.substring(0,Ke)+We.newText+A.substring(H,A.length);else throw new Error("Overlapping edit");te=Ke}return A}s.applyEdits=a;function o(g,D){if(g.length<=1)return g;var A=g.length/2|0,le=g.slice(0,A),te=g.slice(A);o(le,D),o(te,D);for(var Fe=0,We=0,Ke=0;Fe<le.length&&We<te.length;){var H=D(le[Fe],te[We]);H<=0?g[Ke++]=le[Fe++]:g[Ke++]=te[We++]}for(;Fe<le.length;)g[Ke++]=le[Fe++];for(;We<te.length;)g[Ke++]=te[We++];return g}})(vs||(t.TextDocument=vs={}));var id=function(){function s(d,f,a,o){this._uri=d,this._languageId=f,this._version=a,this._content=o,this._lineOffsets=void 0}return Object.defineProperty(s.prototype,"uri",{get:function(){return this._uri},enumerable:!1,configurable:!0}),Object.defineProperty(s.prototype,"languageId",{get:function(){return this._languageId},enumerable:!1,configurable:!0}),Object.defineProperty(s.prototype,"version",{get:function(){return this._version},enumerable:!1,configurable:!0}),s.prototype.getText=function(d){if(d){var f=this.offsetAt(d.start),a=this.offsetAt(d.end);return this._content.substring(f,a)}return this._content},s.prototype.update=function(d,f){this._content=d.text,this._version=f,this._lineOffsets=void 0},s.prototype.getLineOffsets=function(){if(this._lineOffsets===void 0){for(var d=[],f=this._content,a=!0,o=0;o<f.length;o++){a&&(d.push(o),a=!1);var g=f.charAt(o);a=g==="\r"||g===`
-`,g==="\r"&&o+1<f.length&&f.charAt(o+1)===`
-`&&o++}a&&f.length>0&&d.push(f.length),this._lineOffsets=d}return this._lineOffsets},s.prototype.positionAt=function(d){d=Math.max(Math.min(d,this._content.length),0);var f=this.getLineOffsets(),a=0,o=f.length;if(o===0)return h.create(0,d);for(;a<o;){var g=Math.floor((a+o)/2);f[g]>d?o=g:a=g+1}var D=a-1;return h.create(D,d-f[D])},s.prototype.offsetAt=function(d){var f=this.getLineOffsets();if(d.line>=f.length)return this._content.length;if(d.line<0)return 0;var a=f[d.line],o=d.line+1<f.length?f[d.line+1]:this._content.length;return Math.max(Math.min(a+d.character,o),a)},Object.defineProperty(s.prototype,"lineCount",{get:function(){return this.getLineOffsets().length},enumerable:!1,configurable:!0}),s}(),m;(function(s){var d=Object.prototype.toString;function f(H){return typeof H<"u"}s.defined=f;function a(H){return typeof H>"u"}s.undefined=a;function o(H){return H===!0||H===!1}s.boolean=o;function g(H){return d.call(H)==="[object String]"}s.string=g;function D(H){return d.call(H)==="[object Number]"}s.number=D;function A(H,At,Bn){return d.call(H)==="[object Number]"&&At<=H&&H<=Bn}s.numberRange=A;function le(H){return d.call(H)==="[object Number]"&&-2147483648<=H&&H<=2147483647}s.integer=le;function te(H){return d.call(H)==="[object Number]"&&0<=H&&H<=2147483647}s.uinteger=te;function Fe(H){return d.call(H)==="[object Function]"}s.func=Fe;function We(H){return H!==null&&typeof H=="object"}s.objectLiteral=We;function Ke(H,At){return Array.isArray(H)&&H.every(At)}s.typedArray=Ke})(m||(m={}))})});var se=w(Ee=>{"use strict";Object.defineProperty(Ee,"__esModule",{value:!0});Ee.ProtocolNotificationType=Ee.ProtocolNotificationType0=Ee.ProtocolRequestType=Ee.ProtocolRequestType0=Ee.RegistrationType=Ee.MessageDirection=void 0;var zt=Et(),na;(function(e){e.clientToServer="clientToServer",e.serverToClient="serverToClient",e.both="both"})(na||(Ee.MessageDirection=na={}));var Co=class{constructor(t){this.method=t}};Ee.RegistrationType=Co;var So=class extends zt.RequestType0{constructor(t){super(t)}};Ee.ProtocolRequestType0=So;var Po=class extends zt.RequestType{constructor(t){super(t,zt.ParameterStructures.byName)}};Ee.ProtocolRequestType=Po;var wo=class extends zt.NotificationType0{constructor(t){super(t)}};Ee.ProtocolNotificationType0=wo;var ko=class extends zt.NotificationType{constructor(t){super(t,zt.ParameterStructures.byName)}};Ee.ProtocolNotificationType=ko});var gr=w(ge=>{"use strict";Object.defineProperty(ge,"__esModule",{value:!0});ge.objectLiteral=ge.typedArray=ge.stringArray=ge.array=ge.func=ge.error=ge.number=ge.string=ge.boolean=void 0;function Jd(e){return e===!0||e===!1}ge.boolean=Jd;function ra(e){return typeof e=="string"||e instanceof String}ge.string=ra;function Kd(e){return typeof e=="number"||e instanceof Number}ge.number=Kd;function Zd(e){return e instanceof Error}ge.error=Zd;function ef(e){return typeof e=="function"}ge.func=ef;function ia(e){return Array.isArray(e)}ge.array=ia;function tf(e){return ia(e)&&e.every(t=>ra(t))}ge.stringArray=tf;function nf(e,t){return Array.isArray(e)&&e.every(t)}ge.typedArray=nf;function rf(e){return e!==null&&typeof e=="object"}ge.objectLiteral=rf});var aa=w(mr=>{"use strict";Object.defineProperty(mr,"__esModule",{value:!0});mr.ImplementationRequest=void 0;var oa=se(),sa;(function(e){e.method="textDocument/implementation",e.messageDirection=oa.MessageDirection.clientToServer,e.type=new oa.ProtocolRequestType(e.method)})(sa||(mr.ImplementationRequest=sa={}))});var la=w(pr=>{"use strict";Object.defineProperty(pr,"__esModule",{value:!0});pr.TypeDefinitionRequest=void 0;var ca=se(),ua;(function(e){e.method="textDocument/typeDefinition",e.messageDirection=ca.MessageDirection.clientToServer,e.type=new ca.ProtocolRequestType(e.method)})(ua||(pr.TypeDefinitionRequest=ua={}))});var ha=w(Vt=>{"use strict";Object.defineProperty(Vt,"__esModule",{value:!0});Vt.DidChangeWorkspaceFoldersNotification=Vt.WorkspaceFoldersRequest=void 0;var yr=se(),da;(function(e){e.method="workspace/workspaceFolders",e.messageDirection=yr.MessageDirection.serverToClient,e.type=new yr.ProtocolRequestType0(e.method)})(da||(Vt.WorkspaceFoldersRequest=da={}));var fa;(function(e){e.method="workspace/didChangeWorkspaceFolders",e.messageDirection=yr.MessageDirection.clientToServer,e.type=new yr.ProtocolNotificationType(e.method)})(fa||(Vt.DidChangeWorkspaceFoldersNotification=fa={}))});var pa=w(vr=>{"use strict";Object.defineProperty(vr,"__esModule",{value:!0});vr.ConfigurationRequest=void 0;var ga=se(),ma;(function(e){e.method="workspace/configuration",e.messageDirection=ga.MessageDirection.serverToClient,e.type=new ga.ProtocolRequestType(e.method)})(ma||(vr.ConfigurationRequest=ma={}))});var ba=w(Gt=>{"use strict";Object.defineProperty(Gt,"__esModule",{value:!0});Gt.ColorPresentationRequest=Gt.DocumentColorRequest=void 0;var br=se(),ya;(function(e){e.method="textDocument/documentColor",e.messageDirection=br.MessageDirection.clientToServer,e.type=new br.ProtocolRequestType(e.method)})(ya||(Gt.DocumentColorRequest=ya={}));var va;(function(e){e.method="textDocument/colorPresentation",e.messageDirection=br.MessageDirection.clientToServer,e.type=new br.ProtocolRequestType(e.method)})(va||(Gt.ColorPresentationRequest=va={}))});var _a=w(Qt=>{"use strict";Object.defineProperty(Qt,"__esModule",{value:!0});Qt.FoldingRangeRefreshRequest=Qt.FoldingRangeRequest=void 0;var Rr=se(),Ra;(function(e){e.method="textDocument/foldingRange",e.messageDirection=Rr.MessageDirection.clientToServer,e.type=new Rr.ProtocolRequestType(e.method)})(Ra||(Qt.FoldingRangeRequest=Ra={}));var Da;(function(e){e.method="workspace/foldingRange/refresh",e.messageDirection=Rr.MessageDirection.serverToClient,e.type=new Rr.ProtocolRequestType0(e.method)})(Da||(Qt.FoldingRangeRefreshRequest=Da={}))});var Ca=w(Dr=>{"use strict";Object.defineProperty(Dr,"__esModule",{value:!0});Dr.DeclarationRequest=void 0;var Ta=se(),Ea;(function(e){e.method="textDocument/declaration",e.messageDirection=Ta.MessageDirection.clientToServer,e.type=new Ta.ProtocolRequestType(e.method)})(Ea||(Dr.DeclarationRequest=Ea={}))});var wa=w(_r=>{"use strict";Object.defineProperty(_r,"__esModule",{value:!0});_r.SelectionRangeRequest=void 0;var Sa=se(),Pa;(function(e){e.method="textDocument/selectionRange",e.messageDirection=Sa.MessageDirection.clientToServer,e.type=new Sa.ProtocolRequestType(e.method)})(Pa||(_r.SelectionRangeRequest=Pa={}))});var Na=w(ct=>{"use strict";Object.defineProperty(ct,"__esModule",{value:!0});ct.WorkDoneProgressCancelNotification=ct.WorkDoneProgressCreateRequest=ct.WorkDoneProgress=void 0;var of=Et(),Tr=se(),ka;(function(e){e.type=new of.ProgressType;function t(n){return n===e.type}e.is=t})(ka||(ct.WorkDoneProgress=ka={}));var qa;(function(e){e.method="window/workDoneProgress/create",e.messageDirection=Tr.MessageDirection.serverToClient,e.type=new Tr.ProtocolRequestType(e.method)})(qa||(ct.WorkDoneProgressCreateRequest=qa={}));var Oa;(function(e){e.method="window/workDoneProgress/cancel",e.messageDirection=Tr.MessageDirection.clientToServer,e.type=new Tr.ProtocolNotificationType(e.method)})(Oa||(ct.WorkDoneProgressCancelNotification=Oa={}))});var Aa=w(ut=>{"use strict";Object.defineProperty(ut,"__esModule",{value:!0});ut.CallHierarchyOutgoingCallsRequest=ut.CallHierarchyIncomingCallsRequest=ut.CallHierarchyPrepareRequest=void 0;var Xt=se(),Ma;(function(e){e.method="textDocument/prepareCallHierarchy",e.messageDirection=Xt.MessageDirection.clientToServer,e.type=new Xt.ProtocolRequestType(e.method)})(Ma||(ut.CallHierarchyPrepareRequest=Ma={}));var Ia;(function(e){e.method="callHierarchy/incomingCalls",e.messageDirection=Xt.MessageDirection.clientToServer,e.type=new Xt.ProtocolRequestType(e.method)})(Ia||(ut.CallHierarchyIncomingCallsRequest=Ia={}));var La;(function(e){e.method="callHierarchy/outgoingCalls",e.messageDirection=Xt.MessageDirection.clientToServer,e.type=new Xt.ProtocolRequestType(e.method)})(La||(ut.CallHierarchyOutgoingCallsRequest=La={}))});var Ua=w(Ce=>{"use strict";Object.defineProperty(Ce,"__esModule",{value:!0});Ce.SemanticTokensRefreshRequest=Ce.SemanticTokensRangeRequest=Ce.SemanticTokensDeltaRequest=Ce.SemanticTokensRequest=Ce.SemanticTokensRegistrationType=Ce.TokenFormat=void 0;var et=se(),xa;(function(e){e.Relative="relative"})(xa||(Ce.TokenFormat=xa={}));var vn;(function(e){e.method="textDocument/semanticTokens",e.type=new et.RegistrationType(e.method)})(vn||(Ce.SemanticTokensRegistrationType=vn={}));var ja;(function(e){e.method="textDocument/semanticTokens/full",e.messageDirection=et.MessageDirection.clientToServer,e.type=new et.ProtocolRequestType(e.method),e.registrationMethod=vn.method})(ja||(Ce.SemanticTokensRequest=ja={}));var Fa;(function(e){e.method="textDocument/semanticTokens/full/delta",e.messageDirection=et.MessageDirection.clientToServer,e.type=new et.ProtocolRequestType(e.method),e.registrationMethod=vn.method})(Fa||(Ce.SemanticTokensDeltaRequest=Fa={}));var Wa;(function(e){e.method="textDocument/semanticTokens/range",e.messageDirection=et.MessageDirection.clientToServer,e.type=new et.ProtocolRequestType(e.method),e.registrationMethod=vn.method})(Wa||(Ce.SemanticTokensRangeRequest=Wa={}));var Ha;(function(e){e.method="workspace/semanticTokens/refresh",e.messageDirection=et.MessageDirection.serverToClient,e.type=new et.ProtocolRequestType0(e.method)})(Ha||(Ce.SemanticTokensRefreshRequest=Ha={}))});var za=w(Er=>{"use strict";Object.defineProperty(Er,"__esModule",{value:!0});Er.ShowDocumentRequest=void 0;var Ba=se(),$a;(function(e){e.method="window/showDocument",e.messageDirection=Ba.MessageDirection.serverToClient,e.type=new Ba.ProtocolRequestType(e.method)})($a||(Er.ShowDocumentRequest=$a={}))});var Qa=w(Cr=>{"use strict";Object.defineProperty(Cr,"__esModule",{value:!0});Cr.LinkedEditingRangeRequest=void 0;var Va=se(),Ga;(function(e){e.method="textDocument/linkedEditingRange",e.messageDirection=Va.MessageDirection.clientToServer,e.type=new Va.ProtocolRequestType(e.method)})(Ga||(Cr.LinkedEditingRangeRequest=Ga={}))});var nc=w(Re=>{"use strict";Object.defineProperty(Re,"__esModule",{value:!0});Re.WillDeleteFilesRequest=Re.DidDeleteFilesNotification=Re.DidRenameFilesNotification=Re.WillRenameFilesRequest=Re.DidCreateFilesNotification=Re.WillCreateFilesRequest=Re.FileOperationPatternKind=void 0;var Oe=se(),Xa;(function(e){e.file="file",e.folder="folder"})(Xa||(Re.FileOperationPatternKind=Xa={}));var Ya;(function(e){e.method="workspace/willCreateFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolRequestType(e.method)})(Ya||(Re.WillCreateFilesRequest=Ya={}));var Ja;(function(e){e.method="workspace/didCreateFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolNotificationType(e.method)})(Ja||(Re.DidCreateFilesNotification=Ja={}));var Ka;(function(e){e.method="workspace/willRenameFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolRequestType(e.method)})(Ka||(Re.WillRenameFilesRequest=Ka={}));var Za;(function(e){e.method="workspace/didRenameFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolNotificationType(e.method)})(Za||(Re.DidRenameFilesNotification=Za={}));var ec;(function(e){e.method="workspace/didDeleteFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolNotificationType(e.method)})(ec||(Re.DidDeleteFilesNotification=ec={}));var tc;(function(e){e.method="workspace/willDeleteFiles",e.messageDirection=Oe.MessageDirection.clientToServer,e.type=new Oe.ProtocolRequestType(e.method)})(tc||(Re.WillDeleteFilesRequest=tc={}))});var ac=w(lt=>{"use strict";Object.defineProperty(lt,"__esModule",{value:!0});lt.MonikerRequest=lt.MonikerKind=lt.UniquenessLevel=void 0;var rc=se(),ic;(function(e){e.document="document",e.project="project",e.group="group",e.scheme="scheme",e.global="global"})(ic||(lt.UniquenessLevel=ic={}));var oc;(function(e){e.$import="import",e.$export="export",e.local="local"})(oc||(lt.MonikerKind=oc={}));var sc;(function(e){e.method="textDocument/moniker",e.messageDirection=rc.MessageDirection.clientToServer,e.type=new rc.ProtocolRequestType(e.method)})(sc||(lt.MonikerRequest=sc={}))});var dc=w(dt=>{"use strict";Object.defineProperty(dt,"__esModule",{value:!0});dt.TypeHierarchySubtypesRequest=dt.TypeHierarchySupertypesRequest=dt.TypeHierarchyPrepareRequest=void 0;var Yt=se(),cc;(function(e){e.method="textDocument/prepareTypeHierarchy",e.messageDirection=Yt.MessageDirection.clientToServer,e.type=new Yt.ProtocolRequestType(e.method)})(cc||(dt.TypeHierarchyPrepareRequest=cc={}));var uc;(function(e){e.method="typeHierarchy/supertypes",e.messageDirection=Yt.MessageDirection.clientToServer,e.type=new Yt.ProtocolRequestType(e.method)})(uc||(dt.TypeHierarchySupertypesRequest=uc={}));var lc;(function(e){e.method="typeHierarchy/subtypes",e.messageDirection=Yt.MessageDirection.clientToServer,e.type=new Yt.ProtocolRequestType(e.method)})(lc||(dt.TypeHierarchySubtypesRequest=lc={}))});var gc=w(Jt=>{"use strict";Object.defineProperty(Jt,"__esModule",{value:!0});Jt.InlineValueRefreshRequest=Jt.InlineValueRequest=void 0;var Sr=se(),fc;(function(e){e.method="textDocument/inlineValue",e.messageDirection=Sr.MessageDirection.clientToServer,e.type=new Sr.ProtocolRequestType(e.method)})(fc||(Jt.InlineValueRequest=fc={}));var hc;(function(e){e.method="workspace/inlineValue/refresh",e.messageDirection=Sr.MessageDirection.serverToClient,e.type=new Sr.ProtocolRequestType0(e.method)})(hc||(Jt.InlineValueRefreshRequest=hc={}))});var vc=w(ft=>{"use strict";Object.defineProperty(ft,"__esModule",{value:!0});ft.InlayHintRefreshRequest=ft.InlayHintResolveRequest=ft.InlayHintRequest=void 0;var Kt=se(),mc;(function(e){e.method="textDocument/inlayHint",e.messageDirection=Kt.MessageDirection.clientToServer,e.type=new Kt.ProtocolRequestType(e.method)})(mc||(ft.InlayHintRequest=mc={}));var pc;(function(e){e.method="inlayHint/resolve",e.messageDirection=Kt.MessageDirection.clientToServer,e.type=new Kt.ProtocolRequestType(e.method)})(pc||(ft.InlayHintResolveRequest=pc={}));var yc;(function(e){e.method="workspace/inlayHint/refresh",e.messageDirection=Kt.MessageDirection.serverToClient,e.type=new Kt.ProtocolRequestType0(e.method)})(yc||(ft.InlayHintRefreshRequest=yc={}))});var Cc=w(Ne=>{"use strict";Object.defineProperty(Ne,"__esModule",{value:!0});Ne.DiagnosticRefreshRequest=Ne.WorkspaceDiagnosticRequest=Ne.DocumentDiagnosticRequest=Ne.DocumentDiagnosticReportKind=Ne.DiagnosticServerCancellationData=void 0;var Ec=Et(),sf=gr(),Zt=se(),bc;(function(e){function t(n){let r=n;return r&&sf.boolean(r.retriggerRequest)}e.is=t})(bc||(Ne.DiagnosticServerCancellationData=bc={}));var Rc;(function(e){e.Full="full",e.Unchanged="unchanged"})(Rc||(Ne.DocumentDiagnosticReportKind=Rc={}));var Dc;(function(e){e.method="textDocument/diagnostic",e.messageDirection=Zt.MessageDirection.clientToServer,e.type=new Zt.ProtocolRequestType(e.method),e.partialResult=new Ec.ProgressType})(Dc||(Ne.DocumentDiagnosticRequest=Dc={}));var _c;(function(e){e.method="workspace/diagnostic",e.messageDirection=Zt.MessageDirection.clientToServer,e.type=new Zt.ProtocolRequestType(e.method),e.partialResult=new Ec.ProgressType})(_c||(Ne.WorkspaceDiagnosticRequest=_c={}));var Tc;(function(e){e.method="workspace/diagnostic/refresh",e.messageDirection=Zt.MessageDirection.serverToClient,e.type=new Zt.ProtocolRequestType0(e.method)})(Tc||(Ne.DiagnosticRefreshRequest=Tc={}))});var Nc=w(de=>{"use strict";Object.defineProperty(de,"__esModule",{value:!0});de.DidCloseNotebookDocumentNotification=de.DidSaveNotebookDocumentNotification=de.DidChangeNotebookDocumentNotification=de.NotebookCellArrayChange=de.DidOpenNotebookDocumentNotification=de.NotebookDocumentSyncRegistrationType=de.NotebookDocument=de.NotebookCell=de.ExecutionSummary=de.NotebookCellKind=void 0;var bn=hr(),Ue=gr(),ze=se(),qo;(function(e){e.Markup=1,e.Code=2;function t(n){return n===1||n===2}e.is=t})(qo||(de.NotebookCellKind=qo={}));var Oo;(function(e){function t(i,u){let h={executionOrder:i};return(u===!0||u===!1)&&(h.success=u),h}e.create=t;function n(i){let u=i;return Ue.objectLiteral(u)&&bn.uinteger.is(u.executionOrder)&&(u.success===void 0||Ue.boolean(u.success))}e.is=n;function r(i,u){return i===u?!0:i==null||u===null||u===void 0?!1:i.executionOrder===u.executionOrder&&i.success===u.success}e.equals=r})(Oo||(de.ExecutionSummary=Oo={}));var Pr;(function(e){function t(u,h){return{kind:u,document:h}}e.create=t;function n(u){let h=u;return Ue.objectLiteral(h)&&qo.is(h.kind)&&bn.DocumentUri.is(h.document)&&(h.metadata===void 0||Ue.objectLiteral(h.metadata))}e.is=n;function r(u,h){let b=new Set;return u.document!==h.document&&b.add("document"),u.kind!==h.kind&&b.add("kind"),u.executionSummary!==h.executionSummary&&b.add("executionSummary"),(u.metadata!==void 0||h.metadata!==void 0)&&!i(u.metadata,h.metadata)&&b.add("metadata"),(u.executionSummary!==void 0||h.executionSummary!==void 0)&&!Oo.equals(u.executionSummary,h.executionSummary)&&b.add("executionSummary"),b}e.diff=r;function i(u,h){if(u===h)return!0;if(u==null||h===null||h===void 0||typeof u!=typeof h||typeof u!="object")return!1;let b=Array.isArray(u),P=Array.isArray(h);if(b!==P)return!1;if(b&&P){if(u.length!==h.length)return!1;for(let C=0;C<u.length;C++)if(!i(u[C],h[C]))return!1}if(Ue.objectLiteral(u)&&Ue.objectLiteral(h)){let C=Object.keys(u),k=Object.keys(h);if(C.length!==k.length||(C.sort(),k.sort(),!i(C,k)))return!1;for(let O=0;O<C.length;O++){let M=C[O];if(!i(u[M],h[M]))return!1}}return!0}})(Pr||(de.NotebookCell=Pr={}));var Sc;(function(e){function t(r,i,u,h){return{uri:r,notebookType:i,version:u,cells:h}}e.create=t;function n(r){let i=r;return Ue.objectLiteral(i)&&Ue.string(i.uri)&&bn.integer.is(i.version)&&Ue.typedArray(i.cells,Pr.is)}e.is=n})(Sc||(de.NotebookDocument=Sc={}));var en;(function(e){e.method="notebookDocument/sync",e.messageDirection=ze.MessageDirection.clientToServer,e.type=new ze.RegistrationType(e.method)})(en||(de.NotebookDocumentSyncRegistrationType=en={}));var Pc;(function(e){e.method="notebookDocument/didOpen",e.messageDirection=ze.MessageDirection.clientToServer,e.type=new ze.ProtocolNotificationType(e.method),e.registrationMethod=en.method})(Pc||(de.DidOpenNotebookDocumentNotification=Pc={}));var wc;(function(e){function t(r){let i=r;return Ue.objectLiteral(i)&&bn.uinteger.is(i.start)&&bn.uinteger.is(i.deleteCount)&&(i.cells===void 0||Ue.typedArray(i.cells,Pr.is))}e.is=t;function n(r,i,u){let h={start:r,deleteCount:i};return u!==void 0&&(h.cells=u),h}e.create=n})(wc||(de.NotebookCellArrayChange=wc={}));var kc;(function(e){e.method="notebookDocument/didChange",e.messageDirection=ze.MessageDirection.clientToServer,e.type=new ze.ProtocolNotificationType(e.method),e.registrationMethod=en.method})(kc||(de.DidChangeNotebookDocumentNotification=kc={}));var qc;(function(e){e.method="notebookDocument/didSave",e.messageDirection=ze.MessageDirection.clientToServer,e.type=new ze.ProtocolNotificationType(e.method),e.registrationMethod=en.method})(qc||(de.DidSaveNotebookDocumentNotification=qc={}));var Oc;(function(e){e.method="notebookDocument/didClose",e.messageDirection=ze.MessageDirection.clientToServer,e.type=new ze.ProtocolNotificationType(e.method),e.registrationMethod=en.method})(Oc||(de.DidCloseNotebookDocumentNotification=Oc={}))});var Lc=w(wr=>{"use strict";Object.defineProperty(wr,"__esModule",{value:!0});wr.InlineCompletionRequest=void 0;var Mc=se(),Ic;(function(e){e.method="textDocument/inlineCompletion",e.messageDirection=Mc.MessageDirection.clientToServer,e.type=new Mc.ProtocolRequestType(e.method)})(Ic||(wr.InlineCompletionRequest=Ic={}))});var Qu=w(c=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0});c.WorkspaceSymbolRequest=c.CodeActionResolveRequest=c.CodeActionRequest=c.DocumentSymbolRequest=c.DocumentHighlightRequest=c.ReferencesRequest=c.DefinitionRequest=c.SignatureHelpRequest=c.SignatureHelpTriggerKind=c.HoverRequest=c.CompletionResolveRequest=c.CompletionRequest=c.CompletionTriggerKind=c.PublishDiagnosticsNotification=c.WatchKind=c.RelativePattern=c.FileChangeType=c.DidChangeWatchedFilesNotification=c.WillSaveTextDocumentWaitUntilRequest=c.WillSaveTextDocumentNotification=c.TextDocumentSaveReason=c.DidSaveTextDocumentNotification=c.DidCloseTextDocumentNotification=c.DidChangeTextDocumentNotification=c.TextDocumentContentChangeEvent=c.DidOpenTextDocumentNotification=c.TextDocumentSyncKind=c.TelemetryEventNotification=c.LogMessageNotification=c.ShowMessageRequest=c.ShowMessageNotification=c.MessageType=c.DidChangeConfigurationNotification=c.ExitNotification=c.ShutdownRequest=c.InitializedNotification=c.InitializeErrorCodes=c.InitializeRequest=c.WorkDoneProgressOptions=c.TextDocumentRegistrationOptions=c.StaticRegistrationOptions=c.PositionEncodingKind=c.FailureHandlingKind=c.ResourceOperationKind=c.UnregistrationRequest=c.RegistrationRequest=c.DocumentSelector=c.NotebookCellTextDocumentFilter=c.NotebookDocumentFilter=c.TextDocumentFilter=void 0;c.MonikerRequest=c.MonikerKind=c.UniquenessLevel=c.WillDeleteFilesRequest=c.DidDeleteFilesNotification=c.WillRenameFilesRequest=c.DidRenameFilesNotification=c.WillCreateFilesRequest=c.DidCreateFilesNotification=c.FileOperationPatternKind=c.LinkedEditingRangeRequest=c.ShowDocumentRequest=c.SemanticTokensRegistrationType=c.SemanticTokensRefreshRequest=c.SemanticTokensRangeRequest=c.SemanticTokensDeltaRequest=c.SemanticTokensRequest=c.TokenFormat=c.CallHierarchyPrepareRequest=c.CallHierarchyOutgoingCallsRequest=c.CallHierarchyIncomingCallsRequest=c.WorkDoneProgressCancelNotification=c.WorkDoneProgressCreateRequest=c.WorkDoneProgress=c.SelectionRangeRequest=c.DeclarationRequest=c.FoldingRangeRefreshRequest=c.FoldingRangeRequest=c.ColorPresentationRequest=c.DocumentColorRequest=c.ConfigurationRequest=c.DidChangeWorkspaceFoldersNotification=c.WorkspaceFoldersRequest=c.TypeDefinitionRequest=c.ImplementationRequest=c.ApplyWorkspaceEditRequest=c.ExecuteCommandRequest=c.PrepareRenameRequest=c.RenameRequest=c.PrepareSupportDefaultBehavior=c.DocumentOnTypeFormattingRequest=c.DocumentRangesFormattingRequest=c.DocumentRangeFormattingRequest=c.DocumentFormattingRequest=c.DocumentLinkResolveRequest=c.DocumentLinkRequest=c.CodeLensRefreshRequest=c.CodeLensResolveRequest=c.CodeLensRequest=c.WorkspaceSymbolResolveRequest=void 0;c.InlineCompletionRequest=c.DidCloseNotebookDocumentNotification=c.DidSaveNotebookDocumentNotification=c.DidChangeNotebookDocumentNotification=c.NotebookCellArrayChange=c.DidOpenNotebookDocumentNotification=c.NotebookDocumentSyncRegistrationType=c.NotebookDocument=c.NotebookCell=c.ExecutionSummary=c.NotebookCellKind=c.DiagnosticRefreshRequest=c.WorkspaceDiagnosticRequest=c.DocumentDiagnosticRequest=c.DocumentDiagnosticReportKind=c.DiagnosticServerCancellationData=c.InlayHintRefreshRequest=c.InlayHintResolveRequest=c.InlayHintRequest=c.InlineValueRefreshRequest=c.InlineValueRequest=c.TypeHierarchySupertypesRequest=c.TypeHierarchySubtypesRequest=c.TypeHierarchyPrepareRequest=void 0;var _=se(),Ac=hr(),pe=gr(),af=aa();Object.defineProperty(c,"ImplementationRequest",{enumerable:!0,get:function(){return af.ImplementationRequest}});var cf=la();Object.defineProperty(c,"TypeDefinitionRequest",{enumerable:!0,get:function(){return cf.TypeDefinitionRequest}});var $u=ha();Object.defineProperty(c,"WorkspaceFoldersRequest",{enumerable:!0,get:function(){return $u.WorkspaceFoldersRequest}});Object.defineProperty(c,"DidChangeWorkspaceFoldersNotification",{enumerable:!0,get:function(){return $u.DidChangeWorkspaceFoldersNotification}});var uf=pa();Object.defineProperty(c,"ConfigurationRequest",{enumerable:!0,get:function(){return uf.ConfigurationRequest}});var zu=ba();Object.defineProperty(c,"DocumentColorRequest",{enumerable:!0,get:function(){return zu.DocumentColorRequest}});Object.defineProperty(c,"ColorPresentationRequest",{enumerable:!0,get:function(){return zu.ColorPresentationRequest}});var Vu=_a();Object.defineProperty(c,"FoldingRangeRequest",{enumerable:!0,get:function(){return Vu.FoldingRangeRequest}});Object.defineProperty(c,"FoldingRangeRefreshRequest",{enumerable:!0,get:function(){return Vu.FoldingRangeRefreshRequest}});var lf=Ca();Object.defineProperty(c,"DeclarationRequest",{enumerable:!0,get:function(){return lf.DeclarationRequest}});var df=wa();Object.defineProperty(c,"SelectionRangeRequest",{enumerable:!0,get:function(){return df.SelectionRangeRequest}});var Ao=Na();Object.defineProperty(c,"WorkDoneProgress",{enumerable:!0,get:function(){return Ao.WorkDoneProgress}});Object.defineProperty(c,"WorkDoneProgressCreateRequest",{enumerable:!0,get:function(){return Ao.WorkDoneProgressCreateRequest}});Object.defineProperty(c,"WorkDoneProgressCancelNotification",{enumerable:!0,get:function(){return Ao.WorkDoneProgressCancelNotification}});var xo=Aa();Object.defineProperty(c,"CallHierarchyIncomingCallsRequest",{enumerable:!0,get:function(){return xo.CallHierarchyIncomingCallsRequest}});Object.defineProperty(c,"CallHierarchyOutgoingCallsRequest",{enumerable:!0,get:function(){return xo.CallHierarchyOutgoingCallsRequest}});Object.defineProperty(c,"CallHierarchyPrepareRequest",{enumerable:!0,get:function(){return xo.CallHierarchyPrepareRequest}});var tn=Ua();Object.defineProperty(c,"TokenFormat",{enumerable:!0,get:function(){return tn.TokenFormat}});Object.defineProperty(c,"SemanticTokensRequest",{enumerable:!0,get:function(){return tn.SemanticTokensRequest}});Object.defineProperty(c,"SemanticTokensDeltaRequest",{enumerable:!0,get:function(){return tn.SemanticTokensDeltaRequest}});Object.defineProperty(c,"SemanticTokensRangeRequest",{enumerable:!0,get:function(){return tn.SemanticTokensRangeRequest}});Object.defineProperty(c,"SemanticTokensRefreshRequest",{enumerable:!0,get:function(){return tn.SemanticTokensRefreshRequest}});Object.defineProperty(c,"SemanticTokensRegistrationType",{enumerable:!0,get:function(){return tn.SemanticTokensRegistrationType}});var ff=za();Object.defineProperty(c,"ShowDocumentRequest",{enumerable:!0,get:function(){return ff.ShowDocumentRequest}});var hf=Qa();Object.defineProperty(c,"LinkedEditingRangeRequest",{enumerable:!0,get:function(){return hf.LinkedEditingRangeRequest}});var Ct=nc();Object.defineProperty(c,"FileOperationPatternKind",{enumerable:!0,get:function(){return Ct.FileOperationPatternKind}});Object.defineProperty(c,"DidCreateFilesNotification",{enumerable:!0,get:function(){return Ct.DidCreateFilesNotification}});Object.defineProperty(c,"WillCreateFilesRequest",{enumerable:!0,get:function(){return Ct.WillCreateFilesRequest}});Object.defineProperty(c,"DidRenameFilesNotification",{enumerable:!0,get:function(){return Ct.DidRenameFilesNotification}});Object.defineProperty(c,"WillRenameFilesRequest",{enumerable:!0,get:function(){return Ct.WillRenameFilesRequest}});Object.defineProperty(c,"DidDeleteFilesNotification",{enumerable:!0,get:function(){return Ct.DidDeleteFilesNotification}});Object.defineProperty(c,"WillDeleteFilesRequest",{enumerable:!0,get:function(){return Ct.WillDeleteFilesRequest}});var jo=ac();Object.defineProperty(c,"UniquenessLevel",{enumerable:!0,get:function(){return jo.UniquenessLevel}});Object.defineProperty(c,"MonikerKind",{enumerable:!0,get:function(){return jo.MonikerKind}});Object.defineProperty(c,"MonikerRequest",{enumerable:!0,get:function(){return jo.MonikerRequest}});var Fo=dc();Object.defineProperty(c,"TypeHierarchyPrepareRequest",{enumerable:!0,get:function(){return Fo.TypeHierarchyPrepareRequest}});Object.defineProperty(c,"TypeHierarchySubtypesRequest",{enumerable:!0,get:function(){return Fo.TypeHierarchySubtypesRequest}});Object.defineProperty(c,"TypeHierarchySupertypesRequest",{enumerable:!0,get:function(){return Fo.TypeHierarchySupertypesRequest}});var Gu=gc();Object.defineProperty(c,"InlineValueRequest",{enumerable:!0,get:function(){return Gu.InlineValueRequest}});Object.defineProperty(c,"InlineValueRefreshRequest",{enumerable:!0,get:function(){return Gu.InlineValueRefreshRequest}});var Wo=vc();Object.defineProperty(c,"InlayHintRequest",{enumerable:!0,get:function(){return Wo.InlayHintRequest}});Object.defineProperty(c,"InlayHintResolveRequest",{enumerable:!0,get:function(){return Wo.InlayHintResolveRequest}});Object.defineProperty(c,"InlayHintRefreshRequest",{enumerable:!0,get:function(){return Wo.InlayHintRefreshRequest}});var Rn=Cc();Object.defineProperty(c,"DiagnosticServerCancellationData",{enumerable:!0,get:function(){return Rn.DiagnosticServerCancellationData}});Object.defineProperty(c,"DocumentDiagnosticReportKind",{enumerable:!0,get:function(){return Rn.DocumentDiagnosticReportKind}});Object.defineProperty(c,"DocumentDiagnosticRequest",{enumerable:!0,get:function(){return Rn.DocumentDiagnosticRequest}});Object.defineProperty(c,"WorkspaceDiagnosticRequest",{enumerable:!0,get:function(){return Rn.WorkspaceDiagnosticRequest}});Object.defineProperty(c,"DiagnosticRefreshRequest",{enumerable:!0,get:function(){return Rn.DiagnosticRefreshRequest}});var Ve=Nc();Object.defineProperty(c,"NotebookCellKind",{enumerable:!0,get:function(){return Ve.NotebookCellKind}});Object.defineProperty(c,"ExecutionSummary",{enumerable:!0,get:function(){return Ve.ExecutionSummary}});Object.defineProperty(c,"NotebookCell",{enumerable:!0,get:function(){return Ve.NotebookCell}});Object.defineProperty(c,"NotebookDocument",{enumerable:!0,get:function(){return Ve.NotebookDocument}});Object.defineProperty(c,"NotebookDocumentSyncRegistrationType",{enumerable:!0,get:function(){return Ve.NotebookDocumentSyncRegistrationType}});Object.defineProperty(c,"DidOpenNotebookDocumentNotification",{enumerable:!0,get:function(){return Ve.DidOpenNotebookDocumentNotification}});Object.defineProperty(c,"NotebookCellArrayChange",{enumerable:!0,get:function(){return Ve.NotebookCellArrayChange}});Object.defineProperty(c,"DidChangeNotebookDocumentNotification",{enumerable:!0,get:function(){return Ve.DidChangeNotebookDocumentNotification}});Object.defineProperty(c,"DidSaveNotebookDocumentNotification",{enumerable:!0,get:function(){return Ve.DidSaveNotebookDocumentNotification}});Object.defineProperty(c,"DidCloseNotebookDocumentNotification",{enumerable:!0,get:function(){return Ve.DidCloseNotebookDocumentNotification}});var gf=Lc();Object.defineProperty(c,"InlineCompletionRequest",{enumerable:!0,get:function(){return gf.InlineCompletionRequest}});var No;(function(e){function t(n){let r=n;return pe.string(r)||pe.string(r.language)||pe.string(r.scheme)||pe.string(r.pattern)}e.is=t})(No||(c.TextDocumentFilter=No={}));var Mo;(function(e){function t(n){let r=n;return pe.objectLiteral(r)&&(pe.string(r.notebookType)||pe.string(r.scheme)||pe.string(r.pattern))}e.is=t})(Mo||(c.NotebookDocumentFilter=Mo={}));var Io;(function(e){function t(n){let r=n;return pe.objectLiteral(r)&&(pe.string(r.notebook)||Mo.is(r.notebook))&&(r.language===void 0||pe.string(r.language))}e.is=t})(Io||(c.NotebookCellTextDocumentFilter=Io={}));var Lo;(function(e){function t(n){if(!Array.isArray(n))return!1;for(let r of n)if(!pe.string(r)&&!No.is(r)&&!Io.is(r))return!1;return!0}e.is=t})(Lo||(c.DocumentSelector=Lo={}));var xc;(function(e){e.method="client/registerCapability",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolRequestType(e.method)})(xc||(c.RegistrationRequest=xc={}));var jc;(function(e){e.method="client/unregisterCapability",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolRequestType(e.method)})(jc||(c.UnregistrationRequest=jc={}));var Fc;(function(e){e.Create="create",e.Rename="rename",e.Delete="delete"})(Fc||(c.ResourceOperationKind=Fc={}));var Wc;(function(e){e.Abort="abort",e.Transactional="transactional",e.TextOnlyTransactional="textOnlyTransactional",e.Undo="undo"})(Wc||(c.FailureHandlingKind=Wc={}));var Hc;(function(e){e.UTF8="utf-8",e.UTF16="utf-16",e.UTF32="utf-32"})(Hc||(c.PositionEncodingKind=Hc={}));var Uc;(function(e){function t(n){let r=n;return r&&pe.string(r.id)&&r.id.length>0}e.hasId=t})(Uc||(c.StaticRegistrationOptions=Uc={}));var Bc;(function(e){function t(n){let r=n;return r&&(r.documentSelector===null||Lo.is(r.documentSelector))}e.is=t})(Bc||(c.TextDocumentRegistrationOptions=Bc={}));var $c;(function(e){function t(r){let i=r;return pe.objectLiteral(i)&&(i.workDoneProgress===void 0||pe.boolean(i.workDoneProgress))}e.is=t;function n(r){let i=r;return i&&pe.boolean(i.workDoneProgress)}e.hasWorkDoneProgress=n})($c||(c.WorkDoneProgressOptions=$c={}));var zc;(function(e){e.method="initialize",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(zc||(c.InitializeRequest=zc={}));var Vc;(function(e){e.unknownProtocolVersion=1})(Vc||(c.InitializeErrorCodes=Vc={}));var Gc;(function(e){e.method="initialized",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(Gc||(c.InitializedNotification=Gc={}));var Qc;(function(e){e.method="shutdown",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType0(e.method)})(Qc||(c.ShutdownRequest=Qc={}));var Xc;(function(e){e.method="exit",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType0(e.method)})(Xc||(c.ExitNotification=Xc={}));var Yc;(function(e){e.method="workspace/didChangeConfiguration",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(Yc||(c.DidChangeConfigurationNotification=Yc={}));var Jc;(function(e){e.Error=1,e.Warning=2,e.Info=3,e.Log=4,e.Debug=5})(Jc||(c.MessageType=Jc={}));var Kc;(function(e){e.method="window/showMessage",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolNotificationType(e.method)})(Kc||(c.ShowMessageNotification=Kc={}));var Zc;(function(e){e.method="window/showMessageRequest",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolRequestType(e.method)})(Zc||(c.ShowMessageRequest=Zc={}));var eu;(function(e){e.method="window/logMessage",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolNotificationType(e.method)})(eu||(c.LogMessageNotification=eu={}));var tu;(function(e){e.method="telemetry/event",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolNotificationType(e.method)})(tu||(c.TelemetryEventNotification=tu={}));var nu;(function(e){e.None=0,e.Full=1,e.Incremental=2})(nu||(c.TextDocumentSyncKind=nu={}));var ru;(function(e){e.method="textDocument/didOpen",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(ru||(c.DidOpenTextDocumentNotification=ru={}));var iu;(function(e){function t(r){let i=r;return i!=null&&typeof i.text=="string"&&i.range!==void 0&&(i.rangeLength===void 0||typeof i.rangeLength=="number")}e.isIncremental=t;function n(r){let i=r;return i!=null&&typeof i.text=="string"&&i.range===void 0&&i.rangeLength===void 0}e.isFull=n})(iu||(c.TextDocumentContentChangeEvent=iu={}));var ou;(function(e){e.method="textDocument/didChange",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(ou||(c.DidChangeTextDocumentNotification=ou={}));var su;(function(e){e.method="textDocument/didClose",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(su||(c.DidCloseTextDocumentNotification=su={}));var au;(function(e){e.method="textDocument/didSave",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(au||(c.DidSaveTextDocumentNotification=au={}));var cu;(function(e){e.Manual=1,e.AfterDelay=2,e.FocusOut=3})(cu||(c.TextDocumentSaveReason=cu={}));var uu;(function(e){e.method="textDocument/willSave",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(uu||(c.WillSaveTextDocumentNotification=uu={}));var lu;(function(e){e.method="textDocument/willSaveWaitUntil",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(lu||(c.WillSaveTextDocumentWaitUntilRequest=lu={}));var du;(function(e){e.method="workspace/didChangeWatchedFiles",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolNotificationType(e.method)})(du||(c.DidChangeWatchedFilesNotification=du={}));var fu;(function(e){e.Created=1,e.Changed=2,e.Deleted=3})(fu||(c.FileChangeType=fu={}));var hu;(function(e){function t(n){let r=n;return pe.objectLiteral(r)&&(Ac.URI.is(r.baseUri)||Ac.WorkspaceFolder.is(r.baseUri))&&pe.string(r.pattern)}e.is=t})(hu||(c.RelativePattern=hu={}));var gu;(function(e){e.Create=1,e.Change=2,e.Delete=4})(gu||(c.WatchKind=gu={}));var mu;(function(e){e.method="textDocument/publishDiagnostics",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolNotificationType(e.method)})(mu||(c.PublishDiagnosticsNotification=mu={}));var pu;(function(e){e.Invoked=1,e.TriggerCharacter=2,e.TriggerForIncompleteCompletions=3})(pu||(c.CompletionTriggerKind=pu={}));var yu;(function(e){e.method="textDocument/completion",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(yu||(c.CompletionRequest=yu={}));var vu;(function(e){e.method="completionItem/resolve",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(vu||(c.CompletionResolveRequest=vu={}));var bu;(function(e){e.method="textDocument/hover",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(bu||(c.HoverRequest=bu={}));var Ru;(function(e){e.Invoked=1,e.TriggerCharacter=2,e.ContentChange=3})(Ru||(c.SignatureHelpTriggerKind=Ru={}));var Du;(function(e){e.method="textDocument/signatureHelp",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Du||(c.SignatureHelpRequest=Du={}));var _u;(function(e){e.method="textDocument/definition",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(_u||(c.DefinitionRequest=_u={}));var Tu;(function(e){e.method="textDocument/references",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Tu||(c.ReferencesRequest=Tu={}));var Eu;(function(e){e.method="textDocument/documentHighlight",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Eu||(c.DocumentHighlightRequest=Eu={}));var Cu;(function(e){e.method="textDocument/documentSymbol",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Cu||(c.DocumentSymbolRequest=Cu={}));var Su;(function(e){e.method="textDocument/codeAction",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Su||(c.CodeActionRequest=Su={}));var Pu;(function(e){e.method="codeAction/resolve",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Pu||(c.CodeActionResolveRequest=Pu={}));var wu;(function(e){e.method="workspace/symbol",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(wu||(c.WorkspaceSymbolRequest=wu={}));var ku;(function(e){e.method="workspaceSymbol/resolve",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(ku||(c.WorkspaceSymbolResolveRequest=ku={}));var qu;(function(e){e.method="textDocument/codeLens",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(qu||(c.CodeLensRequest=qu={}));var Ou;(function(e){e.method="codeLens/resolve",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Ou||(c.CodeLensResolveRequest=Ou={}));var Nu;(function(e){e.method="workspace/codeLens/refresh",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolRequestType0(e.method)})(Nu||(c.CodeLensRefreshRequest=Nu={}));var Mu;(function(e){e.method="textDocument/documentLink",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Mu||(c.DocumentLinkRequest=Mu={}));var Iu;(function(e){e.method="documentLink/resolve",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Iu||(c.DocumentLinkResolveRequest=Iu={}));var Lu;(function(e){e.method="textDocument/formatting",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Lu||(c.DocumentFormattingRequest=Lu={}));var Au;(function(e){e.method="textDocument/rangeFormatting",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Au||(c.DocumentRangeFormattingRequest=Au={}));var xu;(function(e){e.method="textDocument/rangesFormatting",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(xu||(c.DocumentRangesFormattingRequest=xu={}));var ju;(function(e){e.method="textDocument/onTypeFormatting",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(ju||(c.DocumentOnTypeFormattingRequest=ju={}));var Fu;(function(e){e.Identifier=1})(Fu||(c.PrepareSupportDefaultBehavior=Fu={}));var Wu;(function(e){e.method="textDocument/rename",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Wu||(c.RenameRequest=Wu={}));var Hu;(function(e){e.method="textDocument/prepareRename",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Hu||(c.PrepareRenameRequest=Hu={}));var Uu;(function(e){e.method="workspace/executeCommand",e.messageDirection=_.MessageDirection.clientToServer,e.type=new _.ProtocolRequestType(e.method)})(Uu||(c.ExecuteCommandRequest=Uu={}));var Bu;(function(e){e.method="workspace/applyEdit",e.messageDirection=_.MessageDirection.serverToClient,e.type=new _.ProtocolRequestType("workspace/applyEdit")})(Bu||(c.ApplyWorkspaceEditRequest=Bu={}))});var Yu=w(kr=>{"use strict";Object.defineProperty(kr,"__esModule",{value:!0});kr.createProtocolConnection=void 0;var Xu=Et();function mf(e,t,n,r){return Xu.ConnectionStrategy.is(r)&&(r={connectionStrategy:r}),(0,Xu.createMessageConnection)(e,t,n,r)}kr.createProtocolConnection=mf});var Ku=w(Se=>{"use strict";var pf=Se&&Se.__createBinding||(Object.create?function(e,t,n,r){r===void 0&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);(!i||("get"in i?!t.__esModule:i.writable||i.configurable))&&(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){r===void 0&&(r=n),e[r]=t[n]}),qr=Se&&Se.__exportStar||function(e,t){for(var n in e)n!=="default"&&!Object.prototype.hasOwnProperty.call(t,n)&&pf(t,e,n)};Object.defineProperty(Se,"__esModule",{value:!0});Se.LSPErrorCodes=Se.createProtocolConnection=void 0;qr(Et(),Se);qr(hr(),Se);qr(se(),Se);qr(Qu(),Se);var yf=Yu();Object.defineProperty(Se,"createProtocolConnection",{enumerable:!0,get:function(){return yf.createProtocolConnection}});var Ju;(function(e){e.lspReservedErrorRangeStart=-32899,e.RequestFailed=-32803,e.ServerCancelled=-32802,e.ContentModified=-32801,e.RequestCancelled=-32800,e.lspReservedErrorRangeEnd=-32800})(Ju||(Se.LSPErrorCodes=Ju={}))});var fe=w(Ge=>{"use strict";var vf=Ge&&Ge.__createBinding||(Object.create?function(e,t,n,r){r===void 0&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);(!i||("get"in i?!t.__esModule:i.writable||i.configurable))&&(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){r===void 0&&(r=n),e[r]=t[n]}),Zu=Ge&&Ge.__exportStar||function(e,t){for(var n in e)n!=="default"&&!Object.prototype.hasOwnProperty.call(t,n)&&vf(t,e,n)};Object.defineProperty(Ge,"__esModule",{value:!0});Ge.createProtocolConnection=void 0;var bf=Eo();Zu(Eo(),Ge);Zu(Ku(),Ge);function Rf(e,t,n,r){return(0,bf.createMessageConnection)(e,t,n,r)}Ge.createProtocolConnection=Rf});var Ho=w(Me=>{"use strict";Object.defineProperty(Me,"__esModule",{value:!0});Me.generateUuid=Me.parse=Me.isUUID=Me.v4=Me.empty=void 0;var Dn=class{constructor(t){this._value=t}asHex(){return this._value}equals(t){return this.asHex()===t.asHex()}},_n=class e extends Dn{static _oneOf(t){return t[Math.floor(t.length*Math.random())]}static _randomHex(){return e._oneOf(e._chars)}constructor(){super([e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),"-",e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),"-","4",e._randomHex(),e._randomHex(),e._randomHex(),"-",e._oneOf(e._timeHighBits),e._randomHex(),e._randomHex(),e._randomHex(),"-",e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex(),e._randomHex()].join(""))}};_n._chars=["0","1","2","3","4","5","6","6","7","8","9","a","b","c","d","e","f"];_n._timeHighBits=["8","9","a","b"];Me.empty=new Dn("00000000-0000-0000-0000-000000000000");function el(){return new _n}Me.v4=el;var Df=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;function tl(e){return Df.test(e)}Me.isUUID=tl;function _f(e){if(!tl(e))throw new Error("invalid uuid");return new Dn(e)}Me.parse=_f;function Tf(){return el().asHex()}Me.generateUuid=Tf});var nl=w(gt=>{"use strict";Object.defineProperty(gt,"__esModule",{value:!0});gt.attachPartialResult=gt.ProgressFeature=gt.attachWorkDone=void 0;var ht=fe(),Ef=Ho(),St=class e{constructor(t,n){this._connection=t,this._token=n,e.Instances.set(this._token,this)}begin(t,n,r,i){let u={kind:"begin",title:t,percentage:n,message:r,cancellable:i};this._connection.sendProgress(ht.WorkDoneProgress.type,this._token,u)}report(t,n){let r={kind:"report"};typeof t=="number"?(r.percentage=t,n!==void 0&&(r.message=n)):r.message=t,this._connection.sendProgress(ht.WorkDoneProgress.type,this._token,r)}done(){e.Instances.delete(this._token),this._connection.sendProgress(ht.WorkDoneProgress.type,this._token,{kind:"end"})}};St.Instances=new Map;var Or=class extends St{constructor(t,n){super(t,n),this._source=new ht.CancellationTokenSource}get token(){return this._source.token}done(){this._source.dispose(),super.done()}cancel(){this._source.cancel()}},Tn=class{constructor(){}begin(){}report(){}done(){}},Nr=class extends Tn{constructor(){super(),this._source=new ht.CancellationTokenSource}get token(){return this._source.token}done(){this._source.dispose()}cancel(){this._source.cancel()}};function Cf(e,t){if(t===void 0||t.workDoneToken===void 0)return new Tn;let n=t.workDoneToken;return delete t.workDoneToken,new St(e,n)}gt.attachWorkDone=Cf;var Sf=e=>class extends e{constructor(){super(),this._progressSupported=!1}initialize(t){super.initialize(t),t?.window?.workDoneProgress===!0&&(this._progressSupported=!0,this.connection.onNotification(ht.WorkDoneProgressCancelNotification.type,n=>{let r=St.Instances.get(n.token);(r instanceof Or||r instanceof Nr)&&r.cancel()}))}attachWorkDoneProgress(t){return t===void 0?new Tn:new St(this.connection,t)}createWorkDoneProgress(){if(this._progressSupported){let t=(0,Ef.generateUuid)();return this.connection.sendRequest(ht.WorkDoneProgressCreateRequest.type,{token:t}).then(()=>new Or(this.connection,t))}else return Promise.resolve(new Nr)}};gt.ProgressFeature=Sf;var Uo;(function(e){e.type=new ht.ProgressType})(Uo||(Uo={}));var Bo=class{constructor(t,n){this._connection=t,this._token=n}report(t){this._connection.sendProgress(Uo.type,this._token,t)}};function Pf(e,t){if(t===void 0||t.partialResultToken===void 0)return;let n=t.partialResultToken;return delete t.partialResultToken,new Bo(e,n)}gt.attachPartialResult=Pf});var rl=w(Mr=>{"use strict";Object.defineProperty(Mr,"__esModule",{value:!0});Mr.ConfigurationFeature=void 0;var wf=fe(),kf=$n(),qf=e=>class extends e{getConfiguration(t){return t?kf.string(t)?this._getConfiguration({section:t}):this._getConfiguration(t):this._getConfiguration({})}_getConfiguration(t){let n={items:Array.isArray(t)?t:[t]};return this.connection.sendRequest(wf.ConfigurationRequest.type,n).then(r=>Array.isArray(r)?Array.isArray(t)?r:r[0]:Array.isArray(t)?[]:null)}};Mr.ConfigurationFeature=qf});var il=w(Lr=>{"use strict";Object.defineProperty(Lr,"__esModule",{value:!0});Lr.WorkspaceFoldersFeature=void 0;var Ir=fe(),Of=e=>class extends e{constructor(){super(),this._notificationIsAutoRegistered=!1}initialize(t){super.initialize(t);let n=t.workspace;n&&n.workspaceFolders&&(this._onDidChangeWorkspaceFolders=new Ir.Emitter,this.connection.onNotification(Ir.DidChangeWorkspaceFoldersNotification.type,r=>{this._onDidChangeWorkspaceFolders.fire(r.event)}))}fillServerCapabilities(t){super.fillServerCapabilities(t);let n=t.workspace?.workspaceFolders?.changeNotifications;this._notificationIsAutoRegistered=n===!0||typeof n=="string"}getWorkspaceFolders(){return this.connection.sendRequest(Ir.WorkspaceFoldersRequest.type)}get onDidChangeWorkspaceFolders(){if(!this._onDidChangeWorkspaceFolders)throw new Error("Client doesn't support sending workspace folder change events.");return!this._notificationIsAutoRegistered&&!this._unregistration&&(this._unregistration=this.connection.client.register(Ir.DidChangeWorkspaceFoldersNotification.type)),this._onDidChangeWorkspaceFolders.event}};Lr.WorkspaceFoldersFeature=Of});var ol=w(Ar=>{"use strict";Object.defineProperty(Ar,"__esModule",{value:!0});Ar.CallHierarchyFeature=void 0;var $o=fe(),Nf=e=>class extends e{get callHierarchy(){return{onPrepare:t=>this.connection.onRequest($o.CallHierarchyPrepareRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n),void 0)),onIncomingCalls:t=>{let n=$o.CallHierarchyIncomingCallsRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))},onOutgoingCalls:t=>{let n=$o.CallHierarchyOutgoingCallsRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))}}}};Ar.CallHierarchyFeature=Nf});var Vo=w(mt=>{"use strict";Object.defineProperty(mt,"__esModule",{value:!0});mt.SemanticTokensBuilder=mt.SemanticTokensDiff=mt.SemanticTokensFeature=void 0;var xr=fe(),Mf=e=>class extends e{get semanticTokens(){return{refresh:()=>this.connection.sendRequest(xr.SemanticTokensRefreshRequest.type),on:t=>{let n=xr.SemanticTokensRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))},onDelta:t=>{let n=xr.SemanticTokensDeltaRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))},onRange:t=>{let n=xr.SemanticTokensRangeRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))}}}};mt.SemanticTokensFeature=Mf;var jr=class{constructor(t,n){this.originalSequence=t,this.modifiedSequence=n}computeDiff(){let t=this.originalSequence.length,n=this.modifiedSequence.length,r=0;for(;r<n&&r<t&&this.originalSequence[r]===this.modifiedSequence[r];)r++;if(r<n&&r<t){let i=t-1,u=n-1;for(;i>=r&&u>=r&&this.originalSequence[i]===this.modifiedSequence[u];)i--,u--;(i<r||u<r)&&(i++,u++);let h=i-r+1,b=this.modifiedSequence.slice(r,u+1);return b.length===1&&b[0]===this.originalSequence[i]?[{start:r,deleteCount:h-1}]:[{start:r,deleteCount:h,data:b}]}else return r<n?[{start:r,deleteCount:0,data:this.modifiedSequence.slice(r)}]:r<t?[{start:r,deleteCount:t-r}]:[]}};mt.SemanticTokensDiff=jr;var zo=class{constructor(){this._prevData=void 0,this.initialize()}initialize(){this._id=Date.now(),this._prevLine=0,this._prevChar=0,this._data=[],this._dataLen=0}push(t,n,r,i,u){let h=t,b=n;this._dataLen>0&&(h-=this._prevLine,h===0&&(b-=this._prevChar)),this._data[this._dataLen++]=h,this._data[this._dataLen++]=b,this._data[this._dataLen++]=r,this._data[this._dataLen++]=i,this._data[this._dataLen++]=u,this._prevLine=t,this._prevChar=n}get id(){return this._id.toString()}previousResult(t){this.id===t&&(this._prevData=this._data),this.initialize()}build(){return this._prevData=void 0,{resultId:this.id,data:this._data}}canBuildEdits(){return this._prevData!==void 0}buildEdits(){return this._prevData!==void 0?{resultId:this.id,edits:new jr(this._prevData,this._data).computeDiff()}:this.build()}};mt.SemanticTokensBuilder=zo});var sl=w(Fr=>{"use strict";Object.defineProperty(Fr,"__esModule",{value:!0});Fr.ShowDocumentFeature=void 0;var If=fe(),Lf=e=>class extends e{showDocument(t){return this.connection.sendRequest(If.ShowDocumentRequest.type,t)}};Fr.ShowDocumentFeature=Lf});var al=w(Wr=>{"use strict";Object.defineProperty(Wr,"__esModule",{value:!0});Wr.FileOperationsFeature=void 0;var nn=fe(),Af=e=>class extends e{onDidCreateFiles(t){return this.connection.onNotification(nn.DidCreateFilesNotification.type,n=>{t(n)})}onDidRenameFiles(t){return this.connection.onNotification(nn.DidRenameFilesNotification.type,n=>{t(n)})}onDidDeleteFiles(t){return this.connection.onNotification(nn.DidDeleteFilesNotification.type,n=>{t(n)})}onWillCreateFiles(t){return this.connection.onRequest(nn.WillCreateFilesRequest.type,(n,r)=>t(n,r))}onWillRenameFiles(t){return this.connection.onRequest(nn.WillRenameFilesRequest.type,(n,r)=>t(n,r))}onWillDeleteFiles(t){return this.connection.onRequest(nn.WillDeleteFilesRequest.type,(n,r)=>t(n,r))}};Wr.FileOperationsFeature=Af});var cl=w(Hr=>{"use strict";Object.defineProperty(Hr,"__esModule",{value:!0});Hr.LinkedEditingRangeFeature=void 0;var xf=fe(),jf=e=>class extends e{onLinkedEditingRange(t){return this.connection.onRequest(xf.LinkedEditingRangeRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n),void 0))}};Hr.LinkedEditingRangeFeature=jf});var ul=w(Ur=>{"use strict";Object.defineProperty(Ur,"__esModule",{value:!0});Ur.TypeHierarchyFeature=void 0;var Go=fe(),Ff=e=>class extends e{get typeHierarchy(){return{onPrepare:t=>this.connection.onRequest(Go.TypeHierarchyPrepareRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n),void 0)),onSupertypes:t=>{let n=Go.TypeHierarchySupertypesRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))},onSubtypes:t=>{let n=Go.TypeHierarchySubtypesRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))}}}};Ur.TypeHierarchyFeature=Ff});var dl=w(Br=>{"use strict";Object.defineProperty(Br,"__esModule",{value:!0});Br.InlineValueFeature=void 0;var ll=fe(),Wf=e=>class extends e{get inlineValue(){return{refresh:()=>this.connection.sendRequest(ll.InlineValueRefreshRequest.type),on:t=>this.connection.onRequest(ll.InlineValueRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n)))}}};Br.InlineValueFeature=Wf});var hl=w($r=>{"use strict";Object.defineProperty($r,"__esModule",{value:!0});$r.FoldingRangeFeature=void 0;var fl=fe(),Hf=e=>class extends e{get foldingRange(){return{refresh:()=>this.connection.sendRequest(fl.FoldingRangeRefreshRequest.type),on:t=>{let n=fl.FoldingRangeRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))}}}};$r.FoldingRangeFeature=Hf});var gl=w(zr=>{"use strict";Object.defineProperty(zr,"__esModule",{value:!0});zr.InlayHintFeature=void 0;var Qo=fe(),Uf=e=>class extends e{get inlayHint(){return{refresh:()=>this.connection.sendRequest(Qo.InlayHintRefreshRequest.type),on:t=>this.connection.onRequest(Qo.InlayHintRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n))),resolve:t=>this.connection.onRequest(Qo.InlayHintResolveRequest.type,(n,r)=>t(n,r))}}};zr.InlayHintFeature=Uf});var ml=w(Vr=>{"use strict";Object.defineProperty(Vr,"__esModule",{value:!0});Vr.DiagnosticFeature=void 0;var En=fe(),Bf=e=>class extends e{get diagnostics(){return{refresh:()=>this.connection.sendRequest(En.DiagnosticRefreshRequest.type),on:t=>this.connection.onRequest(En.DocumentDiagnosticRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n),this.attachPartialResultProgress(En.DocumentDiagnosticRequest.partialResult,n))),onWorkspace:t=>this.connection.onRequest(En.WorkspaceDiagnosticRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n),this.attachPartialResultProgress(En.WorkspaceDiagnosticRequest.partialResult,n)))}}};Vr.DiagnosticFeature=Bf});var Yo=w(Gr=>{"use strict";Object.defineProperty(Gr,"__esModule",{value:!0});Gr.TextDocuments=void 0;var Pt=fe(),Xo=class{constructor(t){this._configuration=t,this._syncedDocuments=new Map,this._onDidChangeContent=new Pt.Emitter,this._onDidOpen=new Pt.Emitter,this._onDidClose=new Pt.Emitter,this._onDidSave=new Pt.Emitter,this._onWillSave=new Pt.Emitter}get onDidOpen(){return this._onDidOpen.event}get onDidChangeContent(){return this._onDidChangeContent.event}get onWillSave(){return this._onWillSave.event}onWillSaveWaitUntil(t){this._willSaveWaitUntil=t}get onDidSave(){return this._onDidSave.event}get onDidClose(){return this._onDidClose.event}get(t){return this._syncedDocuments.get(t)}all(){return Array.from(this._syncedDocuments.values())}keys(){return Array.from(this._syncedDocuments.keys())}listen(t){t.__textDocumentSync=Pt.TextDocumentSyncKind.Incremental;let n=[];return n.push(t.onDidOpenTextDocument(r=>{let i=r.textDocument,u=this._configuration.create(i.uri,i.languageId,i.version,i.text);this._syncedDocuments.set(i.uri,u);let h=Object.freeze({document:u});this._onDidOpen.fire(h),this._onDidChangeContent.fire(h)})),n.push(t.onDidChangeTextDocument(r=>{let i=r.textDocument,u=r.contentChanges;if(u.length===0)return;let{version:h}=i;if(h==null)throw new Error(`Received document change event for ${i.uri} without valid version identifier`);let b=this._syncedDocuments.get(i.uri);b!==void 0&&(b=this._configuration.update(b,u,h),this._syncedDocuments.set(i.uri,b),this._onDidChangeContent.fire(Object.freeze({document:b})))})),n.push(t.onDidCloseTextDocument(r=>{let i=this._syncedDocuments.get(r.textDocument.uri);i!==void 0&&(this._syncedDocuments.delete(r.textDocument.uri),this._onDidClose.fire(Object.freeze({document:i})))})),n.push(t.onWillSaveTextDocument(r=>{let i=this._syncedDocuments.get(r.textDocument.uri);i!==void 0&&this._onWillSave.fire(Object.freeze({document:i,reason:r.reason}))})),n.push(t.onWillSaveTextDocumentWaitUntil((r,i)=>{let u=this._syncedDocuments.get(r.textDocument.uri);return u!==void 0&&this._willSaveWaitUntil?this._willSaveWaitUntil(Object.freeze({document:u,reason:r.reason}),i):[]})),n.push(t.onDidSaveTextDocument(r=>{let i=this._syncedDocuments.get(r.textDocument.uri);i!==void 0&&this._onDidSave.fire(Object.freeze({document:i}))})),Pt.Disposable.create(()=>{n.forEach(r=>r.dispose())})}};Gr.TextDocuments=Xo});var Ko=w(rn=>{"use strict";Object.defineProperty(rn,"__esModule",{value:!0});rn.NotebookDocuments=rn.NotebookSyncFeature=void 0;var Ie=fe(),pl=Yo(),$f=e=>class extends e{get synchronization(){return{onDidOpenNotebookDocument:t=>this.connection.onNotification(Ie.DidOpenNotebookDocumentNotification.type,n=>{t(n)}),onDidChangeNotebookDocument:t=>this.connection.onNotification(Ie.DidChangeNotebookDocumentNotification.type,n=>{t(n)}),onDidSaveNotebookDocument:t=>this.connection.onNotification(Ie.DidSaveNotebookDocumentNotification.type,n=>{t(n)}),onDidCloseNotebookDocument:t=>this.connection.onNotification(Ie.DidCloseNotebookDocumentNotification.type,n=>{t(n)})}}};rn.NotebookSyncFeature=$f;var Qr=class e{onDidOpenTextDocument(t){return this.openHandler=t,Ie.Disposable.create(()=>{this.openHandler=void 0})}openTextDocument(t){this.openHandler&&this.openHandler(t)}onDidChangeTextDocument(t){return this.changeHandler=t,Ie.Disposable.create(()=>{this.changeHandler=t})}changeTextDocument(t){this.changeHandler&&this.changeHandler(t)}onDidCloseTextDocument(t){return this.closeHandler=t,Ie.Disposable.create(()=>{this.closeHandler=void 0})}closeTextDocument(t){this.closeHandler&&this.closeHandler(t)}onWillSaveTextDocument(){return e.NULL_DISPOSE}onWillSaveTextDocumentWaitUntil(){return e.NULL_DISPOSE}onDidSaveTextDocument(){return e.NULL_DISPOSE}};Qr.NULL_DISPOSE=Object.freeze({dispose:()=>{}});var Jo=class{constructor(t){t instanceof pl.TextDocuments?this._cellTextDocuments=t:this._cellTextDocuments=new pl.TextDocuments(t),this.notebookDocuments=new Map,this.notebookCellMap=new Map,this._onDidOpen=new Ie.Emitter,this._onDidChange=new Ie.Emitter,this._onDidSave=new Ie.Emitter,this._onDidClose=new Ie.Emitter}get cellTextDocuments(){return this._cellTextDocuments}getCellTextDocument(t){return this._cellTextDocuments.get(t.document)}getNotebookDocument(t){return this.notebookDocuments.get(t)}getNotebookCell(t){let n=this.notebookCellMap.get(t);return n&&n[0]}findNotebookDocumentForCell(t){let n=typeof t=="string"?t:t.document,r=this.notebookCellMap.get(n);return r&&r[1]}get onDidOpen(){return this._onDidOpen.event}get onDidSave(){return this._onDidSave.event}get onDidChange(){return this._onDidChange.event}get onDidClose(){return this._onDidClose.event}listen(t){let n=new Qr,r=[];return r.push(this.cellTextDocuments.listen(n)),r.push(t.notebooks.synchronization.onDidOpenNotebookDocument(i=>{this.notebookDocuments.set(i.notebookDocument.uri,i.notebookDocument);for(let u of i.cellTextDocuments)n.openTextDocument({textDocument:u});this.updateCellMap(i.notebookDocument),this._onDidOpen.fire(i.notebookDocument)})),r.push(t.notebooks.synchronization.onDidChangeNotebookDocument(i=>{let u=this.notebookDocuments.get(i.notebookDocument.uri);if(u===void 0)return;u.version=i.notebookDocument.version;let h=u.metadata,b=!1,P=i.change;P.metadata!==void 0&&(b=!0,u.metadata=P.metadata);let C=[],k=[],O=[],M=[];if(P.cells!==void 0){let B=P.cells;if(B.structure!==void 0){let y=B.structure.array;if(u.cells.splice(y.start,y.deleteCount,...y.cells!==void 0?y.cells:[]),B.structure.didOpen!==void 0)for(let p of B.structure.didOpen)n.openTextDocument({textDocument:p}),C.push(p.uri);if(B.structure.didClose)for(let p of B.structure.didClose)n.closeTextDocument({textDocument:p}),k.push(p.uri)}if(B.data!==void 0){let y=new Map(B.data.map(p=>[p.document,p]));for(let p=0;p<=u.cells.length;p++){let T=y.get(u.cells[p].document);if(T!==void 0){let j=u.cells.splice(p,1,T);if(O.push({old:j[0],new:T}),y.delete(T.document),y.size===0)break}}}if(B.textContent!==void 0)for(let y of B.textContent)n.changeTextDocument({textDocument:y.document,contentChanges:y.changes}),M.push(y.document.uri)}this.updateCellMap(u);let $={notebookDocument:u};b&&($.metadata={old:h,new:u.metadata});let W=[];for(let B of C)W.push(this.getNotebookCell(B));let X=[];for(let B of k)X.push(this.getNotebookCell(B));let K=[];for(let B of M)K.push(this.getNotebookCell(B));(W.length>0||X.length>0||O.length>0||K.length>0)&&($.cells={added:W,removed:X,changed:{data:O,textContent:K}}),($.metadata!==void 0||$.cells!==void 0)&&this._onDidChange.fire($)})),r.push(t.notebooks.synchronization.onDidSaveNotebookDocument(i=>{let u=this.notebookDocuments.get(i.notebookDocument.uri);u!==void 0&&this._onDidSave.fire(u)})),r.push(t.notebooks.synchronization.onDidCloseNotebookDocument(i=>{let u=this.notebookDocuments.get(i.notebookDocument.uri);if(u!==void 0){this._onDidClose.fire(u);for(let h of i.cellTextDocuments)n.closeTextDocument({textDocument:h});this.notebookDocuments.delete(i.notebookDocument.uri);for(let h of u.cells)this.notebookCellMap.delete(h.document)}})),Ie.Disposable.create(()=>{r.forEach(i=>i.dispose())})}updateCellMap(t){for(let n of t.cells)this.notebookCellMap.set(n.document,[n,t])}};rn.NotebookDocuments=Jo});var yl=w(Xr=>{"use strict";Object.defineProperty(Xr,"__esModule",{value:!0});Xr.MonikerFeature=void 0;var zf=fe(),Vf=e=>class extends e{get moniker(){return{on:t=>{let n=zf.MonikerRequest.type;return this.connection.onRequest(n,(r,i)=>t(r,i,this.attachWorkDoneProgress(r),this.attachPartialResultProgress(n,r)))}}}};Xr.MonikerFeature=Vf});var is=w(V=>{"use strict";Object.defineProperty(V,"__esModule",{value:!0});V.createConnection=V.combineFeatures=V.combineNotebooksFeatures=V.combineLanguagesFeatures=V.combineWorkspaceFeatures=V.combineWindowFeatures=V.combineClientFeatures=V.combineTracerFeatures=V.combineTelemetryFeatures=V.combineConsoleFeatures=V._NotebooksImpl=V._LanguagesImpl=V.BulkUnregistration=V.BulkRegistration=V.ErrorMessageTracker=void 0;var S=fe(),Le=$n(),es=Ho(),L=nl(),Gf=rl(),Qf=il(),Xf=ol(),Yf=Vo(),Jf=sl(),Kf=al(),Zf=cl(),eh=ul(),th=dl(),nh=hl(),rh=gl(),ih=ml(),oh=Ko(),sh=yl();function Zo(e){if(e!==null)return e}var ts=class{constructor(){this._messages=Object.create(null)}add(t){let n=this._messages[t];n||(n=0),n++,this._messages[t]=n}sendErrors(t){Object.keys(this._messages).forEach(n=>{t.window.showErrorMessage(n)})}};V.ErrorMessageTracker=ts;var Yr=class{constructor(){}rawAttach(t){this._rawConnection=t}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}fillServerCapabilities(t){}initialize(t){}error(t){this.send(S.MessageType.Error,t)}warn(t){this.send(S.MessageType.Warning,t)}info(t){this.send(S.MessageType.Info,t)}log(t){this.send(S.MessageType.Log,t)}debug(t){this.send(S.MessageType.Debug,t)}send(t,n){this._rawConnection&&this._rawConnection.sendNotification(S.LogMessageNotification.type,{type:t,message:n}).catch(()=>{(0,S.RAL)().console.error("Sending log message failed")})}},ns=class{constructor(){}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}showErrorMessage(t,...n){let r={type:S.MessageType.Error,message:t,actions:n};return this.connection.sendRequest(S.ShowMessageRequest.type,r).then(Zo)}showWarningMessage(t,...n){let r={type:S.MessageType.Warning,message:t,actions:n};return this.connection.sendRequest(S.ShowMessageRequest.type,r).then(Zo)}showInformationMessage(t,...n){let r={type:S.MessageType.Info,message:t,actions:n};return this.connection.sendRequest(S.ShowMessageRequest.type,r).then(Zo)}},vl=(0,Jf.ShowDocumentFeature)((0,L.ProgressFeature)(ns)),bl;(function(e){function t(){return new Jr}e.create=t})(bl||(V.BulkRegistration=bl={}));var Jr=class{constructor(){this._registrations=[],this._registered=new Set}add(t,n){let r=Le.string(t)?t:t.method;if(this._registered.has(r))throw new Error(`${r} is already added to this registration`);let i=es.generateUuid();this._registrations.push({id:i,method:r,registerOptions:n||{}}),this._registered.add(r)}asRegistrationParams(){return{registrations:this._registrations}}},Rl;(function(e){function t(){return new Cn(void 0,[])}e.create=t})(Rl||(V.BulkUnregistration=Rl={}));var Cn=class{constructor(t,n){this._connection=t,this._unregistrations=new Map,n.forEach(r=>{this._unregistrations.set(r.method,r)})}get isAttached(){return!!this._connection}attach(t){this._connection=t}add(t){this._unregistrations.set(t.method,t)}dispose(){let t=[];for(let r of this._unregistrations.values())t.push(r);let n={unregisterations:t};this._connection.sendRequest(S.UnregistrationRequest.type,n).catch(()=>{this._connection.console.info("Bulk unregistration failed.")})}disposeSingle(t){let n=Le.string(t)?t:t.method,r=this._unregistrations.get(n);if(!r)return!1;let i={unregisterations:[r]};return this._connection.sendRequest(S.UnregistrationRequest.type,i).then(()=>{this._unregistrations.delete(n)},u=>{this._connection.console.info(`Un-registering request handler for ${r.id} failed.`)}),!0}},Kr=class{attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}register(t,n,r){return t instanceof Jr?this.registerMany(t):t instanceof Cn?this.registerSingle1(t,n,r):this.registerSingle2(t,n)}registerSingle1(t,n,r){let i=Le.string(n)?n:n.method,u=es.generateUuid(),h={registrations:[{id:u,method:i,registerOptions:r||{}}]};return t.isAttached||t.attach(this.connection),this.connection.sendRequest(S.RegistrationRequest.type,h).then(b=>(t.add({id:u,method:i}),t),b=>(this.connection.console.info(`Registering request handler for ${i} failed.`),Promise.reject(b)))}registerSingle2(t,n){let r=Le.string(t)?t:t.method,i=es.generateUuid(),u={registrations:[{id:i,method:r,registerOptions:n||{}}]};return this.connection.sendRequest(S.RegistrationRequest.type,u).then(h=>S.Disposable.create(()=>{this.unregisterSingle(i,r).catch(()=>{this.connection.console.info(`Un-registering capability with id ${i} failed.`)})}),h=>(this.connection.console.info(`Registering request handler for ${r} failed.`),Promise.reject(h)))}unregisterSingle(t,n){let r={unregisterations:[{id:t,method:n}]};return this.connection.sendRequest(S.UnregistrationRequest.type,r).catch(()=>{this.connection.console.info(`Un-registering request handler for ${t} failed.`)})}registerMany(t){let n=t.asRegistrationParams();return this.connection.sendRequest(S.RegistrationRequest.type,n).then(()=>new Cn(this._connection,n.registrations.map(r=>({id:r.id,method:r.method}))),r=>(this.connection.console.info("Bulk registration failed."),Promise.reject(r)))}},rs=class{constructor(){}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}applyEdit(t){function n(i){return i&&!!i.edit}let r=n(t)?t:{edit:t};return this.connection.sendRequest(S.ApplyWorkspaceEditRequest.type,r)}},Dl=(0,Kf.FileOperationsFeature)((0,Qf.WorkspaceFoldersFeature)((0,Gf.ConfigurationFeature)(rs))),Zr=class{constructor(){this._trace=S.Trace.Off}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}set trace(t){this._trace=t}log(t,n){this._trace!==S.Trace.Off&&this.connection.sendNotification(S.LogTraceNotification.type,{message:t,verbose:this._trace===S.Trace.Verbose?n:void 0}).catch(()=>{})}},ei=class{constructor(){}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}logEvent(t){this.connection.sendNotification(S.TelemetryEventNotification.type,t).catch(()=>{this.connection.console.log("Sending TelemetryEventNotification failed")})}},ti=class{constructor(){}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}attachWorkDoneProgress(t){return(0,L.attachWorkDone)(this.connection,t)}attachPartialResultProgress(t,n){return(0,L.attachPartialResult)(this.connection,n)}};V._LanguagesImpl=ti;var _l=(0,nh.FoldingRangeFeature)((0,sh.MonikerFeature)((0,ih.DiagnosticFeature)((0,rh.InlayHintFeature)((0,th.InlineValueFeature)((0,eh.TypeHierarchyFeature)((0,Zf.LinkedEditingRangeFeature)((0,Yf.SemanticTokensFeature)((0,Xf.CallHierarchyFeature)(ti))))))))),ni=class{constructor(){}attach(t){this._connection=t}get connection(){if(!this._connection)throw new Error("Remote is not attached to a connection yet.");return this._connection}initialize(t){}fillServerCapabilities(t){}attachWorkDoneProgress(t){return(0,L.attachWorkDone)(this.connection,t)}attachPartialResultProgress(t,n){return(0,L.attachPartialResult)(this.connection,n)}};V._NotebooksImpl=ni;var Tl=(0,oh.NotebookSyncFeature)(ni);function El(e,t){return function(n){return t(e(n))}}V.combineConsoleFeatures=El;function Cl(e,t){return function(n){return t(e(n))}}V.combineTelemetryFeatures=Cl;function Sl(e,t){return function(n){return t(e(n))}}V.combineTracerFeatures=Sl;function Pl(e,t){return function(n){return t(e(n))}}V.combineClientFeatures=Pl;function wl(e,t){return function(n){return t(e(n))}}V.combineWindowFeatures=wl;function kl(e,t){return function(n){return t(e(n))}}V.combineWorkspaceFeatures=kl;function ql(e,t){return function(n){return t(e(n))}}V.combineLanguagesFeatures=ql;function Ol(e,t){return function(n){return t(e(n))}}V.combineNotebooksFeatures=Ol;function ah(e,t){function n(i,u,h){return i&&u?h(i,u):i||u}return{__brand:"features",console:n(e.console,t.console,El),tracer:n(e.tracer,t.tracer,Sl),telemetry:n(e.telemetry,t.telemetry,Cl),client:n(e.client,t.client,Pl),window:n(e.window,t.window,wl),workspace:n(e.workspace,t.workspace,kl),languages:n(e.languages,t.languages,ql),notebooks:n(e.notebooks,t.notebooks,Ol)}}V.combineFeatures=ah;function ch(e,t,n){let r=n&&n.console?new(n.console(Yr)):new Yr,i=e(r);r.rawAttach(i);let u=n&&n.tracer?new(n.tracer(Zr)):new Zr,h=n&&n.telemetry?new(n.telemetry(ei)):new ei,b=n&&n.client?new(n.client(Kr)):new Kr,P=n&&n.window?new(n.window(vl)):new vl,C=n&&n.workspace?new(n.workspace(Dl)):new Dl,k=n&&n.languages?new(n.languages(_l)):new _l,O=n&&n.notebooks?new(n.notebooks(Tl)):new Tl,M=[r,u,h,b,P,C,k,O];function $(y){return y instanceof Promise?y:Le.thenable(y)?new Promise((p,T)=>{y.then(j=>p(j),j=>T(j))}):Promise.resolve(y)}let W,X,K,B={listen:()=>i.listen(),sendRequest:(y,...p)=>i.sendRequest(Le.string(y)?y:y.method,...p),onRequest:(y,p)=>i.onRequest(y,p),sendNotification:(y,p)=>{let T=Le.string(y)?y:y.method;return i.sendNotification(T,p)},onNotification:(y,p)=>i.onNotification(y,p),onProgress:i.onProgress,sendProgress:i.sendProgress,onInitialize:y=>(X=y,{dispose:()=>{X=void 0}}),onInitialized:y=>i.onNotification(S.InitializedNotification.type,y),onShutdown:y=>(W=y,{dispose:()=>{W=void 0}}),onExit:y=>(K=y,{dispose:()=>{K=void 0}}),get console(){return r},get telemetry(){return h},get tracer(){return u},get client(){return b},get window(){return P},get workspace(){return C},get languages(){return k},get notebooks(){return O},onDidChangeConfiguration:y=>i.onNotification(S.DidChangeConfigurationNotification.type,y),onDidChangeWatchedFiles:y=>i.onNotification(S.DidChangeWatchedFilesNotification.type,y),__textDocumentSync:void 0,onDidOpenTextDocument:y=>i.onNotification(S.DidOpenTextDocumentNotification.type,y),onDidChangeTextDocument:y=>i.onNotification(S.DidChangeTextDocumentNotification.type,y),onDidCloseTextDocument:y=>i.onNotification(S.DidCloseTextDocumentNotification.type,y),onWillSaveTextDocument:y=>i.onNotification(S.WillSaveTextDocumentNotification.type,y),onWillSaveTextDocumentWaitUntil:y=>i.onRequest(S.WillSaveTextDocumentWaitUntilRequest.type,y),onDidSaveTextDocument:y=>i.onNotification(S.DidSaveTextDocumentNotification.type,y),sendDiagnostics:y=>i.sendNotification(S.PublishDiagnosticsNotification.type,y),onHover:y=>i.onRequest(S.HoverRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),onCompletion:y=>i.onRequest(S.CompletionRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onCompletionResolve:y=>i.onRequest(S.CompletionResolveRequest.type,y),onSignatureHelp:y=>i.onRequest(S.SignatureHelpRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),onDeclaration:y=>i.onRequest(S.DeclarationRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onDefinition:y=>i.onRequest(S.DefinitionRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onTypeDefinition:y=>i.onRequest(S.TypeDefinitionRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onImplementation:y=>i.onRequest(S.ImplementationRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onReferences:y=>i.onRequest(S.ReferencesRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onDocumentHighlight:y=>i.onRequest(S.DocumentHighlightRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onDocumentSymbol:y=>i.onRequest(S.DocumentSymbolRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onWorkspaceSymbol:y=>i.onRequest(S.WorkspaceSymbolRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onWorkspaceSymbolResolve:y=>i.onRequest(S.WorkspaceSymbolResolveRequest.type,y),onCodeAction:y=>i.onRequest(S.CodeActionRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onCodeActionResolve:y=>i.onRequest(S.CodeActionResolveRequest.type,(p,T)=>y(p,T)),onCodeLens:y=>i.onRequest(S.CodeLensRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onCodeLensResolve:y=>i.onRequest(S.CodeLensResolveRequest.type,(p,T)=>y(p,T)),onDocumentFormatting:y=>i.onRequest(S.DocumentFormattingRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),onDocumentRangeFormatting:y=>i.onRequest(S.DocumentRangeFormattingRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),onDocumentOnTypeFormatting:y=>i.onRequest(S.DocumentOnTypeFormattingRequest.type,(p,T)=>y(p,T)),onRenameRequest:y=>i.onRequest(S.RenameRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),onPrepareRename:y=>i.onRequest(S.PrepareRenameRequest.type,(p,T)=>y(p,T)),onDocumentLinks:y=>i.onRequest(S.DocumentLinkRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onDocumentLinkResolve:y=>i.onRequest(S.DocumentLinkResolveRequest.type,(p,T)=>y(p,T)),onDocumentColor:y=>i.onRequest(S.DocumentColorRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onColorPresentation:y=>i.onRequest(S.ColorPresentationRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onFoldingRanges:y=>i.onRequest(S.FoldingRangeRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onSelectionRanges:y=>i.onRequest(S.SelectionRangeRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),(0,L.attachPartialResult)(i,p))),onExecuteCommand:y=>i.onRequest(S.ExecuteCommandRequest.type,(p,T)=>y(p,T,(0,L.attachWorkDone)(i,p),void 0)),dispose:()=>i.dispose()};for(let y of M)y.attach(B);return i.onRequest(S.InitializeRequest.type,y=>{t.initialize(y),Le.string(y.trace)&&(u.trace=S.Trace.fromString(y.trace));for(let p of M)p.initialize(y.capabilities);if(X){let p=X(y,new S.CancellationTokenSource().token,(0,L.attachWorkDone)(i,y),void 0);return $(p).then(T=>{if(T instanceof S.ResponseError)return T;let j=T;j||(j={capabilities:{}});let ee=j.capabilities;ee||(ee={},j.capabilities=ee),ee.textDocumentSync===void 0||ee.textDocumentSync===null?ee.textDocumentSync=Le.number(B.__textDocumentSync)?B.__textDocumentSync:S.TextDocumentSyncKind.None:!Le.number(ee.textDocumentSync)&&!Le.number(ee.textDocumentSync.change)&&(ee.textDocumentSync.change=Le.number(B.__textDocumentSync)?B.__textDocumentSync:S.TextDocumentSyncKind.None);for(let ce of M)ce.fillServerCapabilities(ee);return j})}else{let p={capabilities:{textDocumentSync:S.TextDocumentSyncKind.None}};for(let T of M)T.fillServerCapabilities(p.capabilities);return p}}),i.onRequest(S.ShutdownRequest.type,()=>{if(t.shutdownReceived=!0,W)return W(new S.CancellationTokenSource().token)}),i.onNotification(S.ExitNotification.type,()=>{try{K&&K()}finally{t.shutdownReceived?t.exit(0):t.exit(1)}}),i.onNotification(S.SetTraceNotification.type,y=>{u.trace=S.Trace.fromString(y.value)}),B}V.createConnection=ch});var Nl=w(Pe=>{"use strict";Object.defineProperty(Pe,"__esModule",{value:!0});Pe.resolveModulePath=Pe.FileSystem=Pe.resolveGlobalYarnPath=Pe.resolveGlobalNodePath=Pe.resolve=Pe.uriToFilePath=void 0;var uh=require("url"),Be=require("path"),os=require("fs"),us=require("child_process");function lh(e){let t=uh.parse(e);if(t.protocol!=="file:"||!t.path)return;let n=t.path.split("/");for(var r=0,i=n.length;r<i;r++)n[r]=decodeURIComponent(n[r]);if(process.platform==="win32"&&n.length>1){let u=n[0],h=n[1];u.length===0&&h.length>1&&h[1]===":"&&n.shift()}return Be.normalize(n.join("/"))}Pe.uriToFilePath=lh;function ss(){return process.platform==="win32"}function ri(e,t,n,r){let i="NODE_PATH",u=["var p = process;","p.on('message',function(m){","if(m.c==='e'){","p.exit(0);","}","else if(m.c==='rs'){","try{","var r=require.resolve(m.a);","p.send({c:'r',s:true,r:r});","}","catch(err){","p.send({c:'r',s:false});","}","}","});"].join("");return new Promise((h,b)=>{let P=process.env,C=Object.create(null);Object.keys(P).forEach(k=>C[k]=P[k]),t&&os.existsSync(t)&&(C[i]?C[i]=t+Be.delimiter+C[i]:C[i]=t,r&&r(`NODE_PATH value is: ${C[i]}`)),C.ELECTRON_RUN_AS_NODE="1";try{let k=(0,us.fork)("",[],{cwd:n,env:C,execArgv:["-e",u]});if(k.pid===void 0){b(new Error(`Starting process to resolve node module  ${e} failed`));return}k.on("error",M=>{b(M)}),k.on("message",M=>{M.c==="r"&&(k.send({c:"e"}),M.s?h(M.r):b(new Error(`Failed to resolve module: ${e}`)))});let O={c:"rs",a:e};k.send(O)}catch(k){b(k)}})}Pe.resolve=ri;function as(e){let t="npm",n=Object.create(null);Object.keys(process.env).forEach(u=>n[u]=process.env[u]),n.NO_UPDATE_NOTIFIER="true";let r={encoding:"utf8",env:n};ss()&&(t="npm.cmd",r.shell=!0);let i=()=>{};try{process.on("SIGPIPE",i);let u=(0,us.spawnSync)(t,["config","get","prefix"],r).stdout;if(!u){e&&e("'npm config get prefix' didn't return a value.");return}let h=u.trim();return e&&e(`'npm config get prefix' value is: ${h}`),h.length>0?ss()?Be.join(h,"node_modules"):Be.join(h,"lib","node_modules"):void 0}catch{return}finally{process.removeListener("SIGPIPE",i)}}Pe.resolveGlobalNodePath=as;function dh(e){let t="yarn",n={encoding:"utf8"};ss()&&(t="yarn.cmd",n.shell=!0);let r=()=>{};try{process.on("SIGPIPE",r);let i=(0,us.spawnSync)(t,["global","dir","--json"],n),u=i.stdout;if(!u){e&&(e("'yarn global dir' didn't return a value."),i.stderr&&e(i.stderr));return}let h=u.trim().split(/\r?\n/);for(let b of h)try{let P=JSON.parse(b);if(P.type==="log")return Be.join(P.data,"node_modules")}catch{}return}catch{return}finally{process.removeListener("SIGPIPE",r)}}Pe.resolveGlobalYarnPath=dh;var cs;(function(e){let t;function n(){return t!==void 0||(process.platform==="win32"?t=!1:t=!os.existsSync(__filename.toUpperCase())||!os.existsSync(__filename.toLowerCase())),t}e.isCaseSensitive=n;function r(i,u){return n()?Be.normalize(u).indexOf(Be.normalize(i))===0:Be.normalize(u).toLowerCase().indexOf(Be.normalize(i).toLowerCase())===0}e.isParent=r})(cs||(Pe.FileSystem=cs={}));function fh(e,t,n,r){return n?(Be.isAbsolute(n)||(n=Be.join(e,n)),ri(t,n,n,r).then(i=>cs.isParent(n,i)?i:Promise.reject(new Error(`Failed to load ${t} from node path location.`))).then(void 0,i=>ri(t,as(r),e,r))):ri(t,as(r),e,r)}Pe.resolveModulePath=fh});var ls=w((nm,Ml)=>{"use strict";Ml.exports=fe()});var Il=w(ii=>{"use strict";Object.defineProperty(ii,"__esModule",{value:!0});ii.InlineCompletionFeature=void 0;var hh=fe(),gh=e=>class extends e{get inlineCompletion(){return{on:t=>this.connection.onRequest(hh.InlineCompletionRequest.type,(n,r)=>t(n,r,this.attachWorkDoneProgress(n)))}}};ii.InlineCompletionFeature=gh});var xl=w(De=>{"use strict";var mh=De&&De.__createBinding||(Object.create?function(e,t,n,r){r===void 0&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);(!i||("get"in i?!t.__esModule:i.writable||i.configurable))&&(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){r===void 0&&(r=n),e[r]=t[n]}),Al=De&&De.__exportStar||function(e,t){for(var n in e)n!=="default"&&!Object.prototype.hasOwnProperty.call(t,n)&&mh(t,e,n)};Object.defineProperty(De,"__esModule",{value:!0});De.ProposedFeatures=De.NotebookDocuments=De.TextDocuments=De.SemanticTokensBuilder=void 0;var ph=Vo();Object.defineProperty(De,"SemanticTokensBuilder",{enumerable:!0,get:function(){return ph.SemanticTokensBuilder}});var yh=Il();Al(fe(),De);var vh=Yo();Object.defineProperty(De,"TextDocuments",{enumerable:!0,get:function(){return vh.TextDocuments}});var bh=Ko();Object.defineProperty(De,"NotebookDocuments",{enumerable:!0,get:function(){return bh.NotebookDocuments}});Al(is(),De);var Ll;(function(e){e.all={__brand:"features",languages:yh.InlineCompletionFeature}})(Ll||(De.ProposedFeatures=Ll={}))});var Bl=w(Ae=>{"use strict";var Rh=Ae&&Ae.__createBinding||(Object.create?function(e,t,n,r){r===void 0&&(r=n);var i=Object.getOwnPropertyDescriptor(t,n);(!i||("get"in i?!t.__esModule:i.writable||i.configurable))&&(i={enumerable:!0,get:function(){return t[n]}}),Object.defineProperty(e,r,i)}:function(e,t,n,r){r===void 0&&(r=n),e[r]=t[n]}),Hl=Ae&&Ae.__exportStar||function(e,t){for(var n in e)n!=="default"&&!Object.prototype.hasOwnProperty.call(t,n)&&Rh(t,e,n)};Object.defineProperty(Ae,"__esModule",{value:!0});Ae.createConnection=Ae.Files=void 0;var jl=require("node:util"),ds=$n(),Dh=is(),Sn=Nl(),wt=ls();Hl(ls(),Ae);Hl(xl(),Ae);var Fl;(function(e){e.uriToFilePath=Sn.uriToFilePath,e.resolveGlobalNodePath=Sn.resolveGlobalNodePath,e.resolveGlobalYarnPath=Sn.resolveGlobalYarnPath,e.resolve=Sn.resolve,e.resolveModulePath=Sn.resolveModulePath})(Fl||(Ae.Files=Fl={}));var Wl;function oi(){if(Wl!==void 0)try{Wl.end()}catch{}}var on=!1,Ul;function _h(){let e="--clientProcessId";function t(n){try{let r=parseInt(n);isNaN(r)||(Ul=setInterval(()=>{try{process.kill(r,0)}catch{oi(),process.exit(on?0:1)}},3e3))}catch{}}for(let n=2;n<process.argv.length;n++){let r=process.argv[n];if(r===e&&n+1<process.argv.length){t(process.argv[n+1]);return}else{let i=r.split("=");i[0]===e&&t(i[1])}}}_h();var Th={initialize:e=>{let t=e.processId;ds.number(t)&&Ul===void 0&&setInterval(()=>{try{process.kill(t,0)}catch{process.exit(on?0:1)}},3e3)},get shutdownReceived(){return on},set shutdownReceived(e){on=e},exit:e=>{oi(),process.exit(e)}};function Eh(e,t,n,r){let i,u,h,b;return e!==void 0&&e.__brand==="features"&&(i=e,e=t,t=n,n=r),wt.ConnectionStrategy.is(e)||wt.ConnectionOptions.is(e)?b=e:(u=e,h=t,b=n),Ch(u,h,b,i)}Ae.createConnection=Eh;function Ch(e,t,n,r){let i=!1;if(!e&&!t&&process.argv.length>2){let P,C,k=process.argv.slice(2);for(let O=0;O<k.length;O++){let M=k[O];if(M==="--node-ipc"){e=new wt.IPCMessageReader(process),t=new wt.IPCMessageWriter(process);break}else if(M==="--stdio"){i=!0,e=process.stdin,t=process.stdout;break}else if(M==="--socket"){P=parseInt(k[O+1]);break}else if(M==="--pipe"){C=k[O+1];break}else{var u=M.split("=");if(u[0]==="--socket"){P=parseInt(u[1]);break}else if(u[0]==="--pipe"){C=u[1];break}}}if(P){let O=(0,wt.createServerSocketTransport)(P);e=O[0],t=O[1]}else if(C){let O=(0,wt.createServerPipeTransport)(C);e=O[0],t=O[1]}}var h="Use arguments of createConnection or set command line parameters: '--node-ipc', '--stdio' or '--socket={number}'";if(!e)throw new Error("Connection input stream is not set. "+h);if(!t)throw new Error("Connection output stream is not set. "+h);if(ds.func(e.read)&&ds.func(e.on)){let P=e;P.on("end",()=>{oi(),process.exit(on?0:1)}),P.on("close",()=>{oi(),process.exit(on?0:1)})}let b=P=>{let C=(0,wt.createProtocolConnection)(e,t,P,n);return i&&Sh(P),C};return(0,Dh.createConnection)(b,Th,r)}function Sh(e){function t(r){return r.map(i=>typeof i=="string"?i:(0,jl.inspect)(i)).join(" ")}let n=new Map;console.assert=function(i,...u){if(!i)if(u.length===0)e.error("Assertion failed");else{let[h,...b]=u;e.error(`Assertion failed: ${h} ${t(b)}`)}},console.count=function(i="default"){let u=String(i),h=n.get(u)??0;h+=1,n.set(u,h),e.log(`${u}: ${u}`)},console.countReset=function(i){i===void 0?n.clear():n.delete(String(i))},console.debug=function(...i){e.log(t(i))},console.dir=function(i,u){e.log((0,jl.inspect)(i,u))},console.log=function(...i){e.log(t(i))},console.error=function(...i){e.error(t(i))},console.trace=function(...i){let u=new Error().stack.replace(/(.+\n){2}/,""),h="Trace";i.length!==0&&(h+=`: ${t(i)}`),e.log(`${h}
-${u}`)},console.warn=function(...i){e.warn(t(i))}}});var fs=w((am,$l)=>{"use strict";$l.exports=Bl()});var Q=Ds(fs());var si=class e{constructor(t,n,r,i){this._uri=t,this._languageId=n,this._version=r,this._content=i,this._lineOffsets=void 0}get uri(){return this._uri}get languageId(){return this._languageId}get version(){return this._version}getText(t){if(t){let n=this.offsetAt(t.start),r=this.offsetAt(t.end);return this._content.substring(n,r)}return this._content}update(t,n){for(let r of t)if(e.isIncremental(r)){let i=Gl(r.range),u=this.offsetAt(i.start),h=this.offsetAt(i.end);this._content=this._content.substring(0,u)+r.text+this._content.substring(h,this._content.length);let b=Math.max(i.start.line,0),P=Math.max(i.end.line,0),C=this._lineOffsets,k=zl(r.text,!1,u);if(P-b===k.length)for(let M=0,$=k.length;M<$;M++)C[M+b+1]=k[M];else k.length<1e4?C.splice(b+1,P-b,...k):this._lineOffsets=C=C.slice(0,b+1).concat(k,C.slice(P+1));let O=r.text.length-(h-u);if(O!==0)for(let M=b+1+k.length,$=C.length;M<$;M++)C[M]=C[M]+O}else if(e.isFull(r))this._content=r.text,this._lineOffsets=void 0;else throw new Error("Unknown change event received");this._version=n}getLineOffsets(){return this._lineOffsets===void 0&&(this._lineOffsets=zl(this._content,!0)),this._lineOffsets}positionAt(t){t=Math.max(Math.min(t,this._content.length),0);let n=this.getLineOffsets(),r=0,i=n.length;if(i===0)return{line:0,character:t};for(;r<i;){let h=Math.floor((r+i)/2);n[h]>t?i=h:r=h+1}let u=r-1;return t=this.ensureBeforeEOL(t,n[u]),{line:u,character:t-n[u]}}offsetAt(t){let n=this.getLineOffsets();if(t.line>=n.length)return this._content.length;if(t.line<0)return 0;let r=n[t.line];if(t.character<=0)return r;let i=t.line+1<n.length?n[t.line+1]:this._content.length,u=Math.min(r+t.character,i);return this.ensureBeforeEOL(u,r)}ensureBeforeEOL(t,n){for(;t>n&&Vl(this._content.charCodeAt(t-1));)t--;return t}get lineCount(){return this.getLineOffsets().length}static isIncremental(t){let n=t;return n!=null&&typeof n.text=="string"&&n.range!==void 0&&(n.rangeLength===void 0||typeof n.rangeLength=="number")}static isFull(t){let n=t;return n!=null&&typeof n.text=="string"&&n.range===void 0&&n.rangeLength===void 0}},ai;(function(e){function t(i,u,h,b){return new si(i,u,h,b)}e.create=t;function n(i,u,h){if(i instanceof si)return i.update(u,h),i;throw new Error("TextDocument.update: document must be created by TextDocument.create")}e.update=n;function r(i,u){let h=i.getText(),b=hs(u.map(Ph),(k,O)=>{let M=k.range.start.line-O.range.start.line;return M===0?k.range.start.character-O.range.start.character:M}),P=0,C=[];for(let k of b){let O=i.offsetAt(k.range.start);if(O<P)throw new Error("Overlapping edit");O>P&&C.push(h.substring(P,O)),k.newText.length&&C.push(k.newText),P=i.offsetAt(k.range.end)}return C.push(h.substr(P)),C.join("")}e.applyEdits=r})(ai||(ai={}));function hs(e,t){if(e.length<=1)return e;let n=e.length/2|0,r=e.slice(0,n),i=e.slice(n);hs(r,t),hs(i,t);let u=0,h=0,b=0;for(;u<r.length&&h<i.length;)t(r[u],i[h])<=0?e[b++]=r[u++]:e[b++]=i[h++];for(;u<r.length;)e[b++]=r[u++];for(;h<i.length;)e[b++]=i[h++];return e}function zl(e,t,n=0){let r=t?[n]:[];for(let i=0;i<e.length;i++){let u=e.charCodeAt(i);Vl(u)&&(u===13&&i+1<e.length&&e.charCodeAt(i+1)===10&&i++,r.push(n+i+1))}return r}function Vl(e){return e===13||e===10}function Gl(e){let t=e.start,n=e.end;return t.line>n.line||t.line===n.line&&t.character>n.character?{start:n,end:t}:e}function Ph(e){let t=Gl(e.range);return t!==e.range?{newText:e.newText,range:t}:e}var Pn=Ds(fs()),ci={BEGIN:{documentation:"Marks the start of a compound statement block. Must be paired with `END`."},END:{documentation:"Marks the end of a compound statement block."},IF:{signature:"IF <condition> THEN ... [ELSEIF ... THEN ...] [ELSE ...] END IF;",documentation:"Conditional branching statement."},THEN:{documentation:"Separates the condition from the body of an IF statement."},ELSE:{documentation:"Defines the fallback branch of an IF statement."},ELSEIF:{signature:"ELSEIF <condition> THEN ...",documentation:"Additional conditional branch in an IF statement."},CASE:{signature:"CASE [<expr>] WHEN <val> THEN ... [ELSE ...] END CASE;",documentation:"Multi-way branching statement."},WHEN:{documentation:"Defines a branch in a CASE expression."},WHILE:{signature:"WHILE <condition> DO ... END WHILE;",documentation:"Repeats a block while a condition is true."},DO:{documentation:"Begins the body of a WHILE or FOR loop."},FOR:{signature:"FOR <var> AS <cursor>[] DO ... END FOR;",documentation:"Iterates over repeating elements in the message tree. The cursor variable references each element in turn."},REPEAT:{signature:"REPEAT ... UNTIL <condition> END REPEAT;",documentation:"Executes a block at least once, then repeats while condition is false."},UNTIL:{documentation:"Defines the exit condition of a REPEAT loop."},LOOP:{signature:"LOOP ... END LOOP;",documentation:"Infinite loop. Use LEAVE to exit."},LEAVE:{signature:"LEAVE [<label>];",documentation:"Exits the enclosing loop or block."},ITERATE:{signature:"ITERATE [<label>];",documentation:"Skips to the next iteration of the enclosing loop."},RETURN:{signature:"RETURN [<expression>];",documentation:"Returns a value from a FUNCTION, or exits a PROCEDURE."},DECLARE:{signature:"DECLARE <name> [SHARED] [EXTERNAL] <type> [<default>];",documentation:"Declares a variable, or declares a SHARED/EXTERNAL variable accessible across invocations."},SET:{signature:"SET <path> = <expression>;",documentation:"Assigns a value to a variable or message-tree field."},CALL:{signature:"CALL <procedure>([<args>]) [INTO <var>];",documentation:"Invokes a procedure."},CREATE:{documentation:"Creates a MODULE, FUNCTION, PROCEDURE, or message-tree element."},MODULE:{documentation:"Defines an ESQL module that groups functions and procedures."},COMPUTE:{documentation:"Qualifier for a FUNCTION or MODULE that maps input to output messages."},FUNCTION:{signature:"CREATE [COMPUTE] FUNCTION <name>(<params>) [RETURNS <type>] BEGIN ... END;",documentation:"Defines an ESQL function. A COMPUTE FUNCTION named `Main` is the entry point for a Compute node."},PROCEDURE:{signature:"CREATE PROCEDURE <name>(<params>) [RETURNS <type>] [LANGUAGE ESQL] BEGIN ... END;",documentation:"Defines an ESQL procedure (does not return a value by default)."},EXTERNAL:{documentation:"Declares a variable whose value is set via node properties (visible in the IIB/ACE node editor)."},SHARED:{documentation:"Declares a variable shared across all invocations of the flow (module-level state)."},ATOMIC:{documentation:"Makes a BEGIN ... END block execute atomically with respect to shared variables."},HANDLER:{signature:"DECLARE <name> HANDLER FOR <condition> BEGIN ... END;",documentation:"Declares a condition handler for error recovery."},CONTINUE:{documentation:"Handler action: continues execution after the condition that raised the handler."},SIGNAL:{signature:"SIGNAL <condition> [SET MESSAGE VALUES(<...>)];",documentation:"Raises a user-defined condition."},RESIGNAL:{documentation:"Re-raises the current condition from within a handler."},THROW:{signature:"THROW USER EXCEPTION [SEVERITY <n>] [CATALOG <s>] [MESSAGE <n>] VALUES(<...>);",documentation:"Throws a user exception. Useful for propagating structured errors to the ExceptionList."},PROPAGATE:{signature:"PROPAGATE [TO TERMINAL <name>] [MESSAGE ENVIRONMENT <env>];",documentation:"Propagates the output message to a terminal."},PASSTHRU:{signature:"PASSTHRU(<sql> [TO <datasource>]);",documentation:"Executes an arbitrary SQL statement against a database."},SELECT:{signature:"SELECT <cols> FROM <source>[] [WHERE <cond>]",documentation:"Queries fields from repeating elements in the message tree or a database."},FROM:{documentation:"Specifies the source for a SELECT statement."},WHERE:{documentation:"Filters rows in a SELECT statement."},INTO:{documentation:"Specifies the target for an INSERT or SET statement."},VALUES:{documentation:"Supplies values for an INSERT statement."},INSERT:{signature:"INSERT INTO <target>[] VALUES (<vals>);",documentation:"Inserts a row into a database table or appends an element to a repeating field."},UPDATE:{signature:"UPDATE <table> AS <alias> SET <col> = <val> [WHERE <cond>];",documentation:"Updates rows in a database table."},DELETE:{signature:"DELETE FROM <table> [WHERE <cond>];",documentation:"Deletes rows from a database table."},GROUP:{documentation:"Groups rows in a SELECT aggregate query."},BY:{documentation:"Used with GROUP BY or ORDER BY."},HAVING:{documentation:"Filters groups in a GROUP BY clause."},ORDER:{documentation:"Orders results of a SELECT statement."},AS:{documentation:"Aliases a field or expression in a SELECT statement."},TO:{documentation:"Specifies a destination (e.g., TO TERMINAL)."},AND:{documentation:"Logical AND operator."},OR:{documentation:"Logical OR operator."},NOT:{documentation:"Logical NOT operator."},IN:{signature:"<expr> IN (<val1>, <val2>, ...)",documentation:"Tests whether a value is contained in a list."},LIKE:{signature:"<expr> LIKE <pattern> [ESCAPE <char>]",documentation:"Pattern matching operator. Use `%` for any sequence and `_` for any single character."},BETWEEN:{signature:"<expr> BETWEEN <low> AND <high>",documentation:"Tests whether a value lies within a range (inclusive)."},IS:{documentation:"Tests for NULL: `<expr> IS [NOT] NULL`."},EXISTS:{signature:"EXISTS(<select>)",documentation:"Returns TRUE if the subquery returns at least one row."},NULLIF:{signature:"NULLIF(<expr1>, <expr2>)",documentation:"Returns NULL if expr1 equals expr2, otherwise returns expr1."},COALESCE:{signature:"COALESCE(<expr1>, <expr2>, ...)",documentation:"Returns the first non-NULL expression in the list."},USER:{documentation:"Used in THROW USER EXCEPTION."},EXCEPTION:{documentation:"Used in THROW USER EXCEPTION."},MESSAGE:{documentation:"Used in THROW / SIGNAL to specify message catalog entry."},TERMINAL:{documentation:"Identifies an output terminal name in PROPAGATE."},RETURNS:{documentation:"Specifies the return type of a FUNCTION."},LANGUAGE:{documentation:"Specifies the implementation language (e.g., LANGUAGE ESQL, LANGUAGE DATABASE)."},ESQL:{documentation:"Language identifier for ESQL procedures."},DATABASE:{documentation:"Specifies that a procedure is implemented by a database stored procedure."},SEVERITY:{documentation:"Severity level used in THROW USER EXCEPTION."},CATALOG:{documentation:"Message catalog identifier used in THROW USER EXCEPTION."}},ui={BOOLEAN:{documentation:"Logical value: TRUE or FALSE."},BIT:{documentation:"A single bit value."},BLOB:{documentation:"Binary Large Object \u2014 a sequence of bytes."},CLOB:{documentation:"Character Large Object \u2014 a large character string."},CHARACTER:{signature:"CHARACTER [VARYING] [(length)]",documentation:"Fixed-length character string. Alias: CHAR."},CHAR:{documentation:"Alias for CHARACTER."},VARCHAR:{documentation:"Variable-length character string."},NVARCHAR:{documentation:"Variable-length Unicode character string."},INTEGER:{documentation:"A 32-bit signed integer value. Alias: INT."},INT:{documentation:"Alias for INTEGER."},SMALLINT:{documentation:"A 16-bit signed integer."},BIGINT:{documentation:"A 64-bit signed integer."},DECIMAL:{signature:"DECIMAL [(precision, scale)]",documentation:"Exact numeric type with configurable precision and scale. Alias: NUMERIC."},NUMERIC:{documentation:"Alias for DECIMAL."},FLOAT:{documentation:"Single-precision floating-point number."},DOUBLE:{documentation:"Double-precision floating-point number."},DATE:{documentation:"Calendar date (year, month, day)."},TIME:{documentation:"Time of day."},TIMESTAMP:{documentation:"Date and time combined."},INTERVAL:{signature:"INTERVAL (<n>) <unit>",documentation:"Duration value (e.g., `INTERVAL(1) DAY`)."},ROW:{documentation:"A single structured row \u2014 a named tuple of fields."},LIST:{documentation:"A list of values or rows."},REFERENCE:{documentation:"A reference (pointer) to a node in the message tree."}},li={InputRoot:{documentation:"The root of the input message tree. Access parsed message content via `InputRoot.<parser>.<element>`."},OutputRoot:{documentation:"The root of the output message tree. Write fields here to build the outgoing message."},InputBody:{documentation:"Shorthand for `InputRoot.<parser>` \u2014 the body of the input message."},OutputBody:{documentation:"Shorthand for `OutputRoot.<parser>` \u2014 the body of the output message."},Environment:{documentation:"The shared Environment tree. Data persists across nodes within the same flow instance."},LocalEnvironment:{documentation:"The local environment tree. Scoped to the current flow path."},InputLocalEnvironment:{documentation:"The local environment from the input side of the current node."},OutputLocalEnvironment:{documentation:"The local environment passed to the next node."},ExceptionList:{documentation:"The exception list tree \u2014 contains details of errors that occurred during processing."},Database:{documentation:"Represents database result set data when using the Database node or PASSTHRU."}},di={CAST:{signature:"CAST(<expression> AS <type>)",documentation:"Converts an expression to the specified ESQL data type."},LENGTH:{signature:"LENGTH(<string>)",documentation:"Returns the number of characters in a string."},SUBSTRING:{signature:"SUBSTRING(<string> FROM <start> [FOR <length>])",documentation:"Extracts a portion of a string starting at position `start` (1-based)."},OVERLAY:{signature:"OVERLAY(<string> PLACING <replacement> FROM <start> [FOR <length>])",documentation:"Replaces a portion of a string with another string."},POSITION:{signature:"POSITION(<needle> IN <haystack>)",documentation:"Returns the 1-based character position of `needle` inside `haystack`, or 0 if not found."},TRIM:{signature:"TRIM([LEADING|TRAILING|BOTH] [<char>] FROM <string>)",documentation:"Removes leading, trailing, or both occurrences of a character (default: space) from a string."},LTRIM:{signature:"LTRIM(<string>)",documentation:"Removes leading whitespace from a string."},RTRIM:{signature:"RTRIM(<string>)",documentation:"Removes trailing whitespace from a string."},UCASE:{signature:"UCASE(<string>)",documentation:"Converts all characters in a string to upper case."},LCASE:{signature:"LCASE(<string>)",documentation:"Converts all characters in a string to lower case."},UPPER:{signature:"UPPER(<string>)",documentation:"Alias for UCASE \u2014 converts to upper case."},LOWER:{signature:"LOWER(<string>)",documentation:"Alias for LCASE \u2014 converts to lower case."},REPLICATE:{signature:"REPLICATE(<string>, <count>)",documentation:"Returns `string` repeated `count` times."},SPACE:{signature:"SPACE(<n>)",documentation:"Returns a string of `n` space characters."},LEFT:{signature:"LEFT(<string>, <n>)",documentation:"Returns the leftmost `n` characters of `string`."},RIGHT:{signature:"RIGHT(<string>, <n>)",documentation:"Returns the rightmost `n` characters of `string`."},REVERSE:{signature:"REVERSE(<string>)",documentation:"Returns the string with its characters in reverse order."},ABS:{signature:"ABS(<number>)",documentation:"Returns the absolute value of a number."},ROUND:{signature:"ROUND(<number>, <scale>)",documentation:"Rounds `number` to `scale` decimal places."},CEIL:{signature:"CEIL(<number>)",documentation:"Returns the smallest integer not less than `number` (ceiling)."},FLOOR:{signature:"FLOOR(<number>)",documentation:"Returns the largest integer not greater than `number` (floor)."},MOD:{signature:"MOD(<dividend>, <divisor>)",documentation:"Returns the remainder of `dividend / divisor`."},POWER:{signature:"POWER(<base>, <exponent>)",documentation:"Returns `base` raised to `exponent`."},SQRT:{signature:"SQRT(<number>)",documentation:"Returns the square root of a number."},LOG:{signature:"LOG(<number>)",documentation:"Returns the natural logarithm of a number."},EXP:{signature:"EXP(<number>)",documentation:"Returns e raised to the power of `number`."},CURRENT_TIMESTAMP:{signature:"CURRENT_TIMESTAMP",documentation:"Returns the current date and time as a TIMESTAMP."},CURRENT_DATE:{signature:"CURRENT_DATE",documentation:"Returns the current date."},CURRENT_TIME:{signature:"CURRENT_TIME",documentation:"Returns the current time."},NOW:{signature:"NOW()",documentation:"Alias for CURRENT_TIMESTAMP."},EXTRACT:{signature:"EXTRACT(<part> FROM <datetime>)",documentation:"Extracts a component from a date/time value. Parts: YEAR, MONTH, DAY, HOUR, MINUTE, SECOND."},CARDINALITY:{signature:"CARDINALITY(<path>[])",documentation:"Returns the number of instances of a repeating field in the message tree."},FIELDNAME:{signature:"FIELDNAME(<field>)",documentation:"Returns the local name of a message-tree field."},FIELDNAMESPACE:{signature:"FIELDNAMESPACE(<field>)",documentation:"Returns the namespace URI of a message-tree field."},FIELDTYPE:{signature:"FIELDTYPE(<field>)",documentation:"Returns the type of a message-tree field as an integer constant."},FIELDVALUE:{signature:"FIELDVALUE(<field>)",documentation:"Returns the scalar value of a message-tree field."},ASBITSTREAM:{signature:"ASBITSTREAM(<tree> [OPTIONS <opts>] [ENCODING <enc>] [CCSID <ccsid>] [SET <set>] [TYPE <type>] [FORMAT <fmt>])",documentation:"Serializes a message-tree element to a BLOB using the specified parser options."},BITSTREAM:{signature:"BITSTREAM(<message>)",documentation:"Returns the binary representation (BLOB) of the input message."},HEXADECIMAL:{signature:"HEXADECIMAL(<blob>)",documentation:"Converts a BLOB to its hexadecimal string representation."},BASE64ENCODE:{signature:"BASE64ENCODE(<blob>)",documentation:"Encodes a BLOB to a Base64-encoded character string."},BASE64DECODE:{signature:"BASE64DECODE(<string>)",documentation:"Decodes a Base64 character string to a BLOB."},SQLCODE:{signature:"SQLCODE",documentation:"Contains the SQL return code from the most recent database operation. 0 = success, 100 = no rows found."},SQLERRORTEXT:{signature:"SQLERRORTEXT",documentation:"Contains the error message text from the most recent failed database operation."},SQLNATIVEERROR:{signature:"SQLNATIVEERROR",documentation:"Contains the native database error code from the most recent failed operation."},SQLSTATE:{signature:"SQLSTATE",documentation:"Contains the SQLSTATE code (5-character string) from the most recent database operation."}};function Ql(){return Object.keys(ci).map(e=>({label:e,kind:Pn.CompletionItemKind.Keyword,detail:"ESQL keyword",documentation:{kind:"markdown",value:pt(ci[e])}}))}function Xl(){return Object.keys(ui).map(e=>({label:e,kind:Pn.CompletionItemKind.TypeParameter,detail:"ESQL type",documentation:{kind:"markdown",value:pt(ui[e])}}))}function Yl(){return Object.keys(li).map(e=>({label:e,kind:Pn.CompletionItemKind.Variable,detail:"ESQL built-in variable",documentation:{kind:"markdown",value:pt(li[e])}}))}function Jl(){return Object.keys(di).map(e=>({label:e,kind:Pn.CompletionItemKind.Function,detail:"ESQL built-in function",insertText:e,documentation:{kind:"markdown",value:pt(di[e])}}))}function pt(e){let t=[];return e.signature&&t.push("```esql",e.signature,"```",""),t.push(e.documentation),t.join(`
-`)}function Kl(e){let t=e.toUpperCase();return ci[t]?pt(ci[t]):ui[t]?`**Type** \u2014 ${pt(ui[t])}`:di[t]?`**Built-in function**
+// node_modules/vscode-jsonrpc/lib/common/messageWriter.js
+var require_messageWriter = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/messageWriter.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = void 0;
+    var ral_1 = require_ral();
+    var Is = require_is2();
+    var semaphore_1 = require_semaphore();
+    var events_1 = require_events();
+    var ContentLength = "Content-Length: ";
+    var CRLF = "\r\n";
+    var MessageWriter;
+    (function(MessageWriter2) {
+      function is(value) {
+        let candidate = value;
+        return candidate && Is.func(candidate.dispose) && Is.func(candidate.onClose) && Is.func(candidate.onError) && Is.func(candidate.write);
+      }
+      MessageWriter2.is = is;
+    })(MessageWriter || (exports2.MessageWriter = MessageWriter = {}));
+    var AbstractMessageWriter = class {
+      constructor() {
+        this.errorEmitter = new events_1.Emitter();
+        this.closeEmitter = new events_1.Emitter();
+      }
+      dispose() {
+        this.errorEmitter.dispose();
+        this.closeEmitter.dispose();
+      }
+      get onError() {
+        return this.errorEmitter.event;
+      }
+      fireError(error, message, count) {
+        this.errorEmitter.fire([this.asError(error), message, count]);
+      }
+      get onClose() {
+        return this.closeEmitter.event;
+      }
+      fireClose() {
+        this.closeEmitter.fire(void 0);
+      }
+      asError(error) {
+        if (error instanceof Error) {
+          return error;
+        } else {
+          return new Error(`Writer received error. Reason: ${Is.string(error.message) ? error.message : "unknown"}`);
+        }
+      }
+    };
+    exports2.AbstractMessageWriter = AbstractMessageWriter;
+    var ResolvedMessageWriterOptions;
+    (function(ResolvedMessageWriterOptions2) {
+      function fromOptions(options) {
+        if (options === void 0 || typeof options === "string") {
+          return { charset: options ?? "utf-8", contentTypeEncoder: (0, ral_1.default)().applicationJson.encoder };
+        } else {
+          return { charset: options.charset ?? "utf-8", contentEncoder: options.contentEncoder, contentTypeEncoder: options.contentTypeEncoder ?? (0, ral_1.default)().applicationJson.encoder };
+        }
+      }
+      ResolvedMessageWriterOptions2.fromOptions = fromOptions;
+    })(ResolvedMessageWriterOptions || (ResolvedMessageWriterOptions = {}));
+    var WriteableStreamMessageWriter = class extends AbstractMessageWriter {
+      constructor(writable, options) {
+        super();
+        this.writable = writable;
+        this.options = ResolvedMessageWriterOptions.fromOptions(options);
+        this.errorCount = 0;
+        this.writeSemaphore = new semaphore_1.Semaphore(1);
+        this.writable.onError((error) => this.fireError(error));
+        this.writable.onClose(() => this.fireClose());
+      }
+      async write(msg) {
+        return this.writeSemaphore.lock(async () => {
+          const payload = this.options.contentTypeEncoder.encode(msg, this.options).then((buffer) => {
+            if (this.options.contentEncoder !== void 0) {
+              return this.options.contentEncoder.encode(buffer);
+            } else {
+              return buffer;
+            }
+          });
+          return payload.then((buffer) => {
+            const headers = [];
+            headers.push(ContentLength, buffer.byteLength.toString(), CRLF);
+            headers.push(CRLF);
+            return this.doWrite(msg, headers, buffer);
+          }, (error) => {
+            this.fireError(error);
+            throw error;
+          });
+        });
+      }
+      async doWrite(msg, headers, data) {
+        try {
+          await this.writable.write(headers.join(""), "ascii");
+          return this.writable.write(data);
+        } catch (error) {
+          this.handleError(error, msg);
+          return Promise.reject(error);
+        }
+      }
+      handleError(error, msg) {
+        this.errorCount++;
+        this.fireError(error, msg, this.errorCount);
+      }
+      end() {
+        this.writable.end();
+      }
+    };
+    exports2.WriteableStreamMessageWriter = WriteableStreamMessageWriter;
+  }
+});
 
-${pt(di[t])}`:li[e]?`**Built-in variable**
+// node_modules/vscode-jsonrpc/lib/common/messageBuffer.js
+var require_messageBuffer = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/messageBuffer.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.AbstractMessageBuffer = void 0;
+    var CR = 13;
+    var LF = 10;
+    var CRLF = "\r\n";
+    var AbstractMessageBuffer = class {
+      constructor(encoding = "utf-8") {
+        this._encoding = encoding;
+        this._chunks = [];
+        this._totalLength = 0;
+      }
+      get encoding() {
+        return this._encoding;
+      }
+      append(chunk) {
+        const toAppend = typeof chunk === "string" ? this.fromString(chunk, this._encoding) : chunk;
+        this._chunks.push(toAppend);
+        this._totalLength += toAppend.byteLength;
+      }
+      tryReadHeaders(lowerCaseKeys = false) {
+        if (this._chunks.length === 0) {
+          return void 0;
+        }
+        let state = 0;
+        let chunkIndex = 0;
+        let offset = 0;
+        let chunkBytesRead = 0;
+        row:
+          while (chunkIndex < this._chunks.length) {
+            const chunk = this._chunks[chunkIndex];
+            offset = 0;
+            column:
+              while (offset < chunk.length) {
+                const value = chunk[offset];
+                switch (value) {
+                  case CR:
+                    switch (state) {
+                      case 0:
+                        state = 1;
+                        break;
+                      case 2:
+                        state = 3;
+                        break;
+                      default:
+                        state = 0;
+                    }
+                    break;
+                  case LF:
+                    switch (state) {
+                      case 1:
+                        state = 2;
+                        break;
+                      case 3:
+                        state = 4;
+                        offset++;
+                        break row;
+                      default:
+                        state = 0;
+                    }
+                    break;
+                  default:
+                    state = 0;
+                }
+                offset++;
+              }
+            chunkBytesRead += chunk.byteLength;
+            chunkIndex++;
+          }
+        if (state !== 4) {
+          return void 0;
+        }
+        const buffer = this._read(chunkBytesRead + offset);
+        const result = /* @__PURE__ */ new Map();
+        const headers = this.toString(buffer, "ascii").split(CRLF);
+        if (headers.length < 2) {
+          return result;
+        }
+        for (let i = 0; i < headers.length - 2; i++) {
+          const header = headers[i];
+          const index = header.indexOf(":");
+          if (index === -1) {
+            throw new Error(`Message header must separate key and value using ':'
+${header}`);
+          }
+          const key = header.substr(0, index);
+          const value = header.substr(index + 1).trim();
+          result.set(lowerCaseKeys ? key.toLowerCase() : key, value);
+        }
+        return result;
+      }
+      tryReadBody(length) {
+        if (this._totalLength < length) {
+          return void 0;
+        }
+        return this._read(length);
+      }
+      get numberOfBytes() {
+        return this._totalLength;
+      }
+      _read(byteCount) {
+        if (byteCount === 0) {
+          return this.emptyBuffer();
+        }
+        if (byteCount > this._totalLength) {
+          throw new Error(`Cannot read so many bytes!`);
+        }
+        if (this._chunks[0].byteLength === byteCount) {
+          const chunk = this._chunks[0];
+          this._chunks.shift();
+          this._totalLength -= byteCount;
+          return this.asNative(chunk);
+        }
+        if (this._chunks[0].byteLength > byteCount) {
+          const chunk = this._chunks[0];
+          const result2 = this.asNative(chunk, byteCount);
+          this._chunks[0] = chunk.slice(byteCount);
+          this._totalLength -= byteCount;
+          return result2;
+        }
+        const result = this.allocNative(byteCount);
+        let resultOffset = 0;
+        let chunkIndex = 0;
+        while (byteCount > 0) {
+          const chunk = this._chunks[chunkIndex];
+          if (chunk.byteLength > byteCount) {
+            const chunkPart = chunk.slice(0, byteCount);
+            result.set(chunkPart, resultOffset);
+            resultOffset += byteCount;
+            this._chunks[chunkIndex] = chunk.slice(byteCount);
+            this._totalLength -= byteCount;
+            byteCount -= byteCount;
+          } else {
+            result.set(chunk, resultOffset);
+            resultOffset += chunk.byteLength;
+            this._chunks.shift();
+            this._totalLength -= chunk.byteLength;
+            byteCount -= chunk.byteLength;
+          }
+        }
+        return result;
+      }
+    };
+    exports2.AbstractMessageBuffer = AbstractMessageBuffer;
+  }
+});
 
-${pt(li[e])}`:null}var Qe=(0,Q.createConnection)(Q.ProposedFeatures.all),kt=new Q.TextDocuments(ai);Qe.onInitialize(e=>({capabilities:{textDocumentSync:Q.TextDocumentSyncKind.Incremental,completionProvider:{resolveProvider:!1,triggerCharacters:["."," "]},hoverProvider:!0,documentSymbolProvider:!0}}));Qe.onInitialized(()=>{Qe.client.register(Q.DidChangeConfigurationNotification.type,void 0)});var gs=[...Ql(),...Xl(),...Yl(),...Jl()];function Zl(e){let t=e.replace(/\/\*[\s\S]*?\*\//g,n=>n.replace(/[^\n]/g," "));return t=t.replace(/--[^\n]*/g,n=>" ".repeat(n.length)),t=t.replace(/'(?:[^']|'')*'/g,n=>n.replace(/[^\n]/g," ")),t}function wh(e,t){let n=e.getText({start:{line:t.line,character:0},end:{line:t.line,character:t.character}}),r=/[A-Za-z_][\w$]*$/.exec(n),i=r?r[0]:"",h=n.slice(0,n.length-i.length).trimEnd().endsWith(".");return{word:i,precededByDot:h}}function ed(e){let n=Zl(e).split(`
-`),r=[],i=[],u=/\bCREATE\s+(?:COMPUTE\s+)?MODULE\s+([A-Za-z_][\w$]*)/i,h=/\bCREATE\s+(?:COMPUTE\s+)?FUNCTION\s+([A-Za-z_][\w$]*)\s*\(/i,b=/\bCREATE\s+(?:COMPUTE\s+)?PROCEDURE\s+([A-Za-z_][\w$]*)\s*\(/i,P=/\bBEGIN\b/gi,C=/\bEND\s+(?:MODULE|IF|WHILE|FOR|REPEAT|LOOP|CASE)\b|\bEND\s*;/gi,k=0;for(let O=0;O<n.length;O++){let M=n[O],$=null,W=u.exec(M);W&&($={name:W[1],kind:Q.SymbolKind.Module});let X=h.exec(M);!$&&X&&($={name:X[1],kind:Q.SymbolKind.Function});let K=b.exec(M);if(!$&&K&&($={name:K[1],kind:Q.SymbolKind.Method}),$){let y={name:$.name,kind:$.kind,line:O,endLine:n.length-1,children:[]};i.length>0?i[i.length-1].children.push(y):r.push(y),i.push(y)}let B;for(P.lastIndex=0;(B=P.exec(M))!==null;)k++;for(C.lastIndex=0;(B=C.exec(M))!==null;)if(k=Math.max(0,k-1),k===0&&i.length>0){let y=i.pop();y.endLine=O}}return r}function td(e,t){return e.map(n=>{let r={start:{line:n.line,character:0},end:{line:Math.min(n.endLine,t-1),character:0}};return Q.DocumentSymbol.create(n.name,void 0,n.kind,r,r,td(n.children,t))})}function nd(e){let t=[];for(let n of e)t.push({label:n.name,kind:n.kind===Q.SymbolKind.Module?Q.CompletionItemKind.Module:n.kind===Q.SymbolKind.Function?Q.CompletionItemKind.Function:Q.CompletionItemKind.Method,detail:n.kind===Q.SymbolKind.Module?"ESQL module":n.kind===Q.SymbolKind.Function?"ESQL function":"ESQL procedure"}),t.push(...nd(n.children));return t}function kh(e){let t=e.getText(),n=Zl(t),r=n.split(`
-`),i=[],u=[],h=/\bBEGIN\b/gi,b=/\bEND\s*(?:MODULE|IF|WHILE|FOR|REPEAT|LOOP|CASE)?\s*;/gi;for(let W=0;W<r.length;W++){let X=r[W],K;for(h.lastIndex=0;(K=h.exec(X))!==null;)u.push({line:W,ch:K.index});for(b.lastIndex=0;(K=b.exec(X))!==null;)u.pop()}for(let W of u)i.push({severity:Q.DiagnosticSeverity.Warning,range:{start:{line:W.line,character:W.ch},end:{line:W.line,character:W.ch+5}},message:"Unmatched BEGIN \u2014 no corresponding END found.",source:"esql"});let P=/\bEND\s+MODULE\s*;/gi,C=/\bCREATE\s+(?:COMPUTE\s+)?MODULE\b/gi,k=0,O=0;C.lastIndex=0;let M;for(;(M=C.exec(n))!==null;)k++;for(P.lastIndex=0;(M=P.exec(n))!==null;)O++;O>k?i.push({severity:Q.DiagnosticSeverity.Error,range:{start:{line:0,character:0},end:{line:0,character:0}},message:`Found ${O} END MODULE but only ${k} CREATE MODULE declaration(s).`,source:"esql"}):k>O&&i.push({severity:Q.DiagnosticSeverity.Warning,range:{start:{line:0,character:0},end:{line:0,character:0}},message:`CREATE MODULE without matching END MODULE (${k} open, ${O} closed).`,source:"esql"});let $=/^\s*DECLARE\b[^;]+$/i;for(let W=0;W<r.length;W++)if($.test(r[W])){let X=(r[W+1]??"").trim();(X.length===0||/^[A-Za-z_]/.test(X)===!1||/^\s*(DECLARE|SET|IF|WHILE|FOR|CALL|RETURN|END|CREATE)\b/i.test(X))&&i.push({severity:Q.DiagnosticSeverity.Warning,range:{start:{line:W,character:0},end:{line:W,character:r[W].length}},message:"DECLARE statement may be missing a semicolon.",source:"esql"})}return i}function rd(e){let t=kh(e);Qe.sendDiagnostics({uri:e.uri,diagnostics:t})}kt.onDidChangeContent(e=>{rd(e.document)});kt.onDidOpen(e=>{rd(e.document)});kt.onDidClose(e=>{Qe.sendDiagnostics({uri:e.document.uri,diagnostics:[]})});Qe.onCompletion(e=>{let t=kt.get(e.textDocument.uri);if(!t)return gs;let{precededByDot:n}=wh(t,e.position);if(n)return[];let r=t.getText(),i=ed(r),u=nd(i),h=new Set(gs.map(P=>P.label.toUpperCase())),b=u.filter(P=>!h.has(P.label.toUpperCase()));return[...gs,...b]});Qe.onHover(e=>{let t=kt.get(e.textDocument.uri);if(!t)return null;let n=t.getText({start:{line:e.position.line,character:0},end:{line:e.position.line+1,character:0}}),r=e.position.character,i=n.slice(0,r),u=n.slice(r),h=/[A-Za-z_][\w$]*$/.exec(i)?.[0]??"",b=/^[\w$]*/.exec(u)?.[0]??"",P=h+b;if(!P)return null;let C=Kl(P);if(!C)return null;let k=r-h.length,O=r+b.length;return{contents:{kind:Q.MarkupKind.Markdown,value:C},range:{start:{line:e.position.line,character:k},end:{line:e.position.line,character:O}}}});Qe.onDocumentSymbol(e=>{let t=kt.get(e.textDocument.uri);if(!t)return[];let n=t.getText(),r=ed(n),i=t.lineCount;return td(r,i)});kt.listen(Qe);Qe.listen();
+// node_modules/vscode-jsonrpc/lib/common/connection.js
+var require_connection = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/connection.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createMessageConnection = exports2.ConnectionOptions = exports2.MessageStrategy = exports2.CancellationStrategy = exports2.CancellationSenderStrategy = exports2.CancellationReceiverStrategy = exports2.RequestCancellationReceiverStrategy = exports2.IdCancellationReceiverStrategy = exports2.ConnectionStrategy = exports2.ConnectionError = exports2.ConnectionErrors = exports2.LogTraceNotification = exports2.SetTraceNotification = exports2.TraceFormat = exports2.TraceValues = exports2.Trace = exports2.NullLogger = exports2.ProgressType = exports2.ProgressToken = void 0;
+    var ral_1 = require_ral();
+    var Is = require_is2();
+    var messages_1 = require_messages();
+    var linkedMap_1 = require_linkedMap();
+    var events_1 = require_events();
+    var cancellation_1 = require_cancellation();
+    var CancelNotification;
+    (function(CancelNotification2) {
+      CancelNotification2.type = new messages_1.NotificationType("$/cancelRequest");
+    })(CancelNotification || (CancelNotification = {}));
+    var ProgressToken;
+    (function(ProgressToken2) {
+      function is(value) {
+        return typeof value === "string" || typeof value === "number";
+      }
+      ProgressToken2.is = is;
+    })(ProgressToken || (exports2.ProgressToken = ProgressToken = {}));
+    var ProgressNotification;
+    (function(ProgressNotification2) {
+      ProgressNotification2.type = new messages_1.NotificationType("$/progress");
+    })(ProgressNotification || (ProgressNotification = {}));
+    var ProgressType = class {
+      constructor() {
+      }
+    };
+    exports2.ProgressType = ProgressType;
+    var StarRequestHandler;
+    (function(StarRequestHandler2) {
+      function is(value) {
+        return Is.func(value);
+      }
+      StarRequestHandler2.is = is;
+    })(StarRequestHandler || (StarRequestHandler = {}));
+    exports2.NullLogger = Object.freeze({
+      error: () => {
+      },
+      warn: () => {
+      },
+      info: () => {
+      },
+      log: () => {
+      }
+    });
+    var Trace;
+    (function(Trace2) {
+      Trace2[Trace2["Off"] = 0] = "Off";
+      Trace2[Trace2["Messages"] = 1] = "Messages";
+      Trace2[Trace2["Compact"] = 2] = "Compact";
+      Trace2[Trace2["Verbose"] = 3] = "Verbose";
+    })(Trace || (exports2.Trace = Trace = {}));
+    var TraceValues;
+    (function(TraceValues2) {
+      TraceValues2.Off = "off";
+      TraceValues2.Messages = "messages";
+      TraceValues2.Compact = "compact";
+      TraceValues2.Verbose = "verbose";
+    })(TraceValues || (exports2.TraceValues = TraceValues = {}));
+    (function(Trace2) {
+      function fromString(value) {
+        if (!Is.string(value)) {
+          return Trace2.Off;
+        }
+        value = value.toLowerCase();
+        switch (value) {
+          case "off":
+            return Trace2.Off;
+          case "messages":
+            return Trace2.Messages;
+          case "compact":
+            return Trace2.Compact;
+          case "verbose":
+            return Trace2.Verbose;
+          default:
+            return Trace2.Off;
+        }
+      }
+      Trace2.fromString = fromString;
+      function toString(value) {
+        switch (value) {
+          case Trace2.Off:
+            return "off";
+          case Trace2.Messages:
+            return "messages";
+          case Trace2.Compact:
+            return "compact";
+          case Trace2.Verbose:
+            return "verbose";
+          default:
+            return "off";
+        }
+      }
+      Trace2.toString = toString;
+    })(Trace || (exports2.Trace = Trace = {}));
+    var TraceFormat;
+    (function(TraceFormat2) {
+      TraceFormat2["Text"] = "text";
+      TraceFormat2["JSON"] = "json";
+    })(TraceFormat || (exports2.TraceFormat = TraceFormat = {}));
+    (function(TraceFormat2) {
+      function fromString(value) {
+        if (!Is.string(value)) {
+          return TraceFormat2.Text;
+        }
+        value = value.toLowerCase();
+        if (value === "json") {
+          return TraceFormat2.JSON;
+        } else {
+          return TraceFormat2.Text;
+        }
+      }
+      TraceFormat2.fromString = fromString;
+    })(TraceFormat || (exports2.TraceFormat = TraceFormat = {}));
+    var SetTraceNotification;
+    (function(SetTraceNotification2) {
+      SetTraceNotification2.type = new messages_1.NotificationType("$/setTrace");
+    })(SetTraceNotification || (exports2.SetTraceNotification = SetTraceNotification = {}));
+    var LogTraceNotification;
+    (function(LogTraceNotification2) {
+      LogTraceNotification2.type = new messages_1.NotificationType("$/logTrace");
+    })(LogTraceNotification || (exports2.LogTraceNotification = LogTraceNotification = {}));
+    var ConnectionErrors;
+    (function(ConnectionErrors2) {
+      ConnectionErrors2[ConnectionErrors2["Closed"] = 1] = "Closed";
+      ConnectionErrors2[ConnectionErrors2["Disposed"] = 2] = "Disposed";
+      ConnectionErrors2[ConnectionErrors2["AlreadyListening"] = 3] = "AlreadyListening";
+    })(ConnectionErrors || (exports2.ConnectionErrors = ConnectionErrors = {}));
+    var ConnectionError = class _ConnectionError extends Error {
+      constructor(code, message) {
+        super(message);
+        this.code = code;
+        Object.setPrototypeOf(this, _ConnectionError.prototype);
+      }
+    };
+    exports2.ConnectionError = ConnectionError;
+    var ConnectionStrategy;
+    (function(ConnectionStrategy2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && Is.func(candidate.cancelUndispatched);
+      }
+      ConnectionStrategy2.is = is;
+    })(ConnectionStrategy || (exports2.ConnectionStrategy = ConnectionStrategy = {}));
+    var IdCancellationReceiverStrategy;
+    (function(IdCancellationReceiverStrategy2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && (candidate.kind === void 0 || candidate.kind === "id") && Is.func(candidate.createCancellationTokenSource) && (candidate.dispose === void 0 || Is.func(candidate.dispose));
+      }
+      IdCancellationReceiverStrategy2.is = is;
+    })(IdCancellationReceiverStrategy || (exports2.IdCancellationReceiverStrategy = IdCancellationReceiverStrategy = {}));
+    var RequestCancellationReceiverStrategy;
+    (function(RequestCancellationReceiverStrategy2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && candidate.kind === "request" && Is.func(candidate.createCancellationTokenSource) && (candidate.dispose === void 0 || Is.func(candidate.dispose));
+      }
+      RequestCancellationReceiverStrategy2.is = is;
+    })(RequestCancellationReceiverStrategy || (exports2.RequestCancellationReceiverStrategy = RequestCancellationReceiverStrategy = {}));
+    var CancellationReceiverStrategy;
+    (function(CancellationReceiverStrategy2) {
+      CancellationReceiverStrategy2.Message = Object.freeze({
+        createCancellationTokenSource(_) {
+          return new cancellation_1.CancellationTokenSource();
+        }
+      });
+      function is(value) {
+        return IdCancellationReceiverStrategy.is(value) || RequestCancellationReceiverStrategy.is(value);
+      }
+      CancellationReceiverStrategy2.is = is;
+    })(CancellationReceiverStrategy || (exports2.CancellationReceiverStrategy = CancellationReceiverStrategy = {}));
+    var CancellationSenderStrategy;
+    (function(CancellationSenderStrategy2) {
+      CancellationSenderStrategy2.Message = Object.freeze({
+        sendCancellation(conn, id) {
+          return conn.sendNotification(CancelNotification.type, { id });
+        },
+        cleanup(_) {
+        }
+      });
+      function is(value) {
+        const candidate = value;
+        return candidate && Is.func(candidate.sendCancellation) && Is.func(candidate.cleanup);
+      }
+      CancellationSenderStrategy2.is = is;
+    })(CancellationSenderStrategy || (exports2.CancellationSenderStrategy = CancellationSenderStrategy = {}));
+    var CancellationStrategy;
+    (function(CancellationStrategy2) {
+      CancellationStrategy2.Message = Object.freeze({
+        receiver: CancellationReceiverStrategy.Message,
+        sender: CancellationSenderStrategy.Message
+      });
+      function is(value) {
+        const candidate = value;
+        return candidate && CancellationReceiverStrategy.is(candidate.receiver) && CancellationSenderStrategy.is(candidate.sender);
+      }
+      CancellationStrategy2.is = is;
+    })(CancellationStrategy || (exports2.CancellationStrategy = CancellationStrategy = {}));
+    var MessageStrategy;
+    (function(MessageStrategy2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && Is.func(candidate.handleMessage);
+      }
+      MessageStrategy2.is = is;
+    })(MessageStrategy || (exports2.MessageStrategy = MessageStrategy = {}));
+    var ConnectionOptions;
+    (function(ConnectionOptions2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && (CancellationStrategy.is(candidate.cancellationStrategy) || ConnectionStrategy.is(candidate.connectionStrategy) || MessageStrategy.is(candidate.messageStrategy));
+      }
+      ConnectionOptions2.is = is;
+    })(ConnectionOptions || (exports2.ConnectionOptions = ConnectionOptions = {}));
+    var ConnectionState;
+    (function(ConnectionState2) {
+      ConnectionState2[ConnectionState2["New"] = 1] = "New";
+      ConnectionState2[ConnectionState2["Listening"] = 2] = "Listening";
+      ConnectionState2[ConnectionState2["Closed"] = 3] = "Closed";
+      ConnectionState2[ConnectionState2["Disposed"] = 4] = "Disposed";
+    })(ConnectionState || (ConnectionState = {}));
+    function createMessageConnection(messageReader, messageWriter, _logger, options) {
+      const logger = _logger !== void 0 ? _logger : exports2.NullLogger;
+      let sequenceNumber = 0;
+      let notificationSequenceNumber = 0;
+      let unknownResponseSequenceNumber = 0;
+      const version = "2.0";
+      let starRequestHandler = void 0;
+      const requestHandlers = /* @__PURE__ */ new Map();
+      let starNotificationHandler = void 0;
+      const notificationHandlers = /* @__PURE__ */ new Map();
+      const progressHandlers = /* @__PURE__ */ new Map();
+      let timer;
+      let messageQueue = new linkedMap_1.LinkedMap();
+      let responsePromises = /* @__PURE__ */ new Map();
+      let knownCanceledRequests = /* @__PURE__ */ new Set();
+      let requestTokens = /* @__PURE__ */ new Map();
+      let trace = Trace.Off;
+      let traceFormat = TraceFormat.Text;
+      let tracer;
+      let state = ConnectionState.New;
+      const errorEmitter = new events_1.Emitter();
+      const closeEmitter = new events_1.Emitter();
+      const unhandledNotificationEmitter = new events_1.Emitter();
+      const unhandledProgressEmitter = new events_1.Emitter();
+      const disposeEmitter = new events_1.Emitter();
+      const cancellationStrategy = options && options.cancellationStrategy ? options.cancellationStrategy : CancellationStrategy.Message;
+      function createRequestQueueKey(id) {
+        if (id === null) {
+          throw new Error(`Can't send requests with id null since the response can't be correlated.`);
+        }
+        return "req-" + id.toString();
+      }
+      function createResponseQueueKey(id) {
+        if (id === null) {
+          return "res-unknown-" + (++unknownResponseSequenceNumber).toString();
+        } else {
+          return "res-" + id.toString();
+        }
+      }
+      function createNotificationQueueKey() {
+        return "not-" + (++notificationSequenceNumber).toString();
+      }
+      function addMessageToQueue(queue, message) {
+        if (messages_1.Message.isRequest(message)) {
+          queue.set(createRequestQueueKey(message.id), message);
+        } else if (messages_1.Message.isResponse(message)) {
+          queue.set(createResponseQueueKey(message.id), message);
+        } else {
+          queue.set(createNotificationQueueKey(), message);
+        }
+      }
+      function cancelUndispatched(_message) {
+        return void 0;
+      }
+      function isListening() {
+        return state === ConnectionState.Listening;
+      }
+      function isClosed() {
+        return state === ConnectionState.Closed;
+      }
+      function isDisposed() {
+        return state === ConnectionState.Disposed;
+      }
+      function closeHandler() {
+        if (state === ConnectionState.New || state === ConnectionState.Listening) {
+          state = ConnectionState.Closed;
+          closeEmitter.fire(void 0);
+        }
+      }
+      function readErrorHandler(error) {
+        errorEmitter.fire([error, void 0, void 0]);
+      }
+      function writeErrorHandler(data) {
+        errorEmitter.fire(data);
+      }
+      messageReader.onClose(closeHandler);
+      messageReader.onError(readErrorHandler);
+      messageWriter.onClose(closeHandler);
+      messageWriter.onError(writeErrorHandler);
+      function triggerMessageQueue() {
+        if (timer || messageQueue.size === 0) {
+          return;
+        }
+        timer = (0, ral_1.default)().timer.setImmediate(() => {
+          timer = void 0;
+          processMessageQueue();
+        });
+      }
+      function handleMessage(message) {
+        if (messages_1.Message.isRequest(message)) {
+          handleRequest(message);
+        } else if (messages_1.Message.isNotification(message)) {
+          handleNotification(message);
+        } else if (messages_1.Message.isResponse(message)) {
+          handleResponse(message);
+        } else {
+          handleInvalidMessage(message);
+        }
+      }
+      function processMessageQueue() {
+        if (messageQueue.size === 0) {
+          return;
+        }
+        const message = messageQueue.shift();
+        try {
+          const messageStrategy = options?.messageStrategy;
+          if (MessageStrategy.is(messageStrategy)) {
+            messageStrategy.handleMessage(message, handleMessage);
+          } else {
+            handleMessage(message);
+          }
+        } finally {
+          triggerMessageQueue();
+        }
+      }
+      const callback = (message) => {
+        try {
+          if (messages_1.Message.isNotification(message) && message.method === CancelNotification.type.method) {
+            const cancelId = message.params.id;
+            const key = createRequestQueueKey(cancelId);
+            const toCancel = messageQueue.get(key);
+            if (messages_1.Message.isRequest(toCancel)) {
+              const strategy = options?.connectionStrategy;
+              const response = strategy && strategy.cancelUndispatched ? strategy.cancelUndispatched(toCancel, cancelUndispatched) : cancelUndispatched(toCancel);
+              if (response && (response.error !== void 0 || response.result !== void 0)) {
+                messageQueue.delete(key);
+                requestTokens.delete(cancelId);
+                response.id = toCancel.id;
+                traceSendingResponse(response, message.method, Date.now());
+                messageWriter.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
+                return;
+              }
+            }
+            const cancellationToken = requestTokens.get(cancelId);
+            if (cancellationToken !== void 0) {
+              cancellationToken.cancel();
+              traceReceivedNotification(message);
+              return;
+            } else {
+              knownCanceledRequests.add(cancelId);
+            }
+          }
+          addMessageToQueue(messageQueue, message);
+        } finally {
+          triggerMessageQueue();
+        }
+      };
+      function handleRequest(requestMessage) {
+        if (isDisposed()) {
+          return;
+        }
+        function reply(resultOrError, method, startTime2) {
+          const message = {
+            jsonrpc: version,
+            id: requestMessage.id
+          };
+          if (resultOrError instanceof messages_1.ResponseError) {
+            message.error = resultOrError.toJson();
+          } else {
+            message.result = resultOrError === void 0 ? null : resultOrError;
+          }
+          traceSendingResponse(message, method, startTime2);
+          messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+        }
+        function replyError(error, method, startTime2) {
+          const message = {
+            jsonrpc: version,
+            id: requestMessage.id,
+            error: error.toJson()
+          };
+          traceSendingResponse(message, method, startTime2);
+          messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+        }
+        function replySuccess(result, method, startTime2) {
+          if (result === void 0) {
+            result = null;
+          }
+          const message = {
+            jsonrpc: version,
+            id: requestMessage.id,
+            result
+          };
+          traceSendingResponse(message, method, startTime2);
+          messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+        }
+        traceReceivedRequest(requestMessage);
+        const element = requestHandlers.get(requestMessage.method);
+        let type;
+        let requestHandler;
+        if (element) {
+          type = element.type;
+          requestHandler = element.handler;
+        }
+        const startTime = Date.now();
+        if (requestHandler || starRequestHandler) {
+          const tokenKey = requestMessage.id ?? String(Date.now());
+          const cancellationSource = IdCancellationReceiverStrategy.is(cancellationStrategy.receiver) ? cancellationStrategy.receiver.createCancellationTokenSource(tokenKey) : cancellationStrategy.receiver.createCancellationTokenSource(requestMessage);
+          if (requestMessage.id !== null && knownCanceledRequests.has(requestMessage.id)) {
+            cancellationSource.cancel();
+          }
+          if (requestMessage.id !== null) {
+            requestTokens.set(tokenKey, cancellationSource);
+          }
+          try {
+            let handlerResult;
+            if (requestHandler) {
+              if (requestMessage.params === void 0) {
+                if (type !== void 0 && type.numberOfParams !== 0) {
+                  replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines ${type.numberOfParams} params but received none.`), requestMessage.method, startTime);
+                  return;
+                }
+                handlerResult = requestHandler(cancellationSource.token);
+              } else if (Array.isArray(requestMessage.params)) {
+                if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byName) {
+                  replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines parameters by name but received parameters by position`), requestMessage.method, startTime);
+                  return;
+                }
+                handlerResult = requestHandler(...requestMessage.params, cancellationSource.token);
+              } else {
+                if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byPosition) {
+                  replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines parameters by position but received parameters by name`), requestMessage.method, startTime);
+                  return;
+                }
+                handlerResult = requestHandler(requestMessage.params, cancellationSource.token);
+              }
+            } else if (starRequestHandler) {
+              handlerResult = starRequestHandler(requestMessage.method, requestMessage.params, cancellationSource.token);
+            }
+            const promise = handlerResult;
+            if (!handlerResult) {
+              requestTokens.delete(tokenKey);
+              replySuccess(handlerResult, requestMessage.method, startTime);
+            } else if (promise.then) {
+              promise.then((resultOrError) => {
+                requestTokens.delete(tokenKey);
+                reply(resultOrError, requestMessage.method, startTime);
+              }, (error) => {
+                requestTokens.delete(tokenKey);
+                if (error instanceof messages_1.ResponseError) {
+                  replyError(error, requestMessage.method, startTime);
+                } else if (error && Is.string(error.message)) {
+                  replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed with message: ${error.message}`), requestMessage.method, startTime);
+                } else {
+                  replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed unexpectedly without providing any details.`), requestMessage.method, startTime);
+                }
+              });
+            } else {
+              requestTokens.delete(tokenKey);
+              reply(handlerResult, requestMessage.method, startTime);
+            }
+          } catch (error) {
+            requestTokens.delete(tokenKey);
+            if (error instanceof messages_1.ResponseError) {
+              reply(error, requestMessage.method, startTime);
+            } else if (error && Is.string(error.message)) {
+              replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed with message: ${error.message}`), requestMessage.method, startTime);
+            } else {
+              replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed unexpectedly without providing any details.`), requestMessage.method, startTime);
+            }
+          }
+        } else {
+          replyError(new messages_1.ResponseError(messages_1.ErrorCodes.MethodNotFound, `Unhandled method ${requestMessage.method}`), requestMessage.method, startTime);
+        }
+      }
+      function handleResponse(responseMessage) {
+        if (isDisposed()) {
+          return;
+        }
+        if (responseMessage.id === null) {
+          if (responseMessage.error) {
+            logger.error(`Received response message without id: Error is: 
+${JSON.stringify(responseMessage.error, void 0, 4)}`);
+          } else {
+            logger.error(`Received response message without id. No further error information provided.`);
+          }
+        } else {
+          const key = responseMessage.id;
+          const responsePromise = responsePromises.get(key);
+          traceReceivedResponse(responseMessage, responsePromise);
+          if (responsePromise !== void 0) {
+            responsePromises.delete(key);
+            try {
+              if (responseMessage.error) {
+                const error = responseMessage.error;
+                responsePromise.reject(new messages_1.ResponseError(error.code, error.message, error.data));
+              } else if (responseMessage.result !== void 0) {
+                responsePromise.resolve(responseMessage.result);
+              } else {
+                throw new Error("Should never happen.");
+              }
+            } catch (error) {
+              if (error.message) {
+                logger.error(`Response handler '${responsePromise.method}' failed with message: ${error.message}`);
+              } else {
+                logger.error(`Response handler '${responsePromise.method}' failed unexpectedly.`);
+              }
+            }
+          }
+        }
+      }
+      function handleNotification(message) {
+        if (isDisposed()) {
+          return;
+        }
+        let type = void 0;
+        let notificationHandler;
+        if (message.method === CancelNotification.type.method) {
+          const cancelId = message.params.id;
+          knownCanceledRequests.delete(cancelId);
+          traceReceivedNotification(message);
+          return;
+        } else {
+          const element = notificationHandlers.get(message.method);
+          if (element) {
+            notificationHandler = element.handler;
+            type = element.type;
+          }
+        }
+        if (notificationHandler || starNotificationHandler) {
+          try {
+            traceReceivedNotification(message);
+            if (notificationHandler) {
+              if (message.params === void 0) {
+                if (type !== void 0) {
+                  if (type.numberOfParams !== 0 && type.parameterStructures !== messages_1.ParameterStructures.byName) {
+                    logger.error(`Notification ${message.method} defines ${type.numberOfParams} params but received none.`);
+                  }
+                }
+                notificationHandler();
+              } else if (Array.isArray(message.params)) {
+                const params = message.params;
+                if (message.method === ProgressNotification.type.method && params.length === 2 && ProgressToken.is(params[0])) {
+                  notificationHandler({ token: params[0], value: params[1] });
+                } else {
+                  if (type !== void 0) {
+                    if (type.parameterStructures === messages_1.ParameterStructures.byName) {
+                      logger.error(`Notification ${message.method} defines parameters by name but received parameters by position`);
+                    }
+                    if (type.numberOfParams !== message.params.length) {
+                      logger.error(`Notification ${message.method} defines ${type.numberOfParams} params but received ${params.length} arguments`);
+                    }
+                  }
+                  notificationHandler(...params);
+                }
+              } else {
+                if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byPosition) {
+                  logger.error(`Notification ${message.method} defines parameters by position but received parameters by name`);
+                }
+                notificationHandler(message.params);
+              }
+            } else if (starNotificationHandler) {
+              starNotificationHandler(message.method, message.params);
+            }
+          } catch (error) {
+            if (error.message) {
+              logger.error(`Notification handler '${message.method}' failed with message: ${error.message}`);
+            } else {
+              logger.error(`Notification handler '${message.method}' failed unexpectedly.`);
+            }
+          }
+        } else {
+          unhandledNotificationEmitter.fire(message);
+        }
+      }
+      function handleInvalidMessage(message) {
+        if (!message) {
+          logger.error("Received empty message.");
+          return;
+        }
+        logger.error(`Received message which is neither a response nor a notification message:
+${JSON.stringify(message, null, 4)}`);
+        const responseMessage = message;
+        if (Is.string(responseMessage.id) || Is.number(responseMessage.id)) {
+          const key = responseMessage.id;
+          const responseHandler = responsePromises.get(key);
+          if (responseHandler) {
+            responseHandler.reject(new Error("The received response has neither a result nor an error property."));
+          }
+        }
+      }
+      function stringifyTrace(params) {
+        if (params === void 0 || params === null) {
+          return void 0;
+        }
+        switch (trace) {
+          case Trace.Verbose:
+            return JSON.stringify(params, null, 4);
+          case Trace.Compact:
+            return JSON.stringify(params);
+          default:
+            return void 0;
+        }
+      }
+      function traceSendingRequest(message) {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if ((trace === Trace.Verbose || trace === Trace.Compact) && message.params) {
+            data = `Params: ${stringifyTrace(message.params)}
+
+`;
+          }
+          tracer.log(`Sending request '${message.method} - (${message.id})'.`, data);
+        } else {
+          logLSPMessage("send-request", message);
+        }
+      }
+      function traceSendingNotification(message) {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if (trace === Trace.Verbose || trace === Trace.Compact) {
+            if (message.params) {
+              data = `Params: ${stringifyTrace(message.params)}
+
+`;
+            } else {
+              data = "No parameters provided.\n\n";
+            }
+          }
+          tracer.log(`Sending notification '${message.method}'.`, data);
+        } else {
+          logLSPMessage("send-notification", message);
+        }
+      }
+      function traceSendingResponse(message, method, startTime) {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if (trace === Trace.Verbose || trace === Trace.Compact) {
+            if (message.error && message.error.data) {
+              data = `Error data: ${stringifyTrace(message.error.data)}
+
+`;
+            } else {
+              if (message.result) {
+                data = `Result: ${stringifyTrace(message.result)}
+
+`;
+              } else if (message.error === void 0) {
+                data = "No result returned.\n\n";
+              }
+            }
+          }
+          tracer.log(`Sending response '${method} - (${message.id})'. Processing request took ${Date.now() - startTime}ms`, data);
+        } else {
+          logLSPMessage("send-response", message);
+        }
+      }
+      function traceReceivedRequest(message) {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if ((trace === Trace.Verbose || trace === Trace.Compact) && message.params) {
+            data = `Params: ${stringifyTrace(message.params)}
+
+`;
+          }
+          tracer.log(`Received request '${message.method} - (${message.id})'.`, data);
+        } else {
+          logLSPMessage("receive-request", message);
+        }
+      }
+      function traceReceivedNotification(message) {
+        if (trace === Trace.Off || !tracer || message.method === LogTraceNotification.type.method) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if (trace === Trace.Verbose || trace === Trace.Compact) {
+            if (message.params) {
+              data = `Params: ${stringifyTrace(message.params)}
+
+`;
+            } else {
+              data = "No parameters provided.\n\n";
+            }
+          }
+          tracer.log(`Received notification '${message.method}'.`, data);
+        } else {
+          logLSPMessage("receive-notification", message);
+        }
+      }
+      function traceReceivedResponse(message, responsePromise) {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        if (traceFormat === TraceFormat.Text) {
+          let data = void 0;
+          if (trace === Trace.Verbose || trace === Trace.Compact) {
+            if (message.error && message.error.data) {
+              data = `Error data: ${stringifyTrace(message.error.data)}
+
+`;
+            } else {
+              if (message.result) {
+                data = `Result: ${stringifyTrace(message.result)}
+
+`;
+              } else if (message.error === void 0) {
+                data = "No result returned.\n\n";
+              }
+            }
+          }
+          if (responsePromise) {
+            const error = message.error ? ` Request failed: ${message.error.message} (${message.error.code}).` : "";
+            tracer.log(`Received response '${responsePromise.method} - (${message.id})' in ${Date.now() - responsePromise.timerStart}ms.${error}`, data);
+          } else {
+            tracer.log(`Received response ${message.id} without active response promise.`, data);
+          }
+        } else {
+          logLSPMessage("receive-response", message);
+        }
+      }
+      function logLSPMessage(type, message) {
+        if (!tracer || trace === Trace.Off) {
+          return;
+        }
+        const lspMessage = {
+          isLSPMessage: true,
+          type,
+          message,
+          timestamp: Date.now()
+        };
+        tracer.log(lspMessage);
+      }
+      function throwIfClosedOrDisposed() {
+        if (isClosed()) {
+          throw new ConnectionError(ConnectionErrors.Closed, "Connection is closed.");
+        }
+        if (isDisposed()) {
+          throw new ConnectionError(ConnectionErrors.Disposed, "Connection is disposed.");
+        }
+      }
+      function throwIfListening() {
+        if (isListening()) {
+          throw new ConnectionError(ConnectionErrors.AlreadyListening, "Connection is already listening");
+        }
+      }
+      function throwIfNotListening() {
+        if (!isListening()) {
+          throw new Error("Call listen() first.");
+        }
+      }
+      function undefinedToNull(param) {
+        if (param === void 0) {
+          return null;
+        } else {
+          return param;
+        }
+      }
+      function nullToUndefined(param) {
+        if (param === null) {
+          return void 0;
+        } else {
+          return param;
+        }
+      }
+      function isNamedParam(param) {
+        return param !== void 0 && param !== null && !Array.isArray(param) && typeof param === "object";
+      }
+      function computeSingleParam(parameterStructures, param) {
+        switch (parameterStructures) {
+          case messages_1.ParameterStructures.auto:
+            if (isNamedParam(param)) {
+              return nullToUndefined(param);
+            } else {
+              return [undefinedToNull(param)];
+            }
+          case messages_1.ParameterStructures.byName:
+            if (!isNamedParam(param)) {
+              throw new Error(`Received parameters by name but param is not an object literal.`);
+            }
+            return nullToUndefined(param);
+          case messages_1.ParameterStructures.byPosition:
+            return [undefinedToNull(param)];
+          default:
+            throw new Error(`Unknown parameter structure ${parameterStructures.toString()}`);
+        }
+      }
+      function computeMessageParams(type, params) {
+        let result;
+        const numberOfParams = type.numberOfParams;
+        switch (numberOfParams) {
+          case 0:
+            result = void 0;
+            break;
+          case 1:
+            result = computeSingleParam(type.parameterStructures, params[0]);
+            break;
+          default:
+            result = [];
+            for (let i = 0; i < params.length && i < numberOfParams; i++) {
+              result.push(undefinedToNull(params[i]));
+            }
+            if (params.length < numberOfParams) {
+              for (let i = params.length; i < numberOfParams; i++) {
+                result.push(null);
+              }
+            }
+            break;
+        }
+        return result;
+      }
+      const connection2 = {
+        sendNotification: (type, ...args) => {
+          throwIfClosedOrDisposed();
+          let method;
+          let messageParams;
+          if (Is.string(type)) {
+            method = type;
+            const first = args[0];
+            let paramStart = 0;
+            let parameterStructures = messages_1.ParameterStructures.auto;
+            if (messages_1.ParameterStructures.is(first)) {
+              paramStart = 1;
+              parameterStructures = first;
+            }
+            let paramEnd = args.length;
+            const numberOfParams = paramEnd - paramStart;
+            switch (numberOfParams) {
+              case 0:
+                messageParams = void 0;
+                break;
+              case 1:
+                messageParams = computeSingleParam(parameterStructures, args[paramStart]);
+                break;
+              default:
+                if (parameterStructures === messages_1.ParameterStructures.byName) {
+                  throw new Error(`Received ${numberOfParams} parameters for 'by Name' notification parameter structure.`);
+                }
+                messageParams = args.slice(paramStart, paramEnd).map((value) => undefinedToNull(value));
+                break;
+            }
+          } else {
+            const params = args;
+            method = type.method;
+            messageParams = computeMessageParams(type, params);
+          }
+          const notificationMessage = {
+            jsonrpc: version,
+            method,
+            params: messageParams
+          };
+          traceSendingNotification(notificationMessage);
+          return messageWriter.write(notificationMessage).catch((error) => {
+            logger.error(`Sending notification failed.`);
+            throw error;
+          });
+        },
+        onNotification: (type, handler) => {
+          throwIfClosedOrDisposed();
+          let method;
+          if (Is.func(type)) {
+            starNotificationHandler = type;
+          } else if (handler) {
+            if (Is.string(type)) {
+              method = type;
+              notificationHandlers.set(type, { type: void 0, handler });
+            } else {
+              method = type.method;
+              notificationHandlers.set(type.method, { type, handler });
+            }
+          }
+          return {
+            dispose: () => {
+              if (method !== void 0) {
+                notificationHandlers.delete(method);
+              } else {
+                starNotificationHandler = void 0;
+              }
+            }
+          };
+        },
+        onProgress: (_type, token, handler) => {
+          if (progressHandlers.has(token)) {
+            throw new Error(`Progress handler for token ${token} already registered`);
+          }
+          progressHandlers.set(token, handler);
+          return {
+            dispose: () => {
+              progressHandlers.delete(token);
+            }
+          };
+        },
+        sendProgress: (_type, token, value) => {
+          return connection2.sendNotification(ProgressNotification.type, { token, value });
+        },
+        onUnhandledProgress: unhandledProgressEmitter.event,
+        sendRequest: (type, ...args) => {
+          throwIfClosedOrDisposed();
+          throwIfNotListening();
+          let method;
+          let messageParams;
+          let token = void 0;
+          if (Is.string(type)) {
+            method = type;
+            const first = args[0];
+            const last = args[args.length - 1];
+            let paramStart = 0;
+            let parameterStructures = messages_1.ParameterStructures.auto;
+            if (messages_1.ParameterStructures.is(first)) {
+              paramStart = 1;
+              parameterStructures = first;
+            }
+            let paramEnd = args.length;
+            if (cancellation_1.CancellationToken.is(last)) {
+              paramEnd = paramEnd - 1;
+              token = last;
+            }
+            const numberOfParams = paramEnd - paramStart;
+            switch (numberOfParams) {
+              case 0:
+                messageParams = void 0;
+                break;
+              case 1:
+                messageParams = computeSingleParam(parameterStructures, args[paramStart]);
+                break;
+              default:
+                if (parameterStructures === messages_1.ParameterStructures.byName) {
+                  throw new Error(`Received ${numberOfParams} parameters for 'by Name' request parameter structure.`);
+                }
+                messageParams = args.slice(paramStart, paramEnd).map((value) => undefinedToNull(value));
+                break;
+            }
+          } else {
+            const params = args;
+            method = type.method;
+            messageParams = computeMessageParams(type, params);
+            const numberOfParams = type.numberOfParams;
+            token = cancellation_1.CancellationToken.is(params[numberOfParams]) ? params[numberOfParams] : void 0;
+          }
+          const id = sequenceNumber++;
+          let disposable;
+          if (token) {
+            disposable = token.onCancellationRequested(() => {
+              const p = cancellationStrategy.sender.sendCancellation(connection2, id);
+              if (p === void 0) {
+                logger.log(`Received no promise from cancellation strategy when cancelling id ${id}`);
+                return Promise.resolve();
+              } else {
+                return p.catch(() => {
+                  logger.log(`Sending cancellation messages for id ${id} failed`);
+                });
+              }
+            });
+          }
+          const requestMessage = {
+            jsonrpc: version,
+            id,
+            method,
+            params: messageParams
+          };
+          traceSendingRequest(requestMessage);
+          if (typeof cancellationStrategy.sender.enableCancellation === "function") {
+            cancellationStrategy.sender.enableCancellation(requestMessage);
+          }
+          return new Promise(async (resolve, reject) => {
+            const resolveWithCleanup = (r) => {
+              resolve(r);
+              cancellationStrategy.sender.cleanup(id);
+              disposable?.dispose();
+            };
+            const rejectWithCleanup = (r) => {
+              reject(r);
+              cancellationStrategy.sender.cleanup(id);
+              disposable?.dispose();
+            };
+            const responsePromise = { method, timerStart: Date.now(), resolve: resolveWithCleanup, reject: rejectWithCleanup };
+            try {
+              await messageWriter.write(requestMessage);
+              responsePromises.set(id, responsePromise);
+            } catch (error) {
+              logger.error(`Sending request failed.`);
+              responsePromise.reject(new messages_1.ResponseError(messages_1.ErrorCodes.MessageWriteError, error.message ? error.message : "Unknown reason"));
+              throw error;
+            }
+          });
+        },
+        onRequest: (type, handler) => {
+          throwIfClosedOrDisposed();
+          let method = null;
+          if (StarRequestHandler.is(type)) {
+            method = void 0;
+            starRequestHandler = type;
+          } else if (Is.string(type)) {
+            method = null;
+            if (handler !== void 0) {
+              method = type;
+              requestHandlers.set(type, { handler, type: void 0 });
+            }
+          } else {
+            if (handler !== void 0) {
+              method = type.method;
+              requestHandlers.set(type.method, { type, handler });
+            }
+          }
+          return {
+            dispose: () => {
+              if (method === null) {
+                return;
+              }
+              if (method !== void 0) {
+                requestHandlers.delete(method);
+              } else {
+                starRequestHandler = void 0;
+              }
+            }
+          };
+        },
+        hasPendingResponse: () => {
+          return responsePromises.size > 0;
+        },
+        trace: async (_value, _tracer, sendNotificationOrTraceOptions) => {
+          let _sendNotification = false;
+          let _traceFormat = TraceFormat.Text;
+          if (sendNotificationOrTraceOptions !== void 0) {
+            if (Is.boolean(sendNotificationOrTraceOptions)) {
+              _sendNotification = sendNotificationOrTraceOptions;
+            } else {
+              _sendNotification = sendNotificationOrTraceOptions.sendNotification || false;
+              _traceFormat = sendNotificationOrTraceOptions.traceFormat || TraceFormat.Text;
+            }
+          }
+          trace = _value;
+          traceFormat = _traceFormat;
+          if (trace === Trace.Off) {
+            tracer = void 0;
+          } else {
+            tracer = _tracer;
+          }
+          if (_sendNotification && !isClosed() && !isDisposed()) {
+            await connection2.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
+          }
+        },
+        onError: errorEmitter.event,
+        onClose: closeEmitter.event,
+        onUnhandledNotification: unhandledNotificationEmitter.event,
+        onDispose: disposeEmitter.event,
+        end: () => {
+          messageWriter.end();
+        },
+        dispose: () => {
+          if (isDisposed()) {
+            return;
+          }
+          state = ConnectionState.Disposed;
+          disposeEmitter.fire(void 0);
+          const error = new messages_1.ResponseError(messages_1.ErrorCodes.PendingResponseRejected, "Pending response rejected since connection got disposed");
+          for (const promise of responsePromises.values()) {
+            promise.reject(error);
+          }
+          responsePromises = /* @__PURE__ */ new Map();
+          requestTokens = /* @__PURE__ */ new Map();
+          knownCanceledRequests = /* @__PURE__ */ new Set();
+          messageQueue = new linkedMap_1.LinkedMap();
+          if (Is.func(messageWriter.dispose)) {
+            messageWriter.dispose();
+          }
+          if (Is.func(messageReader.dispose)) {
+            messageReader.dispose();
+          }
+        },
+        listen: () => {
+          throwIfClosedOrDisposed();
+          throwIfListening();
+          state = ConnectionState.Listening;
+          messageReader.listen(callback);
+        },
+        inspect: () => {
+          (0, ral_1.default)().console.log("inspect");
+        }
+      };
+      connection2.onNotification(LogTraceNotification.type, (params) => {
+        if (trace === Trace.Off || !tracer) {
+          return;
+        }
+        const verbose = trace === Trace.Verbose || trace === Trace.Compact;
+        tracer.log(params.message, verbose ? params.verbose : void 0);
+      });
+      connection2.onNotification(ProgressNotification.type, (params) => {
+        const handler = progressHandlers.get(params.token);
+        if (handler) {
+          handler(params.value);
+        } else {
+          unhandledProgressEmitter.fire(params);
+        }
+      });
+      return connection2;
+    }
+    exports2.createMessageConnection = createMessageConnection;
+  }
+});
+
+// node_modules/vscode-jsonrpc/lib/common/api.js
+var require_api = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/common/api.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ProgressType = exports2.ProgressToken = exports2.createMessageConnection = exports2.NullLogger = exports2.ConnectionOptions = exports2.ConnectionStrategy = exports2.AbstractMessageBuffer = exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = exports2.SharedArrayReceiverStrategy = exports2.SharedArraySenderStrategy = exports2.CancellationToken = exports2.CancellationTokenSource = exports2.Emitter = exports2.Event = exports2.Disposable = exports2.LRUCache = exports2.Touch = exports2.LinkedMap = exports2.ParameterStructures = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.ErrorCodes = exports2.ResponseError = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType0 = exports2.RequestType = exports2.Message = exports2.RAL = void 0;
+    exports2.MessageStrategy = exports2.CancellationStrategy = exports2.CancellationSenderStrategy = exports2.CancellationReceiverStrategy = exports2.ConnectionError = exports2.ConnectionErrors = exports2.LogTraceNotification = exports2.SetTraceNotification = exports2.TraceFormat = exports2.TraceValues = exports2.Trace = void 0;
+    var messages_1 = require_messages();
+    Object.defineProperty(exports2, "Message", { enumerable: true, get: function() {
+      return messages_1.Message;
+    } });
+    Object.defineProperty(exports2, "RequestType", { enumerable: true, get: function() {
+      return messages_1.RequestType;
+    } });
+    Object.defineProperty(exports2, "RequestType0", { enumerable: true, get: function() {
+      return messages_1.RequestType0;
+    } });
+    Object.defineProperty(exports2, "RequestType1", { enumerable: true, get: function() {
+      return messages_1.RequestType1;
+    } });
+    Object.defineProperty(exports2, "RequestType2", { enumerable: true, get: function() {
+      return messages_1.RequestType2;
+    } });
+    Object.defineProperty(exports2, "RequestType3", { enumerable: true, get: function() {
+      return messages_1.RequestType3;
+    } });
+    Object.defineProperty(exports2, "RequestType4", { enumerable: true, get: function() {
+      return messages_1.RequestType4;
+    } });
+    Object.defineProperty(exports2, "RequestType5", { enumerable: true, get: function() {
+      return messages_1.RequestType5;
+    } });
+    Object.defineProperty(exports2, "RequestType6", { enumerable: true, get: function() {
+      return messages_1.RequestType6;
+    } });
+    Object.defineProperty(exports2, "RequestType7", { enumerable: true, get: function() {
+      return messages_1.RequestType7;
+    } });
+    Object.defineProperty(exports2, "RequestType8", { enumerable: true, get: function() {
+      return messages_1.RequestType8;
+    } });
+    Object.defineProperty(exports2, "RequestType9", { enumerable: true, get: function() {
+      return messages_1.RequestType9;
+    } });
+    Object.defineProperty(exports2, "ResponseError", { enumerable: true, get: function() {
+      return messages_1.ResponseError;
+    } });
+    Object.defineProperty(exports2, "ErrorCodes", { enumerable: true, get: function() {
+      return messages_1.ErrorCodes;
+    } });
+    Object.defineProperty(exports2, "NotificationType", { enumerable: true, get: function() {
+      return messages_1.NotificationType;
+    } });
+    Object.defineProperty(exports2, "NotificationType0", { enumerable: true, get: function() {
+      return messages_1.NotificationType0;
+    } });
+    Object.defineProperty(exports2, "NotificationType1", { enumerable: true, get: function() {
+      return messages_1.NotificationType1;
+    } });
+    Object.defineProperty(exports2, "NotificationType2", { enumerable: true, get: function() {
+      return messages_1.NotificationType2;
+    } });
+    Object.defineProperty(exports2, "NotificationType3", { enumerable: true, get: function() {
+      return messages_1.NotificationType3;
+    } });
+    Object.defineProperty(exports2, "NotificationType4", { enumerable: true, get: function() {
+      return messages_1.NotificationType4;
+    } });
+    Object.defineProperty(exports2, "NotificationType5", { enumerable: true, get: function() {
+      return messages_1.NotificationType5;
+    } });
+    Object.defineProperty(exports2, "NotificationType6", { enumerable: true, get: function() {
+      return messages_1.NotificationType6;
+    } });
+    Object.defineProperty(exports2, "NotificationType7", { enumerable: true, get: function() {
+      return messages_1.NotificationType7;
+    } });
+    Object.defineProperty(exports2, "NotificationType8", { enumerable: true, get: function() {
+      return messages_1.NotificationType8;
+    } });
+    Object.defineProperty(exports2, "NotificationType9", { enumerable: true, get: function() {
+      return messages_1.NotificationType9;
+    } });
+    Object.defineProperty(exports2, "ParameterStructures", { enumerable: true, get: function() {
+      return messages_1.ParameterStructures;
+    } });
+    var linkedMap_1 = require_linkedMap();
+    Object.defineProperty(exports2, "LinkedMap", { enumerable: true, get: function() {
+      return linkedMap_1.LinkedMap;
+    } });
+    Object.defineProperty(exports2, "LRUCache", { enumerable: true, get: function() {
+      return linkedMap_1.LRUCache;
+    } });
+    Object.defineProperty(exports2, "Touch", { enumerable: true, get: function() {
+      return linkedMap_1.Touch;
+    } });
+    var disposable_1 = require_disposable();
+    Object.defineProperty(exports2, "Disposable", { enumerable: true, get: function() {
+      return disposable_1.Disposable;
+    } });
+    var events_1 = require_events();
+    Object.defineProperty(exports2, "Event", { enumerable: true, get: function() {
+      return events_1.Event;
+    } });
+    Object.defineProperty(exports2, "Emitter", { enumerable: true, get: function() {
+      return events_1.Emitter;
+    } });
+    var cancellation_1 = require_cancellation();
+    Object.defineProperty(exports2, "CancellationTokenSource", { enumerable: true, get: function() {
+      return cancellation_1.CancellationTokenSource;
+    } });
+    Object.defineProperty(exports2, "CancellationToken", { enumerable: true, get: function() {
+      return cancellation_1.CancellationToken;
+    } });
+    var sharedArrayCancellation_1 = require_sharedArrayCancellation();
+    Object.defineProperty(exports2, "SharedArraySenderStrategy", { enumerable: true, get: function() {
+      return sharedArrayCancellation_1.SharedArraySenderStrategy;
+    } });
+    Object.defineProperty(exports2, "SharedArrayReceiverStrategy", { enumerable: true, get: function() {
+      return sharedArrayCancellation_1.SharedArrayReceiverStrategy;
+    } });
+    var messageReader_1 = require_messageReader();
+    Object.defineProperty(exports2, "MessageReader", { enumerable: true, get: function() {
+      return messageReader_1.MessageReader;
+    } });
+    Object.defineProperty(exports2, "AbstractMessageReader", { enumerable: true, get: function() {
+      return messageReader_1.AbstractMessageReader;
+    } });
+    Object.defineProperty(exports2, "ReadableStreamMessageReader", { enumerable: true, get: function() {
+      return messageReader_1.ReadableStreamMessageReader;
+    } });
+    var messageWriter_1 = require_messageWriter();
+    Object.defineProperty(exports2, "MessageWriter", { enumerable: true, get: function() {
+      return messageWriter_1.MessageWriter;
+    } });
+    Object.defineProperty(exports2, "AbstractMessageWriter", { enumerable: true, get: function() {
+      return messageWriter_1.AbstractMessageWriter;
+    } });
+    Object.defineProperty(exports2, "WriteableStreamMessageWriter", { enumerable: true, get: function() {
+      return messageWriter_1.WriteableStreamMessageWriter;
+    } });
+    var messageBuffer_1 = require_messageBuffer();
+    Object.defineProperty(exports2, "AbstractMessageBuffer", { enumerable: true, get: function() {
+      return messageBuffer_1.AbstractMessageBuffer;
+    } });
+    var connection_1 = require_connection();
+    Object.defineProperty(exports2, "ConnectionStrategy", { enumerable: true, get: function() {
+      return connection_1.ConnectionStrategy;
+    } });
+    Object.defineProperty(exports2, "ConnectionOptions", { enumerable: true, get: function() {
+      return connection_1.ConnectionOptions;
+    } });
+    Object.defineProperty(exports2, "NullLogger", { enumerable: true, get: function() {
+      return connection_1.NullLogger;
+    } });
+    Object.defineProperty(exports2, "createMessageConnection", { enumerable: true, get: function() {
+      return connection_1.createMessageConnection;
+    } });
+    Object.defineProperty(exports2, "ProgressToken", { enumerable: true, get: function() {
+      return connection_1.ProgressToken;
+    } });
+    Object.defineProperty(exports2, "ProgressType", { enumerable: true, get: function() {
+      return connection_1.ProgressType;
+    } });
+    Object.defineProperty(exports2, "Trace", { enumerable: true, get: function() {
+      return connection_1.Trace;
+    } });
+    Object.defineProperty(exports2, "TraceValues", { enumerable: true, get: function() {
+      return connection_1.TraceValues;
+    } });
+    Object.defineProperty(exports2, "TraceFormat", { enumerable: true, get: function() {
+      return connection_1.TraceFormat;
+    } });
+    Object.defineProperty(exports2, "SetTraceNotification", { enumerable: true, get: function() {
+      return connection_1.SetTraceNotification;
+    } });
+    Object.defineProperty(exports2, "LogTraceNotification", { enumerable: true, get: function() {
+      return connection_1.LogTraceNotification;
+    } });
+    Object.defineProperty(exports2, "ConnectionErrors", { enumerable: true, get: function() {
+      return connection_1.ConnectionErrors;
+    } });
+    Object.defineProperty(exports2, "ConnectionError", { enumerable: true, get: function() {
+      return connection_1.ConnectionError;
+    } });
+    Object.defineProperty(exports2, "CancellationReceiverStrategy", { enumerable: true, get: function() {
+      return connection_1.CancellationReceiverStrategy;
+    } });
+    Object.defineProperty(exports2, "CancellationSenderStrategy", { enumerable: true, get: function() {
+      return connection_1.CancellationSenderStrategy;
+    } });
+    Object.defineProperty(exports2, "CancellationStrategy", { enumerable: true, get: function() {
+      return connection_1.CancellationStrategy;
+    } });
+    Object.defineProperty(exports2, "MessageStrategy", { enumerable: true, get: function() {
+      return connection_1.MessageStrategy;
+    } });
+    var ral_1 = require_ral();
+    exports2.RAL = ral_1.default;
+  }
+});
+
+// node_modules/vscode-jsonrpc/lib/node/ril.js
+var require_ril = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/node/ril.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    var util_1 = require("util");
+    var api_1 = require_api();
+    var MessageBuffer = class _MessageBuffer extends api_1.AbstractMessageBuffer {
+      constructor(encoding = "utf-8") {
+        super(encoding);
+      }
+      emptyBuffer() {
+        return _MessageBuffer.emptyBuffer;
+      }
+      fromString(value, encoding) {
+        return Buffer.from(value, encoding);
+      }
+      toString(value, encoding) {
+        if (value instanceof Buffer) {
+          return value.toString(encoding);
+        } else {
+          return new util_1.TextDecoder(encoding).decode(value);
+        }
+      }
+      asNative(buffer, length) {
+        if (length === void 0) {
+          return buffer instanceof Buffer ? buffer : Buffer.from(buffer);
+        } else {
+          return buffer instanceof Buffer ? buffer.slice(0, length) : Buffer.from(buffer, 0, length);
+        }
+      }
+      allocNative(length) {
+        return Buffer.allocUnsafe(length);
+      }
+    };
+    MessageBuffer.emptyBuffer = Buffer.allocUnsafe(0);
+    var ReadableStreamWrapper = class {
+      constructor(stream) {
+        this.stream = stream;
+      }
+      onClose(listener) {
+        this.stream.on("close", listener);
+        return api_1.Disposable.create(() => this.stream.off("close", listener));
+      }
+      onError(listener) {
+        this.stream.on("error", listener);
+        return api_1.Disposable.create(() => this.stream.off("error", listener));
+      }
+      onEnd(listener) {
+        this.stream.on("end", listener);
+        return api_1.Disposable.create(() => this.stream.off("end", listener));
+      }
+      onData(listener) {
+        this.stream.on("data", listener);
+        return api_1.Disposable.create(() => this.stream.off("data", listener));
+      }
+    };
+    var WritableStreamWrapper = class {
+      constructor(stream) {
+        this.stream = stream;
+      }
+      onClose(listener) {
+        this.stream.on("close", listener);
+        return api_1.Disposable.create(() => this.stream.off("close", listener));
+      }
+      onError(listener) {
+        this.stream.on("error", listener);
+        return api_1.Disposable.create(() => this.stream.off("error", listener));
+      }
+      onEnd(listener) {
+        this.stream.on("end", listener);
+        return api_1.Disposable.create(() => this.stream.off("end", listener));
+      }
+      write(data, encoding) {
+        return new Promise((resolve, reject) => {
+          const callback = (error) => {
+            if (error === void 0 || error === null) {
+              resolve();
+            } else {
+              reject(error);
+            }
+          };
+          if (typeof data === "string") {
+            this.stream.write(data, encoding, callback);
+          } else {
+            this.stream.write(data, callback);
+          }
+        });
+      }
+      end() {
+        this.stream.end();
+      }
+    };
+    var _ril = Object.freeze({
+      messageBuffer: Object.freeze({
+        create: (encoding) => new MessageBuffer(encoding)
+      }),
+      applicationJson: Object.freeze({
+        encoder: Object.freeze({
+          name: "application/json",
+          encode: (msg, options) => {
+            try {
+              return Promise.resolve(Buffer.from(JSON.stringify(msg, void 0, 0), options.charset));
+            } catch (err) {
+              return Promise.reject(err);
+            }
+          }
+        }),
+        decoder: Object.freeze({
+          name: "application/json",
+          decode: (buffer, options) => {
+            try {
+              if (buffer instanceof Buffer) {
+                return Promise.resolve(JSON.parse(buffer.toString(options.charset)));
+              } else {
+                return Promise.resolve(JSON.parse(new util_1.TextDecoder(options.charset).decode(buffer)));
+              }
+            } catch (err) {
+              return Promise.reject(err);
+            }
+          }
+        })
+      }),
+      stream: Object.freeze({
+        asReadableStream: (stream) => new ReadableStreamWrapper(stream),
+        asWritableStream: (stream) => new WritableStreamWrapper(stream)
+      }),
+      console,
+      timer: Object.freeze({
+        setTimeout(callback, ms, ...args) {
+          const handle = setTimeout(callback, ms, ...args);
+          return { dispose: () => clearTimeout(handle) };
+        },
+        setImmediate(callback, ...args) {
+          const handle = setImmediate(callback, ...args);
+          return { dispose: () => clearImmediate(handle) };
+        },
+        setInterval(callback, ms, ...args) {
+          const handle = setInterval(callback, ms, ...args);
+          return { dispose: () => clearInterval(handle) };
+        }
+      })
+    });
+    function RIL() {
+      return _ril;
+    }
+    (function(RIL2) {
+      function install() {
+        api_1.RAL.install(_ril);
+      }
+      RIL2.install = install;
+    })(RIL || (RIL = {}));
+    exports2.default = RIL;
+  }
+});
+
+// node_modules/vscode-jsonrpc/lib/node/main.js
+var require_main = __commonJS({
+  "node_modules/vscode-jsonrpc/lib/node/main.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      var desc = Object.getOwnPropertyDescriptor(m, k);
+      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() {
+          return m[k];
+        } };
+      }
+      Object.defineProperty(o, k2, desc);
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createMessageConnection = exports2.createServerSocketTransport = exports2.createClientSocketTransport = exports2.createServerPipeTransport = exports2.createClientPipeTransport = exports2.generateRandomPipeName = exports2.StreamMessageWriter = exports2.StreamMessageReader = exports2.SocketMessageWriter = exports2.SocketMessageReader = exports2.PortMessageWriter = exports2.PortMessageReader = exports2.IPCMessageWriter = exports2.IPCMessageReader = void 0;
+    var ril_1 = require_ril();
+    ril_1.default.install();
+    var path = require("path");
+    var os = require("os");
+    var crypto_1 = require("crypto");
+    var net_1 = require("net");
+    var api_1 = require_api();
+    __exportStar(require_api(), exports2);
+    var IPCMessageReader = class extends api_1.AbstractMessageReader {
+      constructor(process2) {
+        super();
+        this.process = process2;
+        let eventEmitter = this.process;
+        eventEmitter.on("error", (error) => this.fireError(error));
+        eventEmitter.on("close", () => this.fireClose());
+      }
+      listen(callback) {
+        this.process.on("message", callback);
+        return api_1.Disposable.create(() => this.process.off("message", callback));
+      }
+    };
+    exports2.IPCMessageReader = IPCMessageReader;
+    var IPCMessageWriter = class extends api_1.AbstractMessageWriter {
+      constructor(process2) {
+        super();
+        this.process = process2;
+        this.errorCount = 0;
+        const eventEmitter = this.process;
+        eventEmitter.on("error", (error) => this.fireError(error));
+        eventEmitter.on("close", () => this.fireClose);
+      }
+      write(msg) {
+        try {
+          if (typeof this.process.send === "function") {
+            this.process.send(msg, void 0, void 0, (error) => {
+              if (error) {
+                this.errorCount++;
+                this.handleError(error, msg);
+              } else {
+                this.errorCount = 0;
+              }
+            });
+          }
+          return Promise.resolve();
+        } catch (error) {
+          this.handleError(error, msg);
+          return Promise.reject(error);
+        }
+      }
+      handleError(error, msg) {
+        this.errorCount++;
+        this.fireError(error, msg, this.errorCount);
+      }
+      end() {
+      }
+    };
+    exports2.IPCMessageWriter = IPCMessageWriter;
+    var PortMessageReader = class extends api_1.AbstractMessageReader {
+      constructor(port) {
+        super();
+        this.onData = new api_1.Emitter();
+        port.on("close", () => this.fireClose);
+        port.on("error", (error) => this.fireError(error));
+        port.on("message", (message) => {
+          this.onData.fire(message);
+        });
+      }
+      listen(callback) {
+        return this.onData.event(callback);
+      }
+    };
+    exports2.PortMessageReader = PortMessageReader;
+    var PortMessageWriter = class extends api_1.AbstractMessageWriter {
+      constructor(port) {
+        super();
+        this.port = port;
+        this.errorCount = 0;
+        port.on("close", () => this.fireClose());
+        port.on("error", (error) => this.fireError(error));
+      }
+      write(msg) {
+        try {
+          this.port.postMessage(msg);
+          return Promise.resolve();
+        } catch (error) {
+          this.handleError(error, msg);
+          return Promise.reject(error);
+        }
+      }
+      handleError(error, msg) {
+        this.errorCount++;
+        this.fireError(error, msg, this.errorCount);
+      }
+      end() {
+      }
+    };
+    exports2.PortMessageWriter = PortMessageWriter;
+    var SocketMessageReader = class extends api_1.ReadableStreamMessageReader {
+      constructor(socket, encoding = "utf-8") {
+        super((0, ril_1.default)().stream.asReadableStream(socket), encoding);
+      }
+    };
+    exports2.SocketMessageReader = SocketMessageReader;
+    var SocketMessageWriter = class extends api_1.WriteableStreamMessageWriter {
+      constructor(socket, options) {
+        super((0, ril_1.default)().stream.asWritableStream(socket), options);
+        this.socket = socket;
+      }
+      dispose() {
+        super.dispose();
+        this.socket.destroy();
+      }
+    };
+    exports2.SocketMessageWriter = SocketMessageWriter;
+    var StreamMessageReader = class extends api_1.ReadableStreamMessageReader {
+      constructor(readable, encoding) {
+        super((0, ril_1.default)().stream.asReadableStream(readable), encoding);
+      }
+    };
+    exports2.StreamMessageReader = StreamMessageReader;
+    var StreamMessageWriter = class extends api_1.WriteableStreamMessageWriter {
+      constructor(writable, options) {
+        super((0, ril_1.default)().stream.asWritableStream(writable), options);
+      }
+    };
+    exports2.StreamMessageWriter = StreamMessageWriter;
+    var XDG_RUNTIME_DIR = process.env["XDG_RUNTIME_DIR"];
+    var safeIpcPathLengths = /* @__PURE__ */ new Map([
+      ["linux", 107],
+      ["darwin", 103]
+    ]);
+    function generateRandomPipeName() {
+      const randomSuffix = (0, crypto_1.randomBytes)(21).toString("hex");
+      if (process.platform === "win32") {
+        return `\\\\.\\pipe\\vscode-jsonrpc-${randomSuffix}-sock`;
+      }
+      let result;
+      if (XDG_RUNTIME_DIR) {
+        result = path.join(XDG_RUNTIME_DIR, `vscode-ipc-${randomSuffix}.sock`);
+      } else {
+        result = path.join(os.tmpdir(), `vscode-${randomSuffix}.sock`);
+      }
+      const limit = safeIpcPathLengths.get(process.platform);
+      if (limit !== void 0 && result.length > limit) {
+        (0, ril_1.default)().console.warn(`WARNING: IPC handle "${result}" is longer than ${limit} characters.`);
+      }
+      return result;
+    }
+    exports2.generateRandomPipeName = generateRandomPipeName;
+    function createClientPipeTransport(pipeName, encoding = "utf-8") {
+      let connectResolve;
+      const connected = new Promise((resolve, _reject) => {
+        connectResolve = resolve;
+      });
+      return new Promise((resolve, reject) => {
+        let server = (0, net_1.createServer)((socket) => {
+          server.close();
+          connectResolve([
+            new SocketMessageReader(socket, encoding),
+            new SocketMessageWriter(socket, encoding)
+          ]);
+        });
+        server.on("error", reject);
+        server.listen(pipeName, () => {
+          server.removeListener("error", reject);
+          resolve({
+            onConnected: () => {
+              return connected;
+            }
+          });
+        });
+      });
+    }
+    exports2.createClientPipeTransport = createClientPipeTransport;
+    function createServerPipeTransport(pipeName, encoding = "utf-8") {
+      const socket = (0, net_1.createConnection)(pipeName);
+      return [
+        new SocketMessageReader(socket, encoding),
+        new SocketMessageWriter(socket, encoding)
+      ];
+    }
+    exports2.createServerPipeTransport = createServerPipeTransport;
+    function createClientSocketTransport(port, encoding = "utf-8") {
+      let connectResolve;
+      const connected = new Promise((resolve, _reject) => {
+        connectResolve = resolve;
+      });
+      return new Promise((resolve, reject) => {
+        const server = (0, net_1.createServer)((socket) => {
+          server.close();
+          connectResolve([
+            new SocketMessageReader(socket, encoding),
+            new SocketMessageWriter(socket, encoding)
+          ]);
+        });
+        server.on("error", reject);
+        server.listen(port, "127.0.0.1", () => {
+          server.removeListener("error", reject);
+          resolve({
+            onConnected: () => {
+              return connected;
+            }
+          });
+        });
+      });
+    }
+    exports2.createClientSocketTransport = createClientSocketTransport;
+    function createServerSocketTransport(port, encoding = "utf-8") {
+      const socket = (0, net_1.createConnection)(port, "127.0.0.1");
+      return [
+        new SocketMessageReader(socket, encoding),
+        new SocketMessageWriter(socket, encoding)
+      ];
+    }
+    exports2.createServerSocketTransport = createServerSocketTransport;
+    function isReadableStream(value) {
+      const candidate = value;
+      return candidate.read !== void 0 && candidate.addListener !== void 0;
+    }
+    function isWritableStream(value) {
+      const candidate = value;
+      return candidate.write !== void 0 && candidate.addListener !== void 0;
+    }
+    function createMessageConnection(input, output, logger, options) {
+      if (!logger) {
+        logger = api_1.NullLogger;
+      }
+      const reader = isReadableStream(input) ? new StreamMessageReader(input) : input;
+      const writer = isWritableStream(output) ? new StreamMessageWriter(output) : output;
+      if (api_1.ConnectionStrategy.is(options)) {
+        options = { connectionStrategy: options };
+      }
+      return (0, api_1.createMessageConnection)(reader, writer, logger, options);
+    }
+    exports2.createMessageConnection = createMessageConnection;
+  }
+});
+
+// node_modules/vscode-jsonrpc/node.js
+var require_node = __commonJS({
+  "node_modules/vscode-jsonrpc/node.js"(exports2, module2) {
+    "use strict";
+    module2.exports = require_main();
+  }
+});
+
+// node_modules/vscode-languageserver-types/lib/umd/main.js
+var require_main2 = __commonJS({
+  "node_modules/vscode-languageserver-types/lib/umd/main.js"(exports2, module2) {
+    (function(factory) {
+      if (typeof module2 === "object" && typeof module2.exports === "object") {
+        var v = factory(require, exports2);
+        if (v !== void 0)
+          module2.exports = v;
+      } else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
+      }
+    })(function(require2, exports3) {
+      "use strict";
+      Object.defineProperty(exports3, "__esModule", { value: true });
+      exports3.TextDocument = exports3.EOL = exports3.WorkspaceFolder = exports3.InlineCompletionContext = exports3.SelectedCompletionInfo = exports3.InlineCompletionTriggerKind = exports3.InlineCompletionList = exports3.InlineCompletionItem = exports3.StringValue = exports3.InlayHint = exports3.InlayHintLabelPart = exports3.InlayHintKind = exports3.InlineValueContext = exports3.InlineValueEvaluatableExpression = exports3.InlineValueVariableLookup = exports3.InlineValueText = exports3.SemanticTokens = exports3.SemanticTokenModifiers = exports3.SemanticTokenTypes = exports3.SelectionRange = exports3.DocumentLink = exports3.FormattingOptions = exports3.CodeLens = exports3.CodeAction = exports3.CodeActionContext = exports3.CodeActionTriggerKind = exports3.CodeActionKind = exports3.DocumentSymbol = exports3.WorkspaceSymbol = exports3.SymbolInformation = exports3.SymbolTag = exports3.SymbolKind = exports3.DocumentHighlight = exports3.DocumentHighlightKind = exports3.SignatureInformation = exports3.ParameterInformation = exports3.Hover = exports3.MarkedString = exports3.CompletionList = exports3.CompletionItem = exports3.CompletionItemLabelDetails = exports3.InsertTextMode = exports3.InsertReplaceEdit = exports3.CompletionItemTag = exports3.InsertTextFormat = exports3.CompletionItemKind = exports3.MarkupContent = exports3.MarkupKind = exports3.TextDocumentItem = exports3.OptionalVersionedTextDocumentIdentifier = exports3.VersionedTextDocumentIdentifier = exports3.TextDocumentIdentifier = exports3.WorkspaceChange = exports3.WorkspaceEdit = exports3.DeleteFile = exports3.RenameFile = exports3.CreateFile = exports3.TextDocumentEdit = exports3.AnnotatedTextEdit = exports3.ChangeAnnotationIdentifier = exports3.ChangeAnnotation = exports3.TextEdit = exports3.Command = exports3.Diagnostic = exports3.CodeDescription = exports3.DiagnosticTag = exports3.DiagnosticSeverity = exports3.DiagnosticRelatedInformation = exports3.FoldingRange = exports3.FoldingRangeKind = exports3.ColorPresentation = exports3.ColorInformation = exports3.Color = exports3.LocationLink = exports3.Location = exports3.Range = exports3.Position = exports3.uinteger = exports3.integer = exports3.URI = exports3.DocumentUri = void 0;
+      var DocumentUri;
+      (function(DocumentUri2) {
+        function is(value) {
+          return typeof value === "string";
+        }
+        DocumentUri2.is = is;
+      })(DocumentUri || (exports3.DocumentUri = DocumentUri = {}));
+      var URI;
+      (function(URI2) {
+        function is(value) {
+          return typeof value === "string";
+        }
+        URI2.is = is;
+      })(URI || (exports3.URI = URI = {}));
+      var integer;
+      (function(integer2) {
+        integer2.MIN_VALUE = -2147483648;
+        integer2.MAX_VALUE = 2147483647;
+        function is(value) {
+          return typeof value === "number" && integer2.MIN_VALUE <= value && value <= integer2.MAX_VALUE;
+        }
+        integer2.is = is;
+      })(integer || (exports3.integer = integer = {}));
+      var uinteger;
+      (function(uinteger2) {
+        uinteger2.MIN_VALUE = 0;
+        uinteger2.MAX_VALUE = 2147483647;
+        function is(value) {
+          return typeof value === "number" && uinteger2.MIN_VALUE <= value && value <= uinteger2.MAX_VALUE;
+        }
+        uinteger2.is = is;
+      })(uinteger || (exports3.uinteger = uinteger = {}));
+      var Position2;
+      (function(Position3) {
+        function create(line, character) {
+          if (line === Number.MAX_VALUE) {
+            line = uinteger.MAX_VALUE;
+          }
+          if (character === Number.MAX_VALUE) {
+            character = uinteger.MAX_VALUE;
+          }
+          return { line, character };
+        }
+        Position3.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.uinteger(candidate.line) && Is.uinteger(candidate.character);
+        }
+        Position3.is = is;
+      })(Position2 || (exports3.Position = Position2 = {}));
+      var Range2;
+      (function(Range3) {
+        function create(one, two, three, four) {
+          if (Is.uinteger(one) && Is.uinteger(two) && Is.uinteger(three) && Is.uinteger(four)) {
+            return { start: Position2.create(one, two), end: Position2.create(three, four) };
+          } else if (Position2.is(one) && Position2.is(two)) {
+            return { start: one, end: two };
+          } else {
+            throw new Error("Range#create called with invalid arguments[".concat(one, ", ").concat(two, ", ").concat(three, ", ").concat(four, "]"));
+          }
+        }
+        Range3.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Position2.is(candidate.start) && Position2.is(candidate.end);
+        }
+        Range3.is = is;
+      })(Range2 || (exports3.Range = Range2 = {}));
+      var Location;
+      (function(Location2) {
+        function create(uri, range) {
+          return { uri, range };
+        }
+        Location2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Range2.is(candidate.range) && (Is.string(candidate.uri) || Is.undefined(candidate.uri));
+        }
+        Location2.is = is;
+      })(Location || (exports3.Location = Location = {}));
+      var LocationLink;
+      (function(LocationLink2) {
+        function create(targetUri, targetRange, targetSelectionRange, originSelectionRange) {
+          return { targetUri, targetRange, targetSelectionRange, originSelectionRange };
+        }
+        LocationLink2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Range2.is(candidate.targetRange) && Is.string(candidate.targetUri) && Range2.is(candidate.targetSelectionRange) && (Range2.is(candidate.originSelectionRange) || Is.undefined(candidate.originSelectionRange));
+        }
+        LocationLink2.is = is;
+      })(LocationLink || (exports3.LocationLink = LocationLink = {}));
+      var Color;
+      (function(Color2) {
+        function create(red, green, blue, alpha) {
+          return {
+            red,
+            green,
+            blue,
+            alpha
+          };
+        }
+        Color2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.numberRange(candidate.red, 0, 1) && Is.numberRange(candidate.green, 0, 1) && Is.numberRange(candidate.blue, 0, 1) && Is.numberRange(candidate.alpha, 0, 1);
+        }
+        Color2.is = is;
+      })(Color || (exports3.Color = Color = {}));
+      var ColorInformation;
+      (function(ColorInformation2) {
+        function create(range, color) {
+          return {
+            range,
+            color
+          };
+        }
+        ColorInformation2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Range2.is(candidate.range) && Color.is(candidate.color);
+        }
+        ColorInformation2.is = is;
+      })(ColorInformation || (exports3.ColorInformation = ColorInformation = {}));
+      var ColorPresentation;
+      (function(ColorPresentation2) {
+        function create(label, textEdit, additionalTextEdits) {
+          return {
+            label,
+            textEdit,
+            additionalTextEdits
+          };
+        }
+        ColorPresentation2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.string(candidate.label) && (Is.undefined(candidate.textEdit) || TextEdit.is(candidate)) && (Is.undefined(candidate.additionalTextEdits) || Is.typedArray(candidate.additionalTextEdits, TextEdit.is));
+        }
+        ColorPresentation2.is = is;
+      })(ColorPresentation || (exports3.ColorPresentation = ColorPresentation = {}));
+      var FoldingRangeKind;
+      (function(FoldingRangeKind2) {
+        FoldingRangeKind2.Comment = "comment";
+        FoldingRangeKind2.Imports = "imports";
+        FoldingRangeKind2.Region = "region";
+      })(FoldingRangeKind || (exports3.FoldingRangeKind = FoldingRangeKind = {}));
+      var FoldingRange;
+      (function(FoldingRange2) {
+        function create(startLine, endLine, startCharacter, endCharacter, kind, collapsedText) {
+          var result = {
+            startLine,
+            endLine
+          };
+          if (Is.defined(startCharacter)) {
+            result.startCharacter = startCharacter;
+          }
+          if (Is.defined(endCharacter)) {
+            result.endCharacter = endCharacter;
+          }
+          if (Is.defined(kind)) {
+            result.kind = kind;
+          }
+          if (Is.defined(collapsedText)) {
+            result.collapsedText = collapsedText;
+          }
+          return result;
+        }
+        FoldingRange2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.uinteger(candidate.startLine) && Is.uinteger(candidate.startLine) && (Is.undefined(candidate.startCharacter) || Is.uinteger(candidate.startCharacter)) && (Is.undefined(candidate.endCharacter) || Is.uinteger(candidate.endCharacter)) && (Is.undefined(candidate.kind) || Is.string(candidate.kind));
+        }
+        FoldingRange2.is = is;
+      })(FoldingRange || (exports3.FoldingRange = FoldingRange = {}));
+      var DiagnosticRelatedInformation;
+      (function(DiagnosticRelatedInformation2) {
+        function create(location, message) {
+          return {
+            location,
+            message
+          };
+        }
+        DiagnosticRelatedInformation2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Location.is(candidate.location) && Is.string(candidate.message);
+        }
+        DiagnosticRelatedInformation2.is = is;
+      })(DiagnosticRelatedInformation || (exports3.DiagnosticRelatedInformation = DiagnosticRelatedInformation = {}));
+      var DiagnosticSeverity2;
+      (function(DiagnosticSeverity3) {
+        DiagnosticSeverity3.Error = 1;
+        DiagnosticSeverity3.Warning = 2;
+        DiagnosticSeverity3.Information = 3;
+        DiagnosticSeverity3.Hint = 4;
+      })(DiagnosticSeverity2 || (exports3.DiagnosticSeverity = DiagnosticSeverity2 = {}));
+      var DiagnosticTag;
+      (function(DiagnosticTag2) {
+        DiagnosticTag2.Unnecessary = 1;
+        DiagnosticTag2.Deprecated = 2;
+      })(DiagnosticTag || (exports3.DiagnosticTag = DiagnosticTag = {}));
+      var CodeDescription;
+      (function(CodeDescription2) {
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.string(candidate.href);
+        }
+        CodeDescription2.is = is;
+      })(CodeDescription || (exports3.CodeDescription = CodeDescription = {}));
+      var Diagnostic2;
+      (function(Diagnostic3) {
+        function create(range, message, severity, code, source, relatedInformation) {
+          var result = { range, message };
+          if (Is.defined(severity)) {
+            result.severity = severity;
+          }
+          if (Is.defined(code)) {
+            result.code = code;
+          }
+          if (Is.defined(source)) {
+            result.source = source;
+          }
+          if (Is.defined(relatedInformation)) {
+            result.relatedInformation = relatedInformation;
+          }
+          return result;
+        }
+        Diagnostic3.create = create;
+        function is(value) {
+          var _a;
+          var candidate = value;
+          return Is.defined(candidate) && Range2.is(candidate.range) && Is.string(candidate.message) && (Is.number(candidate.severity) || Is.undefined(candidate.severity)) && (Is.integer(candidate.code) || Is.string(candidate.code) || Is.undefined(candidate.code)) && (Is.undefined(candidate.codeDescription) || Is.string((_a = candidate.codeDescription) === null || _a === void 0 ? void 0 : _a.href)) && (Is.string(candidate.source) || Is.undefined(candidate.source)) && (Is.undefined(candidate.relatedInformation) || Is.typedArray(candidate.relatedInformation, DiagnosticRelatedInformation.is));
+        }
+        Diagnostic3.is = is;
+      })(Diagnostic2 || (exports3.Diagnostic = Diagnostic2 = {}));
+      var Command;
+      (function(Command2) {
+        function create(title, command) {
+          var args = [];
+          for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+          }
+          var result = { title, command };
+          if (Is.defined(args) && args.length > 0) {
+            result.arguments = args;
+          }
+          return result;
+        }
+        Command2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.title) && Is.string(candidate.command);
+        }
+        Command2.is = is;
+      })(Command || (exports3.Command = Command = {}));
+      var TextEdit;
+      (function(TextEdit2) {
+        function replace(range, newText) {
+          return { range, newText };
+        }
+        TextEdit2.replace = replace;
+        function insert(position, newText) {
+          return { range: { start: position, end: position }, newText };
+        }
+        TextEdit2.insert = insert;
+        function del(range) {
+          return { range, newText: "" };
+        }
+        TextEdit2.del = del;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.string(candidate.newText) && Range2.is(candidate.range);
+        }
+        TextEdit2.is = is;
+      })(TextEdit || (exports3.TextEdit = TextEdit = {}));
+      var ChangeAnnotation;
+      (function(ChangeAnnotation2) {
+        function create(label, needsConfirmation, description) {
+          var result = { label };
+          if (needsConfirmation !== void 0) {
+            result.needsConfirmation = needsConfirmation;
+          }
+          if (description !== void 0) {
+            result.description = description;
+          }
+          return result;
+        }
+        ChangeAnnotation2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Is.string(candidate.label) && (Is.boolean(candidate.needsConfirmation) || candidate.needsConfirmation === void 0) && (Is.string(candidate.description) || candidate.description === void 0);
+        }
+        ChangeAnnotation2.is = is;
+      })(ChangeAnnotation || (exports3.ChangeAnnotation = ChangeAnnotation = {}));
+      var ChangeAnnotationIdentifier;
+      (function(ChangeAnnotationIdentifier2) {
+        function is(value) {
+          var candidate = value;
+          return Is.string(candidate);
+        }
+        ChangeAnnotationIdentifier2.is = is;
+      })(ChangeAnnotationIdentifier || (exports3.ChangeAnnotationIdentifier = ChangeAnnotationIdentifier = {}));
+      var AnnotatedTextEdit;
+      (function(AnnotatedTextEdit2) {
+        function replace(range, newText, annotation) {
+          return { range, newText, annotationId: annotation };
+        }
+        AnnotatedTextEdit2.replace = replace;
+        function insert(position, newText, annotation) {
+          return { range: { start: position, end: position }, newText, annotationId: annotation };
+        }
+        AnnotatedTextEdit2.insert = insert;
+        function del(range, annotation) {
+          return { range, newText: "", annotationId: annotation };
+        }
+        AnnotatedTextEdit2.del = del;
+        function is(value) {
+          var candidate = value;
+          return TextEdit.is(candidate) && (ChangeAnnotation.is(candidate.annotationId) || ChangeAnnotationIdentifier.is(candidate.annotationId));
+        }
+        AnnotatedTextEdit2.is = is;
+      })(AnnotatedTextEdit || (exports3.AnnotatedTextEdit = AnnotatedTextEdit = {}));
+      var TextDocumentEdit;
+      (function(TextDocumentEdit2) {
+        function create(textDocument, edits) {
+          return { textDocument, edits };
+        }
+        TextDocumentEdit2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && OptionalVersionedTextDocumentIdentifier.is(candidate.textDocument) && Array.isArray(candidate.edits);
+        }
+        TextDocumentEdit2.is = is;
+      })(TextDocumentEdit || (exports3.TextDocumentEdit = TextDocumentEdit = {}));
+      var CreateFile;
+      (function(CreateFile2) {
+        function create(uri, options, annotation) {
+          var result = {
+            kind: "create",
+            uri
+          };
+          if (options !== void 0 && (options.overwrite !== void 0 || options.ignoreIfExists !== void 0)) {
+            result.options = options;
+          }
+          if (annotation !== void 0) {
+            result.annotationId = annotation;
+          }
+          return result;
+        }
+        CreateFile2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && candidate.kind === "create" && Is.string(candidate.uri) && (candidate.options === void 0 || (candidate.options.overwrite === void 0 || Is.boolean(candidate.options.overwrite)) && (candidate.options.ignoreIfExists === void 0 || Is.boolean(candidate.options.ignoreIfExists))) && (candidate.annotationId === void 0 || ChangeAnnotationIdentifier.is(candidate.annotationId));
+        }
+        CreateFile2.is = is;
+      })(CreateFile || (exports3.CreateFile = CreateFile = {}));
+      var RenameFile;
+      (function(RenameFile2) {
+        function create(oldUri, newUri, options, annotation) {
+          var result = {
+            kind: "rename",
+            oldUri,
+            newUri
+          };
+          if (options !== void 0 && (options.overwrite !== void 0 || options.ignoreIfExists !== void 0)) {
+            result.options = options;
+          }
+          if (annotation !== void 0) {
+            result.annotationId = annotation;
+          }
+          return result;
+        }
+        RenameFile2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && candidate.kind === "rename" && Is.string(candidate.oldUri) && Is.string(candidate.newUri) && (candidate.options === void 0 || (candidate.options.overwrite === void 0 || Is.boolean(candidate.options.overwrite)) && (candidate.options.ignoreIfExists === void 0 || Is.boolean(candidate.options.ignoreIfExists))) && (candidate.annotationId === void 0 || ChangeAnnotationIdentifier.is(candidate.annotationId));
+        }
+        RenameFile2.is = is;
+      })(RenameFile || (exports3.RenameFile = RenameFile = {}));
+      var DeleteFile;
+      (function(DeleteFile2) {
+        function create(uri, options, annotation) {
+          var result = {
+            kind: "delete",
+            uri
+          };
+          if (options !== void 0 && (options.recursive !== void 0 || options.ignoreIfNotExists !== void 0)) {
+            result.options = options;
+          }
+          if (annotation !== void 0) {
+            result.annotationId = annotation;
+          }
+          return result;
+        }
+        DeleteFile2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && candidate.kind === "delete" && Is.string(candidate.uri) && (candidate.options === void 0 || (candidate.options.recursive === void 0 || Is.boolean(candidate.options.recursive)) && (candidate.options.ignoreIfNotExists === void 0 || Is.boolean(candidate.options.ignoreIfNotExists))) && (candidate.annotationId === void 0 || ChangeAnnotationIdentifier.is(candidate.annotationId));
+        }
+        DeleteFile2.is = is;
+      })(DeleteFile || (exports3.DeleteFile = DeleteFile = {}));
+      var WorkspaceEdit;
+      (function(WorkspaceEdit2) {
+        function is(value) {
+          var candidate = value;
+          return candidate && (candidate.changes !== void 0 || candidate.documentChanges !== void 0) && (candidate.documentChanges === void 0 || candidate.documentChanges.every(function(change) {
+            if (Is.string(change.kind)) {
+              return CreateFile.is(change) || RenameFile.is(change) || DeleteFile.is(change);
+            } else {
+              return TextDocumentEdit.is(change);
+            }
+          }));
+        }
+        WorkspaceEdit2.is = is;
+      })(WorkspaceEdit || (exports3.WorkspaceEdit = WorkspaceEdit = {}));
+      var TextEditChangeImpl = (
+        /** @class */
+        function() {
+          function TextEditChangeImpl2(edits, changeAnnotations) {
+            this.edits = edits;
+            this.changeAnnotations = changeAnnotations;
+          }
+          TextEditChangeImpl2.prototype.insert = function(position, newText, annotation) {
+            var edit;
+            var id;
+            if (annotation === void 0) {
+              edit = TextEdit.insert(position, newText);
+            } else if (ChangeAnnotationIdentifier.is(annotation)) {
+              id = annotation;
+              edit = AnnotatedTextEdit.insert(position, newText, annotation);
+            } else {
+              this.assertChangeAnnotations(this.changeAnnotations);
+              id = this.changeAnnotations.manage(annotation);
+              edit = AnnotatedTextEdit.insert(position, newText, id);
+            }
+            this.edits.push(edit);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          TextEditChangeImpl2.prototype.replace = function(range, newText, annotation) {
+            var edit;
+            var id;
+            if (annotation === void 0) {
+              edit = TextEdit.replace(range, newText);
+            } else if (ChangeAnnotationIdentifier.is(annotation)) {
+              id = annotation;
+              edit = AnnotatedTextEdit.replace(range, newText, annotation);
+            } else {
+              this.assertChangeAnnotations(this.changeAnnotations);
+              id = this.changeAnnotations.manage(annotation);
+              edit = AnnotatedTextEdit.replace(range, newText, id);
+            }
+            this.edits.push(edit);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          TextEditChangeImpl2.prototype.delete = function(range, annotation) {
+            var edit;
+            var id;
+            if (annotation === void 0) {
+              edit = TextEdit.del(range);
+            } else if (ChangeAnnotationIdentifier.is(annotation)) {
+              id = annotation;
+              edit = AnnotatedTextEdit.del(range, annotation);
+            } else {
+              this.assertChangeAnnotations(this.changeAnnotations);
+              id = this.changeAnnotations.manage(annotation);
+              edit = AnnotatedTextEdit.del(range, id);
+            }
+            this.edits.push(edit);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          TextEditChangeImpl2.prototype.add = function(edit) {
+            this.edits.push(edit);
+          };
+          TextEditChangeImpl2.prototype.all = function() {
+            return this.edits;
+          };
+          TextEditChangeImpl2.prototype.clear = function() {
+            this.edits.splice(0, this.edits.length);
+          };
+          TextEditChangeImpl2.prototype.assertChangeAnnotations = function(value) {
+            if (value === void 0) {
+              throw new Error("Text edit change is not configured to manage change annotations.");
+            }
+          };
+          return TextEditChangeImpl2;
+        }()
+      );
+      var ChangeAnnotations = (
+        /** @class */
+        function() {
+          function ChangeAnnotations2(annotations) {
+            this._annotations = annotations === void 0 ? /* @__PURE__ */ Object.create(null) : annotations;
+            this._counter = 0;
+            this._size = 0;
+          }
+          ChangeAnnotations2.prototype.all = function() {
+            return this._annotations;
+          };
+          Object.defineProperty(ChangeAnnotations2.prototype, "size", {
+            get: function() {
+              return this._size;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          ChangeAnnotations2.prototype.manage = function(idOrAnnotation, annotation) {
+            var id;
+            if (ChangeAnnotationIdentifier.is(idOrAnnotation)) {
+              id = idOrAnnotation;
+            } else {
+              id = this.nextId();
+              annotation = idOrAnnotation;
+            }
+            if (this._annotations[id] !== void 0) {
+              throw new Error("Id ".concat(id, " is already in use."));
+            }
+            if (annotation === void 0) {
+              throw new Error("No annotation provided for id ".concat(id));
+            }
+            this._annotations[id] = annotation;
+            this._size++;
+            return id;
+          };
+          ChangeAnnotations2.prototype.nextId = function() {
+            this._counter++;
+            return this._counter.toString();
+          };
+          return ChangeAnnotations2;
+        }()
+      );
+      var WorkspaceChange = (
+        /** @class */
+        function() {
+          function WorkspaceChange2(workspaceEdit) {
+            var _this = this;
+            this._textEditChanges = /* @__PURE__ */ Object.create(null);
+            if (workspaceEdit !== void 0) {
+              this._workspaceEdit = workspaceEdit;
+              if (workspaceEdit.documentChanges) {
+                this._changeAnnotations = new ChangeAnnotations(workspaceEdit.changeAnnotations);
+                workspaceEdit.changeAnnotations = this._changeAnnotations.all();
+                workspaceEdit.documentChanges.forEach(function(change) {
+                  if (TextDocumentEdit.is(change)) {
+                    var textEditChange = new TextEditChangeImpl(change.edits, _this._changeAnnotations);
+                    _this._textEditChanges[change.textDocument.uri] = textEditChange;
+                  }
+                });
+              } else if (workspaceEdit.changes) {
+                Object.keys(workspaceEdit.changes).forEach(function(key) {
+                  var textEditChange = new TextEditChangeImpl(workspaceEdit.changes[key]);
+                  _this._textEditChanges[key] = textEditChange;
+                });
+              }
+            } else {
+              this._workspaceEdit = {};
+            }
+          }
+          Object.defineProperty(WorkspaceChange2.prototype, "edit", {
+            /**
+             * Returns the underlying {@link WorkspaceEdit} literal
+             * use to be returned from a workspace edit operation like rename.
+             */
+            get: function() {
+              this.initDocumentChanges();
+              if (this._changeAnnotations !== void 0) {
+                if (this._changeAnnotations.size === 0) {
+                  this._workspaceEdit.changeAnnotations = void 0;
+                } else {
+                  this._workspaceEdit.changeAnnotations = this._changeAnnotations.all();
+                }
+              }
+              return this._workspaceEdit;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          WorkspaceChange2.prototype.getTextEditChange = function(key) {
+            if (OptionalVersionedTextDocumentIdentifier.is(key)) {
+              this.initDocumentChanges();
+              if (this._workspaceEdit.documentChanges === void 0) {
+                throw new Error("Workspace edit is not configured for document changes.");
+              }
+              var textDocument = { uri: key.uri, version: key.version };
+              var result = this._textEditChanges[textDocument.uri];
+              if (!result) {
+                var edits = [];
+                var textDocumentEdit = {
+                  textDocument,
+                  edits
+                };
+                this._workspaceEdit.documentChanges.push(textDocumentEdit);
+                result = new TextEditChangeImpl(edits, this._changeAnnotations);
+                this._textEditChanges[textDocument.uri] = result;
+              }
+              return result;
+            } else {
+              this.initChanges();
+              if (this._workspaceEdit.changes === void 0) {
+                throw new Error("Workspace edit is not configured for normal text edit changes.");
+              }
+              var result = this._textEditChanges[key];
+              if (!result) {
+                var edits = [];
+                this._workspaceEdit.changes[key] = edits;
+                result = new TextEditChangeImpl(edits);
+                this._textEditChanges[key] = result;
+              }
+              return result;
+            }
+          };
+          WorkspaceChange2.prototype.initDocumentChanges = function() {
+            if (this._workspaceEdit.documentChanges === void 0 && this._workspaceEdit.changes === void 0) {
+              this._changeAnnotations = new ChangeAnnotations();
+              this._workspaceEdit.documentChanges = [];
+              this._workspaceEdit.changeAnnotations = this._changeAnnotations.all();
+            }
+          };
+          WorkspaceChange2.prototype.initChanges = function() {
+            if (this._workspaceEdit.documentChanges === void 0 && this._workspaceEdit.changes === void 0) {
+              this._workspaceEdit.changes = /* @__PURE__ */ Object.create(null);
+            }
+          };
+          WorkspaceChange2.prototype.createFile = function(uri, optionsOrAnnotation, options) {
+            this.initDocumentChanges();
+            if (this._workspaceEdit.documentChanges === void 0) {
+              throw new Error("Workspace edit is not configured for document changes.");
+            }
+            var annotation;
+            if (ChangeAnnotation.is(optionsOrAnnotation) || ChangeAnnotationIdentifier.is(optionsOrAnnotation)) {
+              annotation = optionsOrAnnotation;
+            } else {
+              options = optionsOrAnnotation;
+            }
+            var operation;
+            var id;
+            if (annotation === void 0) {
+              operation = CreateFile.create(uri, options);
+            } else {
+              id = ChangeAnnotationIdentifier.is(annotation) ? annotation : this._changeAnnotations.manage(annotation);
+              operation = CreateFile.create(uri, options, id);
+            }
+            this._workspaceEdit.documentChanges.push(operation);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          WorkspaceChange2.prototype.renameFile = function(oldUri, newUri, optionsOrAnnotation, options) {
+            this.initDocumentChanges();
+            if (this._workspaceEdit.documentChanges === void 0) {
+              throw new Error("Workspace edit is not configured for document changes.");
+            }
+            var annotation;
+            if (ChangeAnnotation.is(optionsOrAnnotation) || ChangeAnnotationIdentifier.is(optionsOrAnnotation)) {
+              annotation = optionsOrAnnotation;
+            } else {
+              options = optionsOrAnnotation;
+            }
+            var operation;
+            var id;
+            if (annotation === void 0) {
+              operation = RenameFile.create(oldUri, newUri, options);
+            } else {
+              id = ChangeAnnotationIdentifier.is(annotation) ? annotation : this._changeAnnotations.manage(annotation);
+              operation = RenameFile.create(oldUri, newUri, options, id);
+            }
+            this._workspaceEdit.documentChanges.push(operation);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          WorkspaceChange2.prototype.deleteFile = function(uri, optionsOrAnnotation, options) {
+            this.initDocumentChanges();
+            if (this._workspaceEdit.documentChanges === void 0) {
+              throw new Error("Workspace edit is not configured for document changes.");
+            }
+            var annotation;
+            if (ChangeAnnotation.is(optionsOrAnnotation) || ChangeAnnotationIdentifier.is(optionsOrAnnotation)) {
+              annotation = optionsOrAnnotation;
+            } else {
+              options = optionsOrAnnotation;
+            }
+            var operation;
+            var id;
+            if (annotation === void 0) {
+              operation = DeleteFile.create(uri, options);
+            } else {
+              id = ChangeAnnotationIdentifier.is(annotation) ? annotation : this._changeAnnotations.manage(annotation);
+              operation = DeleteFile.create(uri, options, id);
+            }
+            this._workspaceEdit.documentChanges.push(operation);
+            if (id !== void 0) {
+              return id;
+            }
+          };
+          return WorkspaceChange2;
+        }()
+      );
+      exports3.WorkspaceChange = WorkspaceChange;
+      var TextDocumentIdentifier;
+      (function(TextDocumentIdentifier2) {
+        function create(uri) {
+          return { uri };
+        }
+        TextDocumentIdentifier2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.uri);
+        }
+        TextDocumentIdentifier2.is = is;
+      })(TextDocumentIdentifier || (exports3.TextDocumentIdentifier = TextDocumentIdentifier = {}));
+      var VersionedTextDocumentIdentifier;
+      (function(VersionedTextDocumentIdentifier2) {
+        function create(uri, version) {
+          return { uri, version };
+        }
+        VersionedTextDocumentIdentifier2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.uri) && Is.integer(candidate.version);
+        }
+        VersionedTextDocumentIdentifier2.is = is;
+      })(VersionedTextDocumentIdentifier || (exports3.VersionedTextDocumentIdentifier = VersionedTextDocumentIdentifier = {}));
+      var OptionalVersionedTextDocumentIdentifier;
+      (function(OptionalVersionedTextDocumentIdentifier2) {
+        function create(uri, version) {
+          return { uri, version };
+        }
+        OptionalVersionedTextDocumentIdentifier2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.uri) && (candidate.version === null || Is.integer(candidate.version));
+        }
+        OptionalVersionedTextDocumentIdentifier2.is = is;
+      })(OptionalVersionedTextDocumentIdentifier || (exports3.OptionalVersionedTextDocumentIdentifier = OptionalVersionedTextDocumentIdentifier = {}));
+      var TextDocumentItem;
+      (function(TextDocumentItem2) {
+        function create(uri, languageId, version, text) {
+          return { uri, languageId, version, text };
+        }
+        TextDocumentItem2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.uri) && Is.string(candidate.languageId) && Is.integer(candidate.version) && Is.string(candidate.text);
+        }
+        TextDocumentItem2.is = is;
+      })(TextDocumentItem || (exports3.TextDocumentItem = TextDocumentItem = {}));
+      var MarkupKind2;
+      (function(MarkupKind3) {
+        MarkupKind3.PlainText = "plaintext";
+        MarkupKind3.Markdown = "markdown";
+        function is(value) {
+          var candidate = value;
+          return candidate === MarkupKind3.PlainText || candidate === MarkupKind3.Markdown;
+        }
+        MarkupKind3.is = is;
+      })(MarkupKind2 || (exports3.MarkupKind = MarkupKind2 = {}));
+      var MarkupContent;
+      (function(MarkupContent2) {
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(value) && MarkupKind2.is(candidate.kind) && Is.string(candidate.value);
+        }
+        MarkupContent2.is = is;
+      })(MarkupContent || (exports3.MarkupContent = MarkupContent = {}));
+      var CompletionItemKind3;
+      (function(CompletionItemKind4) {
+        CompletionItemKind4.Text = 1;
+        CompletionItemKind4.Method = 2;
+        CompletionItemKind4.Function = 3;
+        CompletionItemKind4.Constructor = 4;
+        CompletionItemKind4.Field = 5;
+        CompletionItemKind4.Variable = 6;
+        CompletionItemKind4.Class = 7;
+        CompletionItemKind4.Interface = 8;
+        CompletionItemKind4.Module = 9;
+        CompletionItemKind4.Property = 10;
+        CompletionItemKind4.Unit = 11;
+        CompletionItemKind4.Value = 12;
+        CompletionItemKind4.Enum = 13;
+        CompletionItemKind4.Keyword = 14;
+        CompletionItemKind4.Snippet = 15;
+        CompletionItemKind4.Color = 16;
+        CompletionItemKind4.File = 17;
+        CompletionItemKind4.Reference = 18;
+        CompletionItemKind4.Folder = 19;
+        CompletionItemKind4.EnumMember = 20;
+        CompletionItemKind4.Constant = 21;
+        CompletionItemKind4.Struct = 22;
+        CompletionItemKind4.Event = 23;
+        CompletionItemKind4.Operator = 24;
+        CompletionItemKind4.TypeParameter = 25;
+      })(CompletionItemKind3 || (exports3.CompletionItemKind = CompletionItemKind3 = {}));
+      var InsertTextFormat;
+      (function(InsertTextFormat2) {
+        InsertTextFormat2.PlainText = 1;
+        InsertTextFormat2.Snippet = 2;
+      })(InsertTextFormat || (exports3.InsertTextFormat = InsertTextFormat = {}));
+      var CompletionItemTag;
+      (function(CompletionItemTag2) {
+        CompletionItemTag2.Deprecated = 1;
+      })(CompletionItemTag || (exports3.CompletionItemTag = CompletionItemTag = {}));
+      var InsertReplaceEdit;
+      (function(InsertReplaceEdit2) {
+        function create(newText, insert, replace) {
+          return { newText, insert, replace };
+        }
+        InsertReplaceEdit2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && Is.string(candidate.newText) && Range2.is(candidate.insert) && Range2.is(candidate.replace);
+        }
+        InsertReplaceEdit2.is = is;
+      })(InsertReplaceEdit || (exports3.InsertReplaceEdit = InsertReplaceEdit = {}));
+      var InsertTextMode;
+      (function(InsertTextMode2) {
+        InsertTextMode2.asIs = 1;
+        InsertTextMode2.adjustIndentation = 2;
+      })(InsertTextMode || (exports3.InsertTextMode = InsertTextMode = {}));
+      var CompletionItemLabelDetails;
+      (function(CompletionItemLabelDetails2) {
+        function is(value) {
+          var candidate = value;
+          return candidate && (Is.string(candidate.detail) || candidate.detail === void 0) && (Is.string(candidate.description) || candidate.description === void 0);
+        }
+        CompletionItemLabelDetails2.is = is;
+      })(CompletionItemLabelDetails || (exports3.CompletionItemLabelDetails = CompletionItemLabelDetails = {}));
+      var CompletionItem3;
+      (function(CompletionItem4) {
+        function create(label) {
+          return { label };
+        }
+        CompletionItem4.create = create;
+      })(CompletionItem3 || (exports3.CompletionItem = CompletionItem3 = {}));
+      var CompletionList;
+      (function(CompletionList2) {
+        function create(items, isIncomplete) {
+          return { items: items ? items : [], isIncomplete: !!isIncomplete };
+        }
+        CompletionList2.create = create;
+      })(CompletionList || (exports3.CompletionList = CompletionList = {}));
+      var MarkedString;
+      (function(MarkedString2) {
+        function fromPlainText(plainText) {
+          return plainText.replace(/[\\`*_{}[\]()#+\-.!]/g, "\\$&");
+        }
+        MarkedString2.fromPlainText = fromPlainText;
+        function is(value) {
+          var candidate = value;
+          return Is.string(candidate) || Is.objectLiteral(candidate) && Is.string(candidate.language) && Is.string(candidate.value);
+        }
+        MarkedString2.is = is;
+      })(MarkedString || (exports3.MarkedString = MarkedString = {}));
+      var Hover2;
+      (function(Hover3) {
+        function is(value) {
+          var candidate = value;
+          return !!candidate && Is.objectLiteral(candidate) && (MarkupContent.is(candidate.contents) || MarkedString.is(candidate.contents) || Is.typedArray(candidate.contents, MarkedString.is)) && (value.range === void 0 || Range2.is(value.range));
+        }
+        Hover3.is = is;
+      })(Hover2 || (exports3.Hover = Hover2 = {}));
+      var ParameterInformation;
+      (function(ParameterInformation2) {
+        function create(label, documentation) {
+          return documentation ? { label, documentation } : { label };
+        }
+        ParameterInformation2.create = create;
+      })(ParameterInformation || (exports3.ParameterInformation = ParameterInformation = {}));
+      var SignatureInformation;
+      (function(SignatureInformation2) {
+        function create(label, documentation) {
+          var parameters = [];
+          for (var _i = 2; _i < arguments.length; _i++) {
+            parameters[_i - 2] = arguments[_i];
+          }
+          var result = { label };
+          if (Is.defined(documentation)) {
+            result.documentation = documentation;
+          }
+          if (Is.defined(parameters)) {
+            result.parameters = parameters;
+          } else {
+            result.parameters = [];
+          }
+          return result;
+        }
+        SignatureInformation2.create = create;
+      })(SignatureInformation || (exports3.SignatureInformation = SignatureInformation = {}));
+      var DocumentHighlightKind;
+      (function(DocumentHighlightKind2) {
+        DocumentHighlightKind2.Text = 1;
+        DocumentHighlightKind2.Read = 2;
+        DocumentHighlightKind2.Write = 3;
+      })(DocumentHighlightKind || (exports3.DocumentHighlightKind = DocumentHighlightKind = {}));
+      var DocumentHighlight;
+      (function(DocumentHighlight2) {
+        function create(range, kind) {
+          var result = { range };
+          if (Is.number(kind)) {
+            result.kind = kind;
+          }
+          return result;
+        }
+        DocumentHighlight2.create = create;
+      })(DocumentHighlight || (exports3.DocumentHighlight = DocumentHighlight = {}));
+      var SymbolKind2;
+      (function(SymbolKind3) {
+        SymbolKind3.File = 1;
+        SymbolKind3.Module = 2;
+        SymbolKind3.Namespace = 3;
+        SymbolKind3.Package = 4;
+        SymbolKind3.Class = 5;
+        SymbolKind3.Method = 6;
+        SymbolKind3.Property = 7;
+        SymbolKind3.Field = 8;
+        SymbolKind3.Constructor = 9;
+        SymbolKind3.Enum = 10;
+        SymbolKind3.Interface = 11;
+        SymbolKind3.Function = 12;
+        SymbolKind3.Variable = 13;
+        SymbolKind3.Constant = 14;
+        SymbolKind3.String = 15;
+        SymbolKind3.Number = 16;
+        SymbolKind3.Boolean = 17;
+        SymbolKind3.Array = 18;
+        SymbolKind3.Object = 19;
+        SymbolKind3.Key = 20;
+        SymbolKind3.Null = 21;
+        SymbolKind3.EnumMember = 22;
+        SymbolKind3.Struct = 23;
+        SymbolKind3.Event = 24;
+        SymbolKind3.Operator = 25;
+        SymbolKind3.TypeParameter = 26;
+      })(SymbolKind2 || (exports3.SymbolKind = SymbolKind2 = {}));
+      var SymbolTag;
+      (function(SymbolTag2) {
+        SymbolTag2.Deprecated = 1;
+      })(SymbolTag || (exports3.SymbolTag = SymbolTag = {}));
+      var SymbolInformation;
+      (function(SymbolInformation2) {
+        function create(name, kind, range, uri, containerName) {
+          var result = {
+            name,
+            kind,
+            location: { uri, range }
+          };
+          if (containerName) {
+            result.containerName = containerName;
+          }
+          return result;
+        }
+        SymbolInformation2.create = create;
+      })(SymbolInformation || (exports3.SymbolInformation = SymbolInformation = {}));
+      var WorkspaceSymbol;
+      (function(WorkspaceSymbol2) {
+        function create(name, kind, uri, range) {
+          return range !== void 0 ? { name, kind, location: { uri, range } } : { name, kind, location: { uri } };
+        }
+        WorkspaceSymbol2.create = create;
+      })(WorkspaceSymbol || (exports3.WorkspaceSymbol = WorkspaceSymbol = {}));
+      var DocumentSymbol2;
+      (function(DocumentSymbol3) {
+        function create(name, detail, kind, range, selectionRange, children) {
+          var result = {
+            name,
+            detail,
+            kind,
+            range,
+            selectionRange
+          };
+          if (children !== void 0) {
+            result.children = children;
+          }
+          return result;
+        }
+        DocumentSymbol3.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && Is.string(candidate.name) && Is.number(candidate.kind) && Range2.is(candidate.range) && Range2.is(candidate.selectionRange) && (candidate.detail === void 0 || Is.string(candidate.detail)) && (candidate.deprecated === void 0 || Is.boolean(candidate.deprecated)) && (candidate.children === void 0 || Array.isArray(candidate.children)) && (candidate.tags === void 0 || Array.isArray(candidate.tags));
+        }
+        DocumentSymbol3.is = is;
+      })(DocumentSymbol2 || (exports3.DocumentSymbol = DocumentSymbol2 = {}));
+      var CodeActionKind;
+      (function(CodeActionKind2) {
+        CodeActionKind2.Empty = "";
+        CodeActionKind2.QuickFix = "quickfix";
+        CodeActionKind2.Refactor = "refactor";
+        CodeActionKind2.RefactorExtract = "refactor.extract";
+        CodeActionKind2.RefactorInline = "refactor.inline";
+        CodeActionKind2.RefactorRewrite = "refactor.rewrite";
+        CodeActionKind2.Source = "source";
+        CodeActionKind2.SourceOrganizeImports = "source.organizeImports";
+        CodeActionKind2.SourceFixAll = "source.fixAll";
+      })(CodeActionKind || (exports3.CodeActionKind = CodeActionKind = {}));
+      var CodeActionTriggerKind;
+      (function(CodeActionTriggerKind2) {
+        CodeActionTriggerKind2.Invoked = 1;
+        CodeActionTriggerKind2.Automatic = 2;
+      })(CodeActionTriggerKind || (exports3.CodeActionTriggerKind = CodeActionTriggerKind = {}));
+      var CodeActionContext;
+      (function(CodeActionContext2) {
+        function create(diagnostics, only, triggerKind) {
+          var result = { diagnostics };
+          if (only !== void 0 && only !== null) {
+            result.only = only;
+          }
+          if (triggerKind !== void 0 && triggerKind !== null) {
+            result.triggerKind = triggerKind;
+          }
+          return result;
+        }
+        CodeActionContext2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.typedArray(candidate.diagnostics, Diagnostic2.is) && (candidate.only === void 0 || Is.typedArray(candidate.only, Is.string)) && (candidate.triggerKind === void 0 || candidate.triggerKind === CodeActionTriggerKind.Invoked || candidate.triggerKind === CodeActionTriggerKind.Automatic);
+        }
+        CodeActionContext2.is = is;
+      })(CodeActionContext || (exports3.CodeActionContext = CodeActionContext = {}));
+      var CodeAction;
+      (function(CodeAction2) {
+        function create(title, kindOrCommandOrEdit, kind) {
+          var result = { title };
+          var checkKind = true;
+          if (typeof kindOrCommandOrEdit === "string") {
+            checkKind = false;
+            result.kind = kindOrCommandOrEdit;
+          } else if (Command.is(kindOrCommandOrEdit)) {
+            result.command = kindOrCommandOrEdit;
+          } else {
+            result.edit = kindOrCommandOrEdit;
+          }
+          if (checkKind && kind !== void 0) {
+            result.kind = kind;
+          }
+          return result;
+        }
+        CodeAction2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate && Is.string(candidate.title) && (candidate.diagnostics === void 0 || Is.typedArray(candidate.diagnostics, Diagnostic2.is)) && (candidate.kind === void 0 || Is.string(candidate.kind)) && (candidate.edit !== void 0 || candidate.command !== void 0) && (candidate.command === void 0 || Command.is(candidate.command)) && (candidate.isPreferred === void 0 || Is.boolean(candidate.isPreferred)) && (candidate.edit === void 0 || WorkspaceEdit.is(candidate.edit));
+        }
+        CodeAction2.is = is;
+      })(CodeAction || (exports3.CodeAction = CodeAction = {}));
+      var CodeLens;
+      (function(CodeLens2) {
+        function create(range, data) {
+          var result = { range };
+          if (Is.defined(data)) {
+            result.data = data;
+          }
+          return result;
+        }
+        CodeLens2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Range2.is(candidate.range) && (Is.undefined(candidate.command) || Command.is(candidate.command));
+        }
+        CodeLens2.is = is;
+      })(CodeLens || (exports3.CodeLens = CodeLens = {}));
+      var FormattingOptions;
+      (function(FormattingOptions2) {
+        function create(tabSize, insertSpaces) {
+          return { tabSize, insertSpaces };
+        }
+        FormattingOptions2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.uinteger(candidate.tabSize) && Is.boolean(candidate.insertSpaces);
+        }
+        FormattingOptions2.is = is;
+      })(FormattingOptions || (exports3.FormattingOptions = FormattingOptions = {}));
+      var DocumentLink;
+      (function(DocumentLink2) {
+        function create(range, target, data) {
+          return { range, target, data };
+        }
+        DocumentLink2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Range2.is(candidate.range) && (Is.undefined(candidate.target) || Is.string(candidate.target));
+        }
+        DocumentLink2.is = is;
+      })(DocumentLink || (exports3.DocumentLink = DocumentLink = {}));
+      var SelectionRange;
+      (function(SelectionRange2) {
+        function create(range, parent) {
+          return { range, parent };
+        }
+        SelectionRange2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Range2.is(candidate.range) && (candidate.parent === void 0 || SelectionRange2.is(candidate.parent));
+        }
+        SelectionRange2.is = is;
+      })(SelectionRange || (exports3.SelectionRange = SelectionRange = {}));
+      var SemanticTokenTypes;
+      (function(SemanticTokenTypes2) {
+        SemanticTokenTypes2["namespace"] = "namespace";
+        SemanticTokenTypes2["type"] = "type";
+        SemanticTokenTypes2["class"] = "class";
+        SemanticTokenTypes2["enum"] = "enum";
+        SemanticTokenTypes2["interface"] = "interface";
+        SemanticTokenTypes2["struct"] = "struct";
+        SemanticTokenTypes2["typeParameter"] = "typeParameter";
+        SemanticTokenTypes2["parameter"] = "parameter";
+        SemanticTokenTypes2["variable"] = "variable";
+        SemanticTokenTypes2["property"] = "property";
+        SemanticTokenTypes2["enumMember"] = "enumMember";
+        SemanticTokenTypes2["event"] = "event";
+        SemanticTokenTypes2["function"] = "function";
+        SemanticTokenTypes2["method"] = "method";
+        SemanticTokenTypes2["macro"] = "macro";
+        SemanticTokenTypes2["keyword"] = "keyword";
+        SemanticTokenTypes2["modifier"] = "modifier";
+        SemanticTokenTypes2["comment"] = "comment";
+        SemanticTokenTypes2["string"] = "string";
+        SemanticTokenTypes2["number"] = "number";
+        SemanticTokenTypes2["regexp"] = "regexp";
+        SemanticTokenTypes2["operator"] = "operator";
+        SemanticTokenTypes2["decorator"] = "decorator";
+      })(SemanticTokenTypes || (exports3.SemanticTokenTypes = SemanticTokenTypes = {}));
+      var SemanticTokenModifiers;
+      (function(SemanticTokenModifiers2) {
+        SemanticTokenModifiers2["declaration"] = "declaration";
+        SemanticTokenModifiers2["definition"] = "definition";
+        SemanticTokenModifiers2["readonly"] = "readonly";
+        SemanticTokenModifiers2["static"] = "static";
+        SemanticTokenModifiers2["deprecated"] = "deprecated";
+        SemanticTokenModifiers2["abstract"] = "abstract";
+        SemanticTokenModifiers2["async"] = "async";
+        SemanticTokenModifiers2["modification"] = "modification";
+        SemanticTokenModifiers2["documentation"] = "documentation";
+        SemanticTokenModifiers2["defaultLibrary"] = "defaultLibrary";
+      })(SemanticTokenModifiers || (exports3.SemanticTokenModifiers = SemanticTokenModifiers = {}));
+      var SemanticTokens;
+      (function(SemanticTokens2) {
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && (candidate.resultId === void 0 || typeof candidate.resultId === "string") && Array.isArray(candidate.data) && (candidate.data.length === 0 || typeof candidate.data[0] === "number");
+        }
+        SemanticTokens2.is = is;
+      })(SemanticTokens || (exports3.SemanticTokens = SemanticTokens = {}));
+      var InlineValueText;
+      (function(InlineValueText2) {
+        function create(range, text) {
+          return { range, text };
+        }
+        InlineValueText2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate !== void 0 && candidate !== null && Range2.is(candidate.range) && Is.string(candidate.text);
+        }
+        InlineValueText2.is = is;
+      })(InlineValueText || (exports3.InlineValueText = InlineValueText = {}));
+      var InlineValueVariableLookup;
+      (function(InlineValueVariableLookup2) {
+        function create(range, variableName, caseSensitiveLookup) {
+          return { range, variableName, caseSensitiveLookup };
+        }
+        InlineValueVariableLookup2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate !== void 0 && candidate !== null && Range2.is(candidate.range) && Is.boolean(candidate.caseSensitiveLookup) && (Is.string(candidate.variableName) || candidate.variableName === void 0);
+        }
+        InlineValueVariableLookup2.is = is;
+      })(InlineValueVariableLookup || (exports3.InlineValueVariableLookup = InlineValueVariableLookup = {}));
+      var InlineValueEvaluatableExpression;
+      (function(InlineValueEvaluatableExpression2) {
+        function create(range, expression) {
+          return { range, expression };
+        }
+        InlineValueEvaluatableExpression2.create = create;
+        function is(value) {
+          var candidate = value;
+          return candidate !== void 0 && candidate !== null && Range2.is(candidate.range) && (Is.string(candidate.expression) || candidate.expression === void 0);
+        }
+        InlineValueEvaluatableExpression2.is = is;
+      })(InlineValueEvaluatableExpression || (exports3.InlineValueEvaluatableExpression = InlineValueEvaluatableExpression = {}));
+      var InlineValueContext;
+      (function(InlineValueContext2) {
+        function create(frameId, stoppedLocation) {
+          return { frameId, stoppedLocation };
+        }
+        InlineValueContext2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Range2.is(value.stoppedLocation);
+        }
+        InlineValueContext2.is = is;
+      })(InlineValueContext || (exports3.InlineValueContext = InlineValueContext = {}));
+      var InlayHintKind;
+      (function(InlayHintKind2) {
+        InlayHintKind2.Type = 1;
+        InlayHintKind2.Parameter = 2;
+        function is(value) {
+          return value === 1 || value === 2;
+        }
+        InlayHintKind2.is = is;
+      })(InlayHintKind || (exports3.InlayHintKind = InlayHintKind = {}));
+      var InlayHintLabelPart;
+      (function(InlayHintLabelPart2) {
+        function create(value) {
+          return { value };
+        }
+        InlayHintLabelPart2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && (candidate.tooltip === void 0 || Is.string(candidate.tooltip) || MarkupContent.is(candidate.tooltip)) && (candidate.location === void 0 || Location.is(candidate.location)) && (candidate.command === void 0 || Command.is(candidate.command));
+        }
+        InlayHintLabelPart2.is = is;
+      })(InlayHintLabelPart || (exports3.InlayHintLabelPart = InlayHintLabelPart = {}));
+      var InlayHint;
+      (function(InlayHint2) {
+        function create(position, label, kind) {
+          var result = { position, label };
+          if (kind !== void 0) {
+            result.kind = kind;
+          }
+          return result;
+        }
+        InlayHint2.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && Position2.is(candidate.position) && (Is.string(candidate.label) || Is.typedArray(candidate.label, InlayHintLabelPart.is)) && (candidate.kind === void 0 || InlayHintKind.is(candidate.kind)) && candidate.textEdits === void 0 || Is.typedArray(candidate.textEdits, TextEdit.is) && (candidate.tooltip === void 0 || Is.string(candidate.tooltip) || MarkupContent.is(candidate.tooltip)) && (candidate.paddingLeft === void 0 || Is.boolean(candidate.paddingLeft)) && (candidate.paddingRight === void 0 || Is.boolean(candidate.paddingRight));
+        }
+        InlayHint2.is = is;
+      })(InlayHint || (exports3.InlayHint = InlayHint = {}));
+      var StringValue;
+      (function(StringValue2) {
+        function createSnippet(value) {
+          return { kind: "snippet", value };
+        }
+        StringValue2.createSnippet = createSnippet;
+      })(StringValue || (exports3.StringValue = StringValue = {}));
+      var InlineCompletionItem;
+      (function(InlineCompletionItem2) {
+        function create(insertText, filterText, range, command) {
+          return { insertText, filterText, range, command };
+        }
+        InlineCompletionItem2.create = create;
+      })(InlineCompletionItem || (exports3.InlineCompletionItem = InlineCompletionItem = {}));
+      var InlineCompletionList;
+      (function(InlineCompletionList2) {
+        function create(items) {
+          return { items };
+        }
+        InlineCompletionList2.create = create;
+      })(InlineCompletionList || (exports3.InlineCompletionList = InlineCompletionList = {}));
+      var InlineCompletionTriggerKind;
+      (function(InlineCompletionTriggerKind2) {
+        InlineCompletionTriggerKind2.Invoked = 0;
+        InlineCompletionTriggerKind2.Automatic = 1;
+      })(InlineCompletionTriggerKind || (exports3.InlineCompletionTriggerKind = InlineCompletionTriggerKind = {}));
+      var SelectedCompletionInfo;
+      (function(SelectedCompletionInfo2) {
+        function create(range, text) {
+          return { range, text };
+        }
+        SelectedCompletionInfo2.create = create;
+      })(SelectedCompletionInfo || (exports3.SelectedCompletionInfo = SelectedCompletionInfo = {}));
+      var InlineCompletionContext;
+      (function(InlineCompletionContext2) {
+        function create(triggerKind, selectedCompletionInfo) {
+          return { triggerKind, selectedCompletionInfo };
+        }
+        InlineCompletionContext2.create = create;
+      })(InlineCompletionContext || (exports3.InlineCompletionContext = InlineCompletionContext = {}));
+      var WorkspaceFolder;
+      (function(WorkspaceFolder2) {
+        function is(value) {
+          var candidate = value;
+          return Is.objectLiteral(candidate) && URI.is(candidate.uri) && Is.string(candidate.name);
+        }
+        WorkspaceFolder2.is = is;
+      })(WorkspaceFolder || (exports3.WorkspaceFolder = WorkspaceFolder = {}));
+      exports3.EOL = ["\n", "\r\n", "\r"];
+      var TextDocument2;
+      (function(TextDocument3) {
+        function create(uri, languageId, version, content) {
+          return new FullTextDocument2(uri, languageId, version, content);
+        }
+        TextDocument3.create = create;
+        function is(value) {
+          var candidate = value;
+          return Is.defined(candidate) && Is.string(candidate.uri) && (Is.undefined(candidate.languageId) || Is.string(candidate.languageId)) && Is.uinteger(candidate.lineCount) && Is.func(candidate.getText) && Is.func(candidate.positionAt) && Is.func(candidate.offsetAt) ? true : false;
+        }
+        TextDocument3.is = is;
+        function applyEdits(document, edits) {
+          var text = document.getText();
+          var sortedEdits = mergeSort2(edits, function(a, b) {
+            var diff = a.range.start.line - b.range.start.line;
+            if (diff === 0) {
+              return a.range.start.character - b.range.start.character;
+            }
+            return diff;
+          });
+          var lastModifiedOffset = text.length;
+          for (var i = sortedEdits.length - 1; i >= 0; i--) {
+            var e = sortedEdits[i];
+            var startOffset = document.offsetAt(e.range.start);
+            var endOffset = document.offsetAt(e.range.end);
+            if (endOffset <= lastModifiedOffset) {
+              text = text.substring(0, startOffset) + e.newText + text.substring(endOffset, text.length);
+            } else {
+              throw new Error("Overlapping edit");
+            }
+            lastModifiedOffset = startOffset;
+          }
+          return text;
+        }
+        TextDocument3.applyEdits = applyEdits;
+        function mergeSort2(data, compare) {
+          if (data.length <= 1) {
+            return data;
+          }
+          var p = data.length / 2 | 0;
+          var left = data.slice(0, p);
+          var right = data.slice(p);
+          mergeSort2(left, compare);
+          mergeSort2(right, compare);
+          var leftIdx = 0;
+          var rightIdx = 0;
+          var i = 0;
+          while (leftIdx < left.length && rightIdx < right.length) {
+            var ret = compare(left[leftIdx], right[rightIdx]);
+            if (ret <= 0) {
+              data[i++] = left[leftIdx++];
+            } else {
+              data[i++] = right[rightIdx++];
+            }
+          }
+          while (leftIdx < left.length) {
+            data[i++] = left[leftIdx++];
+          }
+          while (rightIdx < right.length) {
+            data[i++] = right[rightIdx++];
+          }
+          return data;
+        }
+      })(TextDocument2 || (exports3.TextDocument = TextDocument2 = {}));
+      var FullTextDocument2 = (
+        /** @class */
+        function() {
+          function FullTextDocument3(uri, languageId, version, content) {
+            this._uri = uri;
+            this._languageId = languageId;
+            this._version = version;
+            this._content = content;
+            this._lineOffsets = void 0;
+          }
+          Object.defineProperty(FullTextDocument3.prototype, "uri", {
+            get: function() {
+              return this._uri;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(FullTextDocument3.prototype, "languageId", {
+            get: function() {
+              return this._languageId;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(FullTextDocument3.prototype, "version", {
+            get: function() {
+              return this._version;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          FullTextDocument3.prototype.getText = function(range) {
+            if (range) {
+              var start = this.offsetAt(range.start);
+              var end = this.offsetAt(range.end);
+              return this._content.substring(start, end);
+            }
+            return this._content;
+          };
+          FullTextDocument3.prototype.update = function(event, version) {
+            this._content = event.text;
+            this._version = version;
+            this._lineOffsets = void 0;
+          };
+          FullTextDocument3.prototype.getLineOffsets = function() {
+            if (this._lineOffsets === void 0) {
+              var lineOffsets = [];
+              var text = this._content;
+              var isLineStart = true;
+              for (var i = 0; i < text.length; i++) {
+                if (isLineStart) {
+                  lineOffsets.push(i);
+                  isLineStart = false;
+                }
+                var ch = text.charAt(i);
+                isLineStart = ch === "\r" || ch === "\n";
+                if (ch === "\r" && i + 1 < text.length && text.charAt(i + 1) === "\n") {
+                  i++;
+                }
+              }
+              if (isLineStart && text.length > 0) {
+                lineOffsets.push(text.length);
+              }
+              this._lineOffsets = lineOffsets;
+            }
+            return this._lineOffsets;
+          };
+          FullTextDocument3.prototype.positionAt = function(offset) {
+            offset = Math.max(Math.min(offset, this._content.length), 0);
+            var lineOffsets = this.getLineOffsets();
+            var low = 0, high = lineOffsets.length;
+            if (high === 0) {
+              return Position2.create(0, offset);
+            }
+            while (low < high) {
+              var mid = Math.floor((low + high) / 2);
+              if (lineOffsets[mid] > offset) {
+                high = mid;
+              } else {
+                low = mid + 1;
+              }
+            }
+            var line = low - 1;
+            return Position2.create(line, offset - lineOffsets[line]);
+          };
+          FullTextDocument3.prototype.offsetAt = function(position) {
+            var lineOffsets = this.getLineOffsets();
+            if (position.line >= lineOffsets.length) {
+              return this._content.length;
+            } else if (position.line < 0) {
+              return 0;
+            }
+            var lineOffset = lineOffsets[position.line];
+            var nextLineOffset = position.line + 1 < lineOffsets.length ? lineOffsets[position.line + 1] : this._content.length;
+            return Math.max(Math.min(lineOffset + position.character, nextLineOffset), lineOffset);
+          };
+          Object.defineProperty(FullTextDocument3.prototype, "lineCount", {
+            get: function() {
+              return this.getLineOffsets().length;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return FullTextDocument3;
+        }()
+      );
+      var Is;
+      (function(Is2) {
+        var toString = Object.prototype.toString;
+        function defined(value) {
+          return typeof value !== "undefined";
+        }
+        Is2.defined = defined;
+        function undefined2(value) {
+          return typeof value === "undefined";
+        }
+        Is2.undefined = undefined2;
+        function boolean(value) {
+          return value === true || value === false;
+        }
+        Is2.boolean = boolean;
+        function string(value) {
+          return toString.call(value) === "[object String]";
+        }
+        Is2.string = string;
+        function number(value) {
+          return toString.call(value) === "[object Number]";
+        }
+        Is2.number = number;
+        function numberRange(value, min, max) {
+          return toString.call(value) === "[object Number]" && min <= value && value <= max;
+        }
+        Is2.numberRange = numberRange;
+        function integer2(value) {
+          return toString.call(value) === "[object Number]" && -2147483648 <= value && value <= 2147483647;
+        }
+        Is2.integer = integer2;
+        function uinteger2(value) {
+          return toString.call(value) === "[object Number]" && 0 <= value && value <= 2147483647;
+        }
+        Is2.uinteger = uinteger2;
+        function func(value) {
+          return toString.call(value) === "[object Function]";
+        }
+        Is2.func = func;
+        function objectLiteral(value) {
+          return value !== null && typeof value === "object";
+        }
+        Is2.objectLiteral = objectLiteral;
+        function typedArray(value, check) {
+          return Array.isArray(value) && value.every(check);
+        }
+        Is2.typedArray = typedArray;
+      })(Is || (Is = {}));
+    });
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/messages.js
+var require_messages2 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/messages.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ProtocolNotificationType = exports2.ProtocolNotificationType0 = exports2.ProtocolRequestType = exports2.ProtocolRequestType0 = exports2.RegistrationType = exports2.MessageDirection = void 0;
+    var vscode_jsonrpc_1 = require_main();
+    var MessageDirection;
+    (function(MessageDirection2) {
+      MessageDirection2["clientToServer"] = "clientToServer";
+      MessageDirection2["serverToClient"] = "serverToClient";
+      MessageDirection2["both"] = "both";
+    })(MessageDirection || (exports2.MessageDirection = MessageDirection = {}));
+    var RegistrationType = class {
+      constructor(method) {
+        this.method = method;
+      }
+    };
+    exports2.RegistrationType = RegistrationType;
+    var ProtocolRequestType0 = class extends vscode_jsonrpc_1.RequestType0 {
+      constructor(method) {
+        super(method);
+      }
+    };
+    exports2.ProtocolRequestType0 = ProtocolRequestType0;
+    var ProtocolRequestType = class extends vscode_jsonrpc_1.RequestType {
+      constructor(method) {
+        super(method, vscode_jsonrpc_1.ParameterStructures.byName);
+      }
+    };
+    exports2.ProtocolRequestType = ProtocolRequestType;
+    var ProtocolNotificationType0 = class extends vscode_jsonrpc_1.NotificationType0 {
+      constructor(method) {
+        super(method);
+      }
+    };
+    exports2.ProtocolNotificationType0 = ProtocolNotificationType0;
+    var ProtocolNotificationType = class extends vscode_jsonrpc_1.NotificationType {
+      constructor(method) {
+        super(method, vscode_jsonrpc_1.ParameterStructures.byName);
+      }
+    };
+    exports2.ProtocolNotificationType = ProtocolNotificationType;
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/utils/is.js
+var require_is3 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/utils/is.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.objectLiteral = exports2.typedArray = exports2.stringArray = exports2.array = exports2.func = exports2.error = exports2.number = exports2.string = exports2.boolean = void 0;
+    function boolean(value) {
+      return value === true || value === false;
+    }
+    exports2.boolean = boolean;
+    function string(value) {
+      return typeof value === "string" || value instanceof String;
+    }
+    exports2.string = string;
+    function number(value) {
+      return typeof value === "number" || value instanceof Number;
+    }
+    exports2.number = number;
+    function error(value) {
+      return value instanceof Error;
+    }
+    exports2.error = error;
+    function func(value) {
+      return typeof value === "function";
+    }
+    exports2.func = func;
+    function array(value) {
+      return Array.isArray(value);
+    }
+    exports2.array = array;
+    function stringArray(value) {
+      return array(value) && value.every((elem) => string(elem));
+    }
+    exports2.stringArray = stringArray;
+    function typedArray(value, check) {
+      return Array.isArray(value) && value.every(check);
+    }
+    exports2.typedArray = typedArray;
+    function objectLiteral(value) {
+      return value !== null && typeof value === "object";
+    }
+    exports2.objectLiteral = objectLiteral;
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.implementation.js
+var require_protocol_implementation = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.implementation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ImplementationRequest = void 0;
+    var messages_1 = require_messages2();
+    var ImplementationRequest;
+    (function(ImplementationRequest2) {
+      ImplementationRequest2.method = "textDocument/implementation";
+      ImplementationRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ImplementationRequest2.type = new messages_1.ProtocolRequestType(ImplementationRequest2.method);
+    })(ImplementationRequest || (exports2.ImplementationRequest = ImplementationRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.typeDefinition.js
+var require_protocol_typeDefinition = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.typeDefinition.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TypeDefinitionRequest = void 0;
+    var messages_1 = require_messages2();
+    var TypeDefinitionRequest;
+    (function(TypeDefinitionRequest2) {
+      TypeDefinitionRequest2.method = "textDocument/typeDefinition";
+      TypeDefinitionRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      TypeDefinitionRequest2.type = new messages_1.ProtocolRequestType(TypeDefinitionRequest2.method);
+    })(TypeDefinitionRequest || (exports2.TypeDefinitionRequest = TypeDefinitionRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.workspaceFolder.js
+var require_protocol_workspaceFolder = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.workspaceFolder.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DidChangeWorkspaceFoldersNotification = exports2.WorkspaceFoldersRequest = void 0;
+    var messages_1 = require_messages2();
+    var WorkspaceFoldersRequest;
+    (function(WorkspaceFoldersRequest2) {
+      WorkspaceFoldersRequest2.method = "workspace/workspaceFolders";
+      WorkspaceFoldersRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      WorkspaceFoldersRequest2.type = new messages_1.ProtocolRequestType0(WorkspaceFoldersRequest2.method);
+    })(WorkspaceFoldersRequest || (exports2.WorkspaceFoldersRequest = WorkspaceFoldersRequest = {}));
+    var DidChangeWorkspaceFoldersNotification;
+    (function(DidChangeWorkspaceFoldersNotification2) {
+      DidChangeWorkspaceFoldersNotification2.method = "workspace/didChangeWorkspaceFolders";
+      DidChangeWorkspaceFoldersNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidChangeWorkspaceFoldersNotification2.type = new messages_1.ProtocolNotificationType(DidChangeWorkspaceFoldersNotification2.method);
+    })(DidChangeWorkspaceFoldersNotification || (exports2.DidChangeWorkspaceFoldersNotification = DidChangeWorkspaceFoldersNotification = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.configuration.js
+var require_protocol_configuration = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.configuration.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ConfigurationRequest = void 0;
+    var messages_1 = require_messages2();
+    var ConfigurationRequest;
+    (function(ConfigurationRequest2) {
+      ConfigurationRequest2.method = "workspace/configuration";
+      ConfigurationRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      ConfigurationRequest2.type = new messages_1.ProtocolRequestType(ConfigurationRequest2.method);
+    })(ConfigurationRequest || (exports2.ConfigurationRequest = ConfigurationRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.colorProvider.js
+var require_protocol_colorProvider = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.colorProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ColorPresentationRequest = exports2.DocumentColorRequest = void 0;
+    var messages_1 = require_messages2();
+    var DocumentColorRequest;
+    (function(DocumentColorRequest2) {
+      DocumentColorRequest2.method = "textDocument/documentColor";
+      DocumentColorRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentColorRequest2.type = new messages_1.ProtocolRequestType(DocumentColorRequest2.method);
+    })(DocumentColorRequest || (exports2.DocumentColorRequest = DocumentColorRequest = {}));
+    var ColorPresentationRequest;
+    (function(ColorPresentationRequest2) {
+      ColorPresentationRequest2.method = "textDocument/colorPresentation";
+      ColorPresentationRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ColorPresentationRequest2.type = new messages_1.ProtocolRequestType(ColorPresentationRequest2.method);
+    })(ColorPresentationRequest || (exports2.ColorPresentationRequest = ColorPresentationRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.foldingRange.js
+var require_protocol_foldingRange = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.foldingRange.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.FoldingRangeRefreshRequest = exports2.FoldingRangeRequest = void 0;
+    var messages_1 = require_messages2();
+    var FoldingRangeRequest;
+    (function(FoldingRangeRequest2) {
+      FoldingRangeRequest2.method = "textDocument/foldingRange";
+      FoldingRangeRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      FoldingRangeRequest2.type = new messages_1.ProtocolRequestType(FoldingRangeRequest2.method);
+    })(FoldingRangeRequest || (exports2.FoldingRangeRequest = FoldingRangeRequest = {}));
+    var FoldingRangeRefreshRequest;
+    (function(FoldingRangeRefreshRequest2) {
+      FoldingRangeRefreshRequest2.method = `workspace/foldingRange/refresh`;
+      FoldingRangeRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      FoldingRangeRefreshRequest2.type = new messages_1.ProtocolRequestType0(FoldingRangeRefreshRequest2.method);
+    })(FoldingRangeRefreshRequest || (exports2.FoldingRangeRefreshRequest = FoldingRangeRefreshRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.declaration.js
+var require_protocol_declaration = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.declaration.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DeclarationRequest = void 0;
+    var messages_1 = require_messages2();
+    var DeclarationRequest;
+    (function(DeclarationRequest2) {
+      DeclarationRequest2.method = "textDocument/declaration";
+      DeclarationRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DeclarationRequest2.type = new messages_1.ProtocolRequestType(DeclarationRequest2.method);
+    })(DeclarationRequest || (exports2.DeclarationRequest = DeclarationRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.selectionRange.js
+var require_protocol_selectionRange = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.selectionRange.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.SelectionRangeRequest = void 0;
+    var messages_1 = require_messages2();
+    var SelectionRangeRequest;
+    (function(SelectionRangeRequest2) {
+      SelectionRangeRequest2.method = "textDocument/selectionRange";
+      SelectionRangeRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      SelectionRangeRequest2.type = new messages_1.ProtocolRequestType(SelectionRangeRequest2.method);
+    })(SelectionRangeRequest || (exports2.SelectionRangeRequest = SelectionRangeRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.progress.js
+var require_protocol_progress = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.progress.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.WorkDoneProgressCancelNotification = exports2.WorkDoneProgressCreateRequest = exports2.WorkDoneProgress = void 0;
+    var vscode_jsonrpc_1 = require_main();
+    var messages_1 = require_messages2();
+    var WorkDoneProgress;
+    (function(WorkDoneProgress2) {
+      WorkDoneProgress2.type = new vscode_jsonrpc_1.ProgressType();
+      function is(value) {
+        return value === WorkDoneProgress2.type;
+      }
+      WorkDoneProgress2.is = is;
+    })(WorkDoneProgress || (exports2.WorkDoneProgress = WorkDoneProgress = {}));
+    var WorkDoneProgressCreateRequest;
+    (function(WorkDoneProgressCreateRequest2) {
+      WorkDoneProgressCreateRequest2.method = "window/workDoneProgress/create";
+      WorkDoneProgressCreateRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      WorkDoneProgressCreateRequest2.type = new messages_1.ProtocolRequestType(WorkDoneProgressCreateRequest2.method);
+    })(WorkDoneProgressCreateRequest || (exports2.WorkDoneProgressCreateRequest = WorkDoneProgressCreateRequest = {}));
+    var WorkDoneProgressCancelNotification;
+    (function(WorkDoneProgressCancelNotification2) {
+      WorkDoneProgressCancelNotification2.method = "window/workDoneProgress/cancel";
+      WorkDoneProgressCancelNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WorkDoneProgressCancelNotification2.type = new messages_1.ProtocolNotificationType(WorkDoneProgressCancelNotification2.method);
+    })(WorkDoneProgressCancelNotification || (exports2.WorkDoneProgressCancelNotification = WorkDoneProgressCancelNotification = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.callHierarchy.js
+var require_protocol_callHierarchy = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.callHierarchy.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.CallHierarchyOutgoingCallsRequest = exports2.CallHierarchyIncomingCallsRequest = exports2.CallHierarchyPrepareRequest = void 0;
+    var messages_1 = require_messages2();
+    var CallHierarchyPrepareRequest;
+    (function(CallHierarchyPrepareRequest2) {
+      CallHierarchyPrepareRequest2.method = "textDocument/prepareCallHierarchy";
+      CallHierarchyPrepareRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CallHierarchyPrepareRequest2.type = new messages_1.ProtocolRequestType(CallHierarchyPrepareRequest2.method);
+    })(CallHierarchyPrepareRequest || (exports2.CallHierarchyPrepareRequest = CallHierarchyPrepareRequest = {}));
+    var CallHierarchyIncomingCallsRequest;
+    (function(CallHierarchyIncomingCallsRequest2) {
+      CallHierarchyIncomingCallsRequest2.method = "callHierarchy/incomingCalls";
+      CallHierarchyIncomingCallsRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CallHierarchyIncomingCallsRequest2.type = new messages_1.ProtocolRequestType(CallHierarchyIncomingCallsRequest2.method);
+    })(CallHierarchyIncomingCallsRequest || (exports2.CallHierarchyIncomingCallsRequest = CallHierarchyIncomingCallsRequest = {}));
+    var CallHierarchyOutgoingCallsRequest;
+    (function(CallHierarchyOutgoingCallsRequest2) {
+      CallHierarchyOutgoingCallsRequest2.method = "callHierarchy/outgoingCalls";
+      CallHierarchyOutgoingCallsRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CallHierarchyOutgoingCallsRequest2.type = new messages_1.ProtocolRequestType(CallHierarchyOutgoingCallsRequest2.method);
+    })(CallHierarchyOutgoingCallsRequest || (exports2.CallHierarchyOutgoingCallsRequest = CallHierarchyOutgoingCallsRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.semanticTokens.js
+var require_protocol_semanticTokens = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.semanticTokens.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.SemanticTokensRefreshRequest = exports2.SemanticTokensRangeRequest = exports2.SemanticTokensDeltaRequest = exports2.SemanticTokensRequest = exports2.SemanticTokensRegistrationType = exports2.TokenFormat = void 0;
+    var messages_1 = require_messages2();
+    var TokenFormat;
+    (function(TokenFormat2) {
+      TokenFormat2.Relative = "relative";
+    })(TokenFormat || (exports2.TokenFormat = TokenFormat = {}));
+    var SemanticTokensRegistrationType;
+    (function(SemanticTokensRegistrationType2) {
+      SemanticTokensRegistrationType2.method = "textDocument/semanticTokens";
+      SemanticTokensRegistrationType2.type = new messages_1.RegistrationType(SemanticTokensRegistrationType2.method);
+    })(SemanticTokensRegistrationType || (exports2.SemanticTokensRegistrationType = SemanticTokensRegistrationType = {}));
+    var SemanticTokensRequest;
+    (function(SemanticTokensRequest2) {
+      SemanticTokensRequest2.method = "textDocument/semanticTokens/full";
+      SemanticTokensRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      SemanticTokensRequest2.type = new messages_1.ProtocolRequestType(SemanticTokensRequest2.method);
+      SemanticTokensRequest2.registrationMethod = SemanticTokensRegistrationType.method;
+    })(SemanticTokensRequest || (exports2.SemanticTokensRequest = SemanticTokensRequest = {}));
+    var SemanticTokensDeltaRequest;
+    (function(SemanticTokensDeltaRequest2) {
+      SemanticTokensDeltaRequest2.method = "textDocument/semanticTokens/full/delta";
+      SemanticTokensDeltaRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      SemanticTokensDeltaRequest2.type = new messages_1.ProtocolRequestType(SemanticTokensDeltaRequest2.method);
+      SemanticTokensDeltaRequest2.registrationMethod = SemanticTokensRegistrationType.method;
+    })(SemanticTokensDeltaRequest || (exports2.SemanticTokensDeltaRequest = SemanticTokensDeltaRequest = {}));
+    var SemanticTokensRangeRequest;
+    (function(SemanticTokensRangeRequest2) {
+      SemanticTokensRangeRequest2.method = "textDocument/semanticTokens/range";
+      SemanticTokensRangeRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      SemanticTokensRangeRequest2.type = new messages_1.ProtocolRequestType(SemanticTokensRangeRequest2.method);
+      SemanticTokensRangeRequest2.registrationMethod = SemanticTokensRegistrationType.method;
+    })(SemanticTokensRangeRequest || (exports2.SemanticTokensRangeRequest = SemanticTokensRangeRequest = {}));
+    var SemanticTokensRefreshRequest;
+    (function(SemanticTokensRefreshRequest2) {
+      SemanticTokensRefreshRequest2.method = `workspace/semanticTokens/refresh`;
+      SemanticTokensRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      SemanticTokensRefreshRequest2.type = new messages_1.ProtocolRequestType0(SemanticTokensRefreshRequest2.method);
+    })(SemanticTokensRefreshRequest || (exports2.SemanticTokensRefreshRequest = SemanticTokensRefreshRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.showDocument.js
+var require_protocol_showDocument = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.showDocument.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ShowDocumentRequest = void 0;
+    var messages_1 = require_messages2();
+    var ShowDocumentRequest;
+    (function(ShowDocumentRequest2) {
+      ShowDocumentRequest2.method = "window/showDocument";
+      ShowDocumentRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      ShowDocumentRequest2.type = new messages_1.ProtocolRequestType(ShowDocumentRequest2.method);
+    })(ShowDocumentRequest || (exports2.ShowDocumentRequest = ShowDocumentRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.linkedEditingRange.js
+var require_protocol_linkedEditingRange = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.linkedEditingRange.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.LinkedEditingRangeRequest = void 0;
+    var messages_1 = require_messages2();
+    var LinkedEditingRangeRequest;
+    (function(LinkedEditingRangeRequest2) {
+      LinkedEditingRangeRequest2.method = "textDocument/linkedEditingRange";
+      LinkedEditingRangeRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      LinkedEditingRangeRequest2.type = new messages_1.ProtocolRequestType(LinkedEditingRangeRequest2.method);
+    })(LinkedEditingRangeRequest || (exports2.LinkedEditingRangeRequest = LinkedEditingRangeRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.fileOperations.js
+var require_protocol_fileOperations = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.fileOperations.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.WillDeleteFilesRequest = exports2.DidDeleteFilesNotification = exports2.DidRenameFilesNotification = exports2.WillRenameFilesRequest = exports2.DidCreateFilesNotification = exports2.WillCreateFilesRequest = exports2.FileOperationPatternKind = void 0;
+    var messages_1 = require_messages2();
+    var FileOperationPatternKind;
+    (function(FileOperationPatternKind2) {
+      FileOperationPatternKind2.file = "file";
+      FileOperationPatternKind2.folder = "folder";
+    })(FileOperationPatternKind || (exports2.FileOperationPatternKind = FileOperationPatternKind = {}));
+    var WillCreateFilesRequest;
+    (function(WillCreateFilesRequest2) {
+      WillCreateFilesRequest2.method = "workspace/willCreateFiles";
+      WillCreateFilesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WillCreateFilesRequest2.type = new messages_1.ProtocolRequestType(WillCreateFilesRequest2.method);
+    })(WillCreateFilesRequest || (exports2.WillCreateFilesRequest = WillCreateFilesRequest = {}));
+    var DidCreateFilesNotification;
+    (function(DidCreateFilesNotification2) {
+      DidCreateFilesNotification2.method = "workspace/didCreateFiles";
+      DidCreateFilesNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidCreateFilesNotification2.type = new messages_1.ProtocolNotificationType(DidCreateFilesNotification2.method);
+    })(DidCreateFilesNotification || (exports2.DidCreateFilesNotification = DidCreateFilesNotification = {}));
+    var WillRenameFilesRequest;
+    (function(WillRenameFilesRequest2) {
+      WillRenameFilesRequest2.method = "workspace/willRenameFiles";
+      WillRenameFilesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WillRenameFilesRequest2.type = new messages_1.ProtocolRequestType(WillRenameFilesRequest2.method);
+    })(WillRenameFilesRequest || (exports2.WillRenameFilesRequest = WillRenameFilesRequest = {}));
+    var DidRenameFilesNotification;
+    (function(DidRenameFilesNotification2) {
+      DidRenameFilesNotification2.method = "workspace/didRenameFiles";
+      DidRenameFilesNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidRenameFilesNotification2.type = new messages_1.ProtocolNotificationType(DidRenameFilesNotification2.method);
+    })(DidRenameFilesNotification || (exports2.DidRenameFilesNotification = DidRenameFilesNotification = {}));
+    var DidDeleteFilesNotification;
+    (function(DidDeleteFilesNotification2) {
+      DidDeleteFilesNotification2.method = "workspace/didDeleteFiles";
+      DidDeleteFilesNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidDeleteFilesNotification2.type = new messages_1.ProtocolNotificationType(DidDeleteFilesNotification2.method);
+    })(DidDeleteFilesNotification || (exports2.DidDeleteFilesNotification = DidDeleteFilesNotification = {}));
+    var WillDeleteFilesRequest;
+    (function(WillDeleteFilesRequest2) {
+      WillDeleteFilesRequest2.method = "workspace/willDeleteFiles";
+      WillDeleteFilesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WillDeleteFilesRequest2.type = new messages_1.ProtocolRequestType(WillDeleteFilesRequest2.method);
+    })(WillDeleteFilesRequest || (exports2.WillDeleteFilesRequest = WillDeleteFilesRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.moniker.js
+var require_protocol_moniker = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.moniker.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.MonikerRequest = exports2.MonikerKind = exports2.UniquenessLevel = void 0;
+    var messages_1 = require_messages2();
+    var UniquenessLevel;
+    (function(UniquenessLevel2) {
+      UniquenessLevel2.document = "document";
+      UniquenessLevel2.project = "project";
+      UniquenessLevel2.group = "group";
+      UniquenessLevel2.scheme = "scheme";
+      UniquenessLevel2.global = "global";
+    })(UniquenessLevel || (exports2.UniquenessLevel = UniquenessLevel = {}));
+    var MonikerKind;
+    (function(MonikerKind2) {
+      MonikerKind2.$import = "import";
+      MonikerKind2.$export = "export";
+      MonikerKind2.local = "local";
+    })(MonikerKind || (exports2.MonikerKind = MonikerKind = {}));
+    var MonikerRequest;
+    (function(MonikerRequest2) {
+      MonikerRequest2.method = "textDocument/moniker";
+      MonikerRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      MonikerRequest2.type = new messages_1.ProtocolRequestType(MonikerRequest2.method);
+    })(MonikerRequest || (exports2.MonikerRequest = MonikerRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.typeHierarchy.js
+var require_protocol_typeHierarchy = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.typeHierarchy.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TypeHierarchySubtypesRequest = exports2.TypeHierarchySupertypesRequest = exports2.TypeHierarchyPrepareRequest = void 0;
+    var messages_1 = require_messages2();
+    var TypeHierarchyPrepareRequest;
+    (function(TypeHierarchyPrepareRequest2) {
+      TypeHierarchyPrepareRequest2.method = "textDocument/prepareTypeHierarchy";
+      TypeHierarchyPrepareRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      TypeHierarchyPrepareRequest2.type = new messages_1.ProtocolRequestType(TypeHierarchyPrepareRequest2.method);
+    })(TypeHierarchyPrepareRequest || (exports2.TypeHierarchyPrepareRequest = TypeHierarchyPrepareRequest = {}));
+    var TypeHierarchySupertypesRequest;
+    (function(TypeHierarchySupertypesRequest2) {
+      TypeHierarchySupertypesRequest2.method = "typeHierarchy/supertypes";
+      TypeHierarchySupertypesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      TypeHierarchySupertypesRequest2.type = new messages_1.ProtocolRequestType(TypeHierarchySupertypesRequest2.method);
+    })(TypeHierarchySupertypesRequest || (exports2.TypeHierarchySupertypesRequest = TypeHierarchySupertypesRequest = {}));
+    var TypeHierarchySubtypesRequest;
+    (function(TypeHierarchySubtypesRequest2) {
+      TypeHierarchySubtypesRequest2.method = "typeHierarchy/subtypes";
+      TypeHierarchySubtypesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      TypeHierarchySubtypesRequest2.type = new messages_1.ProtocolRequestType(TypeHierarchySubtypesRequest2.method);
+    })(TypeHierarchySubtypesRequest || (exports2.TypeHierarchySubtypesRequest = TypeHierarchySubtypesRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.inlineValue.js
+var require_protocol_inlineValue = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.inlineValue.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlineValueRefreshRequest = exports2.InlineValueRequest = void 0;
+    var messages_1 = require_messages2();
+    var InlineValueRequest;
+    (function(InlineValueRequest2) {
+      InlineValueRequest2.method = "textDocument/inlineValue";
+      InlineValueRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InlineValueRequest2.type = new messages_1.ProtocolRequestType(InlineValueRequest2.method);
+    })(InlineValueRequest || (exports2.InlineValueRequest = InlineValueRequest = {}));
+    var InlineValueRefreshRequest;
+    (function(InlineValueRefreshRequest2) {
+      InlineValueRefreshRequest2.method = `workspace/inlineValue/refresh`;
+      InlineValueRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      InlineValueRefreshRequest2.type = new messages_1.ProtocolRequestType0(InlineValueRefreshRequest2.method);
+    })(InlineValueRefreshRequest || (exports2.InlineValueRefreshRequest = InlineValueRefreshRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.inlayHint.js
+var require_protocol_inlayHint = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.inlayHint.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlayHintRefreshRequest = exports2.InlayHintResolveRequest = exports2.InlayHintRequest = void 0;
+    var messages_1 = require_messages2();
+    var InlayHintRequest;
+    (function(InlayHintRequest2) {
+      InlayHintRequest2.method = "textDocument/inlayHint";
+      InlayHintRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InlayHintRequest2.type = new messages_1.ProtocolRequestType(InlayHintRequest2.method);
+    })(InlayHintRequest || (exports2.InlayHintRequest = InlayHintRequest = {}));
+    var InlayHintResolveRequest;
+    (function(InlayHintResolveRequest2) {
+      InlayHintResolveRequest2.method = "inlayHint/resolve";
+      InlayHintResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InlayHintResolveRequest2.type = new messages_1.ProtocolRequestType(InlayHintResolveRequest2.method);
+    })(InlayHintResolveRequest || (exports2.InlayHintResolveRequest = InlayHintResolveRequest = {}));
+    var InlayHintRefreshRequest;
+    (function(InlayHintRefreshRequest2) {
+      InlayHintRefreshRequest2.method = `workspace/inlayHint/refresh`;
+      InlayHintRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      InlayHintRefreshRequest2.type = new messages_1.ProtocolRequestType0(InlayHintRefreshRequest2.method);
+    })(InlayHintRefreshRequest || (exports2.InlayHintRefreshRequest = InlayHintRefreshRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.diagnostic.js
+var require_protocol_diagnostic = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.diagnostic.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DiagnosticRefreshRequest = exports2.WorkspaceDiagnosticRequest = exports2.DocumentDiagnosticRequest = exports2.DocumentDiagnosticReportKind = exports2.DiagnosticServerCancellationData = void 0;
+    var vscode_jsonrpc_1 = require_main();
+    var Is = require_is3();
+    var messages_1 = require_messages2();
+    var DiagnosticServerCancellationData;
+    (function(DiagnosticServerCancellationData2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && Is.boolean(candidate.retriggerRequest);
+      }
+      DiagnosticServerCancellationData2.is = is;
+    })(DiagnosticServerCancellationData || (exports2.DiagnosticServerCancellationData = DiagnosticServerCancellationData = {}));
+    var DocumentDiagnosticReportKind;
+    (function(DocumentDiagnosticReportKind2) {
+      DocumentDiagnosticReportKind2.Full = "full";
+      DocumentDiagnosticReportKind2.Unchanged = "unchanged";
+    })(DocumentDiagnosticReportKind || (exports2.DocumentDiagnosticReportKind = DocumentDiagnosticReportKind = {}));
+    var DocumentDiagnosticRequest;
+    (function(DocumentDiagnosticRequest2) {
+      DocumentDiagnosticRequest2.method = "textDocument/diagnostic";
+      DocumentDiagnosticRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentDiagnosticRequest2.type = new messages_1.ProtocolRequestType(DocumentDiagnosticRequest2.method);
+      DocumentDiagnosticRequest2.partialResult = new vscode_jsonrpc_1.ProgressType();
+    })(DocumentDiagnosticRequest || (exports2.DocumentDiagnosticRequest = DocumentDiagnosticRequest = {}));
+    var WorkspaceDiagnosticRequest;
+    (function(WorkspaceDiagnosticRequest2) {
+      WorkspaceDiagnosticRequest2.method = "workspace/diagnostic";
+      WorkspaceDiagnosticRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WorkspaceDiagnosticRequest2.type = new messages_1.ProtocolRequestType(WorkspaceDiagnosticRequest2.method);
+      WorkspaceDiagnosticRequest2.partialResult = new vscode_jsonrpc_1.ProgressType();
+    })(WorkspaceDiagnosticRequest || (exports2.WorkspaceDiagnosticRequest = WorkspaceDiagnosticRequest = {}));
+    var DiagnosticRefreshRequest;
+    (function(DiagnosticRefreshRequest2) {
+      DiagnosticRefreshRequest2.method = `workspace/diagnostic/refresh`;
+      DiagnosticRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      DiagnosticRefreshRequest2.type = new messages_1.ProtocolRequestType0(DiagnosticRefreshRequest2.method);
+    })(DiagnosticRefreshRequest || (exports2.DiagnosticRefreshRequest = DiagnosticRefreshRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.notebook.js
+var require_protocol_notebook = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.notebook.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DidCloseNotebookDocumentNotification = exports2.DidSaveNotebookDocumentNotification = exports2.DidChangeNotebookDocumentNotification = exports2.NotebookCellArrayChange = exports2.DidOpenNotebookDocumentNotification = exports2.NotebookDocumentSyncRegistrationType = exports2.NotebookDocument = exports2.NotebookCell = exports2.ExecutionSummary = exports2.NotebookCellKind = void 0;
+    var vscode_languageserver_types_1 = require_main2();
+    var Is = require_is3();
+    var messages_1 = require_messages2();
+    var NotebookCellKind;
+    (function(NotebookCellKind2) {
+      NotebookCellKind2.Markup = 1;
+      NotebookCellKind2.Code = 2;
+      function is(value) {
+        return value === 1 || value === 2;
+      }
+      NotebookCellKind2.is = is;
+    })(NotebookCellKind || (exports2.NotebookCellKind = NotebookCellKind = {}));
+    var ExecutionSummary;
+    (function(ExecutionSummary2) {
+      function create(executionOrder, success) {
+        const result = { executionOrder };
+        if (success === true || success === false) {
+          result.success = success;
+        }
+        return result;
+      }
+      ExecutionSummary2.create = create;
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && vscode_languageserver_types_1.uinteger.is(candidate.executionOrder) && (candidate.success === void 0 || Is.boolean(candidate.success));
+      }
+      ExecutionSummary2.is = is;
+      function equals(one, other) {
+        if (one === other) {
+          return true;
+        }
+        if (one === null || one === void 0 || other === null || other === void 0) {
+          return false;
+        }
+        return one.executionOrder === other.executionOrder && one.success === other.success;
+      }
+      ExecutionSummary2.equals = equals;
+    })(ExecutionSummary || (exports2.ExecutionSummary = ExecutionSummary = {}));
+    var NotebookCell;
+    (function(NotebookCell2) {
+      function create(kind, document) {
+        return { kind, document };
+      }
+      NotebookCell2.create = create;
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && NotebookCellKind.is(candidate.kind) && vscode_languageserver_types_1.DocumentUri.is(candidate.document) && (candidate.metadata === void 0 || Is.objectLiteral(candidate.metadata));
+      }
+      NotebookCell2.is = is;
+      function diff(one, two) {
+        const result = /* @__PURE__ */ new Set();
+        if (one.document !== two.document) {
+          result.add("document");
+        }
+        if (one.kind !== two.kind) {
+          result.add("kind");
+        }
+        if (one.executionSummary !== two.executionSummary) {
+          result.add("executionSummary");
+        }
+        if ((one.metadata !== void 0 || two.metadata !== void 0) && !equalsMetadata(one.metadata, two.metadata)) {
+          result.add("metadata");
+        }
+        if ((one.executionSummary !== void 0 || two.executionSummary !== void 0) && !ExecutionSummary.equals(one.executionSummary, two.executionSummary)) {
+          result.add("executionSummary");
+        }
+        return result;
+      }
+      NotebookCell2.diff = diff;
+      function equalsMetadata(one, other) {
+        if (one === other) {
+          return true;
+        }
+        if (one === null || one === void 0 || other === null || other === void 0) {
+          return false;
+        }
+        if (typeof one !== typeof other) {
+          return false;
+        }
+        if (typeof one !== "object") {
+          return false;
+        }
+        const oneArray = Array.isArray(one);
+        const otherArray = Array.isArray(other);
+        if (oneArray !== otherArray) {
+          return false;
+        }
+        if (oneArray && otherArray) {
+          if (one.length !== other.length) {
+            return false;
+          }
+          for (let i = 0; i < one.length; i++) {
+            if (!equalsMetadata(one[i], other[i])) {
+              return false;
+            }
+          }
+        }
+        if (Is.objectLiteral(one) && Is.objectLiteral(other)) {
+          const oneKeys = Object.keys(one);
+          const otherKeys = Object.keys(other);
+          if (oneKeys.length !== otherKeys.length) {
+            return false;
+          }
+          oneKeys.sort();
+          otherKeys.sort();
+          if (!equalsMetadata(oneKeys, otherKeys)) {
+            return false;
+          }
+          for (let i = 0; i < oneKeys.length; i++) {
+            const prop = oneKeys[i];
+            if (!equalsMetadata(one[prop], other[prop])) {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+    })(NotebookCell || (exports2.NotebookCell = NotebookCell = {}));
+    var NotebookDocument;
+    (function(NotebookDocument2) {
+      function create(uri, notebookType, version, cells) {
+        return { uri, notebookType, version, cells };
+      }
+      NotebookDocument2.create = create;
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && Is.string(candidate.uri) && vscode_languageserver_types_1.integer.is(candidate.version) && Is.typedArray(candidate.cells, NotebookCell.is);
+      }
+      NotebookDocument2.is = is;
+    })(NotebookDocument || (exports2.NotebookDocument = NotebookDocument = {}));
+    var NotebookDocumentSyncRegistrationType;
+    (function(NotebookDocumentSyncRegistrationType2) {
+      NotebookDocumentSyncRegistrationType2.method = "notebookDocument/sync";
+      NotebookDocumentSyncRegistrationType2.messageDirection = messages_1.MessageDirection.clientToServer;
+      NotebookDocumentSyncRegistrationType2.type = new messages_1.RegistrationType(NotebookDocumentSyncRegistrationType2.method);
+    })(NotebookDocumentSyncRegistrationType || (exports2.NotebookDocumentSyncRegistrationType = NotebookDocumentSyncRegistrationType = {}));
+    var DidOpenNotebookDocumentNotification;
+    (function(DidOpenNotebookDocumentNotification2) {
+      DidOpenNotebookDocumentNotification2.method = "notebookDocument/didOpen";
+      DidOpenNotebookDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidOpenNotebookDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidOpenNotebookDocumentNotification2.method);
+      DidOpenNotebookDocumentNotification2.registrationMethod = NotebookDocumentSyncRegistrationType.method;
+    })(DidOpenNotebookDocumentNotification || (exports2.DidOpenNotebookDocumentNotification = DidOpenNotebookDocumentNotification = {}));
+    var NotebookCellArrayChange;
+    (function(NotebookCellArrayChange2) {
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && vscode_languageserver_types_1.uinteger.is(candidate.start) && vscode_languageserver_types_1.uinteger.is(candidate.deleteCount) && (candidate.cells === void 0 || Is.typedArray(candidate.cells, NotebookCell.is));
+      }
+      NotebookCellArrayChange2.is = is;
+      function create(start, deleteCount, cells) {
+        const result = { start, deleteCount };
+        if (cells !== void 0) {
+          result.cells = cells;
+        }
+        return result;
+      }
+      NotebookCellArrayChange2.create = create;
+    })(NotebookCellArrayChange || (exports2.NotebookCellArrayChange = NotebookCellArrayChange = {}));
+    var DidChangeNotebookDocumentNotification;
+    (function(DidChangeNotebookDocumentNotification2) {
+      DidChangeNotebookDocumentNotification2.method = "notebookDocument/didChange";
+      DidChangeNotebookDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidChangeNotebookDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidChangeNotebookDocumentNotification2.method);
+      DidChangeNotebookDocumentNotification2.registrationMethod = NotebookDocumentSyncRegistrationType.method;
+    })(DidChangeNotebookDocumentNotification || (exports2.DidChangeNotebookDocumentNotification = DidChangeNotebookDocumentNotification = {}));
+    var DidSaveNotebookDocumentNotification;
+    (function(DidSaveNotebookDocumentNotification2) {
+      DidSaveNotebookDocumentNotification2.method = "notebookDocument/didSave";
+      DidSaveNotebookDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidSaveNotebookDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidSaveNotebookDocumentNotification2.method);
+      DidSaveNotebookDocumentNotification2.registrationMethod = NotebookDocumentSyncRegistrationType.method;
+    })(DidSaveNotebookDocumentNotification || (exports2.DidSaveNotebookDocumentNotification = DidSaveNotebookDocumentNotification = {}));
+    var DidCloseNotebookDocumentNotification;
+    (function(DidCloseNotebookDocumentNotification2) {
+      DidCloseNotebookDocumentNotification2.method = "notebookDocument/didClose";
+      DidCloseNotebookDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidCloseNotebookDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidCloseNotebookDocumentNotification2.method);
+      DidCloseNotebookDocumentNotification2.registrationMethod = NotebookDocumentSyncRegistrationType.method;
+    })(DidCloseNotebookDocumentNotification || (exports2.DidCloseNotebookDocumentNotification = DidCloseNotebookDocumentNotification = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.inlineCompletion.js
+var require_protocol_inlineCompletion = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.inlineCompletion.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlineCompletionRequest = void 0;
+    var messages_1 = require_messages2();
+    var InlineCompletionRequest;
+    (function(InlineCompletionRequest2) {
+      InlineCompletionRequest2.method = "textDocument/inlineCompletion";
+      InlineCompletionRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InlineCompletionRequest2.type = new messages_1.ProtocolRequestType(InlineCompletionRequest2.method);
+    })(InlineCompletionRequest || (exports2.InlineCompletionRequest = InlineCompletionRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/protocol.js
+var require_protocol = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/protocol.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.WorkspaceSymbolRequest = exports2.CodeActionResolveRequest = exports2.CodeActionRequest = exports2.DocumentSymbolRequest = exports2.DocumentHighlightRequest = exports2.ReferencesRequest = exports2.DefinitionRequest = exports2.SignatureHelpRequest = exports2.SignatureHelpTriggerKind = exports2.HoverRequest = exports2.CompletionResolveRequest = exports2.CompletionRequest = exports2.CompletionTriggerKind = exports2.PublishDiagnosticsNotification = exports2.WatchKind = exports2.RelativePattern = exports2.FileChangeType = exports2.DidChangeWatchedFilesNotification = exports2.WillSaveTextDocumentWaitUntilRequest = exports2.WillSaveTextDocumentNotification = exports2.TextDocumentSaveReason = exports2.DidSaveTextDocumentNotification = exports2.DidCloseTextDocumentNotification = exports2.DidChangeTextDocumentNotification = exports2.TextDocumentContentChangeEvent = exports2.DidOpenTextDocumentNotification = exports2.TextDocumentSyncKind = exports2.TelemetryEventNotification = exports2.LogMessageNotification = exports2.ShowMessageRequest = exports2.ShowMessageNotification = exports2.MessageType = exports2.DidChangeConfigurationNotification = exports2.ExitNotification = exports2.ShutdownRequest = exports2.InitializedNotification = exports2.InitializeErrorCodes = exports2.InitializeRequest = exports2.WorkDoneProgressOptions = exports2.TextDocumentRegistrationOptions = exports2.StaticRegistrationOptions = exports2.PositionEncodingKind = exports2.FailureHandlingKind = exports2.ResourceOperationKind = exports2.UnregistrationRequest = exports2.RegistrationRequest = exports2.DocumentSelector = exports2.NotebookCellTextDocumentFilter = exports2.NotebookDocumentFilter = exports2.TextDocumentFilter = void 0;
+    exports2.MonikerRequest = exports2.MonikerKind = exports2.UniquenessLevel = exports2.WillDeleteFilesRequest = exports2.DidDeleteFilesNotification = exports2.WillRenameFilesRequest = exports2.DidRenameFilesNotification = exports2.WillCreateFilesRequest = exports2.DidCreateFilesNotification = exports2.FileOperationPatternKind = exports2.LinkedEditingRangeRequest = exports2.ShowDocumentRequest = exports2.SemanticTokensRegistrationType = exports2.SemanticTokensRefreshRequest = exports2.SemanticTokensRangeRequest = exports2.SemanticTokensDeltaRequest = exports2.SemanticTokensRequest = exports2.TokenFormat = exports2.CallHierarchyPrepareRequest = exports2.CallHierarchyOutgoingCallsRequest = exports2.CallHierarchyIncomingCallsRequest = exports2.WorkDoneProgressCancelNotification = exports2.WorkDoneProgressCreateRequest = exports2.WorkDoneProgress = exports2.SelectionRangeRequest = exports2.DeclarationRequest = exports2.FoldingRangeRefreshRequest = exports2.FoldingRangeRequest = exports2.ColorPresentationRequest = exports2.DocumentColorRequest = exports2.ConfigurationRequest = exports2.DidChangeWorkspaceFoldersNotification = exports2.WorkspaceFoldersRequest = exports2.TypeDefinitionRequest = exports2.ImplementationRequest = exports2.ApplyWorkspaceEditRequest = exports2.ExecuteCommandRequest = exports2.PrepareRenameRequest = exports2.RenameRequest = exports2.PrepareSupportDefaultBehavior = exports2.DocumentOnTypeFormattingRequest = exports2.DocumentRangesFormattingRequest = exports2.DocumentRangeFormattingRequest = exports2.DocumentFormattingRequest = exports2.DocumentLinkResolveRequest = exports2.DocumentLinkRequest = exports2.CodeLensRefreshRequest = exports2.CodeLensResolveRequest = exports2.CodeLensRequest = exports2.WorkspaceSymbolResolveRequest = void 0;
+    exports2.InlineCompletionRequest = exports2.DidCloseNotebookDocumentNotification = exports2.DidSaveNotebookDocumentNotification = exports2.DidChangeNotebookDocumentNotification = exports2.NotebookCellArrayChange = exports2.DidOpenNotebookDocumentNotification = exports2.NotebookDocumentSyncRegistrationType = exports2.NotebookDocument = exports2.NotebookCell = exports2.ExecutionSummary = exports2.NotebookCellKind = exports2.DiagnosticRefreshRequest = exports2.WorkspaceDiagnosticRequest = exports2.DocumentDiagnosticRequest = exports2.DocumentDiagnosticReportKind = exports2.DiagnosticServerCancellationData = exports2.InlayHintRefreshRequest = exports2.InlayHintResolveRequest = exports2.InlayHintRequest = exports2.InlineValueRefreshRequest = exports2.InlineValueRequest = exports2.TypeHierarchySupertypesRequest = exports2.TypeHierarchySubtypesRequest = exports2.TypeHierarchyPrepareRequest = void 0;
+    var messages_1 = require_messages2();
+    var vscode_languageserver_types_1 = require_main2();
+    var Is = require_is3();
+    var protocol_implementation_1 = require_protocol_implementation();
+    Object.defineProperty(exports2, "ImplementationRequest", { enumerable: true, get: function() {
+      return protocol_implementation_1.ImplementationRequest;
+    } });
+    var protocol_typeDefinition_1 = require_protocol_typeDefinition();
+    Object.defineProperty(exports2, "TypeDefinitionRequest", { enumerable: true, get: function() {
+      return protocol_typeDefinition_1.TypeDefinitionRequest;
+    } });
+    var protocol_workspaceFolder_1 = require_protocol_workspaceFolder();
+    Object.defineProperty(exports2, "WorkspaceFoldersRequest", { enumerable: true, get: function() {
+      return protocol_workspaceFolder_1.WorkspaceFoldersRequest;
+    } });
+    Object.defineProperty(exports2, "DidChangeWorkspaceFoldersNotification", { enumerable: true, get: function() {
+      return protocol_workspaceFolder_1.DidChangeWorkspaceFoldersNotification;
+    } });
+    var protocol_configuration_1 = require_protocol_configuration();
+    Object.defineProperty(exports2, "ConfigurationRequest", { enumerable: true, get: function() {
+      return protocol_configuration_1.ConfigurationRequest;
+    } });
+    var protocol_colorProvider_1 = require_protocol_colorProvider();
+    Object.defineProperty(exports2, "DocumentColorRequest", { enumerable: true, get: function() {
+      return protocol_colorProvider_1.DocumentColorRequest;
+    } });
+    Object.defineProperty(exports2, "ColorPresentationRequest", { enumerable: true, get: function() {
+      return protocol_colorProvider_1.ColorPresentationRequest;
+    } });
+    var protocol_foldingRange_1 = require_protocol_foldingRange();
+    Object.defineProperty(exports2, "FoldingRangeRequest", { enumerable: true, get: function() {
+      return protocol_foldingRange_1.FoldingRangeRequest;
+    } });
+    Object.defineProperty(exports2, "FoldingRangeRefreshRequest", { enumerable: true, get: function() {
+      return protocol_foldingRange_1.FoldingRangeRefreshRequest;
+    } });
+    var protocol_declaration_1 = require_protocol_declaration();
+    Object.defineProperty(exports2, "DeclarationRequest", { enumerable: true, get: function() {
+      return protocol_declaration_1.DeclarationRequest;
+    } });
+    var protocol_selectionRange_1 = require_protocol_selectionRange();
+    Object.defineProperty(exports2, "SelectionRangeRequest", { enumerable: true, get: function() {
+      return protocol_selectionRange_1.SelectionRangeRequest;
+    } });
+    var protocol_progress_1 = require_protocol_progress();
+    Object.defineProperty(exports2, "WorkDoneProgress", { enumerable: true, get: function() {
+      return protocol_progress_1.WorkDoneProgress;
+    } });
+    Object.defineProperty(exports2, "WorkDoneProgressCreateRequest", { enumerable: true, get: function() {
+      return protocol_progress_1.WorkDoneProgressCreateRequest;
+    } });
+    Object.defineProperty(exports2, "WorkDoneProgressCancelNotification", { enumerable: true, get: function() {
+      return protocol_progress_1.WorkDoneProgressCancelNotification;
+    } });
+    var protocol_callHierarchy_1 = require_protocol_callHierarchy();
+    Object.defineProperty(exports2, "CallHierarchyIncomingCallsRequest", { enumerable: true, get: function() {
+      return protocol_callHierarchy_1.CallHierarchyIncomingCallsRequest;
+    } });
+    Object.defineProperty(exports2, "CallHierarchyOutgoingCallsRequest", { enumerable: true, get: function() {
+      return protocol_callHierarchy_1.CallHierarchyOutgoingCallsRequest;
+    } });
+    Object.defineProperty(exports2, "CallHierarchyPrepareRequest", { enumerable: true, get: function() {
+      return protocol_callHierarchy_1.CallHierarchyPrepareRequest;
+    } });
+    var protocol_semanticTokens_1 = require_protocol_semanticTokens();
+    Object.defineProperty(exports2, "TokenFormat", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.TokenFormat;
+    } });
+    Object.defineProperty(exports2, "SemanticTokensRequest", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.SemanticTokensRequest;
+    } });
+    Object.defineProperty(exports2, "SemanticTokensDeltaRequest", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.SemanticTokensDeltaRequest;
+    } });
+    Object.defineProperty(exports2, "SemanticTokensRangeRequest", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.SemanticTokensRangeRequest;
+    } });
+    Object.defineProperty(exports2, "SemanticTokensRefreshRequest", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.SemanticTokensRefreshRequest;
+    } });
+    Object.defineProperty(exports2, "SemanticTokensRegistrationType", { enumerable: true, get: function() {
+      return protocol_semanticTokens_1.SemanticTokensRegistrationType;
+    } });
+    var protocol_showDocument_1 = require_protocol_showDocument();
+    Object.defineProperty(exports2, "ShowDocumentRequest", { enumerable: true, get: function() {
+      return protocol_showDocument_1.ShowDocumentRequest;
+    } });
+    var protocol_linkedEditingRange_1 = require_protocol_linkedEditingRange();
+    Object.defineProperty(exports2, "LinkedEditingRangeRequest", { enumerable: true, get: function() {
+      return protocol_linkedEditingRange_1.LinkedEditingRangeRequest;
+    } });
+    var protocol_fileOperations_1 = require_protocol_fileOperations();
+    Object.defineProperty(exports2, "FileOperationPatternKind", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.FileOperationPatternKind;
+    } });
+    Object.defineProperty(exports2, "DidCreateFilesNotification", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.DidCreateFilesNotification;
+    } });
+    Object.defineProperty(exports2, "WillCreateFilesRequest", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.WillCreateFilesRequest;
+    } });
+    Object.defineProperty(exports2, "DidRenameFilesNotification", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.DidRenameFilesNotification;
+    } });
+    Object.defineProperty(exports2, "WillRenameFilesRequest", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.WillRenameFilesRequest;
+    } });
+    Object.defineProperty(exports2, "DidDeleteFilesNotification", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.DidDeleteFilesNotification;
+    } });
+    Object.defineProperty(exports2, "WillDeleteFilesRequest", { enumerable: true, get: function() {
+      return protocol_fileOperations_1.WillDeleteFilesRequest;
+    } });
+    var protocol_moniker_1 = require_protocol_moniker();
+    Object.defineProperty(exports2, "UniquenessLevel", { enumerable: true, get: function() {
+      return protocol_moniker_1.UniquenessLevel;
+    } });
+    Object.defineProperty(exports2, "MonikerKind", { enumerable: true, get: function() {
+      return protocol_moniker_1.MonikerKind;
+    } });
+    Object.defineProperty(exports2, "MonikerRequest", { enumerable: true, get: function() {
+      return protocol_moniker_1.MonikerRequest;
+    } });
+    var protocol_typeHierarchy_1 = require_protocol_typeHierarchy();
+    Object.defineProperty(exports2, "TypeHierarchyPrepareRequest", { enumerable: true, get: function() {
+      return protocol_typeHierarchy_1.TypeHierarchyPrepareRequest;
+    } });
+    Object.defineProperty(exports2, "TypeHierarchySubtypesRequest", { enumerable: true, get: function() {
+      return protocol_typeHierarchy_1.TypeHierarchySubtypesRequest;
+    } });
+    Object.defineProperty(exports2, "TypeHierarchySupertypesRequest", { enumerable: true, get: function() {
+      return protocol_typeHierarchy_1.TypeHierarchySupertypesRequest;
+    } });
+    var protocol_inlineValue_1 = require_protocol_inlineValue();
+    Object.defineProperty(exports2, "InlineValueRequest", { enumerable: true, get: function() {
+      return protocol_inlineValue_1.InlineValueRequest;
+    } });
+    Object.defineProperty(exports2, "InlineValueRefreshRequest", { enumerable: true, get: function() {
+      return protocol_inlineValue_1.InlineValueRefreshRequest;
+    } });
+    var protocol_inlayHint_1 = require_protocol_inlayHint();
+    Object.defineProperty(exports2, "InlayHintRequest", { enumerable: true, get: function() {
+      return protocol_inlayHint_1.InlayHintRequest;
+    } });
+    Object.defineProperty(exports2, "InlayHintResolveRequest", { enumerable: true, get: function() {
+      return protocol_inlayHint_1.InlayHintResolveRequest;
+    } });
+    Object.defineProperty(exports2, "InlayHintRefreshRequest", { enumerable: true, get: function() {
+      return protocol_inlayHint_1.InlayHintRefreshRequest;
+    } });
+    var protocol_diagnostic_1 = require_protocol_diagnostic();
+    Object.defineProperty(exports2, "DiagnosticServerCancellationData", { enumerable: true, get: function() {
+      return protocol_diagnostic_1.DiagnosticServerCancellationData;
+    } });
+    Object.defineProperty(exports2, "DocumentDiagnosticReportKind", { enumerable: true, get: function() {
+      return protocol_diagnostic_1.DocumentDiagnosticReportKind;
+    } });
+    Object.defineProperty(exports2, "DocumentDiagnosticRequest", { enumerable: true, get: function() {
+      return protocol_diagnostic_1.DocumentDiagnosticRequest;
+    } });
+    Object.defineProperty(exports2, "WorkspaceDiagnosticRequest", { enumerable: true, get: function() {
+      return protocol_diagnostic_1.WorkspaceDiagnosticRequest;
+    } });
+    Object.defineProperty(exports2, "DiagnosticRefreshRequest", { enumerable: true, get: function() {
+      return protocol_diagnostic_1.DiagnosticRefreshRequest;
+    } });
+    var protocol_notebook_1 = require_protocol_notebook();
+    Object.defineProperty(exports2, "NotebookCellKind", { enumerable: true, get: function() {
+      return protocol_notebook_1.NotebookCellKind;
+    } });
+    Object.defineProperty(exports2, "ExecutionSummary", { enumerable: true, get: function() {
+      return protocol_notebook_1.ExecutionSummary;
+    } });
+    Object.defineProperty(exports2, "NotebookCell", { enumerable: true, get: function() {
+      return protocol_notebook_1.NotebookCell;
+    } });
+    Object.defineProperty(exports2, "NotebookDocument", { enumerable: true, get: function() {
+      return protocol_notebook_1.NotebookDocument;
+    } });
+    Object.defineProperty(exports2, "NotebookDocumentSyncRegistrationType", { enumerable: true, get: function() {
+      return protocol_notebook_1.NotebookDocumentSyncRegistrationType;
+    } });
+    Object.defineProperty(exports2, "DidOpenNotebookDocumentNotification", { enumerable: true, get: function() {
+      return protocol_notebook_1.DidOpenNotebookDocumentNotification;
+    } });
+    Object.defineProperty(exports2, "NotebookCellArrayChange", { enumerable: true, get: function() {
+      return protocol_notebook_1.NotebookCellArrayChange;
+    } });
+    Object.defineProperty(exports2, "DidChangeNotebookDocumentNotification", { enumerable: true, get: function() {
+      return protocol_notebook_1.DidChangeNotebookDocumentNotification;
+    } });
+    Object.defineProperty(exports2, "DidSaveNotebookDocumentNotification", { enumerable: true, get: function() {
+      return protocol_notebook_1.DidSaveNotebookDocumentNotification;
+    } });
+    Object.defineProperty(exports2, "DidCloseNotebookDocumentNotification", { enumerable: true, get: function() {
+      return protocol_notebook_1.DidCloseNotebookDocumentNotification;
+    } });
+    var protocol_inlineCompletion_1 = require_protocol_inlineCompletion();
+    Object.defineProperty(exports2, "InlineCompletionRequest", { enumerable: true, get: function() {
+      return protocol_inlineCompletion_1.InlineCompletionRequest;
+    } });
+    var TextDocumentFilter;
+    (function(TextDocumentFilter2) {
+      function is(value) {
+        const candidate = value;
+        return Is.string(candidate) || (Is.string(candidate.language) || Is.string(candidate.scheme) || Is.string(candidate.pattern));
+      }
+      TextDocumentFilter2.is = is;
+    })(TextDocumentFilter || (exports2.TextDocumentFilter = TextDocumentFilter = {}));
+    var NotebookDocumentFilter;
+    (function(NotebookDocumentFilter2) {
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && (Is.string(candidate.notebookType) || Is.string(candidate.scheme) || Is.string(candidate.pattern));
+      }
+      NotebookDocumentFilter2.is = is;
+    })(NotebookDocumentFilter || (exports2.NotebookDocumentFilter = NotebookDocumentFilter = {}));
+    var NotebookCellTextDocumentFilter;
+    (function(NotebookCellTextDocumentFilter2) {
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && (Is.string(candidate.notebook) || NotebookDocumentFilter.is(candidate.notebook)) && (candidate.language === void 0 || Is.string(candidate.language));
+      }
+      NotebookCellTextDocumentFilter2.is = is;
+    })(NotebookCellTextDocumentFilter || (exports2.NotebookCellTextDocumentFilter = NotebookCellTextDocumentFilter = {}));
+    var DocumentSelector;
+    (function(DocumentSelector2) {
+      function is(value) {
+        if (!Array.isArray(value)) {
+          return false;
+        }
+        for (let elem of value) {
+          if (!Is.string(elem) && !TextDocumentFilter.is(elem) && !NotebookCellTextDocumentFilter.is(elem)) {
+            return false;
+          }
+        }
+        return true;
+      }
+      DocumentSelector2.is = is;
+    })(DocumentSelector || (exports2.DocumentSelector = DocumentSelector = {}));
+    var RegistrationRequest;
+    (function(RegistrationRequest2) {
+      RegistrationRequest2.method = "client/registerCapability";
+      RegistrationRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      RegistrationRequest2.type = new messages_1.ProtocolRequestType(RegistrationRequest2.method);
+    })(RegistrationRequest || (exports2.RegistrationRequest = RegistrationRequest = {}));
+    var UnregistrationRequest;
+    (function(UnregistrationRequest2) {
+      UnregistrationRequest2.method = "client/unregisterCapability";
+      UnregistrationRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      UnregistrationRequest2.type = new messages_1.ProtocolRequestType(UnregistrationRequest2.method);
+    })(UnregistrationRequest || (exports2.UnregistrationRequest = UnregistrationRequest = {}));
+    var ResourceOperationKind;
+    (function(ResourceOperationKind2) {
+      ResourceOperationKind2.Create = "create";
+      ResourceOperationKind2.Rename = "rename";
+      ResourceOperationKind2.Delete = "delete";
+    })(ResourceOperationKind || (exports2.ResourceOperationKind = ResourceOperationKind = {}));
+    var FailureHandlingKind;
+    (function(FailureHandlingKind2) {
+      FailureHandlingKind2.Abort = "abort";
+      FailureHandlingKind2.Transactional = "transactional";
+      FailureHandlingKind2.TextOnlyTransactional = "textOnlyTransactional";
+      FailureHandlingKind2.Undo = "undo";
+    })(FailureHandlingKind || (exports2.FailureHandlingKind = FailureHandlingKind = {}));
+    var PositionEncodingKind;
+    (function(PositionEncodingKind2) {
+      PositionEncodingKind2.UTF8 = "utf-8";
+      PositionEncodingKind2.UTF16 = "utf-16";
+      PositionEncodingKind2.UTF32 = "utf-32";
+    })(PositionEncodingKind || (exports2.PositionEncodingKind = PositionEncodingKind = {}));
+    var StaticRegistrationOptions;
+    (function(StaticRegistrationOptions2) {
+      function hasId(value) {
+        const candidate = value;
+        return candidate && Is.string(candidate.id) && candidate.id.length > 0;
+      }
+      StaticRegistrationOptions2.hasId = hasId;
+    })(StaticRegistrationOptions || (exports2.StaticRegistrationOptions = StaticRegistrationOptions = {}));
+    var TextDocumentRegistrationOptions;
+    (function(TextDocumentRegistrationOptions2) {
+      function is(value) {
+        const candidate = value;
+        return candidate && (candidate.documentSelector === null || DocumentSelector.is(candidate.documentSelector));
+      }
+      TextDocumentRegistrationOptions2.is = is;
+    })(TextDocumentRegistrationOptions || (exports2.TextDocumentRegistrationOptions = TextDocumentRegistrationOptions = {}));
+    var WorkDoneProgressOptions;
+    (function(WorkDoneProgressOptions2) {
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && (candidate.workDoneProgress === void 0 || Is.boolean(candidate.workDoneProgress));
+      }
+      WorkDoneProgressOptions2.is = is;
+      function hasWorkDoneProgress(value) {
+        const candidate = value;
+        return candidate && Is.boolean(candidate.workDoneProgress);
+      }
+      WorkDoneProgressOptions2.hasWorkDoneProgress = hasWorkDoneProgress;
+    })(WorkDoneProgressOptions || (exports2.WorkDoneProgressOptions = WorkDoneProgressOptions = {}));
+    var InitializeRequest;
+    (function(InitializeRequest2) {
+      InitializeRequest2.method = "initialize";
+      InitializeRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InitializeRequest2.type = new messages_1.ProtocolRequestType(InitializeRequest2.method);
+    })(InitializeRequest || (exports2.InitializeRequest = InitializeRequest = {}));
+    var InitializeErrorCodes;
+    (function(InitializeErrorCodes2) {
+      InitializeErrorCodes2.unknownProtocolVersion = 1;
+    })(InitializeErrorCodes || (exports2.InitializeErrorCodes = InitializeErrorCodes = {}));
+    var InitializedNotification;
+    (function(InitializedNotification2) {
+      InitializedNotification2.method = "initialized";
+      InitializedNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      InitializedNotification2.type = new messages_1.ProtocolNotificationType(InitializedNotification2.method);
+    })(InitializedNotification || (exports2.InitializedNotification = InitializedNotification = {}));
+    var ShutdownRequest;
+    (function(ShutdownRequest2) {
+      ShutdownRequest2.method = "shutdown";
+      ShutdownRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ShutdownRequest2.type = new messages_1.ProtocolRequestType0(ShutdownRequest2.method);
+    })(ShutdownRequest || (exports2.ShutdownRequest = ShutdownRequest = {}));
+    var ExitNotification;
+    (function(ExitNotification2) {
+      ExitNotification2.method = "exit";
+      ExitNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ExitNotification2.type = new messages_1.ProtocolNotificationType0(ExitNotification2.method);
+    })(ExitNotification || (exports2.ExitNotification = ExitNotification = {}));
+    var DidChangeConfigurationNotification2;
+    (function(DidChangeConfigurationNotification3) {
+      DidChangeConfigurationNotification3.method = "workspace/didChangeConfiguration";
+      DidChangeConfigurationNotification3.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidChangeConfigurationNotification3.type = new messages_1.ProtocolNotificationType(DidChangeConfigurationNotification3.method);
+    })(DidChangeConfigurationNotification2 || (exports2.DidChangeConfigurationNotification = DidChangeConfigurationNotification2 = {}));
+    var MessageType;
+    (function(MessageType2) {
+      MessageType2.Error = 1;
+      MessageType2.Warning = 2;
+      MessageType2.Info = 3;
+      MessageType2.Log = 4;
+      MessageType2.Debug = 5;
+    })(MessageType || (exports2.MessageType = MessageType = {}));
+    var ShowMessageNotification;
+    (function(ShowMessageNotification2) {
+      ShowMessageNotification2.method = "window/showMessage";
+      ShowMessageNotification2.messageDirection = messages_1.MessageDirection.serverToClient;
+      ShowMessageNotification2.type = new messages_1.ProtocolNotificationType(ShowMessageNotification2.method);
+    })(ShowMessageNotification || (exports2.ShowMessageNotification = ShowMessageNotification = {}));
+    var ShowMessageRequest;
+    (function(ShowMessageRequest2) {
+      ShowMessageRequest2.method = "window/showMessageRequest";
+      ShowMessageRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      ShowMessageRequest2.type = new messages_1.ProtocolRequestType(ShowMessageRequest2.method);
+    })(ShowMessageRequest || (exports2.ShowMessageRequest = ShowMessageRequest = {}));
+    var LogMessageNotification;
+    (function(LogMessageNotification2) {
+      LogMessageNotification2.method = "window/logMessage";
+      LogMessageNotification2.messageDirection = messages_1.MessageDirection.serverToClient;
+      LogMessageNotification2.type = new messages_1.ProtocolNotificationType(LogMessageNotification2.method);
+    })(LogMessageNotification || (exports2.LogMessageNotification = LogMessageNotification = {}));
+    var TelemetryEventNotification;
+    (function(TelemetryEventNotification2) {
+      TelemetryEventNotification2.method = "telemetry/event";
+      TelemetryEventNotification2.messageDirection = messages_1.MessageDirection.serverToClient;
+      TelemetryEventNotification2.type = new messages_1.ProtocolNotificationType(TelemetryEventNotification2.method);
+    })(TelemetryEventNotification || (exports2.TelemetryEventNotification = TelemetryEventNotification = {}));
+    var TextDocumentSyncKind2;
+    (function(TextDocumentSyncKind3) {
+      TextDocumentSyncKind3.None = 0;
+      TextDocumentSyncKind3.Full = 1;
+      TextDocumentSyncKind3.Incremental = 2;
+    })(TextDocumentSyncKind2 || (exports2.TextDocumentSyncKind = TextDocumentSyncKind2 = {}));
+    var DidOpenTextDocumentNotification;
+    (function(DidOpenTextDocumentNotification2) {
+      DidOpenTextDocumentNotification2.method = "textDocument/didOpen";
+      DidOpenTextDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidOpenTextDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidOpenTextDocumentNotification2.method);
+    })(DidOpenTextDocumentNotification || (exports2.DidOpenTextDocumentNotification = DidOpenTextDocumentNotification = {}));
+    var TextDocumentContentChangeEvent;
+    (function(TextDocumentContentChangeEvent2) {
+      function isIncremental(event) {
+        let candidate = event;
+        return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range !== void 0 && (candidate.rangeLength === void 0 || typeof candidate.rangeLength === "number");
+      }
+      TextDocumentContentChangeEvent2.isIncremental = isIncremental;
+      function isFull(event) {
+        let candidate = event;
+        return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range === void 0 && candidate.rangeLength === void 0;
+      }
+      TextDocumentContentChangeEvent2.isFull = isFull;
+    })(TextDocumentContentChangeEvent || (exports2.TextDocumentContentChangeEvent = TextDocumentContentChangeEvent = {}));
+    var DidChangeTextDocumentNotification;
+    (function(DidChangeTextDocumentNotification2) {
+      DidChangeTextDocumentNotification2.method = "textDocument/didChange";
+      DidChangeTextDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidChangeTextDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidChangeTextDocumentNotification2.method);
+    })(DidChangeTextDocumentNotification || (exports2.DidChangeTextDocumentNotification = DidChangeTextDocumentNotification = {}));
+    var DidCloseTextDocumentNotification;
+    (function(DidCloseTextDocumentNotification2) {
+      DidCloseTextDocumentNotification2.method = "textDocument/didClose";
+      DidCloseTextDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidCloseTextDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidCloseTextDocumentNotification2.method);
+    })(DidCloseTextDocumentNotification || (exports2.DidCloseTextDocumentNotification = DidCloseTextDocumentNotification = {}));
+    var DidSaveTextDocumentNotification;
+    (function(DidSaveTextDocumentNotification2) {
+      DidSaveTextDocumentNotification2.method = "textDocument/didSave";
+      DidSaveTextDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidSaveTextDocumentNotification2.type = new messages_1.ProtocolNotificationType(DidSaveTextDocumentNotification2.method);
+    })(DidSaveTextDocumentNotification || (exports2.DidSaveTextDocumentNotification = DidSaveTextDocumentNotification = {}));
+    var TextDocumentSaveReason;
+    (function(TextDocumentSaveReason2) {
+      TextDocumentSaveReason2.Manual = 1;
+      TextDocumentSaveReason2.AfterDelay = 2;
+      TextDocumentSaveReason2.FocusOut = 3;
+    })(TextDocumentSaveReason || (exports2.TextDocumentSaveReason = TextDocumentSaveReason = {}));
+    var WillSaveTextDocumentNotification;
+    (function(WillSaveTextDocumentNotification2) {
+      WillSaveTextDocumentNotification2.method = "textDocument/willSave";
+      WillSaveTextDocumentNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WillSaveTextDocumentNotification2.type = new messages_1.ProtocolNotificationType(WillSaveTextDocumentNotification2.method);
+    })(WillSaveTextDocumentNotification || (exports2.WillSaveTextDocumentNotification = WillSaveTextDocumentNotification = {}));
+    var WillSaveTextDocumentWaitUntilRequest;
+    (function(WillSaveTextDocumentWaitUntilRequest2) {
+      WillSaveTextDocumentWaitUntilRequest2.method = "textDocument/willSaveWaitUntil";
+      WillSaveTextDocumentWaitUntilRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WillSaveTextDocumentWaitUntilRequest2.type = new messages_1.ProtocolRequestType(WillSaveTextDocumentWaitUntilRequest2.method);
+    })(WillSaveTextDocumentWaitUntilRequest || (exports2.WillSaveTextDocumentWaitUntilRequest = WillSaveTextDocumentWaitUntilRequest = {}));
+    var DidChangeWatchedFilesNotification;
+    (function(DidChangeWatchedFilesNotification2) {
+      DidChangeWatchedFilesNotification2.method = "workspace/didChangeWatchedFiles";
+      DidChangeWatchedFilesNotification2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DidChangeWatchedFilesNotification2.type = new messages_1.ProtocolNotificationType(DidChangeWatchedFilesNotification2.method);
+    })(DidChangeWatchedFilesNotification || (exports2.DidChangeWatchedFilesNotification = DidChangeWatchedFilesNotification = {}));
+    var FileChangeType;
+    (function(FileChangeType2) {
+      FileChangeType2.Created = 1;
+      FileChangeType2.Changed = 2;
+      FileChangeType2.Deleted = 3;
+    })(FileChangeType || (exports2.FileChangeType = FileChangeType = {}));
+    var RelativePattern;
+    (function(RelativePattern2) {
+      function is(value) {
+        const candidate = value;
+        return Is.objectLiteral(candidate) && (vscode_languageserver_types_1.URI.is(candidate.baseUri) || vscode_languageserver_types_1.WorkspaceFolder.is(candidate.baseUri)) && Is.string(candidate.pattern);
+      }
+      RelativePattern2.is = is;
+    })(RelativePattern || (exports2.RelativePattern = RelativePattern = {}));
+    var WatchKind;
+    (function(WatchKind2) {
+      WatchKind2.Create = 1;
+      WatchKind2.Change = 2;
+      WatchKind2.Delete = 4;
+    })(WatchKind || (exports2.WatchKind = WatchKind = {}));
+    var PublishDiagnosticsNotification;
+    (function(PublishDiagnosticsNotification2) {
+      PublishDiagnosticsNotification2.method = "textDocument/publishDiagnostics";
+      PublishDiagnosticsNotification2.messageDirection = messages_1.MessageDirection.serverToClient;
+      PublishDiagnosticsNotification2.type = new messages_1.ProtocolNotificationType(PublishDiagnosticsNotification2.method);
+    })(PublishDiagnosticsNotification || (exports2.PublishDiagnosticsNotification = PublishDiagnosticsNotification = {}));
+    var CompletionTriggerKind;
+    (function(CompletionTriggerKind2) {
+      CompletionTriggerKind2.Invoked = 1;
+      CompletionTriggerKind2.TriggerCharacter = 2;
+      CompletionTriggerKind2.TriggerForIncompleteCompletions = 3;
+    })(CompletionTriggerKind || (exports2.CompletionTriggerKind = CompletionTriggerKind = {}));
+    var CompletionRequest;
+    (function(CompletionRequest2) {
+      CompletionRequest2.method = "textDocument/completion";
+      CompletionRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CompletionRequest2.type = new messages_1.ProtocolRequestType(CompletionRequest2.method);
+    })(CompletionRequest || (exports2.CompletionRequest = CompletionRequest = {}));
+    var CompletionResolveRequest;
+    (function(CompletionResolveRequest2) {
+      CompletionResolveRequest2.method = "completionItem/resolve";
+      CompletionResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CompletionResolveRequest2.type = new messages_1.ProtocolRequestType(CompletionResolveRequest2.method);
+    })(CompletionResolveRequest || (exports2.CompletionResolveRequest = CompletionResolveRequest = {}));
+    var HoverRequest;
+    (function(HoverRequest2) {
+      HoverRequest2.method = "textDocument/hover";
+      HoverRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      HoverRequest2.type = new messages_1.ProtocolRequestType(HoverRequest2.method);
+    })(HoverRequest || (exports2.HoverRequest = HoverRequest = {}));
+    var SignatureHelpTriggerKind;
+    (function(SignatureHelpTriggerKind2) {
+      SignatureHelpTriggerKind2.Invoked = 1;
+      SignatureHelpTriggerKind2.TriggerCharacter = 2;
+      SignatureHelpTriggerKind2.ContentChange = 3;
+    })(SignatureHelpTriggerKind || (exports2.SignatureHelpTriggerKind = SignatureHelpTriggerKind = {}));
+    var SignatureHelpRequest;
+    (function(SignatureHelpRequest2) {
+      SignatureHelpRequest2.method = "textDocument/signatureHelp";
+      SignatureHelpRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      SignatureHelpRequest2.type = new messages_1.ProtocolRequestType(SignatureHelpRequest2.method);
+    })(SignatureHelpRequest || (exports2.SignatureHelpRequest = SignatureHelpRequest = {}));
+    var DefinitionRequest;
+    (function(DefinitionRequest2) {
+      DefinitionRequest2.method = "textDocument/definition";
+      DefinitionRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DefinitionRequest2.type = new messages_1.ProtocolRequestType(DefinitionRequest2.method);
+    })(DefinitionRequest || (exports2.DefinitionRequest = DefinitionRequest = {}));
+    var ReferencesRequest;
+    (function(ReferencesRequest2) {
+      ReferencesRequest2.method = "textDocument/references";
+      ReferencesRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ReferencesRequest2.type = new messages_1.ProtocolRequestType(ReferencesRequest2.method);
+    })(ReferencesRequest || (exports2.ReferencesRequest = ReferencesRequest = {}));
+    var DocumentHighlightRequest;
+    (function(DocumentHighlightRequest2) {
+      DocumentHighlightRequest2.method = "textDocument/documentHighlight";
+      DocumentHighlightRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentHighlightRequest2.type = new messages_1.ProtocolRequestType(DocumentHighlightRequest2.method);
+    })(DocumentHighlightRequest || (exports2.DocumentHighlightRequest = DocumentHighlightRequest = {}));
+    var DocumentSymbolRequest;
+    (function(DocumentSymbolRequest2) {
+      DocumentSymbolRequest2.method = "textDocument/documentSymbol";
+      DocumentSymbolRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentSymbolRequest2.type = new messages_1.ProtocolRequestType(DocumentSymbolRequest2.method);
+    })(DocumentSymbolRequest || (exports2.DocumentSymbolRequest = DocumentSymbolRequest = {}));
+    var CodeActionRequest;
+    (function(CodeActionRequest2) {
+      CodeActionRequest2.method = "textDocument/codeAction";
+      CodeActionRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CodeActionRequest2.type = new messages_1.ProtocolRequestType(CodeActionRequest2.method);
+    })(CodeActionRequest || (exports2.CodeActionRequest = CodeActionRequest = {}));
+    var CodeActionResolveRequest;
+    (function(CodeActionResolveRequest2) {
+      CodeActionResolveRequest2.method = "codeAction/resolve";
+      CodeActionResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CodeActionResolveRequest2.type = new messages_1.ProtocolRequestType(CodeActionResolveRequest2.method);
+    })(CodeActionResolveRequest || (exports2.CodeActionResolveRequest = CodeActionResolveRequest = {}));
+    var WorkspaceSymbolRequest;
+    (function(WorkspaceSymbolRequest2) {
+      WorkspaceSymbolRequest2.method = "workspace/symbol";
+      WorkspaceSymbolRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WorkspaceSymbolRequest2.type = new messages_1.ProtocolRequestType(WorkspaceSymbolRequest2.method);
+    })(WorkspaceSymbolRequest || (exports2.WorkspaceSymbolRequest = WorkspaceSymbolRequest = {}));
+    var WorkspaceSymbolResolveRequest;
+    (function(WorkspaceSymbolResolveRequest2) {
+      WorkspaceSymbolResolveRequest2.method = "workspaceSymbol/resolve";
+      WorkspaceSymbolResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      WorkspaceSymbolResolveRequest2.type = new messages_1.ProtocolRequestType(WorkspaceSymbolResolveRequest2.method);
+    })(WorkspaceSymbolResolveRequest || (exports2.WorkspaceSymbolResolveRequest = WorkspaceSymbolResolveRequest = {}));
+    var CodeLensRequest;
+    (function(CodeLensRequest2) {
+      CodeLensRequest2.method = "textDocument/codeLens";
+      CodeLensRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CodeLensRequest2.type = new messages_1.ProtocolRequestType(CodeLensRequest2.method);
+    })(CodeLensRequest || (exports2.CodeLensRequest = CodeLensRequest = {}));
+    var CodeLensResolveRequest;
+    (function(CodeLensResolveRequest2) {
+      CodeLensResolveRequest2.method = "codeLens/resolve";
+      CodeLensResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      CodeLensResolveRequest2.type = new messages_1.ProtocolRequestType(CodeLensResolveRequest2.method);
+    })(CodeLensResolveRequest || (exports2.CodeLensResolveRequest = CodeLensResolveRequest = {}));
+    var CodeLensRefreshRequest;
+    (function(CodeLensRefreshRequest2) {
+      CodeLensRefreshRequest2.method = `workspace/codeLens/refresh`;
+      CodeLensRefreshRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      CodeLensRefreshRequest2.type = new messages_1.ProtocolRequestType0(CodeLensRefreshRequest2.method);
+    })(CodeLensRefreshRequest || (exports2.CodeLensRefreshRequest = CodeLensRefreshRequest = {}));
+    var DocumentLinkRequest;
+    (function(DocumentLinkRequest2) {
+      DocumentLinkRequest2.method = "textDocument/documentLink";
+      DocumentLinkRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentLinkRequest2.type = new messages_1.ProtocolRequestType(DocumentLinkRequest2.method);
+    })(DocumentLinkRequest || (exports2.DocumentLinkRequest = DocumentLinkRequest = {}));
+    var DocumentLinkResolveRequest;
+    (function(DocumentLinkResolveRequest2) {
+      DocumentLinkResolveRequest2.method = "documentLink/resolve";
+      DocumentLinkResolveRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentLinkResolveRequest2.type = new messages_1.ProtocolRequestType(DocumentLinkResolveRequest2.method);
+    })(DocumentLinkResolveRequest || (exports2.DocumentLinkResolveRequest = DocumentLinkResolveRequest = {}));
+    var DocumentFormattingRequest;
+    (function(DocumentFormattingRequest2) {
+      DocumentFormattingRequest2.method = "textDocument/formatting";
+      DocumentFormattingRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentFormattingRequest2.type = new messages_1.ProtocolRequestType(DocumentFormattingRequest2.method);
+    })(DocumentFormattingRequest || (exports2.DocumentFormattingRequest = DocumentFormattingRequest = {}));
+    var DocumentRangeFormattingRequest;
+    (function(DocumentRangeFormattingRequest2) {
+      DocumentRangeFormattingRequest2.method = "textDocument/rangeFormatting";
+      DocumentRangeFormattingRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentRangeFormattingRequest2.type = new messages_1.ProtocolRequestType(DocumentRangeFormattingRequest2.method);
+    })(DocumentRangeFormattingRequest || (exports2.DocumentRangeFormattingRequest = DocumentRangeFormattingRequest = {}));
+    var DocumentRangesFormattingRequest;
+    (function(DocumentRangesFormattingRequest2) {
+      DocumentRangesFormattingRequest2.method = "textDocument/rangesFormatting";
+      DocumentRangesFormattingRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentRangesFormattingRequest2.type = new messages_1.ProtocolRequestType(DocumentRangesFormattingRequest2.method);
+    })(DocumentRangesFormattingRequest || (exports2.DocumentRangesFormattingRequest = DocumentRangesFormattingRequest = {}));
+    var DocumentOnTypeFormattingRequest;
+    (function(DocumentOnTypeFormattingRequest2) {
+      DocumentOnTypeFormattingRequest2.method = "textDocument/onTypeFormatting";
+      DocumentOnTypeFormattingRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      DocumentOnTypeFormattingRequest2.type = new messages_1.ProtocolRequestType(DocumentOnTypeFormattingRequest2.method);
+    })(DocumentOnTypeFormattingRequest || (exports2.DocumentOnTypeFormattingRequest = DocumentOnTypeFormattingRequest = {}));
+    var PrepareSupportDefaultBehavior;
+    (function(PrepareSupportDefaultBehavior2) {
+      PrepareSupportDefaultBehavior2.Identifier = 1;
+    })(PrepareSupportDefaultBehavior || (exports2.PrepareSupportDefaultBehavior = PrepareSupportDefaultBehavior = {}));
+    var RenameRequest;
+    (function(RenameRequest2) {
+      RenameRequest2.method = "textDocument/rename";
+      RenameRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      RenameRequest2.type = new messages_1.ProtocolRequestType(RenameRequest2.method);
+    })(RenameRequest || (exports2.RenameRequest = RenameRequest = {}));
+    var PrepareRenameRequest;
+    (function(PrepareRenameRequest2) {
+      PrepareRenameRequest2.method = "textDocument/prepareRename";
+      PrepareRenameRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      PrepareRenameRequest2.type = new messages_1.ProtocolRequestType(PrepareRenameRequest2.method);
+    })(PrepareRenameRequest || (exports2.PrepareRenameRequest = PrepareRenameRequest = {}));
+    var ExecuteCommandRequest;
+    (function(ExecuteCommandRequest2) {
+      ExecuteCommandRequest2.method = "workspace/executeCommand";
+      ExecuteCommandRequest2.messageDirection = messages_1.MessageDirection.clientToServer;
+      ExecuteCommandRequest2.type = new messages_1.ProtocolRequestType(ExecuteCommandRequest2.method);
+    })(ExecuteCommandRequest || (exports2.ExecuteCommandRequest = ExecuteCommandRequest = {}));
+    var ApplyWorkspaceEditRequest;
+    (function(ApplyWorkspaceEditRequest2) {
+      ApplyWorkspaceEditRequest2.method = "workspace/applyEdit";
+      ApplyWorkspaceEditRequest2.messageDirection = messages_1.MessageDirection.serverToClient;
+      ApplyWorkspaceEditRequest2.type = new messages_1.ProtocolRequestType("workspace/applyEdit");
+    })(ApplyWorkspaceEditRequest || (exports2.ApplyWorkspaceEditRequest = ApplyWorkspaceEditRequest = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/connection.js
+var require_connection2 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/connection.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createProtocolConnection = void 0;
+    var vscode_jsonrpc_1 = require_main();
+    function createProtocolConnection(input, output, logger, options) {
+      if (vscode_jsonrpc_1.ConnectionStrategy.is(options)) {
+        options = { connectionStrategy: options };
+      }
+      return (0, vscode_jsonrpc_1.createMessageConnection)(input, output, logger, options);
+    }
+    exports2.createProtocolConnection = createProtocolConnection;
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/common/api.js
+var require_api2 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/common/api.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      var desc = Object.getOwnPropertyDescriptor(m, k);
+      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() {
+          return m[k];
+        } };
+      }
+      Object.defineProperty(o, k2, desc);
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.LSPErrorCodes = exports2.createProtocolConnection = void 0;
+    __exportStar(require_main(), exports2);
+    __exportStar(require_main2(), exports2);
+    __exportStar(require_messages2(), exports2);
+    __exportStar(require_protocol(), exports2);
+    var connection_1 = require_connection2();
+    Object.defineProperty(exports2, "createProtocolConnection", { enumerable: true, get: function() {
+      return connection_1.createProtocolConnection;
+    } });
+    var LSPErrorCodes;
+    (function(LSPErrorCodes2) {
+      LSPErrorCodes2.lspReservedErrorRangeStart = -32899;
+      LSPErrorCodes2.RequestFailed = -32803;
+      LSPErrorCodes2.ServerCancelled = -32802;
+      LSPErrorCodes2.ContentModified = -32801;
+      LSPErrorCodes2.RequestCancelled = -32800;
+      LSPErrorCodes2.lspReservedErrorRangeEnd = -32800;
+    })(LSPErrorCodes || (exports2.LSPErrorCodes = LSPErrorCodes = {}));
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/lib/node/main.js
+var require_main3 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/lib/node/main.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      var desc = Object.getOwnPropertyDescriptor(m, k);
+      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() {
+          return m[k];
+        } };
+      }
+      Object.defineProperty(o, k2, desc);
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createProtocolConnection = void 0;
+    var node_1 = require_node();
+    __exportStar(require_node(), exports2);
+    __exportStar(require_api2(), exports2);
+    function createProtocolConnection(input, output, logger, options) {
+      return (0, node_1.createMessageConnection)(input, output, logger, options);
+    }
+    exports2.createProtocolConnection = createProtocolConnection;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/utils/uuid.js
+var require_uuid = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/utils/uuid.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.generateUuid = exports2.parse = exports2.isUUID = exports2.v4 = exports2.empty = void 0;
+    var ValueUUID = class {
+      constructor(_value) {
+        this._value = _value;
+      }
+      asHex() {
+        return this._value;
+      }
+      equals(other) {
+        return this.asHex() === other.asHex();
+      }
+    };
+    var V4UUID = class _V4UUID extends ValueUUID {
+      static _oneOf(array) {
+        return array[Math.floor(array.length * Math.random())];
+      }
+      static _randomHex() {
+        return _V4UUID._oneOf(_V4UUID._chars);
+      }
+      constructor() {
+        super([
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          "-",
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          "-",
+          "4",
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          "-",
+          _V4UUID._oneOf(_V4UUID._timeHighBits),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          "-",
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex(),
+          _V4UUID._randomHex()
+        ].join(""));
+      }
+    };
+    V4UUID._chars = ["0", "1", "2", "3", "4", "5", "6", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+    V4UUID._timeHighBits = ["8", "9", "a", "b"];
+    exports2.empty = new ValueUUID("00000000-0000-0000-0000-000000000000");
+    function v4() {
+      return new V4UUID();
+    }
+    exports2.v4 = v4;
+    var _UUIDPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    function isUUID(value) {
+      return _UUIDPattern.test(value);
+    }
+    exports2.isUUID = isUUID;
+    function parse(value) {
+      if (!isUUID(value)) {
+        throw new Error("invalid uuid");
+      }
+      return new ValueUUID(value);
+    }
+    exports2.parse = parse;
+    function generateUuid() {
+      return v4().asHex();
+    }
+    exports2.generateUuid = generateUuid;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/progress.js
+var require_progress = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/progress.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.attachPartialResult = exports2.ProgressFeature = exports2.attachWorkDone = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var uuid_1 = require_uuid();
+    var WorkDoneProgressReporterImpl = class _WorkDoneProgressReporterImpl {
+      constructor(_connection, _token) {
+        this._connection = _connection;
+        this._token = _token;
+        _WorkDoneProgressReporterImpl.Instances.set(this._token, this);
+      }
+      begin(title, percentage, message, cancellable) {
+        let param = {
+          kind: "begin",
+          title,
+          percentage,
+          message,
+          cancellable
+        };
+        this._connection.sendProgress(vscode_languageserver_protocol_1.WorkDoneProgress.type, this._token, param);
+      }
+      report(arg0, arg1) {
+        let param = {
+          kind: "report"
+        };
+        if (typeof arg0 === "number") {
+          param.percentage = arg0;
+          if (arg1 !== void 0) {
+            param.message = arg1;
+          }
+        } else {
+          param.message = arg0;
+        }
+        this._connection.sendProgress(vscode_languageserver_protocol_1.WorkDoneProgress.type, this._token, param);
+      }
+      done() {
+        _WorkDoneProgressReporterImpl.Instances.delete(this._token);
+        this._connection.sendProgress(vscode_languageserver_protocol_1.WorkDoneProgress.type, this._token, { kind: "end" });
+      }
+    };
+    WorkDoneProgressReporterImpl.Instances = /* @__PURE__ */ new Map();
+    var WorkDoneProgressServerReporterImpl = class extends WorkDoneProgressReporterImpl {
+      constructor(connection2, token) {
+        super(connection2, token);
+        this._source = new vscode_languageserver_protocol_1.CancellationTokenSource();
+      }
+      get token() {
+        return this._source.token;
+      }
+      done() {
+        this._source.dispose();
+        super.done();
+      }
+      cancel() {
+        this._source.cancel();
+      }
+    };
+    var NullProgressReporter = class {
+      constructor() {
+      }
+      begin() {
+      }
+      report() {
+      }
+      done() {
+      }
+    };
+    var NullProgressServerReporter = class extends NullProgressReporter {
+      constructor() {
+        super();
+        this._source = new vscode_languageserver_protocol_1.CancellationTokenSource();
+      }
+      get token() {
+        return this._source.token;
+      }
+      done() {
+        this._source.dispose();
+      }
+      cancel() {
+        this._source.cancel();
+      }
+    };
+    function attachWorkDone(connection2, params) {
+      if (params === void 0 || params.workDoneToken === void 0) {
+        return new NullProgressReporter();
+      }
+      const token = params.workDoneToken;
+      delete params.workDoneToken;
+      return new WorkDoneProgressReporterImpl(connection2, token);
+    }
+    exports2.attachWorkDone = attachWorkDone;
+    var ProgressFeature = (Base) => {
+      return class extends Base {
+        constructor() {
+          super();
+          this._progressSupported = false;
+        }
+        initialize(capabilities) {
+          super.initialize(capabilities);
+          if (capabilities?.window?.workDoneProgress === true) {
+            this._progressSupported = true;
+            this.connection.onNotification(vscode_languageserver_protocol_1.WorkDoneProgressCancelNotification.type, (params) => {
+              let progress = WorkDoneProgressReporterImpl.Instances.get(params.token);
+              if (progress instanceof WorkDoneProgressServerReporterImpl || progress instanceof NullProgressServerReporter) {
+                progress.cancel();
+              }
+            });
+          }
+        }
+        attachWorkDoneProgress(token) {
+          if (token === void 0) {
+            return new NullProgressReporter();
+          } else {
+            return new WorkDoneProgressReporterImpl(this.connection, token);
+          }
+        }
+        createWorkDoneProgress() {
+          if (this._progressSupported) {
+            const token = (0, uuid_1.generateUuid)();
+            return this.connection.sendRequest(vscode_languageserver_protocol_1.WorkDoneProgressCreateRequest.type, { token }).then(() => {
+              const result = new WorkDoneProgressServerReporterImpl(this.connection, token);
+              return result;
+            });
+          } else {
+            return Promise.resolve(new NullProgressServerReporter());
+          }
+        }
+      };
+    };
+    exports2.ProgressFeature = ProgressFeature;
+    var ResultProgress;
+    (function(ResultProgress2) {
+      ResultProgress2.type = new vscode_languageserver_protocol_1.ProgressType();
+    })(ResultProgress || (ResultProgress = {}));
+    var ResultProgressReporterImpl = class {
+      constructor(_connection, _token) {
+        this._connection = _connection;
+        this._token = _token;
+      }
+      report(data) {
+        this._connection.sendProgress(ResultProgress.type, this._token, data);
+      }
+    };
+    function attachPartialResult(connection2, params) {
+      if (params === void 0 || params.partialResultToken === void 0) {
+        return void 0;
+      }
+      const token = params.partialResultToken;
+      delete params.partialResultToken;
+      return new ResultProgressReporterImpl(connection2, token);
+    }
+    exports2.attachPartialResult = attachPartialResult;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/configuration.js
+var require_configuration = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/configuration.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ConfigurationFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var Is = require_is();
+    var ConfigurationFeature = (Base) => {
+      return class extends Base {
+        getConfiguration(arg) {
+          if (!arg) {
+            return this._getConfiguration({});
+          } else if (Is.string(arg)) {
+            return this._getConfiguration({ section: arg });
+          } else {
+            return this._getConfiguration(arg);
+          }
+        }
+        _getConfiguration(arg) {
+          let params = {
+            items: Array.isArray(arg) ? arg : [arg]
+          };
+          return this.connection.sendRequest(vscode_languageserver_protocol_1.ConfigurationRequest.type, params).then((result) => {
+            if (Array.isArray(result)) {
+              return Array.isArray(arg) ? result : result[0];
+            } else {
+              return Array.isArray(arg) ? [] : null;
+            }
+          });
+        }
+      };
+    };
+    exports2.ConfigurationFeature = ConfigurationFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/workspaceFolder.js
+var require_workspaceFolder = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/workspaceFolder.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.WorkspaceFoldersFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var WorkspaceFoldersFeature = (Base) => {
+      return class extends Base {
+        constructor() {
+          super();
+          this._notificationIsAutoRegistered = false;
+        }
+        initialize(capabilities) {
+          super.initialize(capabilities);
+          let workspaceCapabilities = capabilities.workspace;
+          if (workspaceCapabilities && workspaceCapabilities.workspaceFolders) {
+            this._onDidChangeWorkspaceFolders = new vscode_languageserver_protocol_1.Emitter();
+            this.connection.onNotification(vscode_languageserver_protocol_1.DidChangeWorkspaceFoldersNotification.type, (params) => {
+              this._onDidChangeWorkspaceFolders.fire(params.event);
+            });
+          }
+        }
+        fillServerCapabilities(capabilities) {
+          super.fillServerCapabilities(capabilities);
+          const changeNotifications = capabilities.workspace?.workspaceFolders?.changeNotifications;
+          this._notificationIsAutoRegistered = changeNotifications === true || typeof changeNotifications === "string";
+        }
+        getWorkspaceFolders() {
+          return this.connection.sendRequest(vscode_languageserver_protocol_1.WorkspaceFoldersRequest.type);
+        }
+        get onDidChangeWorkspaceFolders() {
+          if (!this._onDidChangeWorkspaceFolders) {
+            throw new Error("Client doesn't support sending workspace folder change events.");
+          }
+          if (!this._notificationIsAutoRegistered && !this._unregistration) {
+            this._unregistration = this.connection.client.register(vscode_languageserver_protocol_1.DidChangeWorkspaceFoldersNotification.type);
+          }
+          return this._onDidChangeWorkspaceFolders.event;
+        }
+      };
+    };
+    exports2.WorkspaceFoldersFeature = WorkspaceFoldersFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/callHierarchy.js
+var require_callHierarchy = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/callHierarchy.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.CallHierarchyFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var CallHierarchyFeature = (Base) => {
+      return class extends Base {
+        get callHierarchy() {
+          return {
+            onPrepare: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.CallHierarchyPrepareRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), void 0);
+              });
+            },
+            onIncomingCalls: (handler) => {
+              const type = vscode_languageserver_protocol_1.CallHierarchyIncomingCallsRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            },
+            onOutgoingCalls: (handler) => {
+              const type = vscode_languageserver_protocol_1.CallHierarchyOutgoingCallsRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.CallHierarchyFeature = CallHierarchyFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/semanticTokens.js
+var require_semanticTokens = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/semanticTokens.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.SemanticTokensBuilder = exports2.SemanticTokensDiff = exports2.SemanticTokensFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var SemanticTokensFeature = (Base) => {
+      return class extends Base {
+        get semanticTokens() {
+          return {
+            refresh: () => {
+              return this.connection.sendRequest(vscode_languageserver_protocol_1.SemanticTokensRefreshRequest.type);
+            },
+            on: (handler) => {
+              const type = vscode_languageserver_protocol_1.SemanticTokensRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            },
+            onDelta: (handler) => {
+              const type = vscode_languageserver_protocol_1.SemanticTokensDeltaRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            },
+            onRange: (handler) => {
+              const type = vscode_languageserver_protocol_1.SemanticTokensRangeRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.SemanticTokensFeature = SemanticTokensFeature;
+    var SemanticTokensDiff = class {
+      constructor(originalSequence, modifiedSequence) {
+        this.originalSequence = originalSequence;
+        this.modifiedSequence = modifiedSequence;
+      }
+      computeDiff() {
+        const originalLength = this.originalSequence.length;
+        const modifiedLength = this.modifiedSequence.length;
+        let startIndex = 0;
+        while (startIndex < modifiedLength && startIndex < originalLength && this.originalSequence[startIndex] === this.modifiedSequence[startIndex]) {
+          startIndex++;
+        }
+        if (startIndex < modifiedLength && startIndex < originalLength) {
+          let originalEndIndex = originalLength - 1;
+          let modifiedEndIndex = modifiedLength - 1;
+          while (originalEndIndex >= startIndex && modifiedEndIndex >= startIndex && this.originalSequence[originalEndIndex] === this.modifiedSequence[modifiedEndIndex]) {
+            originalEndIndex--;
+            modifiedEndIndex--;
+          }
+          if (originalEndIndex < startIndex || modifiedEndIndex < startIndex) {
+            originalEndIndex++;
+            modifiedEndIndex++;
+          }
+          const deleteCount = originalEndIndex - startIndex + 1;
+          const newData = this.modifiedSequence.slice(startIndex, modifiedEndIndex + 1);
+          if (newData.length === 1 && newData[0] === this.originalSequence[originalEndIndex]) {
+            return [
+              { start: startIndex, deleteCount: deleteCount - 1 }
+            ];
+          } else {
+            return [
+              { start: startIndex, deleteCount, data: newData }
+            ];
+          }
+        } else if (startIndex < modifiedLength) {
+          return [
+            { start: startIndex, deleteCount: 0, data: this.modifiedSequence.slice(startIndex) }
+          ];
+        } else if (startIndex < originalLength) {
+          return [
+            { start: startIndex, deleteCount: originalLength - startIndex }
+          ];
+        } else {
+          return [];
+        }
+      }
+    };
+    exports2.SemanticTokensDiff = SemanticTokensDiff;
+    var SemanticTokensBuilder = class {
+      constructor() {
+        this._prevData = void 0;
+        this.initialize();
+      }
+      initialize() {
+        this._id = Date.now();
+        this._prevLine = 0;
+        this._prevChar = 0;
+        this._data = [];
+        this._dataLen = 0;
+      }
+      push(line, char, length, tokenType, tokenModifiers) {
+        let pushLine = line;
+        let pushChar = char;
+        if (this._dataLen > 0) {
+          pushLine -= this._prevLine;
+          if (pushLine === 0) {
+            pushChar -= this._prevChar;
+          }
+        }
+        this._data[this._dataLen++] = pushLine;
+        this._data[this._dataLen++] = pushChar;
+        this._data[this._dataLen++] = length;
+        this._data[this._dataLen++] = tokenType;
+        this._data[this._dataLen++] = tokenModifiers;
+        this._prevLine = line;
+        this._prevChar = char;
+      }
+      get id() {
+        return this._id.toString();
+      }
+      previousResult(id) {
+        if (this.id === id) {
+          this._prevData = this._data;
+        }
+        this.initialize();
+      }
+      build() {
+        this._prevData = void 0;
+        return {
+          resultId: this.id,
+          data: this._data
+        };
+      }
+      canBuildEdits() {
+        return this._prevData !== void 0;
+      }
+      buildEdits() {
+        if (this._prevData !== void 0) {
+          return {
+            resultId: this.id,
+            edits: new SemanticTokensDiff(this._prevData, this._data).computeDiff()
+          };
+        } else {
+          return this.build();
+        }
+      }
+    };
+    exports2.SemanticTokensBuilder = SemanticTokensBuilder;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/showDocument.js
+var require_showDocument = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/showDocument.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ShowDocumentFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var ShowDocumentFeature = (Base) => {
+      return class extends Base {
+        showDocument(params) {
+          return this.connection.sendRequest(vscode_languageserver_protocol_1.ShowDocumentRequest.type, params);
+        }
+      };
+    };
+    exports2.ShowDocumentFeature = ShowDocumentFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/fileOperations.js
+var require_fileOperations = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/fileOperations.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.FileOperationsFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var FileOperationsFeature = (Base) => {
+      return class extends Base {
+        onDidCreateFiles(handler) {
+          return this.connection.onNotification(vscode_languageserver_protocol_1.DidCreateFilesNotification.type, (params) => {
+            handler(params);
+          });
+        }
+        onDidRenameFiles(handler) {
+          return this.connection.onNotification(vscode_languageserver_protocol_1.DidRenameFilesNotification.type, (params) => {
+            handler(params);
+          });
+        }
+        onDidDeleteFiles(handler) {
+          return this.connection.onNotification(vscode_languageserver_protocol_1.DidDeleteFilesNotification.type, (params) => {
+            handler(params);
+          });
+        }
+        onWillCreateFiles(handler) {
+          return this.connection.onRequest(vscode_languageserver_protocol_1.WillCreateFilesRequest.type, (params, cancel) => {
+            return handler(params, cancel);
+          });
+        }
+        onWillRenameFiles(handler) {
+          return this.connection.onRequest(vscode_languageserver_protocol_1.WillRenameFilesRequest.type, (params, cancel) => {
+            return handler(params, cancel);
+          });
+        }
+        onWillDeleteFiles(handler) {
+          return this.connection.onRequest(vscode_languageserver_protocol_1.WillDeleteFilesRequest.type, (params, cancel) => {
+            return handler(params, cancel);
+          });
+        }
+      };
+    };
+    exports2.FileOperationsFeature = FileOperationsFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/linkedEditingRange.js
+var require_linkedEditingRange = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/linkedEditingRange.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.LinkedEditingRangeFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var LinkedEditingRangeFeature = (Base) => {
+      return class extends Base {
+        onLinkedEditingRange(handler) {
+          return this.connection.onRequest(vscode_languageserver_protocol_1.LinkedEditingRangeRequest.type, (params, cancel) => {
+            return handler(params, cancel, this.attachWorkDoneProgress(params), void 0);
+          });
+        }
+      };
+    };
+    exports2.LinkedEditingRangeFeature = LinkedEditingRangeFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/typeHierarchy.js
+var require_typeHierarchy = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/typeHierarchy.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TypeHierarchyFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var TypeHierarchyFeature = (Base) => {
+      return class extends Base {
+        get typeHierarchy() {
+          return {
+            onPrepare: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.TypeHierarchyPrepareRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), void 0);
+              });
+            },
+            onSupertypes: (handler) => {
+              const type = vscode_languageserver_protocol_1.TypeHierarchySupertypesRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            },
+            onSubtypes: (handler) => {
+              const type = vscode_languageserver_protocol_1.TypeHierarchySubtypesRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.TypeHierarchyFeature = TypeHierarchyFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/inlineValue.js
+var require_inlineValue = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/inlineValue.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlineValueFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var InlineValueFeature = (Base) => {
+      return class extends Base {
+        get inlineValue() {
+          return {
+            refresh: () => {
+              return this.connection.sendRequest(vscode_languageserver_protocol_1.InlineValueRefreshRequest.type);
+            },
+            on: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.InlineValueRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.InlineValueFeature = InlineValueFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/foldingRange.js
+var require_foldingRange = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/foldingRange.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.FoldingRangeFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var FoldingRangeFeature = (Base) => {
+      return class extends Base {
+        get foldingRange() {
+          return {
+            refresh: () => {
+              return this.connection.sendRequest(vscode_languageserver_protocol_1.FoldingRangeRefreshRequest.type);
+            },
+            on: (handler) => {
+              const type = vscode_languageserver_protocol_1.FoldingRangeRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.FoldingRangeFeature = FoldingRangeFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/inlayHint.js
+var require_inlayHint = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/inlayHint.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlayHintFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var InlayHintFeature = (Base) => {
+      return class extends Base {
+        get inlayHint() {
+          return {
+            refresh: () => {
+              return this.connection.sendRequest(vscode_languageserver_protocol_1.InlayHintRefreshRequest.type);
+            },
+            on: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.InlayHintRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params));
+              });
+            },
+            resolve: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.InlayHintResolveRequest.type, (params, cancel) => {
+                return handler(params, cancel);
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.InlayHintFeature = InlayHintFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/diagnostic.js
+var require_diagnostic = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/diagnostic.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DiagnosticFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var DiagnosticFeature = (Base) => {
+      return class extends Base {
+        get diagnostics() {
+          return {
+            refresh: () => {
+              return this.connection.sendRequest(vscode_languageserver_protocol_1.DiagnosticRefreshRequest.type);
+            },
+            on: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.DocumentDiagnosticRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(vscode_languageserver_protocol_1.DocumentDiagnosticRequest.partialResult, params));
+              });
+            },
+            onWorkspace: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.WorkspaceDiagnosticRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(vscode_languageserver_protocol_1.WorkspaceDiagnosticRequest.partialResult, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.DiagnosticFeature = DiagnosticFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/textDocuments.js
+var require_textDocuments = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/textDocuments.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TextDocuments = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var TextDocuments2 = class {
+      /**
+       * Create a new text document manager.
+       */
+      constructor(configuration) {
+        this._configuration = configuration;
+        this._syncedDocuments = /* @__PURE__ */ new Map();
+        this._onDidChangeContent = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidOpen = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidClose = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidSave = new vscode_languageserver_protocol_1.Emitter();
+        this._onWillSave = new vscode_languageserver_protocol_1.Emitter();
+      }
+      /**
+       * An event that fires when a text document managed by this manager
+       * has been opened.
+       */
+      get onDidOpen() {
+        return this._onDidOpen.event;
+      }
+      /**
+       * An event that fires when a text document managed by this manager
+       * has been opened or the content changes.
+       */
+      get onDidChangeContent() {
+        return this._onDidChangeContent.event;
+      }
+      /**
+       * An event that fires when a text document managed by this manager
+       * will be saved.
+       */
+      get onWillSave() {
+        return this._onWillSave.event;
+      }
+      /**
+       * Sets a handler that will be called if a participant wants to provide
+       * edits during a text document save.
+       */
+      onWillSaveWaitUntil(handler) {
+        this._willSaveWaitUntil = handler;
+      }
+      /**
+       * An event that fires when a text document managed by this manager
+       * has been saved.
+       */
+      get onDidSave() {
+        return this._onDidSave.event;
+      }
+      /**
+       * An event that fires when a text document managed by this manager
+       * has been closed.
+       */
+      get onDidClose() {
+        return this._onDidClose.event;
+      }
+      /**
+       * Returns the document for the given URI. Returns undefined if
+       * the document is not managed by this instance.
+       *
+       * @param uri The text document's URI to retrieve.
+       * @return the text document or `undefined`.
+       */
+      get(uri) {
+        return this._syncedDocuments.get(uri);
+      }
+      /**
+       * Returns all text documents managed by this instance.
+       *
+       * @return all text documents.
+       */
+      all() {
+        return Array.from(this._syncedDocuments.values());
+      }
+      /**
+       * Returns the URIs of all text documents managed by this instance.
+       *
+       * @return the URI's of all text documents.
+       */
+      keys() {
+        return Array.from(this._syncedDocuments.keys());
+      }
+      /**
+       * Listens for `low level` notification on the given connection to
+       * update the text documents managed by this instance.
+       *
+       * Please note that the connection only provides handlers not an event model. Therefore
+       * listening on a connection will overwrite the following handlers on a connection:
+       * `onDidOpenTextDocument`, `onDidChangeTextDocument`, `onDidCloseTextDocument`,
+       * `onWillSaveTextDocument`, `onWillSaveTextDocumentWaitUntil` and `onDidSaveTextDocument`.
+       *
+       * Use the corresponding events on the TextDocuments instance instead.
+       *
+       * @param connection The connection to listen on.
+       */
+      listen(connection2) {
+        connection2.__textDocumentSync = vscode_languageserver_protocol_1.TextDocumentSyncKind.Incremental;
+        const disposables = [];
+        disposables.push(connection2.onDidOpenTextDocument((event) => {
+          const td = event.textDocument;
+          const document = this._configuration.create(td.uri, td.languageId, td.version, td.text);
+          this._syncedDocuments.set(td.uri, document);
+          const toFire = Object.freeze({ document });
+          this._onDidOpen.fire(toFire);
+          this._onDidChangeContent.fire(toFire);
+        }));
+        disposables.push(connection2.onDidChangeTextDocument((event) => {
+          const td = event.textDocument;
+          const changes = event.contentChanges;
+          if (changes.length === 0) {
+            return;
+          }
+          const { version } = td;
+          if (version === null || version === void 0) {
+            throw new Error(`Received document change event for ${td.uri} without valid version identifier`);
+          }
+          let syncedDocument = this._syncedDocuments.get(td.uri);
+          if (syncedDocument !== void 0) {
+            syncedDocument = this._configuration.update(syncedDocument, changes, version);
+            this._syncedDocuments.set(td.uri, syncedDocument);
+            this._onDidChangeContent.fire(Object.freeze({ document: syncedDocument }));
+          }
+        }));
+        disposables.push(connection2.onDidCloseTextDocument((event) => {
+          let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
+          if (syncedDocument !== void 0) {
+            this._syncedDocuments.delete(event.textDocument.uri);
+            this._onDidClose.fire(Object.freeze({ document: syncedDocument }));
+          }
+        }));
+        disposables.push(connection2.onWillSaveTextDocument((event) => {
+          let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
+          if (syncedDocument !== void 0) {
+            this._onWillSave.fire(Object.freeze({ document: syncedDocument, reason: event.reason }));
+          }
+        }));
+        disposables.push(connection2.onWillSaveTextDocumentWaitUntil((event, token) => {
+          let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
+          if (syncedDocument !== void 0 && this._willSaveWaitUntil) {
+            return this._willSaveWaitUntil(Object.freeze({ document: syncedDocument, reason: event.reason }), token);
+          } else {
+            return [];
+          }
+        }));
+        disposables.push(connection2.onDidSaveTextDocument((event) => {
+          let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
+          if (syncedDocument !== void 0) {
+            this._onDidSave.fire(Object.freeze({ document: syncedDocument }));
+          }
+        }));
+        return vscode_languageserver_protocol_1.Disposable.create(() => {
+          disposables.forEach((disposable) => disposable.dispose());
+        });
+      }
+    };
+    exports2.TextDocuments = TextDocuments2;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/notebook.js
+var require_notebook = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/notebook.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.NotebookDocuments = exports2.NotebookSyncFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var textDocuments_1 = require_textDocuments();
+    var NotebookSyncFeature = (Base) => {
+      return class extends Base {
+        get synchronization() {
+          return {
+            onDidOpenNotebookDocument: (handler) => {
+              return this.connection.onNotification(vscode_languageserver_protocol_1.DidOpenNotebookDocumentNotification.type, (params) => {
+                handler(params);
+              });
+            },
+            onDidChangeNotebookDocument: (handler) => {
+              return this.connection.onNotification(vscode_languageserver_protocol_1.DidChangeNotebookDocumentNotification.type, (params) => {
+                handler(params);
+              });
+            },
+            onDidSaveNotebookDocument: (handler) => {
+              return this.connection.onNotification(vscode_languageserver_protocol_1.DidSaveNotebookDocumentNotification.type, (params) => {
+                handler(params);
+              });
+            },
+            onDidCloseNotebookDocument: (handler) => {
+              return this.connection.onNotification(vscode_languageserver_protocol_1.DidCloseNotebookDocumentNotification.type, (params) => {
+                handler(params);
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.NotebookSyncFeature = NotebookSyncFeature;
+    var CellTextDocumentConnection = class _CellTextDocumentConnection {
+      onDidOpenTextDocument(handler) {
+        this.openHandler = handler;
+        return vscode_languageserver_protocol_1.Disposable.create(() => {
+          this.openHandler = void 0;
+        });
+      }
+      openTextDocument(params) {
+        this.openHandler && this.openHandler(params);
+      }
+      onDidChangeTextDocument(handler) {
+        this.changeHandler = handler;
+        return vscode_languageserver_protocol_1.Disposable.create(() => {
+          this.changeHandler = handler;
+        });
+      }
+      changeTextDocument(params) {
+        this.changeHandler && this.changeHandler(params);
+      }
+      onDidCloseTextDocument(handler) {
+        this.closeHandler = handler;
+        return vscode_languageserver_protocol_1.Disposable.create(() => {
+          this.closeHandler = void 0;
+        });
+      }
+      closeTextDocument(params) {
+        this.closeHandler && this.closeHandler(params);
+      }
+      onWillSaveTextDocument() {
+        return _CellTextDocumentConnection.NULL_DISPOSE;
+      }
+      onWillSaveTextDocumentWaitUntil() {
+        return _CellTextDocumentConnection.NULL_DISPOSE;
+      }
+      onDidSaveTextDocument() {
+        return _CellTextDocumentConnection.NULL_DISPOSE;
+      }
+    };
+    CellTextDocumentConnection.NULL_DISPOSE = Object.freeze({ dispose: () => {
+    } });
+    var NotebookDocuments = class {
+      constructor(configurationOrTextDocuments) {
+        if (configurationOrTextDocuments instanceof textDocuments_1.TextDocuments) {
+          this._cellTextDocuments = configurationOrTextDocuments;
+        } else {
+          this._cellTextDocuments = new textDocuments_1.TextDocuments(configurationOrTextDocuments);
+        }
+        this.notebookDocuments = /* @__PURE__ */ new Map();
+        this.notebookCellMap = /* @__PURE__ */ new Map();
+        this._onDidOpen = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidChange = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidSave = new vscode_languageserver_protocol_1.Emitter();
+        this._onDidClose = new vscode_languageserver_protocol_1.Emitter();
+      }
+      get cellTextDocuments() {
+        return this._cellTextDocuments;
+      }
+      getCellTextDocument(cell) {
+        return this._cellTextDocuments.get(cell.document);
+      }
+      getNotebookDocument(uri) {
+        return this.notebookDocuments.get(uri);
+      }
+      getNotebookCell(uri) {
+        const value = this.notebookCellMap.get(uri);
+        return value && value[0];
+      }
+      findNotebookDocumentForCell(cell) {
+        const key = typeof cell === "string" ? cell : cell.document;
+        const value = this.notebookCellMap.get(key);
+        return value && value[1];
+      }
+      get onDidOpen() {
+        return this._onDidOpen.event;
+      }
+      get onDidSave() {
+        return this._onDidSave.event;
+      }
+      get onDidChange() {
+        return this._onDidChange.event;
+      }
+      get onDidClose() {
+        return this._onDidClose.event;
+      }
+      /**
+       * Listens for `low level` notification on the given connection to
+       * update the notebook documents managed by this instance.
+       *
+       * Please note that the connection only provides handlers not an event model. Therefore
+       * listening on a connection will overwrite the following handlers on a connection:
+       * `onDidOpenNotebookDocument`, `onDidChangeNotebookDocument`, `onDidSaveNotebookDocument`,
+       *  and `onDidCloseNotebookDocument`.
+       *
+       * @param connection The connection to listen on.
+       */
+      listen(connection2) {
+        const cellTextDocumentConnection = new CellTextDocumentConnection();
+        const disposables = [];
+        disposables.push(this.cellTextDocuments.listen(cellTextDocumentConnection));
+        disposables.push(connection2.notebooks.synchronization.onDidOpenNotebookDocument((params) => {
+          this.notebookDocuments.set(params.notebookDocument.uri, params.notebookDocument);
+          for (const cellTextDocument of params.cellTextDocuments) {
+            cellTextDocumentConnection.openTextDocument({ textDocument: cellTextDocument });
+          }
+          this.updateCellMap(params.notebookDocument);
+          this._onDidOpen.fire(params.notebookDocument);
+        }));
+        disposables.push(connection2.notebooks.synchronization.onDidChangeNotebookDocument((params) => {
+          const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
+          if (notebookDocument === void 0) {
+            return;
+          }
+          notebookDocument.version = params.notebookDocument.version;
+          const oldMetadata = notebookDocument.metadata;
+          let metadataChanged = false;
+          const change = params.change;
+          if (change.metadata !== void 0) {
+            metadataChanged = true;
+            notebookDocument.metadata = change.metadata;
+          }
+          const opened = [];
+          const closed = [];
+          const data = [];
+          const text = [];
+          if (change.cells !== void 0) {
+            const changedCells = change.cells;
+            if (changedCells.structure !== void 0) {
+              const array = changedCells.structure.array;
+              notebookDocument.cells.splice(array.start, array.deleteCount, ...array.cells !== void 0 ? array.cells : []);
+              if (changedCells.structure.didOpen !== void 0) {
+                for (const open of changedCells.structure.didOpen) {
+                  cellTextDocumentConnection.openTextDocument({ textDocument: open });
+                  opened.push(open.uri);
+                }
+              }
+              if (changedCells.structure.didClose) {
+                for (const close of changedCells.structure.didClose) {
+                  cellTextDocumentConnection.closeTextDocument({ textDocument: close });
+                  closed.push(close.uri);
+                }
+              }
+            }
+            if (changedCells.data !== void 0) {
+              const cellUpdates = new Map(changedCells.data.map((cell) => [cell.document, cell]));
+              for (let i = 0; i <= notebookDocument.cells.length; i++) {
+                const change2 = cellUpdates.get(notebookDocument.cells[i].document);
+                if (change2 !== void 0) {
+                  const old = notebookDocument.cells.splice(i, 1, change2);
+                  data.push({ old: old[0], new: change2 });
+                  cellUpdates.delete(change2.document);
+                  if (cellUpdates.size === 0) {
+                    break;
+                  }
+                }
+              }
+            }
+            if (changedCells.textContent !== void 0) {
+              for (const cellTextDocument of changedCells.textContent) {
+                cellTextDocumentConnection.changeTextDocument({ textDocument: cellTextDocument.document, contentChanges: cellTextDocument.changes });
+                text.push(cellTextDocument.document.uri);
+              }
+            }
+          }
+          this.updateCellMap(notebookDocument);
+          const changeEvent = { notebookDocument };
+          if (metadataChanged) {
+            changeEvent.metadata = { old: oldMetadata, new: notebookDocument.metadata };
+          }
+          const added = [];
+          for (const open of opened) {
+            added.push(this.getNotebookCell(open));
+          }
+          const removed = [];
+          for (const close of closed) {
+            removed.push(this.getNotebookCell(close));
+          }
+          const textContent = [];
+          for (const change2 of text) {
+            textContent.push(this.getNotebookCell(change2));
+          }
+          if (added.length > 0 || removed.length > 0 || data.length > 0 || textContent.length > 0) {
+            changeEvent.cells = { added, removed, changed: { data, textContent } };
+          }
+          if (changeEvent.metadata !== void 0 || changeEvent.cells !== void 0) {
+            this._onDidChange.fire(changeEvent);
+          }
+        }));
+        disposables.push(connection2.notebooks.synchronization.onDidSaveNotebookDocument((params) => {
+          const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
+          if (notebookDocument === void 0) {
+            return;
+          }
+          this._onDidSave.fire(notebookDocument);
+        }));
+        disposables.push(connection2.notebooks.synchronization.onDidCloseNotebookDocument((params) => {
+          const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
+          if (notebookDocument === void 0) {
+            return;
+          }
+          this._onDidClose.fire(notebookDocument);
+          for (const cellTextDocument of params.cellTextDocuments) {
+            cellTextDocumentConnection.closeTextDocument({ textDocument: cellTextDocument });
+          }
+          this.notebookDocuments.delete(params.notebookDocument.uri);
+          for (const cell of notebookDocument.cells) {
+            this.notebookCellMap.delete(cell.document);
+          }
+        }));
+        return vscode_languageserver_protocol_1.Disposable.create(() => {
+          disposables.forEach((disposable) => disposable.dispose());
+        });
+      }
+      updateCellMap(notebookDocument) {
+        for (const cell of notebookDocument.cells) {
+          this.notebookCellMap.set(cell.document, [cell, notebookDocument]);
+        }
+      }
+    };
+    exports2.NotebookDocuments = NotebookDocuments;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/moniker.js
+var require_moniker = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/moniker.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.MonikerFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var MonikerFeature = (Base) => {
+      return class extends Base {
+        get moniker() {
+          return {
+            on: (handler) => {
+              const type = vscode_languageserver_protocol_1.MonikerRequest.type;
+              return this.connection.onRequest(type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params), this.attachPartialResultProgress(type, params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.MonikerFeature = MonikerFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/server.js
+var require_server = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/server.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createConnection = exports2.combineFeatures = exports2.combineNotebooksFeatures = exports2.combineLanguagesFeatures = exports2.combineWorkspaceFeatures = exports2.combineWindowFeatures = exports2.combineClientFeatures = exports2.combineTracerFeatures = exports2.combineTelemetryFeatures = exports2.combineConsoleFeatures = exports2._NotebooksImpl = exports2._LanguagesImpl = exports2.BulkUnregistration = exports2.BulkRegistration = exports2.ErrorMessageTracker = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var Is = require_is();
+    var UUID = require_uuid();
+    var progress_1 = require_progress();
+    var configuration_1 = require_configuration();
+    var workspaceFolder_1 = require_workspaceFolder();
+    var callHierarchy_1 = require_callHierarchy();
+    var semanticTokens_1 = require_semanticTokens();
+    var showDocument_1 = require_showDocument();
+    var fileOperations_1 = require_fileOperations();
+    var linkedEditingRange_1 = require_linkedEditingRange();
+    var typeHierarchy_1 = require_typeHierarchy();
+    var inlineValue_1 = require_inlineValue();
+    var foldingRange_1 = require_foldingRange();
+    var inlayHint_1 = require_inlayHint();
+    var diagnostic_1 = require_diagnostic();
+    var notebook_1 = require_notebook();
+    var moniker_1 = require_moniker();
+    function null2Undefined(value) {
+      if (value === null) {
+        return void 0;
+      }
+      return value;
+    }
+    var ErrorMessageTracker = class {
+      constructor() {
+        this._messages = /* @__PURE__ */ Object.create(null);
+      }
+      /**
+       * Add a message to the tracker.
+       *
+       * @param message The message to add.
+       */
+      add(message) {
+        let count = this._messages[message];
+        if (!count) {
+          count = 0;
+        }
+        count++;
+        this._messages[message] = count;
+      }
+      /**
+       * Send all tracked messages to the connection's window.
+       *
+       * @param connection The connection established between client and server.
+       */
+      sendErrors(connection2) {
+        Object.keys(this._messages).forEach((message) => {
+          connection2.window.showErrorMessage(message);
+        });
+      }
+    };
+    exports2.ErrorMessageTracker = ErrorMessageTracker;
+    var RemoteConsoleImpl = class {
+      constructor() {
+      }
+      rawAttach(connection2) {
+        this._rawConnection = connection2;
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      initialize(_capabilities) {
+      }
+      error(message) {
+        this.send(vscode_languageserver_protocol_1.MessageType.Error, message);
+      }
+      warn(message) {
+        this.send(vscode_languageserver_protocol_1.MessageType.Warning, message);
+      }
+      info(message) {
+        this.send(vscode_languageserver_protocol_1.MessageType.Info, message);
+      }
+      log(message) {
+        this.send(vscode_languageserver_protocol_1.MessageType.Log, message);
+      }
+      debug(message) {
+        this.send(vscode_languageserver_protocol_1.MessageType.Debug, message);
+      }
+      send(type, message) {
+        if (this._rawConnection) {
+          this._rawConnection.sendNotification(vscode_languageserver_protocol_1.LogMessageNotification.type, { type, message }).catch(() => {
+            (0, vscode_languageserver_protocol_1.RAL)().console.error(`Sending log message failed`);
+          });
+        }
+      }
+    };
+    var _RemoteWindowImpl = class {
+      constructor() {
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      showErrorMessage(message, ...actions) {
+        let params = { type: vscode_languageserver_protocol_1.MessageType.Error, message, actions };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.ShowMessageRequest.type, params).then(null2Undefined);
+      }
+      showWarningMessage(message, ...actions) {
+        let params = { type: vscode_languageserver_protocol_1.MessageType.Warning, message, actions };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.ShowMessageRequest.type, params).then(null2Undefined);
+      }
+      showInformationMessage(message, ...actions) {
+        let params = { type: vscode_languageserver_protocol_1.MessageType.Info, message, actions };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.ShowMessageRequest.type, params).then(null2Undefined);
+      }
+    };
+    var RemoteWindowImpl = (0, showDocument_1.ShowDocumentFeature)((0, progress_1.ProgressFeature)(_RemoteWindowImpl));
+    var BulkRegistration;
+    (function(BulkRegistration2) {
+      function create() {
+        return new BulkRegistrationImpl();
+      }
+      BulkRegistration2.create = create;
+    })(BulkRegistration || (exports2.BulkRegistration = BulkRegistration = {}));
+    var BulkRegistrationImpl = class {
+      constructor() {
+        this._registrations = [];
+        this._registered = /* @__PURE__ */ new Set();
+      }
+      add(type, registerOptions) {
+        const method = Is.string(type) ? type : type.method;
+        if (this._registered.has(method)) {
+          throw new Error(`${method} is already added to this registration`);
+        }
+        const id = UUID.generateUuid();
+        this._registrations.push({
+          id,
+          method,
+          registerOptions: registerOptions || {}
+        });
+        this._registered.add(method);
+      }
+      asRegistrationParams() {
+        return {
+          registrations: this._registrations
+        };
+      }
+    };
+    var BulkUnregistration;
+    (function(BulkUnregistration2) {
+      function create() {
+        return new BulkUnregistrationImpl(void 0, []);
+      }
+      BulkUnregistration2.create = create;
+    })(BulkUnregistration || (exports2.BulkUnregistration = BulkUnregistration = {}));
+    var BulkUnregistrationImpl = class {
+      constructor(_connection, unregistrations) {
+        this._connection = _connection;
+        this._unregistrations = /* @__PURE__ */ new Map();
+        unregistrations.forEach((unregistration) => {
+          this._unregistrations.set(unregistration.method, unregistration);
+        });
+      }
+      get isAttached() {
+        return !!this._connection;
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      add(unregistration) {
+        this._unregistrations.set(unregistration.method, unregistration);
+      }
+      dispose() {
+        let unregistrations = [];
+        for (let unregistration of this._unregistrations.values()) {
+          unregistrations.push(unregistration);
+        }
+        let params = {
+          unregisterations: unregistrations
+        };
+        this._connection.sendRequest(vscode_languageserver_protocol_1.UnregistrationRequest.type, params).catch(() => {
+          this._connection.console.info(`Bulk unregistration failed.`);
+        });
+      }
+      disposeSingle(arg) {
+        const method = Is.string(arg) ? arg : arg.method;
+        const unregistration = this._unregistrations.get(method);
+        if (!unregistration) {
+          return false;
+        }
+        let params = {
+          unregisterations: [unregistration]
+        };
+        this._connection.sendRequest(vscode_languageserver_protocol_1.UnregistrationRequest.type, params).then(() => {
+          this._unregistrations.delete(method);
+        }, (_error) => {
+          this._connection.console.info(`Un-registering request handler for ${unregistration.id} failed.`);
+        });
+        return true;
+      }
+    };
+    var RemoteClientImpl = class {
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      register(typeOrRegistrations, registerOptionsOrType, registerOptions) {
+        if (typeOrRegistrations instanceof BulkRegistrationImpl) {
+          return this.registerMany(typeOrRegistrations);
+        } else if (typeOrRegistrations instanceof BulkUnregistrationImpl) {
+          return this.registerSingle1(typeOrRegistrations, registerOptionsOrType, registerOptions);
+        } else {
+          return this.registerSingle2(typeOrRegistrations, registerOptionsOrType);
+        }
+      }
+      registerSingle1(unregistration, type, registerOptions) {
+        const method = Is.string(type) ? type : type.method;
+        const id = UUID.generateUuid();
+        let params = {
+          registrations: [{ id, method, registerOptions: registerOptions || {} }]
+        };
+        if (!unregistration.isAttached) {
+          unregistration.attach(this.connection);
+        }
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.RegistrationRequest.type, params).then((_result) => {
+          unregistration.add({ id, method });
+          return unregistration;
+        }, (_error) => {
+          this.connection.console.info(`Registering request handler for ${method} failed.`);
+          return Promise.reject(_error);
+        });
+      }
+      registerSingle2(type, registerOptions) {
+        const method = Is.string(type) ? type : type.method;
+        const id = UUID.generateUuid();
+        let params = {
+          registrations: [{ id, method, registerOptions: registerOptions || {} }]
+        };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.RegistrationRequest.type, params).then((_result) => {
+          return vscode_languageserver_protocol_1.Disposable.create(() => {
+            this.unregisterSingle(id, method).catch(() => {
+              this.connection.console.info(`Un-registering capability with id ${id} failed.`);
+            });
+          });
+        }, (_error) => {
+          this.connection.console.info(`Registering request handler for ${method} failed.`);
+          return Promise.reject(_error);
+        });
+      }
+      unregisterSingle(id, method) {
+        let params = {
+          unregisterations: [{ id, method }]
+        };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.UnregistrationRequest.type, params).catch(() => {
+          this.connection.console.info(`Un-registering request handler for ${id} failed.`);
+        });
+      }
+      registerMany(registrations) {
+        let params = registrations.asRegistrationParams();
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.RegistrationRequest.type, params).then(() => {
+          return new BulkUnregistrationImpl(this._connection, params.registrations.map((registration) => {
+            return { id: registration.id, method: registration.method };
+          }));
+        }, (_error) => {
+          this.connection.console.info(`Bulk registration failed.`);
+          return Promise.reject(_error);
+        });
+      }
+    };
+    var _RemoteWorkspaceImpl = class {
+      constructor() {
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      applyEdit(paramOrEdit) {
+        function isApplyWorkspaceEditParams(value) {
+          return value && !!value.edit;
+        }
+        let params = isApplyWorkspaceEditParams(paramOrEdit) ? paramOrEdit : { edit: paramOrEdit };
+        return this.connection.sendRequest(vscode_languageserver_protocol_1.ApplyWorkspaceEditRequest.type, params);
+      }
+    };
+    var RemoteWorkspaceImpl = (0, fileOperations_1.FileOperationsFeature)((0, workspaceFolder_1.WorkspaceFoldersFeature)((0, configuration_1.ConfigurationFeature)(_RemoteWorkspaceImpl)));
+    var TracerImpl = class {
+      constructor() {
+        this._trace = vscode_languageserver_protocol_1.Trace.Off;
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      set trace(value) {
+        this._trace = value;
+      }
+      log(message, verbose) {
+        if (this._trace === vscode_languageserver_protocol_1.Trace.Off) {
+          return;
+        }
+        this.connection.sendNotification(vscode_languageserver_protocol_1.LogTraceNotification.type, {
+          message,
+          verbose: this._trace === vscode_languageserver_protocol_1.Trace.Verbose ? verbose : void 0
+        }).catch(() => {
+        });
+      }
+    };
+    var TelemetryImpl = class {
+      constructor() {
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      logEvent(data) {
+        this.connection.sendNotification(vscode_languageserver_protocol_1.TelemetryEventNotification.type, data).catch(() => {
+          this.connection.console.log(`Sending TelemetryEventNotification failed`);
+        });
+      }
+    };
+    var _LanguagesImpl = class {
+      constructor() {
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      attachWorkDoneProgress(params) {
+        return (0, progress_1.attachWorkDone)(this.connection, params);
+      }
+      attachPartialResultProgress(_type, params) {
+        return (0, progress_1.attachPartialResult)(this.connection, params);
+      }
+    };
+    exports2._LanguagesImpl = _LanguagesImpl;
+    var LanguagesImpl = (0, foldingRange_1.FoldingRangeFeature)((0, moniker_1.MonikerFeature)((0, diagnostic_1.DiagnosticFeature)((0, inlayHint_1.InlayHintFeature)((0, inlineValue_1.InlineValueFeature)((0, typeHierarchy_1.TypeHierarchyFeature)((0, linkedEditingRange_1.LinkedEditingRangeFeature)((0, semanticTokens_1.SemanticTokensFeature)((0, callHierarchy_1.CallHierarchyFeature)(_LanguagesImpl)))))))));
+    var _NotebooksImpl = class {
+      constructor() {
+      }
+      attach(connection2) {
+        this._connection = connection2;
+      }
+      get connection() {
+        if (!this._connection) {
+          throw new Error("Remote is not attached to a connection yet.");
+        }
+        return this._connection;
+      }
+      initialize(_capabilities) {
+      }
+      fillServerCapabilities(_capabilities) {
+      }
+      attachWorkDoneProgress(params) {
+        return (0, progress_1.attachWorkDone)(this.connection, params);
+      }
+      attachPartialResultProgress(_type, params) {
+        return (0, progress_1.attachPartialResult)(this.connection, params);
+      }
+    };
+    exports2._NotebooksImpl = _NotebooksImpl;
+    var NotebooksImpl = (0, notebook_1.NotebookSyncFeature)(_NotebooksImpl);
+    function combineConsoleFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineConsoleFeatures = combineConsoleFeatures;
+    function combineTelemetryFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineTelemetryFeatures = combineTelemetryFeatures;
+    function combineTracerFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineTracerFeatures = combineTracerFeatures;
+    function combineClientFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineClientFeatures = combineClientFeatures;
+    function combineWindowFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineWindowFeatures = combineWindowFeatures;
+    function combineWorkspaceFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineWorkspaceFeatures = combineWorkspaceFeatures;
+    function combineLanguagesFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineLanguagesFeatures = combineLanguagesFeatures;
+    function combineNotebooksFeatures(one, two) {
+      return function(Base) {
+        return two(one(Base));
+      };
+    }
+    exports2.combineNotebooksFeatures = combineNotebooksFeatures;
+    function combineFeatures(one, two) {
+      function combine(one2, two2, func) {
+        if (one2 && two2) {
+          return func(one2, two2);
+        } else if (one2) {
+          return one2;
+        } else {
+          return two2;
+        }
+      }
+      let result = {
+        __brand: "features",
+        console: combine(one.console, two.console, combineConsoleFeatures),
+        tracer: combine(one.tracer, two.tracer, combineTracerFeatures),
+        telemetry: combine(one.telemetry, two.telemetry, combineTelemetryFeatures),
+        client: combine(one.client, two.client, combineClientFeatures),
+        window: combine(one.window, two.window, combineWindowFeatures),
+        workspace: combine(one.workspace, two.workspace, combineWorkspaceFeatures),
+        languages: combine(one.languages, two.languages, combineLanguagesFeatures),
+        notebooks: combine(one.notebooks, two.notebooks, combineNotebooksFeatures)
+      };
+      return result;
+    }
+    exports2.combineFeatures = combineFeatures;
+    function createConnection2(connectionFactory, watchDog, factories) {
+      const logger = factories && factories.console ? new (factories.console(RemoteConsoleImpl))() : new RemoteConsoleImpl();
+      const connection2 = connectionFactory(logger);
+      logger.rawAttach(connection2);
+      const tracer = factories && factories.tracer ? new (factories.tracer(TracerImpl))() : new TracerImpl();
+      const telemetry = factories && factories.telemetry ? new (factories.telemetry(TelemetryImpl))() : new TelemetryImpl();
+      const client = factories && factories.client ? new (factories.client(RemoteClientImpl))() : new RemoteClientImpl();
+      const remoteWindow = factories && factories.window ? new (factories.window(RemoteWindowImpl))() : new RemoteWindowImpl();
+      const workspace = factories && factories.workspace ? new (factories.workspace(RemoteWorkspaceImpl))() : new RemoteWorkspaceImpl();
+      const languages = factories && factories.languages ? new (factories.languages(LanguagesImpl))() : new LanguagesImpl();
+      const notebooks = factories && factories.notebooks ? new (factories.notebooks(NotebooksImpl))() : new NotebooksImpl();
+      const allRemotes = [logger, tracer, telemetry, client, remoteWindow, workspace, languages, notebooks];
+      function asPromise(value) {
+        if (value instanceof Promise) {
+          return value;
+        } else if (Is.thenable(value)) {
+          return new Promise((resolve, reject) => {
+            value.then((resolved) => resolve(resolved), (error) => reject(error));
+          });
+        } else {
+          return Promise.resolve(value);
+        }
+      }
+      let shutdownHandler = void 0;
+      let initializeHandler = void 0;
+      let exitHandler = void 0;
+      let protocolConnection = {
+        listen: () => connection2.listen(),
+        sendRequest: (type, ...params) => connection2.sendRequest(Is.string(type) ? type : type.method, ...params),
+        onRequest: (type, handler) => connection2.onRequest(type, handler),
+        sendNotification: (type, param) => {
+          const method = Is.string(type) ? type : type.method;
+          return connection2.sendNotification(method, param);
+        },
+        onNotification: (type, handler) => connection2.onNotification(type, handler),
+        onProgress: connection2.onProgress,
+        sendProgress: connection2.sendProgress,
+        onInitialize: (handler) => {
+          initializeHandler = handler;
+          return {
+            dispose: () => {
+              initializeHandler = void 0;
+            }
+          };
+        },
+        onInitialized: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.InitializedNotification.type, handler),
+        onShutdown: (handler) => {
+          shutdownHandler = handler;
+          return {
+            dispose: () => {
+              shutdownHandler = void 0;
+            }
+          };
+        },
+        onExit: (handler) => {
+          exitHandler = handler;
+          return {
+            dispose: () => {
+              exitHandler = void 0;
+            }
+          };
+        },
+        get console() {
+          return logger;
+        },
+        get telemetry() {
+          return telemetry;
+        },
+        get tracer() {
+          return tracer;
+        },
+        get client() {
+          return client;
+        },
+        get window() {
+          return remoteWindow;
+        },
+        get workspace() {
+          return workspace;
+        },
+        get languages() {
+          return languages;
+        },
+        get notebooks() {
+          return notebooks;
+        },
+        onDidChangeConfiguration: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeConfigurationNotification.type, handler),
+        onDidChangeWatchedFiles: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeWatchedFilesNotification.type, handler),
+        __textDocumentSync: void 0,
+        onDidOpenTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidOpenTextDocumentNotification.type, handler),
+        onDidChangeTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeTextDocumentNotification.type, handler),
+        onDidCloseTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidCloseTextDocumentNotification.type, handler),
+        onWillSaveTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.WillSaveTextDocumentNotification.type, handler),
+        onWillSaveTextDocumentWaitUntil: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WillSaveTextDocumentWaitUntilRequest.type, handler),
+        onDidSaveTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidSaveTextDocumentNotification.type, handler),
+        sendDiagnostics: (params) => connection2.sendNotification(vscode_languageserver_protocol_1.PublishDiagnosticsNotification.type, params),
+        onHover: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.HoverRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        onCompletion: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CompletionRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onCompletionResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CompletionResolveRequest.type, handler),
+        onSignatureHelp: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.SignatureHelpRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        onDeclaration: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DeclarationRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onDefinition: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DefinitionRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onTypeDefinition: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.TypeDefinitionRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onImplementation: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ImplementationRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onReferences: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ReferencesRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onDocumentHighlight: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentHighlightRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onDocumentSymbol: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentSymbolRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onWorkspaceSymbol: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onWorkspaceSymbolResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolResolveRequest.type, handler),
+        onCodeAction: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeActionRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onCodeActionResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeActionResolveRequest.type, (params, cancel) => {
+          return handler(params, cancel);
+        }),
+        onCodeLens: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeLensRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onCodeLensResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeLensResolveRequest.type, (params, cancel) => {
+          return handler(params, cancel);
+        }),
+        onDocumentFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentFormattingRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        onDocumentRangeFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentRangeFormattingRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        onDocumentOnTypeFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentOnTypeFormattingRequest.type, (params, cancel) => {
+          return handler(params, cancel);
+        }),
+        onRenameRequest: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.RenameRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        onPrepareRename: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.PrepareRenameRequest.type, (params, cancel) => {
+          return handler(params, cancel);
+        }),
+        onDocumentLinks: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentLinkRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onDocumentLinkResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentLinkResolveRequest.type, (params, cancel) => {
+          return handler(params, cancel);
+        }),
+        onDocumentColor: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentColorRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onColorPresentation: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ColorPresentationRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onFoldingRanges: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.FoldingRangeRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onSelectionRanges: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.SelectionRangeRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
+        }),
+        onExecuteCommand: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ExecuteCommandRequest.type, (params, cancel) => {
+          return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+        }),
+        dispose: () => connection2.dispose()
+      };
+      for (let remote of allRemotes) {
+        remote.attach(protocolConnection);
+      }
+      connection2.onRequest(vscode_languageserver_protocol_1.InitializeRequest.type, (params) => {
+        watchDog.initialize(params);
+        if (Is.string(params.trace)) {
+          tracer.trace = vscode_languageserver_protocol_1.Trace.fromString(params.trace);
+        }
+        for (let remote of allRemotes) {
+          remote.initialize(params.capabilities);
+        }
+        if (initializeHandler) {
+          let result = initializeHandler(params, new vscode_languageserver_protocol_1.CancellationTokenSource().token, (0, progress_1.attachWorkDone)(connection2, params), void 0);
+          return asPromise(result).then((value) => {
+            if (value instanceof vscode_languageserver_protocol_1.ResponseError) {
+              return value;
+            }
+            let result2 = value;
+            if (!result2) {
+              result2 = { capabilities: {} };
+            }
+            let capabilities = result2.capabilities;
+            if (!capabilities) {
+              capabilities = {};
+              result2.capabilities = capabilities;
+            }
+            if (capabilities.textDocumentSync === void 0 || capabilities.textDocumentSync === null) {
+              capabilities.textDocumentSync = Is.number(protocolConnection.__textDocumentSync) ? protocolConnection.__textDocumentSync : vscode_languageserver_protocol_1.TextDocumentSyncKind.None;
+            } else if (!Is.number(capabilities.textDocumentSync) && !Is.number(capabilities.textDocumentSync.change)) {
+              capabilities.textDocumentSync.change = Is.number(protocolConnection.__textDocumentSync) ? protocolConnection.__textDocumentSync : vscode_languageserver_protocol_1.TextDocumentSyncKind.None;
+            }
+            for (let remote of allRemotes) {
+              remote.fillServerCapabilities(capabilities);
+            }
+            return result2;
+          });
+        } else {
+          let result = { capabilities: { textDocumentSync: vscode_languageserver_protocol_1.TextDocumentSyncKind.None } };
+          for (let remote of allRemotes) {
+            remote.fillServerCapabilities(result.capabilities);
+          }
+          return result;
+        }
+      });
+      connection2.onRequest(vscode_languageserver_protocol_1.ShutdownRequest.type, () => {
+        watchDog.shutdownReceived = true;
+        if (shutdownHandler) {
+          return shutdownHandler(new vscode_languageserver_protocol_1.CancellationTokenSource().token);
+        } else {
+          return void 0;
+        }
+      });
+      connection2.onNotification(vscode_languageserver_protocol_1.ExitNotification.type, () => {
+        try {
+          if (exitHandler) {
+            exitHandler();
+          }
+        } finally {
+          if (watchDog.shutdownReceived) {
+            watchDog.exit(0);
+          } else {
+            watchDog.exit(1);
+          }
+        }
+      });
+      connection2.onNotification(vscode_languageserver_protocol_1.SetTraceNotification.type, (params) => {
+        tracer.trace = vscode_languageserver_protocol_1.Trace.fromString(params.value);
+      });
+      return protocolConnection;
+    }
+    exports2.createConnection = createConnection2;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/node/files.js
+var require_files = __commonJS({
+  "node_modules/vscode-languageserver/lib/node/files.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.resolveModulePath = exports2.FileSystem = exports2.resolveGlobalYarnPath = exports2.resolveGlobalNodePath = exports2.resolve = exports2.uriToFilePath = void 0;
+    var url = require("url");
+    var path = require("path");
+    var fs = require("fs");
+    var child_process_1 = require("child_process");
+    function uriToFilePath(uri) {
+      let parsed = url.parse(uri);
+      if (parsed.protocol !== "file:" || !parsed.path) {
+        return void 0;
+      }
+      let segments = parsed.path.split("/");
+      for (var i = 0, len = segments.length; i < len; i++) {
+        segments[i] = decodeURIComponent(segments[i]);
+      }
+      if (process.platform === "win32" && segments.length > 1) {
+        let first = segments[0];
+        let second = segments[1];
+        if (first.length === 0 && second.length > 1 && second[1] === ":") {
+          segments.shift();
+        }
+      }
+      return path.normalize(segments.join("/"));
+    }
+    exports2.uriToFilePath = uriToFilePath;
+    function isWindows() {
+      return process.platform === "win32";
+    }
+    function resolve(moduleName, nodePath, cwd, tracer) {
+      const nodePathKey = "NODE_PATH";
+      const app = [
+        "var p = process;",
+        "p.on('message',function(m){",
+        "if(m.c==='e'){",
+        "p.exit(0);",
+        "}",
+        "else if(m.c==='rs'){",
+        "try{",
+        "var r=require.resolve(m.a);",
+        "p.send({c:'r',s:true,r:r});",
+        "}",
+        "catch(err){",
+        "p.send({c:'r',s:false});",
+        "}",
+        "}",
+        "});"
+      ].join("");
+      return new Promise((resolve2, reject) => {
+        let env = process.env;
+        let newEnv = /* @__PURE__ */ Object.create(null);
+        Object.keys(env).forEach((key) => newEnv[key] = env[key]);
+        if (nodePath && fs.existsSync(nodePath)) {
+          if (newEnv[nodePathKey]) {
+            newEnv[nodePathKey] = nodePath + path.delimiter + newEnv[nodePathKey];
+          } else {
+            newEnv[nodePathKey] = nodePath;
+          }
+          if (tracer) {
+            tracer(`NODE_PATH value is: ${newEnv[nodePathKey]}`);
+          }
+        }
+        newEnv["ELECTRON_RUN_AS_NODE"] = "1";
+        try {
+          let cp = (0, child_process_1.fork)("", [], {
+            cwd,
+            env: newEnv,
+            execArgv: ["-e", app]
+          });
+          if (cp.pid === void 0) {
+            reject(new Error(`Starting process to resolve node module  ${moduleName} failed`));
+            return;
+          }
+          cp.on("error", (error) => {
+            reject(error);
+          });
+          cp.on("message", (message2) => {
+            if (message2.c === "r") {
+              cp.send({ c: "e" });
+              if (message2.s) {
+                resolve2(message2.r);
+              } else {
+                reject(new Error(`Failed to resolve module: ${moduleName}`));
+              }
+            }
+          });
+          let message = {
+            c: "rs",
+            a: moduleName
+          };
+          cp.send(message);
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }
+    exports2.resolve = resolve;
+    function resolveGlobalNodePath(tracer) {
+      let npmCommand = "npm";
+      const env = /* @__PURE__ */ Object.create(null);
+      Object.keys(process.env).forEach((key) => env[key] = process.env[key]);
+      env["NO_UPDATE_NOTIFIER"] = "true";
+      const options = {
+        encoding: "utf8",
+        env
+      };
+      if (isWindows()) {
+        npmCommand = "npm.cmd";
+        options.shell = true;
+      }
+      let handler = () => {
+      };
+      try {
+        process.on("SIGPIPE", handler);
+        let stdout = (0, child_process_1.spawnSync)(npmCommand, ["config", "get", "prefix"], options).stdout;
+        if (!stdout) {
+          if (tracer) {
+            tracer(`'npm config get prefix' didn't return a value.`);
+          }
+          return void 0;
+        }
+        let prefix = stdout.trim();
+        if (tracer) {
+          tracer(`'npm config get prefix' value is: ${prefix}`);
+        }
+        if (prefix.length > 0) {
+          if (isWindows()) {
+            return path.join(prefix, "node_modules");
+          } else {
+            return path.join(prefix, "lib", "node_modules");
+          }
+        }
+        return void 0;
+      } catch (err) {
+        return void 0;
+      } finally {
+        process.removeListener("SIGPIPE", handler);
+      }
+    }
+    exports2.resolveGlobalNodePath = resolveGlobalNodePath;
+    function resolveGlobalYarnPath(tracer) {
+      let yarnCommand = "yarn";
+      let options = {
+        encoding: "utf8"
+      };
+      if (isWindows()) {
+        yarnCommand = "yarn.cmd";
+        options.shell = true;
+      }
+      let handler = () => {
+      };
+      try {
+        process.on("SIGPIPE", handler);
+        let results = (0, child_process_1.spawnSync)(yarnCommand, ["global", "dir", "--json"], options);
+        let stdout = results.stdout;
+        if (!stdout) {
+          if (tracer) {
+            tracer(`'yarn global dir' didn't return a value.`);
+            if (results.stderr) {
+              tracer(results.stderr);
+            }
+          }
+          return void 0;
+        }
+        let lines = stdout.trim().split(/\r?\n/);
+        for (let line of lines) {
+          try {
+            let yarn = JSON.parse(line);
+            if (yarn.type === "log") {
+              return path.join(yarn.data, "node_modules");
+            }
+          } catch (e) {
+          }
+        }
+        return void 0;
+      } catch (err) {
+        return void 0;
+      } finally {
+        process.removeListener("SIGPIPE", handler);
+      }
+    }
+    exports2.resolveGlobalYarnPath = resolveGlobalYarnPath;
+    var FileSystem;
+    (function(FileSystem2) {
+      let _isCaseSensitive = void 0;
+      function isCaseSensitive() {
+        if (_isCaseSensitive !== void 0) {
+          return _isCaseSensitive;
+        }
+        if (process.platform === "win32") {
+          _isCaseSensitive = false;
+        } else {
+          _isCaseSensitive = !fs.existsSync(__filename.toUpperCase()) || !fs.existsSync(__filename.toLowerCase());
+        }
+        return _isCaseSensitive;
+      }
+      FileSystem2.isCaseSensitive = isCaseSensitive;
+      function isParent(parent, child) {
+        if (isCaseSensitive()) {
+          return path.normalize(child).indexOf(path.normalize(parent)) === 0;
+        } else {
+          return path.normalize(child).toLowerCase().indexOf(path.normalize(parent).toLowerCase()) === 0;
+        }
+      }
+      FileSystem2.isParent = isParent;
+    })(FileSystem || (exports2.FileSystem = FileSystem = {}));
+    function resolveModulePath(workspaceRoot, moduleName, nodePath, tracer) {
+      if (nodePath) {
+        if (!path.isAbsolute(nodePath)) {
+          nodePath = path.join(workspaceRoot, nodePath);
+        }
+        return resolve(moduleName, nodePath, nodePath, tracer).then((value) => {
+          if (FileSystem.isParent(nodePath, value)) {
+            return value;
+          } else {
+            return Promise.reject(new Error(`Failed to load ${moduleName} from node path location.`));
+          }
+        }).then(void 0, (_error) => {
+          return resolve(moduleName, resolveGlobalNodePath(tracer), workspaceRoot, tracer);
+        });
+      } else {
+        return resolve(moduleName, resolveGlobalNodePath(tracer), workspaceRoot, tracer);
+      }
+    }
+    exports2.resolveModulePath = resolveModulePath;
+  }
+});
+
+// node_modules/vscode-languageserver-protocol/node.js
+var require_node2 = __commonJS({
+  "node_modules/vscode-languageserver-protocol/node.js"(exports2, module2) {
+    "use strict";
+    module2.exports = require_main3();
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/inlineCompletion.proposed.js
+var require_inlineCompletion_proposed = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/inlineCompletion.proposed.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.InlineCompletionFeature = void 0;
+    var vscode_languageserver_protocol_1 = require_main3();
+    var InlineCompletionFeature = (Base) => {
+      return class extends Base {
+        get inlineCompletion() {
+          return {
+            on: (handler) => {
+              return this.connection.onRequest(vscode_languageserver_protocol_1.InlineCompletionRequest.type, (params, cancel) => {
+                return handler(params, cancel, this.attachWorkDoneProgress(params));
+              });
+            }
+          };
+        }
+      };
+    };
+    exports2.InlineCompletionFeature = InlineCompletionFeature;
+  }
+});
+
+// node_modules/vscode-languageserver/lib/common/api.js
+var require_api3 = __commonJS({
+  "node_modules/vscode-languageserver/lib/common/api.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      var desc = Object.getOwnPropertyDescriptor(m, k);
+      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() {
+          return m[k];
+        } };
+      }
+      Object.defineProperty(o, k2, desc);
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ProposedFeatures = exports2.NotebookDocuments = exports2.TextDocuments = exports2.SemanticTokensBuilder = void 0;
+    var semanticTokens_1 = require_semanticTokens();
+    Object.defineProperty(exports2, "SemanticTokensBuilder", { enumerable: true, get: function() {
+      return semanticTokens_1.SemanticTokensBuilder;
+    } });
+    var ic = require_inlineCompletion_proposed();
+    __exportStar(require_main3(), exports2);
+    var textDocuments_1 = require_textDocuments();
+    Object.defineProperty(exports2, "TextDocuments", { enumerable: true, get: function() {
+      return textDocuments_1.TextDocuments;
+    } });
+    var notebook_1 = require_notebook();
+    Object.defineProperty(exports2, "NotebookDocuments", { enumerable: true, get: function() {
+      return notebook_1.NotebookDocuments;
+    } });
+    __exportStar(require_server(), exports2);
+    var ProposedFeatures2;
+    (function(ProposedFeatures3) {
+      ProposedFeatures3.all = {
+        __brand: "features",
+        languages: ic.InlineCompletionFeature
+      };
+    })(ProposedFeatures2 || (exports2.ProposedFeatures = ProposedFeatures2 = {}));
+  }
+});
+
+// node_modules/vscode-languageserver/lib/node/main.js
+var require_main4 = __commonJS({
+  "node_modules/vscode-languageserver/lib/node/main.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      var desc = Object.getOwnPropertyDescriptor(m, k);
+      if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() {
+          return m[k];
+        } };
+      }
+      Object.defineProperty(o, k2, desc);
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createConnection = exports2.Files = void 0;
+    var node_util_1 = require("node:util");
+    var Is = require_is();
+    var server_1 = require_server();
+    var fm = require_files();
+    var node_1 = require_node2();
+    __exportStar(require_node2(), exports2);
+    __exportStar(require_api3(), exports2);
+    var Files;
+    (function(Files2) {
+      Files2.uriToFilePath = fm.uriToFilePath;
+      Files2.resolveGlobalNodePath = fm.resolveGlobalNodePath;
+      Files2.resolveGlobalYarnPath = fm.resolveGlobalYarnPath;
+      Files2.resolve = fm.resolve;
+      Files2.resolveModulePath = fm.resolveModulePath;
+    })(Files || (exports2.Files = Files = {}));
+    var _protocolConnection;
+    function endProtocolConnection() {
+      if (_protocolConnection === void 0) {
+        return;
+      }
+      try {
+        _protocolConnection.end();
+      } catch (_err) {
+      }
+    }
+    var _shutdownReceived = false;
+    var exitTimer = void 0;
+    function setupExitTimer() {
+      const argName = "--clientProcessId";
+      function runTimer(value) {
+        try {
+          let processId = parseInt(value);
+          if (!isNaN(processId)) {
+            exitTimer = setInterval(() => {
+              try {
+                process.kill(processId, 0);
+              } catch (ex) {
+                endProtocolConnection();
+                process.exit(_shutdownReceived ? 0 : 1);
+              }
+            }, 3e3);
+          }
+        } catch (e) {
+        }
+      }
+      for (let i = 2; i < process.argv.length; i++) {
+        let arg = process.argv[i];
+        if (arg === argName && i + 1 < process.argv.length) {
+          runTimer(process.argv[i + 1]);
+          return;
+        } else {
+          let args = arg.split("=");
+          if (args[0] === argName) {
+            runTimer(args[1]);
+          }
+        }
+      }
+    }
+    setupExitTimer();
+    var watchDog = {
+      initialize: (params) => {
+        const processId = params.processId;
+        if (Is.number(processId) && exitTimer === void 0) {
+          setInterval(() => {
+            try {
+              process.kill(processId, 0);
+            } catch (ex) {
+              process.exit(_shutdownReceived ? 0 : 1);
+            }
+          }, 3e3);
+        }
+      },
+      get shutdownReceived() {
+        return _shutdownReceived;
+      },
+      set shutdownReceived(value) {
+        _shutdownReceived = value;
+      },
+      exit: (code) => {
+        endProtocolConnection();
+        process.exit(code);
+      }
+    };
+    function createConnection2(arg1, arg2, arg3, arg4) {
+      let factories;
+      let input;
+      let output;
+      let options;
+      if (arg1 !== void 0 && arg1.__brand === "features") {
+        factories = arg1;
+        arg1 = arg2;
+        arg2 = arg3;
+        arg3 = arg4;
+      }
+      if (node_1.ConnectionStrategy.is(arg1) || node_1.ConnectionOptions.is(arg1)) {
+        options = arg1;
+      } else {
+        input = arg1;
+        output = arg2;
+        options = arg3;
+      }
+      return _createConnection(input, output, options, factories);
+    }
+    exports2.createConnection = createConnection2;
+    function _createConnection(input, output, options, factories) {
+      let stdio = false;
+      if (!input && !output && process.argv.length > 2) {
+        let port = void 0;
+        let pipeName = void 0;
+        let argv = process.argv.slice(2);
+        for (let i = 0; i < argv.length; i++) {
+          let arg = argv[i];
+          if (arg === "--node-ipc") {
+            input = new node_1.IPCMessageReader(process);
+            output = new node_1.IPCMessageWriter(process);
+            break;
+          } else if (arg === "--stdio") {
+            stdio = true;
+            input = process.stdin;
+            output = process.stdout;
+            break;
+          } else if (arg === "--socket") {
+            port = parseInt(argv[i + 1]);
+            break;
+          } else if (arg === "--pipe") {
+            pipeName = argv[i + 1];
+            break;
+          } else {
+            var args = arg.split("=");
+            if (args[0] === "--socket") {
+              port = parseInt(args[1]);
+              break;
+            } else if (args[0] === "--pipe") {
+              pipeName = args[1];
+              break;
+            }
+          }
+        }
+        if (port) {
+          let transport = (0, node_1.createServerSocketTransport)(port);
+          input = transport[0];
+          output = transport[1];
+        } else if (pipeName) {
+          let transport = (0, node_1.createServerPipeTransport)(pipeName);
+          input = transport[0];
+          output = transport[1];
+        }
+      }
+      var commandLineMessage = "Use arguments of createConnection or set command line parameters: '--node-ipc', '--stdio' or '--socket={number}'";
+      if (!input) {
+        throw new Error("Connection input stream is not set. " + commandLineMessage);
+      }
+      if (!output) {
+        throw new Error("Connection output stream is not set. " + commandLineMessage);
+      }
+      if (Is.func(input.read) && Is.func(input.on)) {
+        let inputStream = input;
+        inputStream.on("end", () => {
+          endProtocolConnection();
+          process.exit(_shutdownReceived ? 0 : 1);
+        });
+        inputStream.on("close", () => {
+          endProtocolConnection();
+          process.exit(_shutdownReceived ? 0 : 1);
+        });
+      }
+      const connectionFactory = (logger) => {
+        const result = (0, node_1.createProtocolConnection)(input, output, logger, options);
+        if (stdio) {
+          patchConsole(logger);
+        }
+        return result;
+      };
+      return (0, server_1.createConnection)(connectionFactory, watchDog, factories);
+    }
+    function patchConsole(logger) {
+      function serialize(args) {
+        return args.map((arg) => typeof arg === "string" ? arg : (0, node_util_1.inspect)(arg)).join(" ");
+      }
+      const counters = /* @__PURE__ */ new Map();
+      console.assert = function assert(assertion, ...args) {
+        if (assertion) {
+          return;
+        }
+        if (args.length === 0) {
+          logger.error("Assertion failed");
+        } else {
+          const [message, ...rest] = args;
+          logger.error(`Assertion failed: ${message} ${serialize(rest)}`);
+        }
+      };
+      console.count = function count(label = "default") {
+        const message = String(label);
+        let counter = counters.get(message) ?? 0;
+        counter += 1;
+        counters.set(message, counter);
+        logger.log(`${message}: ${message}`);
+      };
+      console.countReset = function countReset(label) {
+        if (label === void 0) {
+          counters.clear();
+        } else {
+          counters.delete(String(label));
+        }
+      };
+      console.debug = function debug(...args) {
+        logger.log(serialize(args));
+      };
+      console.dir = function dir(arg, options) {
+        logger.log((0, node_util_1.inspect)(arg, options));
+      };
+      console.log = function log(...args) {
+        logger.log(serialize(args));
+      };
+      console.error = function error(...args) {
+        logger.error(serialize(args));
+      };
+      console.trace = function trace(...args) {
+        const stack = new Error().stack.replace(/(.+\n){2}/, "");
+        let message = "Trace";
+        if (args.length !== 0) {
+          message += `: ${serialize(args)}`;
+        }
+        logger.log(`${message}
+${stack}`);
+      };
+      console.warn = function warn(...args) {
+        logger.warn(serialize(args));
+      };
+    }
+  }
+});
+
+// node_modules/vscode-languageserver/node.js
+var require_node3 = __commonJS({
+  "node_modules/vscode-languageserver/node.js"(exports2, module2) {
+    "use strict";
+    module2.exports = require_main4();
+  }
+});
+
+// server/src/server.ts
+var import_node2 = __toESM(require_node3());
+
+// node_modules/vscode-languageserver-textdocument/lib/esm/main.js
+var FullTextDocument = class _FullTextDocument {
+  constructor(uri, languageId, version, content) {
+    this._uri = uri;
+    this._languageId = languageId;
+    this._version = version;
+    this._content = content;
+    this._lineOffsets = void 0;
+  }
+  get uri() {
+    return this._uri;
+  }
+  get languageId() {
+    return this._languageId;
+  }
+  get version() {
+    return this._version;
+  }
+  getText(range) {
+    if (range) {
+      const start = this.offsetAt(range.start);
+      const end = this.offsetAt(range.end);
+      return this._content.substring(start, end);
+    }
+    return this._content;
+  }
+  update(changes, version) {
+    for (const change of changes) {
+      if (_FullTextDocument.isIncremental(change)) {
+        const range = getWellformedRange(change.range);
+        const startOffset = this.offsetAt(range.start);
+        const endOffset = this.offsetAt(range.end);
+        this._content = this._content.substring(0, startOffset) + change.text + this._content.substring(endOffset, this._content.length);
+        const startLine = Math.max(range.start.line, 0);
+        const endLine = Math.max(range.end.line, 0);
+        let lineOffsets = this._lineOffsets;
+        const addedLineOffsets = computeLineOffsets(change.text, false, startOffset);
+        if (endLine - startLine === addedLineOffsets.length) {
+          for (let i = 0, len = addedLineOffsets.length; i < len; i++) {
+            lineOffsets[i + startLine + 1] = addedLineOffsets[i];
+          }
+        } else {
+          if (addedLineOffsets.length < 1e4) {
+            lineOffsets.splice(startLine + 1, endLine - startLine, ...addedLineOffsets);
+          } else {
+            this._lineOffsets = lineOffsets = lineOffsets.slice(0, startLine + 1).concat(addedLineOffsets, lineOffsets.slice(endLine + 1));
+          }
+        }
+        const diff = change.text.length - (endOffset - startOffset);
+        if (diff !== 0) {
+          for (let i = startLine + 1 + addedLineOffsets.length, len = lineOffsets.length; i < len; i++) {
+            lineOffsets[i] = lineOffsets[i] + diff;
+          }
+        }
+      } else if (_FullTextDocument.isFull(change)) {
+        this._content = change.text;
+        this._lineOffsets = void 0;
+      } else {
+        throw new Error("Unknown change event received");
+      }
+    }
+    this._version = version;
+  }
+  getLineOffsets() {
+    if (this._lineOffsets === void 0) {
+      this._lineOffsets = computeLineOffsets(this._content, true);
+    }
+    return this._lineOffsets;
+  }
+  positionAt(offset) {
+    offset = Math.max(Math.min(offset, this._content.length), 0);
+    const lineOffsets = this.getLineOffsets();
+    let low = 0, high = lineOffsets.length;
+    if (high === 0) {
+      return { line: 0, character: offset };
+    }
+    while (low < high) {
+      const mid = Math.floor((low + high) / 2);
+      if (lineOffsets[mid] > offset) {
+        high = mid;
+      } else {
+        low = mid + 1;
+      }
+    }
+    const line = low - 1;
+    offset = this.ensureBeforeEOL(offset, lineOffsets[line]);
+    return { line, character: offset - lineOffsets[line] };
+  }
+  offsetAt(position) {
+    const lineOffsets = this.getLineOffsets();
+    if (position.line >= lineOffsets.length) {
+      return this._content.length;
+    } else if (position.line < 0) {
+      return 0;
+    }
+    const lineOffset = lineOffsets[position.line];
+    if (position.character <= 0) {
+      return lineOffset;
+    }
+    const nextLineOffset = position.line + 1 < lineOffsets.length ? lineOffsets[position.line + 1] : this._content.length;
+    const offset = Math.min(lineOffset + position.character, nextLineOffset);
+    return this.ensureBeforeEOL(offset, lineOffset);
+  }
+  ensureBeforeEOL(offset, lineOffset) {
+    while (offset > lineOffset && isEOL(this._content.charCodeAt(offset - 1))) {
+      offset--;
+    }
+    return offset;
+  }
+  get lineCount() {
+    return this.getLineOffsets().length;
+  }
+  static isIncremental(event) {
+    const candidate = event;
+    return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range !== void 0 && (candidate.rangeLength === void 0 || typeof candidate.rangeLength === "number");
+  }
+  static isFull(event) {
+    const candidate = event;
+    return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range === void 0 && candidate.rangeLength === void 0;
+  }
+};
+var TextDocument;
+(function(TextDocument2) {
+  function create(uri, languageId, version, content) {
+    return new FullTextDocument(uri, languageId, version, content);
+  }
+  TextDocument2.create = create;
+  function update(document, changes, version) {
+    if (document instanceof FullTextDocument) {
+      document.update(changes, version);
+      return document;
+    } else {
+      throw new Error("TextDocument.update: document must be created by TextDocument.create");
+    }
+  }
+  TextDocument2.update = update;
+  function applyEdits(document, edits) {
+    const text = document.getText();
+    const sortedEdits = mergeSort(edits.map(getWellformedEdit), (a, b) => {
+      const diff = a.range.start.line - b.range.start.line;
+      if (diff === 0) {
+        return a.range.start.character - b.range.start.character;
+      }
+      return diff;
+    });
+    let lastModifiedOffset = 0;
+    const spans = [];
+    for (const e of sortedEdits) {
+      const startOffset = document.offsetAt(e.range.start);
+      if (startOffset < lastModifiedOffset) {
+        throw new Error("Overlapping edit");
+      } else if (startOffset > lastModifiedOffset) {
+        spans.push(text.substring(lastModifiedOffset, startOffset));
+      }
+      if (e.newText.length) {
+        spans.push(e.newText);
+      }
+      lastModifiedOffset = document.offsetAt(e.range.end);
+    }
+    spans.push(text.substr(lastModifiedOffset));
+    return spans.join("");
+  }
+  TextDocument2.applyEdits = applyEdits;
+})(TextDocument || (TextDocument = {}));
+function mergeSort(data, compare) {
+  if (data.length <= 1) {
+    return data;
+  }
+  const p = data.length / 2 | 0;
+  const left = data.slice(0, p);
+  const right = data.slice(p);
+  mergeSort(left, compare);
+  mergeSort(right, compare);
+  let leftIdx = 0;
+  let rightIdx = 0;
+  let i = 0;
+  while (leftIdx < left.length && rightIdx < right.length) {
+    const ret = compare(left[leftIdx], right[rightIdx]);
+    if (ret <= 0) {
+      data[i++] = left[leftIdx++];
+    } else {
+      data[i++] = right[rightIdx++];
+    }
+  }
+  while (leftIdx < left.length) {
+    data[i++] = left[leftIdx++];
+  }
+  while (rightIdx < right.length) {
+    data[i++] = right[rightIdx++];
+  }
+  return data;
+}
+function computeLineOffsets(text, isAtLineStart, textOffset = 0) {
+  const result = isAtLineStart ? [textOffset] : [];
+  for (let i = 0; i < text.length; i++) {
+    const ch = text.charCodeAt(i);
+    if (isEOL(ch)) {
+      if (ch === 13 && i + 1 < text.length && text.charCodeAt(i + 1) === 10) {
+        i++;
+      }
+      result.push(textOffset + i + 1);
+    }
+  }
+  return result;
+}
+function isEOL(char) {
+  return char === 13 || char === 10;
+}
+function getWellformedRange(range) {
+  const start = range.start;
+  const end = range.end;
+  if (start.line > end.line || start.line === end.line && start.character > end.character) {
+    return { start: end, end: start };
+  }
+  return range;
+}
+function getWellformedEdit(textEdit) {
+  const range = getWellformedRange(textEdit.range);
+  if (range !== textEdit.range) {
+    return { newText: textEdit.newText, range };
+  }
+  return textEdit;
+}
+
+// server/src/esqlData.ts
+var import_node = __toESM(require_node3());
+var KEYWORD_DOCS = {
+  BEGIN: {
+    documentation: "Marks the start of a compound statement block. Must be paired with `END`."
+  },
+  END: {
+    documentation: "Marks the end of a compound statement block."
+  },
+  IF: {
+    signature: "IF <condition> THEN ... [ELSEIF ... THEN ...] [ELSE ...] END IF;",
+    documentation: "Conditional branching statement."
+  },
+  THEN: { documentation: "Separates the condition from the body of an IF statement." },
+  ELSE: { documentation: "Defines the fallback branch of an IF statement." },
+  ELSEIF: {
+    signature: "ELSEIF <condition> THEN ...",
+    documentation: "Additional conditional branch in an IF statement."
+  },
+  CASE: {
+    signature: "CASE [<expr>] WHEN <val> THEN ... [ELSE ...] END CASE;",
+    documentation: "Multi-way branching statement."
+  },
+  WHEN: { documentation: "Defines a branch in a CASE expression." },
+  WHILE: {
+    signature: "WHILE <condition> DO ... END WHILE;",
+    documentation: "Repeats a block while a condition is true."
+  },
+  DO: { documentation: "Begins the body of a WHILE or FOR loop." },
+  FOR: {
+    signature: "FOR <var> AS <cursor>[] DO ... END FOR;",
+    documentation: "Iterates over repeating elements in the message tree. The cursor variable references each element in turn."
+  },
+  REPEAT: {
+    signature: "REPEAT ... UNTIL <condition> END REPEAT;",
+    documentation: "Executes a block at least once, then repeats while condition is false."
+  },
+  UNTIL: { documentation: "Defines the exit condition of a REPEAT loop." },
+  LOOP: {
+    signature: "LOOP ... END LOOP;",
+    documentation: "Infinite loop. Use LEAVE to exit."
+  },
+  LEAVE: {
+    signature: "LEAVE [<label>];",
+    documentation: "Exits the enclosing loop or block."
+  },
+  ITERATE: {
+    signature: "ITERATE [<label>];",
+    documentation: "Skips to the next iteration of the enclosing loop."
+  },
+  RETURN: {
+    signature: "RETURN [<expression>];",
+    documentation: "Returns a value from a FUNCTION, or exits a PROCEDURE."
+  },
+  DECLARE: {
+    signature: "DECLARE <name> [SHARED] [EXTERNAL] <type> [<default>];",
+    documentation: "Declares a variable, or declares a SHARED/EXTERNAL variable accessible across invocations."
+  },
+  SET: {
+    signature: "SET <path> = <expression>;",
+    documentation: "Assigns a value to a variable or message-tree field."
+  },
+  CALL: {
+    signature: "CALL <procedure>([<args>]) [INTO <var>];",
+    documentation: "Invokes a procedure."
+  },
+  CREATE: {
+    documentation: "Creates a MODULE, FUNCTION, PROCEDURE, or message-tree element."
+  },
+  MODULE: { documentation: "Defines an ESQL module that groups functions and procedures." },
+  COMPUTE: {
+    documentation: "Qualifier for a FUNCTION or MODULE that maps input to output messages."
+  },
+  FUNCTION: {
+    signature: "CREATE [COMPUTE] FUNCTION <name>(<params>) [RETURNS <type>] BEGIN ... END;",
+    documentation: "Defines an ESQL function. A COMPUTE FUNCTION named `Main` is the entry point for a Compute node."
+  },
+  PROCEDURE: {
+    signature: "CREATE PROCEDURE <name>(<params>) [RETURNS <type>] [LANGUAGE ESQL] BEGIN ... END;",
+    documentation: "Defines an ESQL procedure (does not return a value by default)."
+  },
+  EXTERNAL: {
+    documentation: "Declares a variable whose value is set via node properties (visible in the IIB/ACE node editor)."
+  },
+  SHARED: {
+    documentation: "Declares a variable shared across all invocations of the flow (module-level state)."
+  },
+  ATOMIC: {
+    documentation: "Makes a BEGIN ... END block execute atomically with respect to shared variables."
+  },
+  HANDLER: {
+    signature: "DECLARE <name> HANDLER FOR <condition> BEGIN ... END;",
+    documentation: "Declares a condition handler for error recovery."
+  },
+  CONTINUE: {
+    documentation: "Handler action: continues execution after the condition that raised the handler."
+  },
+  SIGNAL: {
+    signature: "SIGNAL <condition> [SET MESSAGE VALUES(<...>)];",
+    documentation: "Raises a user-defined condition."
+  },
+  RESIGNAL: {
+    documentation: "Re-raises the current condition from within a handler."
+  },
+  THROW: {
+    signature: "THROW USER EXCEPTION [SEVERITY <n>] [CATALOG <s>] [MESSAGE <n>] VALUES(<...>);",
+    documentation: "Throws a user exception. Useful for propagating structured errors to the ExceptionList."
+  },
+  PROPAGATE: {
+    signature: "PROPAGATE [TO TERMINAL <name>] [MESSAGE ENVIRONMENT <env>];",
+    documentation: "Propagates the output message to a terminal."
+  },
+  PASSTHRU: {
+    signature: "PASSTHRU(<sql> [TO <datasource>]);",
+    documentation: "Executes an arbitrary SQL statement against a database."
+  },
+  SELECT: {
+    signature: "SELECT <cols> FROM <source>[] [WHERE <cond>]",
+    documentation: "Queries fields from repeating elements in the message tree or a database."
+  },
+  FROM: { documentation: "Specifies the source for a SELECT statement." },
+  WHERE: { documentation: "Filters rows in a SELECT statement." },
+  INTO: { documentation: "Specifies the target for an INSERT or SET statement." },
+  VALUES: { documentation: "Supplies values for an INSERT statement." },
+  INSERT: {
+    signature: "INSERT INTO <target>[] VALUES (<vals>);",
+    documentation: "Inserts a row into a database table or appends an element to a repeating field."
+  },
+  UPDATE: {
+    signature: "UPDATE <table> AS <alias> SET <col> = <val> [WHERE <cond>];",
+    documentation: "Updates rows in a database table."
+  },
+  DELETE: {
+    signature: "DELETE FROM <table> [WHERE <cond>];",
+    documentation: "Deletes rows from a database table."
+  },
+  GROUP: { documentation: "Groups rows in a SELECT aggregate query." },
+  BY: { documentation: "Used with GROUP BY or ORDER BY." },
+  HAVING: { documentation: "Filters groups in a GROUP BY clause." },
+  ORDER: { documentation: "Orders results of a SELECT statement." },
+  AS: { documentation: "Aliases a field or expression in a SELECT statement." },
+  OF: { documentation: "Preposition used in ESQL syntax forms such as references and field selection." },
+  TO: { documentation: "Specifies a destination (e.g., TO TERMINAL)." },
+  AND: { documentation: "Logical AND operator." },
+  OR: { documentation: "Logical OR operator." },
+  NOT: { documentation: "Logical NOT operator." },
+  IN: {
+    signature: "<expr> IN (<val1>, <val2>, ...)",
+    documentation: "Tests whether a value is contained in a list."
+  },
+  LIKE: {
+    signature: "<expr> LIKE <pattern> [ESCAPE <char>]",
+    documentation: "Pattern matching operator. Use `%` for any sequence and `_` for any single character."
+  },
+  BETWEEN: {
+    signature: "<expr> BETWEEN <low> AND <high>",
+    documentation: "Tests whether a value lies within a range (inclusive)."
+  },
+  IS: { documentation: "Tests for NULL: `<expr> IS [NOT] NULL`." },
+  EXISTS: {
+    signature: "EXISTS(<select>)",
+    documentation: "Returns TRUE if the subquery returns at least one row."
+  },
+  NULLIF: {
+    signature: "NULLIF(<expr1>, <expr2>)",
+    documentation: "Returns NULL if expr1 equals expr2, otherwise returns expr1."
+  },
+  COALESCE: {
+    signature: "COALESCE(<expr1>, <expr2>, ...)",
+    documentation: "Returns the first non-NULL expression in the list."
+  },
+  USER: { documentation: "Used in THROW USER EXCEPTION." },
+  EXCEPTION: { documentation: "Used in THROW USER EXCEPTION." },
+  MESSAGE: { documentation: "Used in THROW / SIGNAL to specify message catalog entry." },
+  TERMINAL: { documentation: "Identifies an output terminal name in PROPAGATE." },
+  NAME: {
+    signature: "NAME(<element>)",
+    documentation: "Message-tree function that returns the local name (tag name) of an element node."
+  },
+  NAMESPACE: {
+    signature: "NAMESPACE(<element>)",
+    documentation: "Message-tree function that returns the namespace URI of an element node."
+  },
+  TYPE: {
+    signature: "TYPE(<element>)",
+    documentation: "Message-tree function that returns the type of an element node as an integer constant (e.g., MRM, LIST, VALUE_SET, REFERENCE)."
+  },
+  RETURNS: { documentation: "Specifies the return type of a FUNCTION." },
+  LANGUAGE: { documentation: "Specifies the implementation language (e.g., LANGUAGE ESQL, LANGUAGE DATABASE)." },
+  ESQL: { documentation: "Language identifier for ESQL procedures." },
+  DATABASE: { documentation: "Specifies that a procedure is implemented by a database stored procedure." },
+  SEVERITY: { documentation: "Severity level used in THROW USER EXCEPTION." },
+  CATALOG: { documentation: "Message catalog identifier used in THROW USER EXCEPTION." }
+};
+var TYPE_DOCS = {
+  BOOLEAN: { documentation: "Logical value: TRUE or FALSE." },
+  BIT: { documentation: "A single bit value." },
+  BLOB: { documentation: "Binary Large Object \u2014 a sequence of bytes." },
+  CLOB: { documentation: "Character Large Object \u2014 a large character string." },
+  CHARACTER: {
+    signature: "CHARACTER [VARYING] [(length)]",
+    documentation: "Fixed-length character string. Alias: CHAR."
+  },
+  CHAR: { documentation: "Alias for CHARACTER." },
+  VARCHAR: { documentation: "Variable-length character string." },
+  NVARCHAR: { documentation: "Variable-length Unicode character string." },
+  INTEGER: { documentation: "A 32-bit signed integer value. Alias: INT." },
+  INT: { documentation: "Alias for INTEGER." },
+  SMALLINT: { documentation: "A 16-bit signed integer." },
+  BIGINT: { documentation: "A 64-bit signed integer." },
+  DECIMAL: {
+    signature: "DECIMAL [(precision, scale)]",
+    documentation: "Exact numeric type with configurable precision and scale. Alias: NUMERIC."
+  },
+  NUMERIC: { documentation: "Alias for DECIMAL." },
+  FLOAT: { documentation: "Single-precision floating-point number." },
+  DOUBLE: { documentation: "Double-precision floating-point number." },
+  DATE: { documentation: "Calendar date (year, month, day)." },
+  TIME: { documentation: "Time of day." },
+  TIMESTAMP: { documentation: "Date and time combined." },
+  INTERVAL: {
+    signature: "INTERVAL (<n>) <unit>",
+    documentation: "Duration value (e.g., `INTERVAL(1) DAY`)."
+  },
+  ROW: { documentation: "A single structured row \u2014 a named tuple of fields." },
+  LIST: { documentation: "A list of values or rows." },
+  REFERENCE: { documentation: "A reference (pointer) to a node in the message tree." }
+};
+var BUILTIN_VAR_DOCS = {
+  InputRoot: {
+    documentation: "The root of the input message tree. Access parsed message content via `InputRoot.<parser>.<element>`."
+  },
+  OutputRoot: {
+    documentation: "The root of the output message tree. Write fields here to build the outgoing message."
+  },
+  InputBody: {
+    documentation: "Shorthand for `InputRoot.<parser>` \u2014 the body of the input message."
+  },
+  OutputBody: {
+    documentation: "Shorthand for `OutputRoot.<parser>` \u2014 the body of the output message."
+  },
+  Environment: {
+    documentation: "The shared Environment tree. Data persists across nodes within the same flow instance."
+  },
+  LocalEnvironment: {
+    documentation: "The local environment tree. Scoped to the current flow path."
+  },
+  InputLocalEnvironment: {
+    documentation: "The local environment from the input side of the current node."
+  },
+  OutputLocalEnvironment: {
+    documentation: "The local environment passed to the next node."
+  },
+  ExceptionList: {
+    documentation: "The exception list tree \u2014 contains details of errors that occurred during processing."
+  },
+  Database: {
+    documentation: "Represents database result set data when using the Database node or PASSTHRU."
+  }
+};
+var BUILTIN_FUNC_DOCS = {
+  // String functions
+  CAST: {
+    signature: "CAST(<expression> AS <type>)",
+    documentation: "Converts an expression to the specified ESQL data type."
+  },
+  LENGTH: {
+    signature: "LENGTH(<string>)",
+    documentation: "Returns the number of characters in a string."
+  },
+  SUBSTRING: {
+    signature: "SUBSTRING(<string> FROM <start> [FOR <length>])",
+    documentation: "Extracts a portion of a string starting at position `start` (1-based)."
+  },
+  OVERLAY: {
+    signature: "OVERLAY(<string> PLACING <replacement> FROM <start> [FOR <length>])",
+    documentation: "Replaces a portion of a string with another string."
+  },
+  POSITION: {
+    signature: "POSITION(<needle> IN <haystack>)",
+    documentation: "Returns the 1-based character position of `needle` inside `haystack`, or 0 if not found."
+  },
+  TRIM: {
+    signature: "TRIM([LEADING|TRAILING|BOTH] [<char>] FROM <string>)",
+    documentation: "Removes leading, trailing, or both occurrences of a character (default: space) from a string."
+  },
+  LTRIM: {
+    signature: "LTRIM(<string>)",
+    documentation: "Removes leading whitespace from a string."
+  },
+  RTRIM: {
+    signature: "RTRIM(<string>)",
+    documentation: "Removes trailing whitespace from a string."
+  },
+  UCASE: {
+    signature: "UCASE(<string>)",
+    documentation: "Converts all characters in a string to upper case."
+  },
+  LCASE: {
+    signature: "LCASE(<string>)",
+    documentation: "Converts all characters in a string to lower case."
+  },
+  UPPER: {
+    signature: "UPPER(<string>)",
+    documentation: "Alias for UCASE \u2014 converts to upper case."
+  },
+  LOWER: {
+    signature: "LOWER(<string>)",
+    documentation: "Alias for LCASE \u2014 converts to lower case."
+  },
+  REPLICATE: {
+    signature: "REPLICATE(<string>, <count>)",
+    documentation: "Returns `string` repeated `count` times."
+  },
+  SPACE: {
+    signature: "SPACE(<n>)",
+    documentation: "Returns a string of `n` space characters."
+  },
+  LEFT: {
+    signature: "LEFT(<string>, <n>)",
+    documentation: "Returns the leftmost `n` characters of `string`."
+  },
+  RIGHT: {
+    signature: "RIGHT(<string>, <n>)",
+    documentation: "Returns the rightmost `n` characters of `string`."
+  },
+  REVERSE: {
+    signature: "REVERSE(<string>)",
+    documentation: "Returns the string with its characters in reverse order."
+  },
+  // Numeric functions
+  ABS: {
+    signature: "ABS(<number>)",
+    documentation: "Returns the absolute value of a number."
+  },
+  ROUND: {
+    signature: "ROUND(<number>, <scale>)",
+    documentation: "Rounds `number` to `scale` decimal places."
+  },
+  CEIL: {
+    signature: "CEIL(<number>)",
+    documentation: "Returns the smallest integer not less than `number` (ceiling)."
+  },
+  FLOOR: {
+    signature: "FLOOR(<number>)",
+    documentation: "Returns the largest integer not greater than `number` (floor)."
+  },
+  MOD: {
+    signature: "MOD(<dividend>, <divisor>)",
+    documentation: "Returns the remainder of `dividend / divisor`."
+  },
+  POWER: {
+    signature: "POWER(<base>, <exponent>)",
+    documentation: "Returns `base` raised to `exponent`."
+  },
+  SQRT: {
+    signature: "SQRT(<number>)",
+    documentation: "Returns the square root of a number."
+  },
+  LOG: {
+    signature: "LOG(<number>)",
+    documentation: "Returns the natural logarithm of a number."
+  },
+  EXP: {
+    signature: "EXP(<number>)",
+    documentation: "Returns e raised to the power of `number`."
+  },
+  // Date/time functions
+  CURRENT_TIMESTAMP: {
+    signature: "CURRENT_TIMESTAMP",
+    documentation: "Returns the current date and time as a TIMESTAMP."
+  },
+  CURRENT_DATE: {
+    signature: "CURRENT_DATE",
+    documentation: "Returns the current date."
+  },
+  CURRENT_TIME: {
+    signature: "CURRENT_TIME",
+    documentation: "Returns the current time."
+  },
+  NOW: {
+    signature: "NOW()",
+    documentation: "Alias for CURRENT_TIMESTAMP."
+  },
+  EXTRACT: {
+    signature: "EXTRACT(<part> FROM <datetime>)",
+    documentation: "Extracts a component from a date/time value. Parts: YEAR, MONTH, DAY, HOUR, MINUTE, SECOND."
+  },
+  // Message tree functions
+  CARDINALITY: {
+    signature: "CARDINALITY(<path>[])",
+    documentation: "Returns the number of instances of a repeating field in the message tree."
+  },
+  FIELDNAME: {
+    signature: "FIELDNAME(<field>)",
+    documentation: "Returns the local name of a message-tree field."
+  },
+  FIELDNAMESPACE: {
+    signature: "FIELDNAMESPACE(<field>)",
+    documentation: "Returns the namespace URI of a message-tree field."
+  },
+  FIELDTYPE: {
+    signature: "FIELDTYPE(<field>)",
+    documentation: "Returns the type of a message-tree field as an integer constant."
+  },
+  FIELDVALUE: {
+    signature: "FIELDVALUE(<field>)",
+    documentation: "Returns the scalar value of a message-tree field."
+  },
+  ASBITSTREAM: {
+    signature: "ASBITSTREAM(<tree> [OPTIONS <opts>] [ENCODING <enc>] [CCSID <ccsid>] [SET <set>] [TYPE <type>] [FORMAT <fmt>])",
+    documentation: "Serializes a message-tree element to a BLOB using the specified parser options."
+  },
+  BITSTREAM: {
+    signature: "BITSTREAM(<message>)",
+    documentation: "Returns the binary representation (BLOB) of the input message."
+  },
+  // Encoding functions
+  HEXADECIMAL: {
+    signature: "HEXADECIMAL(<blob>)",
+    documentation: "Converts a BLOB to its hexadecimal string representation."
+  },
+  BASE64ENCODE: {
+    signature: "BASE64ENCODE(<blob>)",
+    documentation: "Encodes a BLOB to a Base64-encoded character string."
+  },
+  BASE64DECODE: {
+    signature: "BASE64DECODE(<string>)",
+    documentation: "Decodes a Base64 character string to a BLOB."
+  },
+  // Error/diagnostic variables
+  SQLCODE: {
+    signature: "SQLCODE",
+    documentation: "Contains the SQL return code from the most recent database operation. 0 = success, 100 = no rows found."
+  },
+  SQLERRORTEXT: {
+    signature: "SQLERRORTEXT",
+    documentation: "Contains the error message text from the most recent failed database operation."
+  },
+  SQLNATIVEERROR: {
+    signature: "SQLNATIVEERROR",
+    documentation: "Contains the native database error code from the most recent failed operation."
+  },
+  SQLSTATE: {
+    signature: "SQLSTATE",
+    documentation: "Contains the SQLSTATE code (5-character string) from the most recent database operation."
+  }
+};
+function buildKeywordCompletions() {
+  return Object.keys(KEYWORD_DOCS).map((kw) => ({
+    label: kw,
+    kind: import_node.CompletionItemKind.Keyword,
+    detail: "ESQL keyword",
+    documentation: {
+      kind: "markdown",
+      value: formatDoc(KEYWORD_DOCS[kw])
+    }
+  }));
+}
+function buildTypeCompletions() {
+  return Object.keys(TYPE_DOCS).map((t) => ({
+    label: t,
+    kind: import_node.CompletionItemKind.TypeParameter,
+    detail: "ESQL type",
+    documentation: {
+      kind: "markdown",
+      value: formatDoc(TYPE_DOCS[t])
+    }
+  }));
+}
+function buildBuiltinVarCompletions() {
+  return Object.keys(BUILTIN_VAR_DOCS).map((v) => ({
+    label: v,
+    kind: import_node.CompletionItemKind.Variable,
+    detail: "ESQL built-in variable",
+    documentation: {
+      kind: "markdown",
+      value: formatDoc(BUILTIN_VAR_DOCS[v])
+    }
+  }));
+}
+function buildBuiltinFuncCompletions() {
+  return Object.keys(BUILTIN_FUNC_DOCS).map((f) => ({
+    label: f,
+    kind: import_node.CompletionItemKind.Function,
+    detail: "ESQL built-in function",
+    insertText: f,
+    documentation: {
+      kind: "markdown",
+      value: formatDoc(BUILTIN_FUNC_DOCS[f])
+    }
+  }));
+}
+function formatDoc(doc) {
+  const lines = [];
+  if (doc.signature) {
+    lines.push("```esql", doc.signature, "```", "");
+  }
+  lines.push(doc.documentation);
+  return lines.join("\n");
+}
+function lookupHoverDoc(word) {
+  const upper = word.toUpperCase();
+  if (KEYWORD_DOCS[upper]) {
+    return formatDoc(KEYWORD_DOCS[upper]);
+  }
+  if (TYPE_DOCS[upper]) {
+    return `**Type** \u2014 ${formatDoc(TYPE_DOCS[upper])}`;
+  }
+  if (BUILTIN_FUNC_DOCS[upper]) {
+    return `**Built-in function**
+
+${formatDoc(BUILTIN_FUNC_DOCS[upper])}`;
+  }
+  if (BUILTIN_VAR_DOCS[word]) {
+    return `**Built-in variable**
+
+${formatDoc(BUILTIN_VAR_DOCS[word])}`;
+  }
+  return null;
+}
+
+// server/src/server.ts
+var connection = (0, import_node2.createConnection)(import_node2.ProposedFeatures.all);
+var documents = new import_node2.TextDocuments(TextDocument);
+connection.onInitialize((_params) => {
+  return {
+    capabilities: {
+      textDocumentSync: import_node2.TextDocumentSyncKind.Incremental,
+      completionProvider: {
+        resolveProvider: false,
+        triggerCharacters: [".", " "]
+      },
+      hoverProvider: true,
+      documentSymbolProvider: true
+    }
+  };
+});
+connection.onInitialized(() => {
+  connection.client.register(import_node2.DidChangeConfigurationNotification.type, void 0);
+});
+var STATIC_COMPLETIONS = [
+  ...buildKeywordCompletions(),
+  ...buildTypeCompletions(),
+  ...buildBuiltinVarCompletions(),
+  ...buildBuiltinFuncCompletions()
+];
+function stripComments(text) {
+  let result = text.replace(
+    /\/\*[\s\S]*?\*\//g,
+    (m) => m.replace(/[^\n]/g, " ")
+  );
+  result = result.replace(/--[^\n]*/g, (m) => " ".repeat(m.length));
+  result = result.replace(
+    /'(?:[^']|'')*'/g,
+    (m) => m.replace(/[^\n]/g, " ")
+  );
+  return result;
+}
+function wordAtPosition(doc, pos) {
+  const lineText = doc.getText({
+    start: { line: pos.line, character: 0 },
+    end: { line: pos.line, character: pos.character }
+  });
+  const match = /[A-Za-z_][\w$]*$/.exec(lineText);
+  const word = match ? match[0] : "";
+  const before = lineText.slice(0, lineText.length - word.length);
+  const precededByDot = before.trimEnd().endsWith(".");
+  return { word, precededByDot };
+}
+function extractSymbols(text) {
+  const stripped = stripComments(text);
+  const lines = stripped.split("\n");
+  const symbols = [];
+  const stack = [];
+  const moduleRe = /\bCREATE\s+(?:COMPUTE\s+)?MODULE\s+([A-Za-z_][\w$]*)/i;
+  const funcRe = /\bCREATE\s+(?:COMPUTE\s+)?FUNCTION\s+([A-Za-z_][\w$]*)\s*\(/i;
+  const procRe = /\bCREATE\s+(?:COMPUTE\s+)?PROCEDURE\s+([A-Za-z_][\w$]*)\s*\(/i;
+  const beginRe = /\bBEGIN\b/gi;
+  const endRe = /\bEND\s+(?:MODULE|IF|WHILE|FOR|REPEAT|LOOP|CASE)\b|\bEND\s*;/gi;
+  let depth = 0;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let decl = null;
+    const mMod = moduleRe.exec(line);
+    if (mMod) {
+      decl = { name: mMod[1], kind: import_node2.SymbolKind.Module };
+    }
+    const mFunc = funcRe.exec(line);
+    if (!decl && mFunc) {
+      decl = { name: mFunc[1], kind: import_node2.SymbolKind.Function };
+    }
+    const mProc = procRe.exec(line);
+    if (!decl && mProc) {
+      decl = { name: mProc[1], kind: import_node2.SymbolKind.Method };
+    }
+    if (decl) {
+      const sym = {
+        name: decl.name,
+        kind: decl.kind,
+        line: i,
+        endLine: lines.length - 1,
+        children: []
+      };
+      if (stack.length > 0) {
+        stack[stack.length - 1].children.push(sym);
+      } else {
+        symbols.push(sym);
+      }
+      stack.push(sym);
+    }
+    let m;
+    beginRe.lastIndex = 0;
+    while ((m = beginRe.exec(line)) !== null) {
+      depth++;
+    }
+    endRe.lastIndex = 0;
+    while ((m = endRe.exec(line)) !== null) {
+      depth = Math.max(0, depth - 1);
+      if (depth === 0 && stack.length > 0) {
+        const closing = stack.pop();
+        closing.endLine = i;
+      }
+    }
+  }
+  return symbols;
+}
+function toDocumentSymbols(syms, totalLines) {
+  return syms.map((s) => {
+    const range = {
+      start: { line: s.line, character: 0 },
+      end: { line: Math.min(s.endLine, totalLines - 1), character: 0 }
+    };
+    return import_node2.DocumentSymbol.create(
+      s.name,
+      void 0,
+      s.kind,
+      range,
+      range,
+      toDocumentSymbols(s.children, totalLines)
+    );
+  });
+}
+function symbolCompletions(syms) {
+  const items = [];
+  for (const s of syms) {
+    items.push({
+      label: s.name,
+      kind: s.kind === import_node2.SymbolKind.Module ? import_node2.CompletionItemKind.Module : s.kind === import_node2.SymbolKind.Function ? import_node2.CompletionItemKind.Function : import_node2.CompletionItemKind.Method,
+      detail: s.kind === import_node2.SymbolKind.Module ? "ESQL module" : s.kind === import_node2.SymbolKind.Function ? "ESQL function" : "ESQL procedure"
+    });
+    items.push(...symbolCompletions(s.children));
+  }
+  return items;
+}
+function extractLocalVariables(text) {
+  const stripped = stripComments(text);
+  const declareRe = /\bDECLARE\s+([A-Za-z_][\w$]*)\s+(?:SHARED|EXTERNAL)?\s*[A-Z]/gi;
+  const items = [];
+  const seen = /* @__PURE__ */ new Set();
+  let m;
+  declareRe.lastIndex = 0;
+  while ((m = declareRe.exec(stripped)) !== null) {
+    const varName = m[1];
+    if (!seen.has(varName.toUpperCase())) {
+      seen.add(varName.toUpperCase());
+      items.push({
+        label: varName,
+        kind: import_node2.CompletionItemKind.Variable,
+        detail: "Local variable"
+      });
+    }
+  }
+  return items;
+}
+function extractFieldAliases(text) {
+  const stripped = stripComments(text);
+  const selectAliasRe = /\bAS\s+([A-Za-z_][\w$]*)\b(?=\s*(?:,|FROM\b|WHERE\b|GROUP\b|HAVING\b|ORDER\b|INTO\b|VALUES\b|JOIN\b|ON\b|UNION\b|EXCEPT\b|INTERSECT\b|;|$))/gi;
+  const createAsAliasRe = /\bCREATE\b[^;\n]*\bAS\s+([A-Za-z_][\w$]*)\b(?=\s*(?:REFERENCE\b|IDENTITY\b|TYPE\b|VALUE\b|NAME\b|;|$))/gi;
+  const createNameRe = /\bCREATE\b[^;\n]*\bNAME\s+(['"])([^'"\r\n]+)\1/gi;
+  const items = [];
+  const seen = /* @__PURE__ */ new Set();
+  const pushAlias = (label, detail) => {
+    const key = label.toUpperCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      items.push({
+        label,
+        kind: import_node2.CompletionItemKind.Field,
+        detail
+      });
+    }
+  };
+  let m;
+  selectAliasRe.lastIndex = 0;
+  while ((m = selectAliasRe.exec(stripped)) !== null) {
+    pushAlias(m[1], "Field alias");
+  }
+  createAsAliasRe.lastIndex = 0;
+  while ((m = createAsAliasRe.exec(stripped)) !== null) {
+    pushAlias(m[1], "CREATE alias");
+  }
+  createNameRe.lastIndex = 0;
+  while ((m = createNameRe.exec(stripped)) !== null) {
+    const fieldName = m[2].trim();
+    if (fieldName.length > 0) {
+      pushAlias(fieldName, "Created field name");
+    }
+  }
+  return items;
+}
+function validateDocument(doc) {
+  const text = doc.getText();
+  const stripped = stripComments(text);
+  const lines = stripped.split("\n");
+  const diagnostics = [];
+  const beginStack = [];
+  const beginRe = /\bBEGIN\b/gi;
+  const endBlockRe = /\bEND\s*(?:MODULE|IF|WHILE|FOR|REPEAT|LOOP|CASE)?\s*;/gi;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let m;
+    beginRe.lastIndex = 0;
+    while ((m = beginRe.exec(line)) !== null) {
+      beginStack.push({ line: i, ch: m.index });
+    }
+    endBlockRe.lastIndex = 0;
+    while ((m = endBlockRe.exec(line)) !== null) {
+      beginStack.pop();
+    }
+  }
+  for (const loc of beginStack) {
+    diagnostics.push({
+      severity: import_node2.DiagnosticSeverity.Warning,
+      range: {
+        start: { line: loc.line, character: loc.ch },
+        end: { line: loc.line, character: loc.ch + 5 }
+      },
+      message: "Unmatched BEGIN \u2014 no corresponding END found.",
+      source: "esql"
+    });
+  }
+  const loopStacks = {
+    WHILE: [],
+    FOR: [],
+    REPEAT: [],
+    LOOP: []
+  };
+  const whileStartRe = /^\s*WHILE\b/i;
+  const forStartRe = /^\s*FOR\b/i;
+  const repeatStartRe = /^\s*REPEAT\b/i;
+  const loopStartRe = /^\s*LOOP\b/i;
+  const loopEndRe = /\bEND\s+(WHILE|FOR|REPEAT|LOOP)\s*;/gi;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (whileStartRe.test(line)) {
+      loopStacks.WHILE.push({ line: i, ch: line.search(/\bWHILE\b/i) });
+    }
+    if (forStartRe.test(line)) {
+      loopStacks.FOR.push({ line: i, ch: line.search(/\bFOR\b/i) });
+    }
+    if (repeatStartRe.test(line)) {
+      loopStacks.REPEAT.push({ line: i, ch: line.search(/\bREPEAT\b/i) });
+    }
+    if (loopStartRe.test(line)) {
+      loopStacks.LOOP.push({ line: i, ch: line.search(/\bLOOP\b/i) });
+    }
+    let loopMatch;
+    loopEndRe.lastIndex = 0;
+    while ((loopMatch = loopEndRe.exec(line)) !== null) {
+      const loopType = loopMatch[1].toUpperCase();
+      const stack = loopStacks[loopType];
+      if (stack.length > 0) {
+        stack.pop();
+      } else {
+        diagnostics.push({
+          severity: import_node2.DiagnosticSeverity.Warning,
+          range: {
+            start: { line: i, character: loopMatch.index },
+            end: { line: i, character: loopMatch.index + loopMatch[0].length }
+          },
+          message: `Unmatched END ${loopType} \u2014 no corresponding ${loopType} start found.`,
+          source: "esql"
+        });
+      }
+    }
+  }
+  for (const loopType of Object.keys(loopStacks)) {
+    for (const loc of loopStacks[loopType]) {
+      diagnostics.push({
+        severity: import_node2.DiagnosticSeverity.Warning,
+        range: {
+          start: { line: loc.line, character: Math.max(0, loc.ch) },
+          end: { line: loc.line, character: Math.max(0, loc.ch) + loopType.length }
+        },
+        message: `${loopType} loop is not closed \u2014 expected END ${loopType};`,
+        source: "esql"
+      });
+    }
+  }
+  const endModuleRe = /\bEND\s+MODULE\s*;/gi;
+  const createModuleRe = /\bCREATE\s+(?:COMPUTE\s+)?MODULE\b/gi;
+  let moduleCount = 0;
+  let endModuleCount = 0;
+  createModuleRe.lastIndex = 0;
+  let mm;
+  while ((mm = createModuleRe.exec(stripped)) !== null) {
+    moduleCount++;
+  }
+  endModuleRe.lastIndex = 0;
+  while ((mm = endModuleRe.exec(stripped)) !== null) {
+    endModuleCount++;
+  }
+  if (endModuleCount > moduleCount) {
+    diagnostics.push({
+      severity: import_node2.DiagnosticSeverity.Error,
+      range: {
+        start: { line: 0, character: 0 },
+        end: { line: 0, character: 0 }
+      },
+      message: `Found ${endModuleCount} END MODULE but only ${moduleCount} CREATE MODULE declaration(s).`,
+      source: "esql"
+    });
+  } else if (moduleCount > endModuleCount) {
+    diagnostics.push({
+      severity: import_node2.DiagnosticSeverity.Warning,
+      range: {
+        start: { line: 0, character: 0 },
+        end: { line: 0, character: 0 }
+      },
+      message: `CREATE MODULE without matching END MODULE (${moduleCount} open, ${endModuleCount} closed).`,
+      source: "esql"
+    });
+  }
+  const startsNewStatementRe = /^\s*(DECLARE|SET|IF|WHILE|FOR|CALL|RETURN|END|CREATE)\b/i;
+  const declareStartRe = /^\s*DECLARE\b/i;
+  const setStartRe = /^\s*SET\b/i;
+  const createStartRe = /^\s*CREATE\b/i;
+  const createDeclarationRe = /^\s*CREATE\s+(?:COMPUTE\s+)?(?:MODULE|PROCEDURE|FUNCTION)\b/i;
+  const findStatementBounds = (startLine) => {
+    for (let j = startLine; j < lines.length; j++) {
+      if (j > startLine && startsNewStatementRe.test(lines[j].trim())) {
+        return { terminated: false, endLine: j - 1 };
+      }
+      if (lines[j].includes(";")) {
+        return { terminated: true, endLine: j };
+      }
+    }
+    return { terminated: false, endLine: lines.length - 1 };
+  };
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let message = null;
+    if (declareStartRe.test(line)) {
+      message = "DECLARE statement may be missing a semicolon.";
+    } else if (setStartRe.test(line)) {
+      message = "SET statement may be missing a semicolon.";
+    } else if (createStartRe.test(line) && !createDeclarationRe.test(line)) {
+      message = "CREATE statement may be missing a semicolon.";
+    }
+    if (!message) {
+      continue;
+    }
+    const { terminated, endLine } = findStatementBounds(i);
+    if (!terminated) {
+      diagnostics.push({
+        severity: import_node2.DiagnosticSeverity.Warning,
+        range: {
+          start: { line: i, character: 0 },
+          end: { line: endLine, character: lines[endLine]?.length ?? 0 }
+        },
+        message,
+        source: "esql"
+      });
+    }
+    i = Math.max(i, endLine);
+  }
+  return diagnostics;
+}
+function sendDiagnostics(doc) {
+  const diagnostics = validateDocument(doc);
+  connection.sendDiagnostics({ uri: doc.uri, diagnostics });
+}
+documents.onDidChangeContent((change) => {
+  sendDiagnostics(change.document);
+});
+documents.onDidOpen((event) => {
+  sendDiagnostics(event.document);
+});
+documents.onDidClose((event) => {
+  connection.sendDiagnostics({ uri: event.document.uri, diagnostics: [] });
+});
+connection.onCompletion(
+  (params) => {
+    const doc = documents.get(params.textDocument.uri);
+    if (!doc) {
+      return STATIC_COMPLETIONS;
+    }
+    const { precededByDot } = wordAtPosition(doc, params.position);
+    if (precededByDot) {
+      return [];
+    }
+    const text = doc.getText();
+    const syms = extractSymbols(text);
+    const dynamicItems = symbolCompletions(syms);
+    const localVars = extractLocalVariables(text);
+    const fieldAliases = extractFieldAliases(text);
+    const staticLabels = new Set(
+      STATIC_COMPLETIONS.map((i) => i.label.toUpperCase())
+    );
+    const uniqueDynamic = [];
+    for (const item of [...dynamicItems, ...localVars, ...fieldAliases]) {
+      const key = item.label.toUpperCase();
+      if (!staticLabels.has(key)) {
+        staticLabels.add(key);
+        uniqueDynamic.push(item);
+      }
+    }
+    return [...STATIC_COMPLETIONS, ...uniqueDynamic];
+  }
+);
+connection.onHover((params) => {
+  const doc = documents.get(params.textDocument.uri);
+  if (!doc) {
+    return null;
+  }
+  const lineText = doc.getText({
+    start: { line: params.position.line, character: 0 },
+    end: { line: params.position.line + 1, character: 0 }
+  });
+  const ch = params.position.character;
+  const before = lineText.slice(0, ch);
+  const after = lineText.slice(ch);
+  const wordBefore = /[A-Za-z_][\w$]*$/.exec(before)?.[0] ?? "";
+  const wordAfter = /^[\w$]*/.exec(after)?.[0] ?? "";
+  const word = wordBefore + wordAfter;
+  if (!word) {
+    return null;
+  }
+  const md = lookupHoverDoc(word);
+  if (!md) {
+    return null;
+  }
+  const startCh = ch - wordBefore.length;
+  const endCh = ch + wordAfter.length;
+  return {
+    contents: { kind: import_node2.MarkupKind.Markdown, value: md },
+    range: {
+      start: { line: params.position.line, character: startCh },
+      end: { line: params.position.line, character: endCh }
+    }
+  };
+});
+connection.onDocumentSymbol(
+  (params) => {
+    const doc = documents.get(params.textDocument.uri);
+    if (!doc) {
+      return [];
+    }
+    const text = doc.getText();
+    const syms = extractSymbols(text);
+    const lineCount = doc.lineCount;
+    return toDocumentSymbols(syms, lineCount);
+  }
+);
+documents.listen(connection);
+connection.listen();
+//# sourceMappingURL=server.js.map

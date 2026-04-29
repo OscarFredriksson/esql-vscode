@@ -155,6 +155,7 @@ export const KEYWORD_DOCS: Record<string, ESQLDoc> = {
   HAVING: { documentation: 'Filters groups in a GROUP BY clause.' },
   ORDER: { documentation: 'Orders results of a SELECT statement.' },
   AS: { documentation: 'Aliases a field or expression in a SELECT statement.' },
+  OF: { documentation: 'Preposition used in ESQL syntax forms such as references and field selection.' },
   TO: { documentation: 'Specifies a destination (e.g., TO TERMINAL).' },
   AND: { documentation: 'Logical AND operator.' },
   OR: { documentation: 'Logical OR operator.' },
@@ -188,6 +189,19 @@ export const KEYWORD_DOCS: Record<string, ESQLDoc> = {
   EXCEPTION: { documentation: 'Used in THROW USER EXCEPTION.' },
   MESSAGE: { documentation: 'Used in THROW / SIGNAL to specify message catalog entry.' },
   TERMINAL: { documentation: 'Identifies an output terminal name in PROPAGATE.' },
+  NAME: {
+    signature: 'NAME(<element>)',
+    documentation: 'Message-tree function that returns the local name (tag name) of an element node.',
+  },
+  NAMESPACE: {
+    signature: 'NAMESPACE(<element>)',
+    documentation: 'Message-tree function that returns the namespace URI of an element node.',
+  },
+  TYPE: {
+    signature: 'TYPE(<element>)',
+    documentation:
+      'Message-tree function that returns the type of an element node as an integer constant (e.g., MRM, LIST, VALUE_SET, REFERENCE).',
+  },
   RETURNS: { documentation: 'Specifies the return type of a FUNCTION.' },
   LANGUAGE: { documentation: 'Specifies the implementation language (e.g., LANGUAGE ESQL, LANGUAGE DATABASE).' },
   ESQL: { documentation: 'Language identifier for ESQL procedures.' },

@@ -158,6 +158,14 @@ Created for visualization of IBM App Connect Enterprise message flows and subflo
 
 ## Changelog
 
+### 0.4.1
+
+- Added local variable IntelliSense from `DECLARE` statements
+- Added alias IntelliSense from `AS` and `CREATE ... AS/NAME` patterns
+- Expanded keyword support and highlighting for `DO`, `OF`, `TYPE`, `NAME`, `NAMESPACE`, and `RETURNS`
+- Improved semicolon diagnostics for `DECLARE`, `SET`, and bare `CREATE` statements, including multiline statements and end-of-file cases
+- Added loop closing diagnostics for missing or unmatched `END WHILE/FOR/REPEAT/LOOP`
+
 ### 0.4.0
 
 - **New**: ESQL Language Server (LSP) for `.esql` files

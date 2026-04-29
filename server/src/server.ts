@@ -245,6 +245,95 @@ function symbolCompletions(syms: ESQLSymbol[]): CompletionItem[] {
   return items;
 }
 
+/** Extract all local DECLARE variables from the text. */
+function extractLocalVariables(text: string): CompletionItem[] {
+  const stripped = stripComments(text);
+
+  // Match DECLARE statements:
+  // DECLARE <varName> [SHARED] [EXTERNAL] <type> ...;
+  // Capture the variable name (first identifier after DECLARE)
+  const declareRe = /\bDECLARE\s+([A-Za-z_][\w$]*)\s+(?:SHARED|EXTERNAL)?\s*[A-Z]/gi;
+
+  const items: CompletionItem[] = [];
+  const seen = new Set<string>();
+
+  let m: RegExpExecArray | null;
+  declareRe.lastIndex = 0;
+  while ((m = declareRe.exec(stripped)) !== null) {
+    const varName = m[1];
+    if (!seen.has(varName.toUpperCase())) {
+      seen.add(varName.toUpperCase());
+      items.push({
+        label: varName,
+        kind: CompletionItemKind.Variable,
+        detail: 'Local variable',
+      });
+    }
+  }
+
+  return items;
+}
+
+/**
+ * Extract field/table aliases and created field names.
+ * Examples:
+ * - SELECT x AS alias
+ * - CREATE ... AS refName
+ * - CREATE ... NAME 'FieldName'
+ */
+function extractFieldAliases(text: string): CompletionItem[] {
+  const stripped = stripComments(text);
+
+  // Match AS aliases that terminate like statement aliases, not CAST(... AS TYPE).
+  const selectAliasRe =
+    /\bAS\s+([A-Za-z_][\w$]*)\b(?=\s*(?:,|FROM\b|WHERE\b|GROUP\b|HAVING\b|ORDER\b|INTO\b|VALUES\b|JOIN\b|ON\b|UNION\b|EXCEPT\b|INTERSECT\b|;|$))/gi;
+
+  // Match CREATE ... AS <identifier> aliases/references.
+  const createAsAliasRe =
+    /\bCREATE\b[^;\n]*\bAS\s+([A-Za-z_][\w$]*)\b(?=\s*(?:REFERENCE\b|IDENTITY\b|TYPE\b|VALUE\b|NAME\b|;|$))/gi;
+
+  // Match CREATE ... NAME 'FieldName' and CREATE ... NAME "FieldName".
+  const createNameRe =
+    /\bCREATE\b[^;\n]*\bNAME\s+(['"])([^'"\r\n]+)\1/gi;
+
+  const items: CompletionItem[] = [];
+  const seen = new Set<string>();
+
+  const pushAlias = (label: string, detail: string): void => {
+    const key = label.toUpperCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      items.push({
+        label,
+        kind: CompletionItemKind.Field,
+        detail,
+      });
+    }
+  };
+
+  let m: RegExpExecArray | null;
+
+  selectAliasRe.lastIndex = 0;
+  while ((m = selectAliasRe.exec(stripped)) !== null) {
+    pushAlias(m[1], 'Field alias');
+  }
+
+  createAsAliasRe.lastIndex = 0;
+  while ((m = createAsAliasRe.exec(stripped)) !== null) {
+    pushAlias(m[1], 'CREATE alias');
+  }
+
+  createNameRe.lastIndex = 0;
+  while ((m = createNameRe.exec(stripped)) !== null) {
+    const fieldName = m[2].trim();
+    if (fieldName.length > 0) {
+      pushAlias(fieldName, 'Created field name');
+    }
+  }
+
+  return items;
+}
+
 // ─── Diagnostics ─────────────────────────────────────────────────────────────
 
 function validateDocument(doc: TextDocument): Diagnostic[] {
@@ -287,6 +376,71 @@ function validateDocument(doc: TextDocument): Diagnostic[] {
     });
   }
 
+  // Track loop open/close balance (WHILE/FOR/REPEAT/LOOP)
+  const loopStacks: Record<string, Array<{ line: number; ch: number }>> = {
+    WHILE: [],
+    FOR: [],
+    REPEAT: [],
+    LOOP: [],
+  };
+
+  const whileStartRe = /^\s*WHILE\b/i;
+  const forStartRe = /^\s*FOR\b/i;
+  const repeatStartRe = /^\s*REPEAT\b/i;
+  const loopStartRe = /^\s*LOOP\b/i;
+  const loopEndRe = /\bEND\s+(WHILE|FOR|REPEAT|LOOP)\s*;/gi;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (whileStartRe.test(line)) {
+      loopStacks.WHILE.push({ line: i, ch: line.search(/\bWHILE\b/i) });
+    }
+    if (forStartRe.test(line)) {
+      loopStacks.FOR.push({ line: i, ch: line.search(/\bFOR\b/i) });
+    }
+    if (repeatStartRe.test(line)) {
+      loopStacks.REPEAT.push({ line: i, ch: line.search(/\bREPEAT\b/i) });
+    }
+    if (loopStartRe.test(line)) {
+      loopStacks.LOOP.push({ line: i, ch: line.search(/\bLOOP\b/i) });
+    }
+
+    let loopMatch: RegExpExecArray | null;
+    loopEndRe.lastIndex = 0;
+    while ((loopMatch = loopEndRe.exec(line)) !== null) {
+      const loopType = loopMatch[1].toUpperCase();
+      const stack = loopStacks[loopType];
+      if (stack.length > 0) {
+        stack.pop();
+      } else {
+        diagnostics.push({
+          severity: DiagnosticSeverity.Warning,
+          range: {
+            start: { line: i, character: loopMatch.index },
+            end: { line: i, character: loopMatch.index + loopMatch[0].length },
+          },
+          message: `Unmatched END ${loopType} — no corresponding ${loopType} start found.`,
+          source: 'esql',
+        });
+      }
+    }
+  }
+
+  for (const loopType of Object.keys(loopStacks)) {
+    for (const loc of loopStacks[loopType]) {
+      diagnostics.push({
+        severity: DiagnosticSeverity.Warning,
+        range: {
+          start: { line: loc.line, character: Math.max(0, loc.ch) },
+          end: { line: loc.line, character: Math.max(0, loc.ch) + loopType.length },
+        },
+        message: `${loopType} loop is not closed — expected END ${loopType};`,
+        source: 'esql',
+      });
+    }
+  }
+
   // Warn on END MODULE without a preceding CREATE MODULE (simple heuristic)
   const endModuleRe = /\bEND\s+MODULE\s*;/gi;
   const createModuleRe = /\bCREATE\s+(?:COMPUTE\s+)?MODULE\b/gi;
@@ -326,31 +480,62 @@ function validateDocument(doc: TextDocument): Diagnostic[] {
     });
   }
 
-  // Check for DECLARE statements missing a semicolon on the same line
-  const declareRe = /^\s*DECLARE\b[^;]+$/i;
-  for (let i = 0; i < lines.length; i++) {
-    // Only flag single-line declares that don't end in semicolon and don't
-    // continue obviously on the next line (continuation check: next line
-    // starts with a keyword or is a new statement)
-    if (declareRe.test(lines[i])) {
-      const nextLine = (lines[i + 1] ?? '').trim();
-      const isContinuation =
-        nextLine.length === 0 ||
-        /^[A-Za-z_]/.test(nextLine) === false ||
-        /^\s*(DECLARE|SET|IF|WHILE|FOR|CALL|RETURN|END|CREATE)\b/i.test(nextLine);
+  const startsNewStatementRe =
+    /^\s*(DECLARE|SET|IF|WHILE|FOR|CALL|RETURN|END|CREATE)\b/i;
 
-      if (isContinuation) {
-        diagnostics.push({
-          severity: DiagnosticSeverity.Warning,
-          range: {
-            start: { line: i, character: 0 },
-            end: { line: i, character: lines[i].length },
-          },
-          message: 'DECLARE statement may be missing a semicolon.',
-          source: 'esql',
-        });
+  // Check DECLARE/SET/bare CREATE statements for missing semicolons,
+  // including multiline statements that may span to the end of file.
+  const declareStartRe = /^\s*DECLARE\b/i;
+  const setStartRe = /^\s*SET\b/i;
+  const createStartRe = /^\s*CREATE\b/i;
+  const createDeclarationRe =
+    /^\s*CREATE\s+(?:COMPUTE\s+)?(?:MODULE|PROCEDURE|FUNCTION)\b/i;
+
+  const findStatementBounds = (
+    startLine: number,
+  ): { terminated: boolean; endLine: number } => {
+    for (let j = startLine; j < lines.length; j++) {
+      if (j > startLine && startsNewStatementRe.test(lines[j].trim())) {
+        return { terminated: false, endLine: j - 1 };
+      }
+      if (lines[j].includes(';')) {
+        return { terminated: true, endLine: j };
       }
     }
+    return { terminated: false, endLine: lines.length - 1 };
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    let message: string | null = null;
+    if (declareStartRe.test(line)) {
+      message = 'DECLARE statement may be missing a semicolon.';
+    } else if (setStartRe.test(line)) {
+      message = 'SET statement may be missing a semicolon.';
+    } else if (createStartRe.test(line) && !createDeclarationRe.test(line)) {
+      message = 'CREATE statement may be missing a semicolon.';
+    }
+
+    if (!message) {
+      continue;
+    }
+
+    const { terminated, endLine } = findStatementBounds(i);
+    if (!terminated) {
+      diagnostics.push({
+        severity: DiagnosticSeverity.Warning,
+        range: {
+          start: { line: i, character: 0 },
+          end: { line: endLine, character: lines[endLine]?.length ?? 0 },
+        },
+        message,
+        source: 'esql',
+      });
+    }
+
+    // Skip ahead to avoid duplicate warnings within the same multiline statement.
+    i = Math.max(i, endLine);
   }
 
   return diagnostics;
@@ -395,12 +580,21 @@ connection.onCompletion(
     const text = doc.getText();
     const syms = extractSymbols(text);
     const dynamicItems = symbolCompletions(syms);
+    const localVars = extractLocalVariables(text);
+    const fieldAliases = extractFieldAliases(text);
 
-    // Deduplicate dynamic items against static ones
-    const staticLabels = new Set(STATIC_COMPLETIONS.map((i) => i.label.toUpperCase()));
-    const uniqueDynamic = dynamicItems.filter(
-      (i) => !staticLabels.has(i.label.toUpperCase()),
+    // Deduplicate all dynamic items against static ones and each other.
+    const staticLabels = new Set(
+      STATIC_COMPLETIONS.map((i) => i.label.toUpperCase()),
     );
+    const uniqueDynamic: CompletionItem[] = [];
+    for (const item of [...dynamicItems, ...localVars, ...fieldAliases]) {
+      const key = item.label.toUpperCase();
+      if (!staticLabels.has(key)) {
+        staticLabels.add(key);
+        uniqueDynamic.push(item);
+      }
+    }
 
     return [...STATIC_COMPLETIONS, ...uniqueDynamic];
   },
