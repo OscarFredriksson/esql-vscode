@@ -158,6 +158,26 @@ Created for visualization of IBM App Connect Enterprise message flows and subflo
 
 ## Changelog
 
+### 0.4.3
+
+- Added external ESQL function/procedure IntelliSense across library roots with `BROKER SCHEMA` + `PATH` resolution
+- Added explicit library loading via setting: `esql.externalLibraries` (absolute or workspace-relative paths)
+- Added GUI commands for library management:
+  - `ESQL: Manage External Libraries` (add/remove/clear)
+  - `ESQL: Show External Libraries`
+  - Folder picker support via file explorer for adding libraries
+- Improved external IntelliSense prioritization:
+  - Ordered by `PATH` schema precedence
+  - Ordered by configured library root precedence
+  - Completion and hover now show library/source context
+- Go-to-definition now returns multiple external matches so VS Code can show a target picker when symbols are duplicated across libraries
+- Improved parser robustness for external indexing:
+  - Multiline `PATH` declarations
+  - Optional semicolon handling for `BROKER SCHEMA`
+  - More tolerant function/procedure signature extraction
+- Enhanced Outline by including local `DECLARE` variables under module/function/procedure symbols
+- Added context-aware variable IntelliSense improvements (scope-aware completions and variable scope hover details)
+
 ### 0.4.2
 
 - Added GitHub Actions workflow for automated extension building and release

@@ -2,7 +2,7 @@
   "name": "esql-language",
   "displayName": "ESQL Language & ACE Flow Visualizer",
   "description": "ESQL syntax highlighting and visual previewer for IBM App Connect Enterprise message flows and subflows",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publisher": "oscarfredriksson",
   "engines": {
     "vscode": "^1.80.0"
@@ -49,6 +49,18 @@
         "title": "Open Preview to the Side",
         "category": "ACE Flow",
         "icon": "$(open-preview)"
+      },
+      {
+        "command": "esql.manageExternalLibraries",
+        "title": "Manage External Libraries",
+        "category": "ESQL",
+        "icon": "$(library)"
+      },
+      {
+        "command": "esql.showExternalLibraries",
+        "title": "Show External Libraries",
+        "category": "ESQL",
+        "icon": "$(list-unordered)"
       }
     ],
     "menus": {
@@ -67,8 +79,27 @@
         {
           "command": "aceFlowVisualizer.openPreviewToSide",
           "when": "resourceExtname == .msgflow || resourceExtname == .subflow"
+        },
+        {
+          "command": "esql.manageExternalLibraries"
+        },
+        {
+          "command": "esql.showExternalLibraries"
         }
       ]
+    },
+    "configuration": {
+      "title": "ESQL",
+      "properties": {
+        "esql.externalLibraries": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "List of library root folders to index for external ESQL functions/procedures. Supports absolute paths or workspace-relative paths. If empty, falls back to indexing the current workspace root."
+        }
+      }
     }
   },
   "scripts": {

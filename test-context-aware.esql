@@ -1,0 +1,53 @@
+-- Test ESQL file to verify context-aware LSP improvements
+-- This file demonstrates the three new features:
+-- 1. Scope-aware completions (variables filtered by scope)
+-- 2. Message tree field suggestions
+-- 3. Go-to-definition navigation
+
+CREATE COMPUTE MODULE DemoModule
+  DECLARE globalVar VARCHAR;
+  DECLARE count INTEGER;
+
+  BEGIN
+    -- Scope Level 1 (global scope)
+    SET globalVar = 'Hello';
+    SET count = 0;
+
+    -- Nested scope
+    WHILE count < 10 DO
+      -- Scope Level 2 (loop scope)
+      DECLARE loopVar VARCHAR;
+      SET loopVar = 'Inside loop';
+      
+      -- Message tree examples:
+      -- Type the following and get completions:
+      -- InputRoot.MQ. -> should suggest Mq_Header, Mq_MessageProperties
+      -- InputRoot.HTTP. -> should suggest HTTPInputHeader, HTTPRequestBody
+      
+      -- Try hover over InputRoot to see available fields
+      SET OutputRoot.MQ.Mq_Header.Encoding = InputRoot.MQ.Mq_Header.Encoding;
+      
+      -- Try go-to-definition (Ctrl+Click) on:
+      -- - globalVar (should jump to DECLARE globalVar)
+      -- - count (should jump to DECLARE count)
+      -- - loopVar (should jump to DECLARE loopVar inside loop)
+      
+      SET count = count + 1;
+    END WHILE;
+
+    -- At this point, loopVar should NOT be suggested in completions
+    -- (it was declared inside the loop scope)
+
+    -- Nested IF
+    IF count > 0 THEN
+      DECLARE ifVar VARCHAR;
+      SET ifVar = 'Inside IF';
+      
+      -- ifVar is in scope here
+      SET globalVar = ifVar;
+    END IF;
+    
+    -- ifVar should NOT be suggested here (it's out of scope)
+
+  END;
+END MODULE;
